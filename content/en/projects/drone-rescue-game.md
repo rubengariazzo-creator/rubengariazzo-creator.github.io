@@ -24,7 +24,7 @@ cta:
 Built with a partner, Ilyane Haida: a rescue game on a 12x12 grid, where drones must locate survivors and deliver them to a hospital while avoiding storms and buildings, under battery-life constraints.
 
 <div class="drone-game" data-lang="en">
-  <p class="drone-game-intro">Play directly in your browser: this widget actually runs the Python script below (unmodified, fetched live) using <strong>Pyodide</strong> (CPython compiled to WebAssembly) — nothing to install. Drone moves are entered through your browser's dialog boxes (<code>prompt</code>): click "Play the game", then answer the prompts that appear one after another, turn by turn — the grid and drone status are repeated at the top of each dialog box.</p>
+  <p class="drone-game-intro">Play directly in your browser: this widget actually runs the Python script below (unmodified, fetched live) using <strong>Pyodide</strong> (CPython compiled to WebAssembly) — nothing to install. Moves are entered in the field that appears below the grid, which stays visible the whole time you're answering.</p>
   <div class="drone-game-rules">
     <p>Game rules:</p>
     <ul>
@@ -40,6 +40,12 @@ Built with a partner, Ilyane Haida: a rescue game on a 12x12 grid, where drones 
   <button type="button" class="drone-game-play">Play the game</button>
   <p class="drone-game-status"></p>
   <pre class="drone-game-terminal" hidden></pre>
+  <form class="drone-game-input-form" hidden>
+    <label class="drone-game-input-label"></label>
+    <input type="text" class="drone-game-input-field" autocomplete="off">
+    <button type="submit">Send</button>
+  </form>
+  <p class="drone-game-fallback-notice" hidden></p>
   <div class="drone-game-controls" hidden>
     <button type="button" class="drone-game-replay" hidden>Play again</button>
   </div>
