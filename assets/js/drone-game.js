@@ -26,10 +26,23 @@
 import builtins
 def _js_input(prompt=""):
     from js import window
-    result = window.prompt(prompt)
+    result = window.__droneGameInput(prompt)
     return result if result is not None else ""
 builtins.input = _js_input
 `;
+
+  // Tail of the terminal (grid + drone status, printed just before each input() call)
+  // prepended to the prompt() message itself, so the current board is visible inside
+  // the dialog — window.prompt() is a blocking native modal that otherwise hides the
+  // page behind it, leaving players no way to check the grid before answering.
+  const PROMPT_CONTEXT_LINES = 30;
+  function makePromptFn(terminal) {
+    return (promptText) => {
+      const lines = terminal.textContent.split("\n");
+      const context = lines.slice(-PROMPT_CONTEXT_LINES).join("\n");
+      return window.prompt(context + "\n\n" + promptText);
+    };
+  }
 
   const TEXT = {
     fr: {
@@ -52,12 +65,20 @@ builtins.input = _js_input
   const CSS = `
 .drone-game{margin:2rem 0;padding:1.25rem;border:1px solid #333;border-radius:8px;background:#0b0b0d;}
 .drone-game-intro{color:#ccc;font-size:0.95rem;line-height:1.5;margin:0 0 1rem;}
+.drone-game-rules{color:#ccc;font-size:0.88rem;line-height:1.5;margin:0 0 1rem;padding:0.85rem 1rem;background:#141416;border:1px solid #2a2a2e;border-radius:6px;}
+.drone-game-rules p{margin:0 0 0.5rem;font-weight:600;color:#eee;}
+.drone-game-rules ul{margin:0;padding-left:1.2rem;}
+.drone-game-rules li{margin-bottom:0.35rem;}
+.drone-game-rules code{background:#232326;padding:0.05rem 0.35rem;border-radius:4px;font-size:0.85em;}
 .drone-game-play,.drone-game-replay{font:inherit;padding:0.6rem 1.2rem;border-radius:6px;border:1px solid #555;background:#1a1a1e;color:#eee;cursor:pointer;}
 .drone-game-play:hover,.drone-game-replay:hover{background:#26262b;}
 .drone-game-play:disabled{opacity:0.6;cursor:wait;}
 .drone-game-status{color:#9aa0a6;font-size:0.9rem;margin:0.75rem 0 0;min-height:1.2em;}
-.drone-game-terminal{margin-top:1rem;padding:0.85rem;background:#050506;color:#d6d6d6;font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",Menlo,monospace;font-size:0.82rem;line-height:1.4;white-space:pre-wrap;word-break:break-word;max-height:26rem;overflow-y:auto;border:1px solid #222;border-radius:6px;}
+.drone-game-terminal{margin-top:1rem;padding:0.85rem;background:#050506;color:#d6d6d6;font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",Menlo,monospace;font-size:0.82rem;line-height:1.4;white-space:pre;overflow-x:auto;-webkit-overflow-scrolling:touch;max-height:26rem;overflow-y:auto;border:1px solid #222;border-radius:6px;}
 .drone-game-controls{margin-top:1rem;}
+@media (max-width:40rem){
+.drone-game-terminal{font-size:0.62rem;max-height:20rem;}
+}
 `;
 
   function injectStyles() {
@@ -109,6 +130,7 @@ builtins.input = _js_input
 
       pyodide.setStdout({ batched: (msg) => appendLine(terminal, msg) });
       pyodide.setStderr({ batched: (msg) => appendLine(terminal, msg) });
+      window.__droneGameInput = makePromptFn(terminal);
 
       pyodide.FS.writeFile("config.json", JSON.stringify(CONFIG));
       pyodide.runPython(INPUT_SHIM);

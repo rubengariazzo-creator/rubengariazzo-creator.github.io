@@ -24,7 +24,19 @@ cta:
 Projet réalisé en binôme avec Ilyane Haida : un jeu de sauvetage sur une grille de 12x12 cases, où des drones doivent localiser des survivants et les acheminer vers un hôpital tout en évitant les tempêtes et les bâtiments, sous contrainte d'autonomie de batterie.
 
 <div class="drone-game" data-lang="fr">
-  <p class="drone-game-intro">Jouez directement dans le navigateur : ce module exécute réellement le script Python ci-dessous (inchangé, téléchargé en direct), grâce à <strong>Pyodide</strong> (CPython compilé en WebAssembly), sans rien installer. Les déplacements de drones se saisissent via des fenêtres de dialogue du navigateur (<code>prompt</code>) : cliquez sur « Lancer le jeu », puis répondez aux invites qui apparaissent successivement, tour après tour.</p>
+  <p class="drone-game-intro">Jouez directement dans le navigateur : ce module exécute réellement le script Python ci-dessous (inchangé, téléchargé en direct), grâce à <strong>Pyodide</strong> (CPython compilé en WebAssembly), sans rien installer. Les déplacements de drones se saisissent via des fenêtres de dialogue du navigateur (<code>prompt</code>) : cliquez sur « Lancer le jeu », puis répondez aux invites qui apparaissent successivement, tour après tour — la grille et l'état des drones sont rappelés en haut de chaque fenêtre de dialogue.</p>
+  <div class="drone-game-rules">
+    <p>Règles du jeu :</p>
+    <ul>
+      <li>Grille 12×12 : colonnes <code>A</code> à <code>L</code>, lignes <code>0</code> à <code>11</code>.</li>
+      <li>Symboles : <code>B</code> bâtiment, <code>H</code> hôpital, <code>S</code> survivant, <code>T</code> tempête, <code>D</code> drone.</li>
+      <li>Chaque tour, déplacez jusqu'à 3 drones d'une case (diagonales incluses) pour récupérer les survivants et les ramener à l'hôpital.</li>
+      <li>Chaque déplacement coûte 1 point de batterie (+2 pour récupérer un survivant) ; la batterie se recharge sur l'hôpital.</li>
+      <li>Une tempête désactive pendant 2 tours tout drone actif qu'elle touche en se déplaçant.</li>
+      <li>+1 point par survivant déposé à l'hôpital. Fin de partie : tous les survivants sauvés, tous les drones hors service, ou 40 tours écoulés.</li>
+      <li>Pour jouer : entrez l'identifiant du drone à déplacer (ou <code>f</code> pour finir le tour), puis sa destination au format <code>colonne ligne</code> (ex. <code>C 5</code>).</li>
+    </ul>
+  </div>
   <button type="button" class="drone-game-play">Lancer le jeu</button>
   <p class="drone-game-status"></p>
   <pre class="drone-game-terminal" hidden></pre>

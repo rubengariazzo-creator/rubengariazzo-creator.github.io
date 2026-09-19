@@ -24,7 +24,19 @@ cta:
 Built with a partner, Ilyane Haida: a rescue game on a 12x12 grid, where drones must locate survivors and deliver them to a hospital while avoiding storms and buildings, under battery-life constraints.
 
 <div class="drone-game" data-lang="en">
-  <p class="drone-game-intro">Play directly in your browser: this widget actually runs the Python script below (unmodified, fetched live) using <strong>Pyodide</strong> (CPython compiled to WebAssembly) — nothing to install. Drone moves are entered through your browser's dialog boxes (<code>prompt</code>): click "Play the game", then answer the prompts that appear one after another, turn by turn.</p>
+  <p class="drone-game-intro">Play directly in your browser: this widget actually runs the Python script below (unmodified, fetched live) using <strong>Pyodide</strong> (CPython compiled to WebAssembly) — nothing to install. Drone moves are entered through your browser's dialog boxes (<code>prompt</code>): click "Play the game", then answer the prompts that appear one after another, turn by turn — the grid and drone status are repeated at the top of each dialog box.</p>
+  <div class="drone-game-rules">
+    <p>Game rules:</p>
+    <ul>
+      <li>12×12 grid: columns <code>A</code> to <code>L</code>, rows <code>0</code> to <code>11</code>.</li>
+      <li>Symbols: <code>B</code> building, <code>H</code> hospital, <code>S</code> survivor, <code>T</code> storm, <code>D</code> drone.</li>
+      <li>Each turn, move up to 3 drones by one square (diagonals included) to pick up survivors and bring them to the hospital.</li>
+      <li>Each move costs 1 battery point (+2 to pick up a survivor); battery recharges at the hospital.</li>
+      <li>A storm disables any active drone it touches while moving, for 2 turns.</li>
+      <li>+1 point per survivor delivered to the hospital. The game ends when all survivors are saved, all drones are down, or after 40 turns.</li>
+      <li>To play: enter the ID of the drone to move (or <code>f</code> to end the turn), then its destination as <code>column row</code> (e.g. <code>C 5</code>).</li>
+    </ul>
+  </div>
   <button type="button" class="drone-game-play">Play the game</button>
   <p class="drone-game-status"></p>
   <pre class="drone-game-terminal" hidden></pre>
