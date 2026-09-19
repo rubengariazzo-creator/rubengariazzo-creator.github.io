@@ -21,9 +21,17 @@ module.exports = function (eleventyConfig) {
     name: "Ruben Gariazzo",
   });
 
+  function escapeAttr(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/"/g, "&quot;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
   eleventyConfig.addNunjucksAsyncShortcode("docPreview", async function (href, lang, label) {
     const title = label || href;
-    return `<iframe src="${href}" class="doc-preview-pdf" title="${title}" loading="lazy"></iframe>`;
+    return `<iframe src="${escapeAttr(href)}" class="doc-preview-pdf" title="${escapeAttr(title)}" loading="lazy"></iframe>`;
   });
 
   eleventyConfig.addCollection("byTranslationKey", (api) => {
