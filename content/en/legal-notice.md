@@ -14,7 +14,7 @@ Under French law (article 6-III of law n° 2004-575 of 21 June 2004 for confiden
 
 ## Hosting
 
-This site is self-hosted by the publisher on their own hardware.
+This site is hosted by GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA ([github.com](https://github.com)), via the GitHub Pages service. The host may collect technical connection data (including IP addresses) as part of its infrastructure's normal operation; see [GitHub's privacy statement](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement).
 
 ## Intellectual property
 
@@ -22,4 +22,4 @@ Content on this site is the publisher's own work, except for projects carried ou
 
 ## Personal data
 
-This site sets no non-essential cookies and collects no personal data through any form. The only contact method offered is a mail link (`mailto:`) that opens your own email client; no data is transmitted to or stored by the site itself.
+This site sets no non-essential cookies and collects no personal data through any form. The contact methods offered are a mail link (`mailto:`), which opens your own email client, and a link to an external LinkedIn profile; no data is transmitted to or stored by the site itself via these links.

@@ -484,6 +484,42 @@ html {
   margin-top: 1.5rem;
 }
 
+.experience-item {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-elevated);
+}
+
+.experience-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  cursor: pointer;
+  list-style: none;
+}
+
+.experience-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.experience-item summary::marker {
+  content: "";
+}
+
+.experience-item summary h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.experience-item[open] summary {
+  margin-bottom: 1rem;
+}
+
 .project-cta a,
 [data-glass-cta] {
   display: inline-block;
@@ -736,5 +772,18 @@ html {
 
   .site-header nav a {
     font-size: 0.9rem;
+  }
+
+  .doc-preview-pdf {
+    display: none;
+  }
+
+  .doc-links a {
+    display: inline-block;
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    margin: 0.25rem 0.35rem 0.25rem 0;
   }
 }

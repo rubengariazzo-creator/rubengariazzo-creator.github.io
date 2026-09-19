@@ -14,7 +14,7 @@ Conformément à l'article 6-III de la loi n° 2004-575 du 21 juin 2004 pour la 
 
 ## Hébergement
 
-Ce site est autohébergé par l'éditeur sur son propre matériel.
+Ce site est hébergé par GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis ([github.com](https://github.com)), via le service GitHub Pages. L'hébergeur peut collecter des données techniques de connexion (notamment l'adresse IP) dans le cadre du fonctionnement normal de son infrastructure ; voir la [politique de confidentialité de GitHub](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement).
 
 ## Propriété intellectuelle
 
@@ -22,4 +22,4 @@ Les contenus de ce site sont la production de l'éditeur, à l'exception des pro
 
 ## Données personnelles
 
-Ce site ne dépose aucun cookie non essentiel et ne collecte aucune donnée personnelle via un formulaire. Le seul moyen de contact proposé est un lien de messagerie (`mailto:`) qui ouvre votre propre client de messagerie ; aucune donnée n'est transmise au site ni stockée par lui.
+Ce site ne dépose aucun cookie non essentiel et ne collecte aucune donnée personnelle via un formulaire. Les moyens de contact proposés sont un lien de messagerie (`mailto:`), qui ouvre votre propre client de messagerie, et un lien vers un profil LinkedIn externe ; aucune donnée n'est transmise au site ni stockée par lui via ces liens.
