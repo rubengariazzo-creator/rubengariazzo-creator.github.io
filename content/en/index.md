@@ -2,6 +2,7 @@
 layout: layouts/page.njk
 translationKey: home
 heroBackground: true
+heroLiquid: true
 title: "Ruben Gariazzo"
 description: "Ruben Gariazzo's portfolio: mechanical and aerospace engineering, programming, and independent research projects."
 ---

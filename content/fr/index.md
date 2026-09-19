@@ -2,6 +2,7 @@
 layout: layouts/page.njk
 translationKey: home
 heroBackground: true
+heroLiquid: true
 title: "Ruben Gariazzo"
 description: "Portfolio de Ruben Gariazzo : projets d'ingénierie mécanique, aérospatiale, programmation et recherche indépendante."
 ---

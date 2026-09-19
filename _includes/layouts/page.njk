@@ -6,7 +6,16 @@ layout: layouts/base.njk
   <div class="hero-gradient" data-gradient="{{ heroColors | join(',') if heroColors else '' }}" aria-hidden="true"></div>
   <script src="/assets/js/gradient-bg.js" defer></script>
   {%- endif %}
+  {%- if heroLiquid %}
+  <div class="hero-liquid-stage">
+    <canvas class="hero-liquid-canvas" data-hero-liquid aria-hidden="true"></canvas>
+    <h1>{{ title }}</h1>
+  </div>
+  <script type="module" src="/assets/js/liquid-hero.js"></script>
+  <script type="module" src="/assets/js/hero-entrance.js"></script>
+  {%- else %}
   <h1>{{ title }}</h1>
+  {%- endif %}
   {{ content | safe }}
 </article>
 {%- if projectFilter %}

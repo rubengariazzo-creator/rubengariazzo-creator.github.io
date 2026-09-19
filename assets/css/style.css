@@ -715,6 +715,51 @@ html {
   position: relative;
 }
 
+.hero-liquid-stage {
+  position: relative;
+  min-height: clamp(9rem, 22vw, 15rem);
+  display: flex;
+  align-items: center;
+}
+
+.hero-liquid-stage h1 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  pointer-events: none;
+}
+
+.hero-liquid-canvas {
+  position: absolute;
+  top: 50%;
+  left: min(60%, 22rem);
+  transform: translateY(-50%);
+  width: clamp(14rem, 30vw, 24rem);
+  height: clamp(14rem, 30vw, 24rem);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1.2s var(--ease);
+  -webkit-mask-image: radial-gradient(circle, #000 55%, transparent 78%);
+  mask-image: radial-gradient(circle, #000 55%, transparent 78%);
+}
+
+.hero-liquid-canvas.is-ready {
+  opacity: 1;
+}
+
+@media (max-width: 48rem) {
+  .hero-liquid-canvas {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-liquid-canvas {
+    display: none;
+  }
+}
+
 .hero-gradient {
   position: fixed;
   inset: 0;
