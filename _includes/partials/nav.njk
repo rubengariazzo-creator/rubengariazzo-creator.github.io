@@ -1,0 +1,20 @@
+{%- set home = "/en/" if lang == "en" else "/" -%}
+{%- set projectsHref = "/en/projects/" if lang == "en" else "/projets/" -%}
+{%- set experienceHref = "/en/experience/" if lang == "en" else "/experiences/" -%}
+{%- set diplomasHref = "/en/diplomas/" if lang == "en" else "/diplomes/" -%}
+{%- set contactHref = "/en/contact/" if lang == "en" else "/contact/" -%}
+{%- set otherLang = "fr" if lang == "en" else "en" -%}
+{%- set otherLangUrl = collections.byTranslationKey[translationKey][otherLang] if translationKey and collections.byTranslationKey[translationKey] and collections.byTranslationKey[translationKey][otherLang] else ("/" if lang == "en" else "/en/") -%}
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="{{ home }}">{{ site.name }}</a>
+    <nav aria-label="{{ 'Navigation principale' if lang == 'fr' else 'Main navigation' }}">
+      <a href="{{ home }}">{{ nav.home }}</a>
+      <a href="{{ projectsHref }}">{{ nav.projects }}</a>
+      <a href="{{ experienceHref }}">{{ nav.experience }}</a>
+      <a href="{{ diplomasHref }}">{{ nav.diplomas }}</a>
+      <a href="{{ contactHref }}">{{ nav.contact }}</a>
+      <a href="{{ otherLangUrl }}" class="lang-switch" hreflang="{{ otherLang }}">{{ otherLang | upper }}</a>
+    </nav>
+  </div>
+</header>

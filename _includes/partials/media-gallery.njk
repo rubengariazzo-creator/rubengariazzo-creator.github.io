@@ -1,0 +1,16 @@
+{%- if gallery and gallery.length %}
+<ul class="media-gallery">
+  {%- for item in gallery %}
+  <li>
+    {%- if item.type == "video" %}
+    <video src="{{ item.src }}" poster="{{ item.poster }}" controls preload="none" aria-label="{{ item.alt }}"></video>
+    {%- else %}
+    {% image item.src, item.alt %}
+    {%- endif %}
+    {%- if item.link %}
+    <p class="media-gallery-caption"><a href="{{ item.link }}" data-lightbox data-lightbox-alt="{{ item.alt }}" data-glass-cta>{{ item.linkLabel }}</a></p>
+    {%- endif %}
+  </li>
+  {%- endfor %}
+</ul>
+{%- endif %}

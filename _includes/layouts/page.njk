@@ -1,0 +1,15 @@
+---
+layout: layouts/base.njk
+---
+<article class="page">
+  {%- if heroBackground %}
+  <div class="hero-gradient" data-gradient="{{ heroColors | join(',') if heroColors else '' }}" aria-hidden="true"></div>
+  <script src="/assets/js/gradient-bg.js" defer></script>
+  {%- endif %}
+  <h1>{{ title }}</h1>
+  {{ content | safe }}
+</article>
+{%- if projectFilter %}
+<script src="/assets/js/card-tilt.js" defer></script>
+<script src="/assets/js/project-filter.js" defer></script>
+{%- endif %}

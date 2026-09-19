@@ -1,0 +1,17 @@
+{%- if downloads and downloads.length %}
+<h2>Documents</h2>
+<ul class="download-list">
+  {%- for item in downloads %}
+  <li>
+    <details class="doc-details">
+      <summary>{{ item.label }}</summary>
+      {% docPreview item.href, lang, item.label %}
+      <p class="doc-links">
+        <a href="{{ item.href }}" target="_blank" rel="noopener">{{ ui.openTab }}</a>
+        · <a href="{{ item.href }}" download>{{ ui.download }}</a>
+      </p>
+    </details>
+  </li>
+  {%- endfor %}
+</ul>
+{%- endif %}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/assets/favicon/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  {%- include "partials/seo-head.njk" %}
+</head>
+<body>
+  <a class="skip-link" href="#main">{{ 'Aller au contenu' if lang == 'fr' else 'Skip to content' }}</a>
+  {%- include "partials/nav.njk" %}
+  <main id="main">
+    {{ content | safe }}
+  </main>
+  {%- include "partials/footer.njk" %}
+  <script src="/assets/js/reveal-on-scroll.js" defer></script>
+  <script src="/assets/js/smart-header.js" defer></script>
+</body>
+</html>

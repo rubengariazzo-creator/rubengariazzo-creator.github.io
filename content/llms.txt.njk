@@ -1,0 +1,21 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# {{ site.name }}
+
+Portfolio site presenting engineering, programming, and independent research projects (French, with an English translation under /en/).
+
+## Projets (français)
+{%- for project in collections.projects %}
+{%- if project.data.lang == "fr" %}
+- {{ project.data.title }}: {{ site.url }}{{ project.url }} ({{ project.data.description }})
+{%- endif %}
+{%- endfor %}
+
+## Projects (English)
+{%- for project in collections.projects %}
+{%- if project.data.lang == "en" %}
+- {{ project.data.title }}: {{ site.url }}{{ project.url }} ({{ project.data.description }})
+{%- endif %}
+{%- endfor %}

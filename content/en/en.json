@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "experience": "Experience",
+    "diplomas": "Diplomas",
+    "contact": "Contact"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "ui": {
+    "download": "Download",
+    "openTab": "Open in a new tab",
+    "scrollHint": "Skip to content"
+  }
+}

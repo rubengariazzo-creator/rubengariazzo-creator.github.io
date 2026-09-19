@@ -1,0 +1,51 @@
+---
+layout: layouts/base.njk
+---
+<article class="project">
+  {%- if heroBackground %}
+  <div class="hero-gradient" data-gradient="{{ heroColors | join(',') if heroColors else '' }}" aria-hidden="true"></div>
+  <script src="/assets/js/gradient-bg.js" defer></script>
+  {%- endif %}
+  {%- if hero.scrollDriven %}
+  <div class="scroll-stage" data-scroll-video>
+    <div class="scroll-stage-sticky">
+      <video poster="{{ hero.poster }}" preload="metadata" aria-label="{{ hero.alt }}">
+        {%- if hero.srcMobile %}
+        <source src="{{ hero.srcMobile }}" media="(max-width: 40rem)">
+        {%- endif %}
+        <source src="{{ hero.src }}">
+      </video>
+      <a href="#project-content" class="scroll-hint" aria-label="{{ ui.scrollHint }}">↓</a>
+    </div>
+  </div>
+  <script src="/assets/js/scroll-video.js" defer></script>
+  {%- elif hero %}
+  <figure class="project-hero">
+    {%- if hero.type == "video" %}
+    <video src="{{ hero.src }}" poster="{{ hero.poster }}" controls preload="none" aria-label="{{ hero.alt }}"></video>
+    {%- else %}
+    {% image hero.src, hero.alt %}
+    {%- endif %}
+  </figure>
+  {%- endif %}
+
+  <h1 id="project-content">{{ title }}</h1>
+  {%- if logos and logos.length %}
+  <ul class="affiliation-logos">
+    {%- for logo in logos %}
+    <li><img src="/{{ logo.src }}" alt="{{ logo.alt }}" loading="lazy"></li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+  {{ content | safe }}
+
+  {%- include "partials/media-gallery.njk" %}
+  {%- include "partials/download-list.njk" %}
+
+  {%- if cta %}
+  <p class="project-cta"><a href="{{ cta.href }}" data-glass-cta>{{ cta.label }}</a></p>
+  {%- endif %}
+</article>
+{%- if gallery and (gallery | selectattr("link") | list | length) %}
+<script src="/assets/js/lightbox.js" defer></script>
+{%- endif %}
