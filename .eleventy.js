@@ -14,10 +14,17 @@ module.exports = function (eleventyConfig) {
     return Image.generateHTML(metadata, { alt, loading: "lazy", decoding: "async", sizes: "(min-width: 40rem) 50vw, 100vw" });
   });
   eleventyConfig.addPassthroughCopy("assets");
-  eleventyConfig.addPassthroughCopy({ "content/robots.txt": "robots.txt" });
 
+  // url drives the canonical tag, hreflang alternates, Open Graph/Twitter
+  // image URLs, JSON-LD, sitemap.xml, and llms.txt on every page -- it was
+  // left at the reserved-for-documentation ".example" placeholder (RFC 2606,
+  // guaranteed to never resolve) from the very first commit, so all of those
+  // were silently broken in production (verified: llms.txt and sitemap.xml
+  // were emitting links to a domain that can't exist). Update this the day a
+  // custom domain replaces GitHub Pages -- until then this is the one real
+  // domain the deployed site is actually reachable at.
   eleventyConfig.addGlobalData("site", {
-    url: "https://ruben-gariazzo.example",
+    url: "https://rubengariazzo-creator.github.io",
     name: "Ruben Gariazzo",
   });
 
