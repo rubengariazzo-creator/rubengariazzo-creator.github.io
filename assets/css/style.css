@@ -1456,7 +1456,7 @@ body.has-custom-cursor [data-glass-cta] {
 }
 
 .cs50x-progress-list li.is-complete .cs50x-progress-check {
-  color: var(--accent-strong);
+  color: #34d399;
 }
 
 .cs50x-progress-title {
