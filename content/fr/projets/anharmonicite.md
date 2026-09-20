@@ -12,6 +12,11 @@ hero:
 gallery:
   - src: "assets/img/anharmonicite/figures-matlab.png"
     alt: "Graphiques MATLAB : évolution de la fréquence, pente d'anharmonicité et dissipation de l'amplitude au cours du temps"
+stats:
+  - value: "0,0363 W"
+    label: "Dissipation corrigée (contre 0,067 W en première estimation)"
+  - value: "5 243"
+    label: "Facteur de qualité Q mesuré"
 downloads:
   - label: "Feuille de calculs complète (PDF)"
     href: /assets/downloads/anharmonicite/feuille-de-calculs.pdf

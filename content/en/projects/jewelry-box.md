@@ -25,6 +25,9 @@ gallery:
     src: /assets/video/boite-a-bijoux/test-choc-loquet.mp4
     poster: /assets/img/boite-a-bijoux/test-choc-loquet-poster.jpg
     alt: "Shock test of the V2 latch (printed in blue, visible on top): the prototype is dropped and survives intact"
+stlModels:
+  - src: "/assets/models/boite-a-bijoux/boite-assemblee.3mf"
+    label: "Full CAD assembly, V2 (drag to orbit)"
 cta:
   label: "See all projects"
   href: /en/projects/

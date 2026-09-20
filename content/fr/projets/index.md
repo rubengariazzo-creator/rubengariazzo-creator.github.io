@@ -31,6 +31,7 @@ description: "Liste des projets d'ingénierie, de programmation et de recherche 
           {%- endfor %}
         </div>
         {%- endif %}
+        <span class="project-card-tag">{{ "0" if loop.index < 10 }}{{ loop.index }} — {{ project.data.category }}</span>
       </div>
       <span class="project-card-title">{{ project.data.title }}</span>
       <p>{{ project.data.description }}</p>

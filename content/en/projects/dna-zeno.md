@@ -14,6 +14,11 @@ gallery:
     alt: "Schematic representation of proton transfer by tunneling between an adenine and a thymine"
   - src: "assets/img/adn-zenon/en-zeno-algorithm.png"
     alt: "Principle of the quantum Zeno effect: free evolution versus repeated projective measurements, with the algorithm's mathematical formalization"
+stats:
+  - value: "×3,000"
+    label: "Probe energy needed vs. DNA bond-breaking threshold"
+  - value: "10⁶"
+    label: "Gap between tunneling error and synthesis error"
 downloads:
   - label: "Full study, French version (PDF)"
     href: /assets/downloads/adn-zenon/etude-fr.pdf

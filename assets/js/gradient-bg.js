@@ -18,30 +18,24 @@
     }
   } catch (err) {}
 
-  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    let pending = null;
-    window.addEventListener(
-      "pointermove",
-      (e) => {
-        if (pending) return;
-        pending = requestAnimationFrame(() => {
-          const fx = e.clientX / window.innerWidth;
-          const fy = e.clientY / window.innerHeight;
-          try {
-            sessionStorage.setItem("mousePos", `${fx},${fy}`);
-          } catch (err) {}
+  // Position comes from the shared pointer.js tracker (assets/js/pointer.js)
+  // instead of this file running its own pointermove+rAF listener -- pointer.js
+  // already skips dispatching under reduced-motion/coarse pointers, so no event
+  // ever arrives here in those cases and this needs no separate check.
+  window.addEventListener("pointer:move", (event) => {
+    const { x, y } = event.detail;
+    const fx = x / window.innerWidth;
+    const fy = y / window.innerHeight;
+    try {
+      sessionStorage.setItem("mousePos", `${fx},${fy}`);
+    } catch (err) {}
 
-          const rect = container.getBoundingClientRect();
-          if (rect.width && rect.height) {
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-            container.style.setProperty("--mx", `${x}%`);
-            container.style.setProperty("--my", `${y}%`);
-          }
-          pending = null;
-        });
-      },
-      { passive: true }
-    );
-  }
+    const rect = container.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const px = ((x - rect.left) / rect.width) * 100;
+      const py = ((y - rect.top) / rect.height) * 100;
+      container.style.setProperty("--mx", `${px}%`);
+      container.style.setProperty("--my", `${py}%`);
+    }
+  });
 })();

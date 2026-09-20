@@ -27,6 +27,11 @@ gallery:
     alt: "Attestation de vol officielle de la fusée Icarus"
     link: /assets/img/icarus/attestation-de-vol.jpg
     linkLabel: "Voir l'attestation de vol"
+stats:
+  - value: "230 m"
+    label: "Apogée prédite"
+  - value: "6.20–6.52"
+    label: "Marge de stabilité (calibres)"
 downloads:
   - label: "Plan technique de la coiffe (PDF)"
     href: /assets/downloads/icarus/plan-coiffe.pdf

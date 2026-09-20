@@ -14,6 +14,11 @@ gallery:
     alt: "Représentation schématique du transfert de proton par effet tunnel entre une adénine et une thymine"
   - src: "assets/img/adn-zenon/fr-algorithme-zenon.png"
     alt: "Principe de l'effet Zénon quantique : évolution libre versus mesures projectives répétées, avec la formalisation mathématique de l'algorithme"
+stats:
+  - value: "×3 000"
+    label: "Énergie sonde nécessaire vs seuil de rupture ADN"
+  - value: "10⁶"
+    label: "Écart entre erreur tunnel et erreur de synthèse"
 downloads:
   - label: "Étude complète, version française (PDF)"
     href: /assets/downloads/adn-zenon/etude-fr.pdf

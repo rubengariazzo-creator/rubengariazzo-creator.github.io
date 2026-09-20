@@ -25,6 +25,9 @@ gallery:
     src: /assets/video/boite-a-bijoux/test-choc-loquet.mp4
     poster: /assets/img/boite-a-bijoux/test-choc-loquet-poster.jpg
     alt: "Test de choc du loquet V2 (imprimé en bleu, visible sur le dessus) : chute du prototype qui reste intact"
+stlModels:
+  - src: "/assets/models/boite-a-bijoux/boite-assemblee.3mf"
+    label: "Assemblage CAO complet, V2 (glisser pour orbiter)"
 cta:
   label: "Voir les projets"
   href: /projets/

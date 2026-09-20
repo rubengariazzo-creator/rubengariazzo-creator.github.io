@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.njk
 ---
+{%- set projectNav = collections.projects | projectNav(lang, page.url) -%}
 <article class="project">
   {%- if heroBackground %}
   <div class="hero-gradient" data-gradient="{{ heroColors | join(',') if heroColors else '' }}" aria-hidden="true"></div>
@@ -29,6 +30,9 @@ layout: layouts/base.njk
   </figure>
   {%- endif %}
 
+  {%- if category %}
+  <p class="project-meta-tag">{{ category }}{{ " — " + projectNav.index + "/" + projectNav.total if projectNav.total }}</p>
+  {%- endif %}
   <h1 id="project-content">{{ title }}</h1>
   {%- if logos and logos.length %}
   <ul class="affiliation-logos">
@@ -39,8 +43,46 @@ layout: layouts/base.njk
   {%- endif %}
   {{ content | safe }}
 
+  {%- if stats and stats.length %}
+  <div class="stat-grid">
+    {%- for stat in stats %}
+    <div class="stat-item">
+      <span class="stat-value">{{ stat.value }}</span>
+      <span class="stat-label">{{ stat.label }}</span>
+    </div>
+    {%- endfor %}
+  </div>
+  {%- endif %}
+
   {%- include "partials/media-gallery.njk" %}
   {%- include "partials/download-list.njk" %}
+
+  {%- if stlModels and stlModels.length %}
+  <div class="stl-viewer-grid">
+    {%- for model in stlModels %}
+    {%- set parts = model.src if model.src is iterable and model.src is not string else [model.src] %}
+    <div class="stl-viewer-mount" data-react-island="stl-viewer" data-stl-src="{{ parts | join('|') }}" data-stl-label="{{ model.label }}"></div>
+    {%- endfor %}
+  </div>
+  <script type="module" src="/assets/app-dist/app.js"></script>
+  {%- endif %}
+
+  {%- if projectNav.prev or projectNav.next %}
+  <nav class="project-pager" aria-label="{{ 'Navigation entre projets' if lang == 'fr' else 'Project navigation' }}">
+    {%- if projectNav.prev %}
+    <a href="{{ projectNav.prev.url }}" rel="prev" class="project-pager-link project-pager-prev">
+      <span class="project-pager-arrow">←</span>
+      <span class="project-pager-title">{{ projectNav.prev.data.title }}</span>
+    </a>
+    {%- else %}<span></span>{%- endif %}
+    {%- if projectNav.next %}
+    <a href="{{ projectNav.next.url }}" rel="next" class="project-pager-link project-pager-next">
+      <span class="project-pager-title">{{ projectNav.next.data.title }}</span>
+      <span class="project-pager-arrow">→</span>
+    </a>
+    {%- endif %}
+  </nav>
+  {%- endif %}
 
   {%- if cta %}
   <p class="project-cta"><a href="{{ cta.href }}" data-glass-cta>{{ cta.label }}</a></p>

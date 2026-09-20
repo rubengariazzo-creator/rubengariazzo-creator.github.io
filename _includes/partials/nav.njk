@@ -9,11 +9,11 @@
   <div class="site-header-inner">
     <a class="brand" href="{{ home }}">{{ site.name }}</a>
     <nav aria-label="{{ 'Navigation principale' if lang == 'fr' else 'Main navigation' }}">
-      <a href="{{ home }}">{{ nav.home }}</a>
-      <a href="{{ projectsHref }}">{{ nav.projects }}</a>
-      <a href="{{ experienceHref }}">{{ nav.experience }}</a>
-      <a href="{{ diplomasHref }}">{{ nav.diplomas }}</a>
-      <a href="{{ contactHref }}">{{ nav.contact }}</a>
+      <a href="{{ home }}"{% if page.url == home %} aria-current="page"{% endif %}>{{ nav.home }}</a>
+      <a href="{{ projectsHref }}"{% if page.url.startsWith(projectsHref) %} aria-current="page"{% endif %}>{{ nav.projects }}</a>
+      <a href="{{ experienceHref }}"{% if page.url == experienceHref %} aria-current="page"{% endif %}>{{ nav.experience }}</a>
+      <a href="{{ diplomasHref }}"{% if page.url == diplomasHref %} aria-current="page"{% endif %}>{{ nav.diplomas }}</a>
+      <a href="{{ contactHref }}"{% if page.url == contactHref %} aria-current="page"{% endif %}>{{ nav.contact }}</a>
       <a href="{{ otherLangUrl }}" class="lang-switch" hreflang="{{ otherLang }}">{{ otherLang | upper }}</a>
     </nav>
   </div>

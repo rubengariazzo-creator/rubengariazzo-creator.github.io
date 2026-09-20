@@ -44,6 +44,25 @@ module.exports = function (eleventyConfig) {
     return map;
   });
 
+  // Prev/next + "N/total" position within a language's project list. A plain
+  // JS filter instead of computing this in the Nunjucks template: Nunjucks'
+  // `{% set %}` doesn't support a dotted assignment target (e.g. `nav.index = x`),
+  // a plain `{% set %}` inside a `{% for %}` doesn't escape the loop's scope
+  // either, and this project's `selectattr` doesn't resolve a dotted attribute
+  // path ("data.lang") -- so the language filtering happens here too, in plain
+  // JS, rather than fighting three separate Nunjucks limitations in the template.
+  eleventyConfig.addFilter("projectNav", (allProjects, lang, currentUrl) => {
+    const projects = allProjects.filter((p) => p.data.lang === lang);
+    const index = projects.findIndex((p) => p.url === currentUrl);
+    if (index === -1) return { index: 0, total: 0, prev: null, next: null };
+    return {
+      index: index + 1,
+      total: projects.length,
+      prev: index > 0 ? projects[index - 1] : null,
+      next: index < projects.length - 1 ? projects[index + 1] : null,
+    };
+  });
+
   eleventyConfig.addCollection("projects", (api) =>
     api
       .getFilteredByGlob("content/**/proj*/*.md")

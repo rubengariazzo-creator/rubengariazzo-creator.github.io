@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "eleventy --serve",
+    "dev": "concurrently -n eleventy,app -k \"eleventy --serve\" \"npm run watch --prefix app\"",
     "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
-    "build": "npm run clean && eleventy"
+    "build": "npm run clean && npm run build --prefix app && eleventy"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +14,8 @@
   "type": "commonjs",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
-    "@11ty/eleventy-img": "^5.0.0"
+    "@11ty/eleventy-img": "^5.0.0",
+    "concurrently": "^9.0.0"
   },
   "overrides": {
     "sharp": "^0.35.4",

@@ -12,6 +12,11 @@ hero:
 gallery:
   - src: "assets/img/cryptanalyse-agapeyeff/grille-polybius.png"
     alt: "Illustration du décodage d'une paire de chiffres en coordonnée de grille Polybius 5×5"
+stats:
+  - value: "87 ans"
+    label: "Non résolu depuis 1939"
+  - value: "3 753 383"
+    label: "Tentatives journalisées"
 downloads:
   - label: "Rapport, version française (PDF)"
     href: /assets/downloads/cryptanalyse-agapeyeff/rapport-fr.pdf

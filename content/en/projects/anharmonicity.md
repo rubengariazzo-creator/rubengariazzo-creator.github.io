@@ -12,6 +12,11 @@ hero:
 gallery:
   - src: "assets/img/anharmonicite/figures-matlab.png"
     alt: "MATLAB plots: frequency evolution, anharmonicity slope, and amplitude dissipation over time"
+stats:
+  - value: "0.0363 W"
+    label: "Corrected dissipation (vs. 0.067 W first estimate)"
+  - value: "5,243"
+    label: "Measured quality factor Q"
 downloads:
   - label: "Full calculation sheet (PDF)"
     href: /assets/downloads/anharmonicite/feuille-de-calculs.pdf

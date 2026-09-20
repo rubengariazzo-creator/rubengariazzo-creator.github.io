@@ -12,6 +12,11 @@ hero:
 gallery:
   - src: "assets/img/cryptanalyse-agapeyeff/polybius-grid-en.png"
     alt: "Illustration of decoding a digit pair into a 5×5 Polybius grid coordinate"
+stats:
+  - value: "87 years"
+    label: "Unsolved since 1939"
+  - value: "3,753,383"
+    label: "Logged attempts"
 downloads:
   - label: "Report, French version (PDF)"
     href: /assets/downloads/cryptanalyse-agapeyeff/rapport-fr.pdf

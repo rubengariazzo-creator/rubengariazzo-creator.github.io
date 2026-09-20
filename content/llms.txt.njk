@@ -9,13 +9,13 @@ Portfolio site presenting engineering, programming, and independent research pro
 ## Projets (français)
 {%- for project in collections.projects %}
 {%- if project.data.lang == "fr" %}
-- {{ project.data.title }}: {{ site.url }}{{ project.url }} ({{ project.data.description }})
+- [{{ project.data.title | safe }}]({{ site.url }}{{ project.url }}): {{ project.data.description | safe }}
 {%- endif %}
 {%- endfor %}
 
 ## Projects (English)
 {%- for project in collections.projects %}
 {%- if project.data.lang == "en" %}
-- {{ project.data.title }}: {{ site.url }}{{ project.url }} ({{ project.data.description }})
+- [{{ project.data.title | safe }}]({{ site.url }}{{ project.url }}): {{ project.data.description | safe }}
 {%- endif %}
 {%- endfor %}

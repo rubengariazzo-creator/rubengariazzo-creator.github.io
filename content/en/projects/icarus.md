@@ -27,6 +27,11 @@ gallery:
     alt: "Official flight certificate for the Icarus rocket"
     link: /assets/img/icarus/attestation-de-vol.jpg
     linkLabel: "See the flight certificate"
+stats:
+  - value: "230 m"
+    label: "Predicted apogee"
+  - value: "6.20–6.52"
+    label: "Stability margin (calibers)"
 downloads:
   - label: "Nose cone technical drawing (PDF)"
     href: /assets/downloads/icarus/plan-coiffe.pdf
