@@ -2,7 +2,15 @@
 <html lang="{{ lang }}">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <!-- script-src/connect-src include cdn.jsdelivr.net and wasm-unsafe-eval for
+       the drone rescue game's Pyodide runtime (assets/js/drone-game.js):
+       pyodide.js itself is loaded via a <script src>, then it fetches its own
+       WASM binary and data files from the same CDN path at runtime (governed
+       by connect-src, not script-src), and instantiating that WASM module
+       needs 'wasm-unsafe-eval' -- CSP treats WebAssembly like eval() unless
+       this narrower keyword is present, without ever allowing 'unsafe-eval'
+       itself. Every other script/connection on the site stays 'self' only. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cdn.jsdelivr.net; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="/assets/favicon/icon.svg" type="image/svg+xml">
   <!-- Preloads only the base-Latin subset (covers FR+EN body text, including

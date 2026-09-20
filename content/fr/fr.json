@@ -7,7 +7,9 @@
     "contact": "Contact"
   },
   "footer": {
-    "rights": "Tous droits réservés."
+    "rights": "Tous droits réservés.",
+    "legalNotice": "Mentions légales",
+    "terms": "CGU"
   },
   "ui": {
     "download": "Télécharger",
