@@ -1365,7 +1365,12 @@ body.has-custom-cursor [data-glass-cta] {
 /* CS50x progress log (content/*/projects/cs50x.md): a live progress bar and
    reflections list, fetched at build time from a separate public repo
    (content/_data/cs50x.js) -- see that repo's own README for why it holds no
-   solution code, just completion status and personal reflections. */
+   solution code, just completion status and personal reflections.
+   Deliberately more colorful than the rest of the site: each week's
+   --topic-color is the real brand color of the technology it covers
+   (Scratch orange, Python blue+yellow, HTML/CSS/JS orange, Flask graphite,
+   etc.) rather than an arbitrary palette, and only "unlocks" -- shows in
+   color instead of the muted default -- once that week is complete. */
 .cs50x-progress {
   margin: 2.5rem 0;
 }
@@ -1375,11 +1380,16 @@ body.has-custom-cursor [data-glass-cta] {
   border: 1px solid var(--border);
   background: var(--bg-elevated);
   overflow: hidden;
+  border-radius: 999px;
 }
 
 .cs50x-progress-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+  background: linear-gradient(90deg,
+    #ffab19, #5c9fd6, #2dd4bf, #a78bfa, #fb7185,
+    #818cf8, #ffd43b, #34d399, #e34f26, #94a3b8);
+  background-size: 46rem 100%;
+  box-shadow: 0 0 10px 1px rgba(167, 139, 250, 0.45);
   transition: width 0.6s var(--ease-snap);
 }
 
@@ -1399,18 +1409,34 @@ body.has-custom-cursor [data-glass-cta] {
 }
 
 .cs50x-progress-list li {
+  --topic-color: var(--accent);
   padding: 0.75rem 1rem;
   border: 1px solid var(--border);
+  border-left: 3px solid var(--border);
   background: var(--bg-elevated);
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 0 0.75rem;
   color: var(--text-muted);
+  transition: border-color 0.4s var(--ease-snap);
 }
+
+/* Real brand/topic colors, in CS50x curriculum order. */
+.cs50x-progress-list li:nth-child(1)  { --topic-color: #ffab19; }
+.cs50x-progress-list li:nth-child(2)  { --topic-color: #5c9fd6; }
+.cs50x-progress-list li:nth-child(3)  { --topic-color: #2dd4bf; }
+.cs50x-progress-list li:nth-child(4)  { --topic-color: #a78bfa; }
+.cs50x-progress-list li:nth-child(5)  { --topic-color: #fb7185; }
+.cs50x-progress-list li:nth-child(6)  { --topic-color: #818cf8; }
+.cs50x-progress-list li:nth-child(7)  { --topic-color: #ffd43b; }
+.cs50x-progress-list li:nth-child(8)  { --topic-color: #34d399; }
+.cs50x-progress-list li:nth-child(9)  { --topic-color: #e34f26; }
+.cs50x-progress-list li:nth-child(10) { --topic-color: #94a3b8; }
 
 .cs50x-progress-list li.is-complete {
   color: var(--text);
-  border-color: var(--accent);
+  border-color: var(--border);
+  border-left-color: var(--topic-color);
 }
 
 .cs50x-progress-check {
@@ -1419,7 +1445,8 @@ body.has-custom-cursor [data-glass-cta] {
 }
 
 .cs50x-progress-list li.is-complete .cs50x-progress-check {
-  color: var(--accent-strong);
+  color: var(--topic-color);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--topic-color) 60%, transparent);
 }
 
 .cs50x-progress-title {
