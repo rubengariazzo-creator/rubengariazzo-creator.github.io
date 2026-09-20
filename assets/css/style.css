@@ -1447,7 +1447,7 @@ body.has-custom-cursor [data-glass-cta] {
 .cs50x-progress-list li.is-complete {
   color: var(--text);
   border-color: var(--border);
-  border-left-color: var(--topic-color);
+  border-left-color: color-mix(in srgb, var(--topic-color) 55%, var(--border));
 }
 
 .cs50x-progress-check {
@@ -1456,8 +1456,7 @@ body.has-custom-cursor [data-glass-cta] {
 }
 
 .cs50x-progress-list li.is-complete .cs50x-progress-check {
-  color: var(--topic-color);
-  text-shadow: 0 0 8px color-mix(in srgb, var(--topic-color) 60%, transparent);
+  color: var(--accent-strong);
 }
 
 .cs50x-progress-title {
