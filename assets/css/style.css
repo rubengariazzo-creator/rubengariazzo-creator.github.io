@@ -1390,7 +1390,8 @@ body.has-custom-cursor [data-glass-cta] {
     #818cf8, #ffd43b, #34d399, #e34f26, #94a3b8,
     #ffab19);
   background-size: 46rem 100%;
-  box-shadow: 0 0 10px 1px rgba(167, 139, 250, 0.45);
+  filter: saturate(65%) brightness(0.85);
+  box-shadow: 0 0 6px 0 rgba(167, 139, 250, 0.2);
   transition: width 0.6s var(--ease-snap);
 }
 
