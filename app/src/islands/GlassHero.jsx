@@ -109,16 +109,22 @@ const medallionUVGenerator = {
   ],
 };
 
-const EXTRUDE_DEPTH = 0.22;
+const EXTRUDE_DEPTH = 0.4;
 const EXTRUDE_SETTINGS = {
   depth: EXTRUDE_DEPTH,
   bevelEnabled: true,
-  bevelThickness: 0.05,
-  bevelSize: 0.05,
-  bevelSegments: 8,
+  bevelThickness: 0.09,
+  bevelSize: 0.08,
+  bevelSegments: 10,
   curveSegments: 16,
   UVGenerator: medallionUVGenerator,
 };
+// A pure side-to-side oscillation passes back through 0deg -- dead flat,
+// depth invisible -- twice a cycle. A small constant tilt keeps the bevelled
+// edge (the actual "depth" that was asked for) visibly catching the light at
+// every point in the sway instead of disappearing at the midpoint.
+const BASE_TILT_Y = 0.18;
+const BASE_TILT_X = -0.08;
 
 function GlassSeal({ scrollProgress }) {
   const group = useRef(null);
@@ -132,9 +138,9 @@ function GlassSeal({ scrollProgress }) {
     // a full 360deg spin. A bounded side-to-side turn keeps the artwork facing
     // the camera while still reading as alive and three-dimensional.
     const t = state.clock.elapsedTime;
-    group.current.rotation.y = Math.sin(t * 0.25) * 0.5;
+    group.current.rotation.y = BASE_TILT_Y + Math.sin(t * 0.25) * 0.45;
     group.current.rotation.z = Math.sin(t * 0.35) * 0.05 - scrollProgress.current * 0.2;
-    group.current.rotation.x = Math.sin(t * 0.2) * 0.05 + scrollProgress.current * 0.25;
+    group.current.rotation.x = BASE_TILT_X + Math.sin(t * 0.2) * 0.05 + scrollProgress.current * 0.25;
   });
 
   if (!texture) return null;
@@ -178,11 +184,15 @@ export default function GlassHero({ onReady }) {
       >
         <Suspense fallback={null}>
           <GlassSeal scrollProgress={scrollProgress} />
-          {/* background+blur renders the Lightformer shapes as a soft ambient
-              gradient behind the object (the self-hosted "shader-gradient" look)
-              instead of the page's near-black backdrop bleeding through the
-              canvas alpha and reading as a flat cutout with nothing behind it. */}
-          <StudioEnvironment background />
+          {/* No `background` here (unlike the old glass nose cone): that
+              painted the Lightformers as a bright blurred backdrop, which is
+              what actually read as "the white halo" -- not a CSS glow, the
+              canvas's own content. The medallion carries its own artwork and
+              colors, so it doesn't need a lit backdrop to read; the page's
+              own dark background now shows through the transparent canvas
+              instead. Lightformers stay in the tree purely for reflections/
+              lighting on the clearcoat. */}
+          <StudioEnvironment />
         </Suspense>
       </Canvas>
     </ErrorBoundary>

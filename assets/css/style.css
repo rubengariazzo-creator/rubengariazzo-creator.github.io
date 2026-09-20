@@ -897,14 +897,18 @@ html {
 }
 
 .hero-liquid-mount {
+  /* No mask-image here on purpose: that circular fade existed to hide the
+     edge of the old bright Lightformer backdrop (the "white halo"), which
+     GlassHero no longer renders -- the medallion's own rounded-square shape
+     is now the only visible edge. A soft teal contact-shadow replaces it for
+     a touch of lift instead of a stark glow. */
   flex: 0 0 auto;
   width: clamp(9rem, 16vw, 15rem);
   height: clamp(9rem, 16vw, 15rem);
   pointer-events: none;
   opacity: 0;
   transition: opacity 1.2s var(--ease);
-  -webkit-mask-image: radial-gradient(circle, #000 50%, transparent 72%);
-  mask-image: radial-gradient(circle, #000 50%, transparent 72%);
+  filter: drop-shadow(0 0.5rem 1.5rem rgba(31, 154, 163, 0.35));
 }
 
 .hero-liquid-mount.is-ready {

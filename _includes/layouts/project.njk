@@ -52,10 +52,11 @@ layout: layouts/base.njk
     {%- if cs50x.items and cs50x.items.length %}
     <ul class="cs50x-progress-list">
       {%- for item in cs50x.items %}
+      {%- set display = item.fr if (lang == "fr" and item.fr) else item %}
       <li class="{{ 'is-complete' if item.completed }}">
         <span class="cs50x-progress-check" aria-hidden="true">{{ "✓" if item.completed else "○" }}</span>
-        <span class="cs50x-progress-title">{{ item.title }}</span>
-        {%- if item.reflection %}<p class="cs50x-progress-reflection">{{ item.reflection }}</p>{%- endif %}
+        <span class="cs50x-progress-title">{{ display.title }}</span>
+        {%- if display.reflection %}<p class="cs50x-progress-reflection">{{ display.reflection }}</p>{%- endif %}
       </li>
       {%- endfor %}
     </ul>
