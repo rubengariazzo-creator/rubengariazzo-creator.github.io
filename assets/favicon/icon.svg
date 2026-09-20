@@ -1,4 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#0b0d10"/>
-  <path d="M16 4 L21 20 L16 17 L11 20 Z" fill="#5fd0ff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="seal" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0" stop-color="#6f85f8"/>
+      <stop offset="1" stop-color="#2c46b8"/>
+    </linearGradient>
+    <linearGradient id="sealDark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5169e8"/>
+      <stop offset="1" stop-color="#24379e"/>
+    </linearGradient>
+    <radialGradient id="planet" cx="0.35" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#f7e6ae"/>
+      <stop offset="1" stop-color="#d8ab52"/>
+    </radialGradient>
+  </defs>
+  <rect width="100" height="100" rx="18" fill="#05060a"/>
+  <ellipse cx="46" cy="90" rx="34" ry="4.5" fill="#000" opacity="0.35"/>
+  <path d="M 10 84 Q 8 74 24 73 Q 34 74 32 82 Q 22 90 10 84 Z" fill="url(#sealDark)"/>
+  <path d="M 14 80 Q 18 78 24 78" stroke="#1c2b7a" stroke-width="1.2" fill="none" opacity="0.6"/>
+  <ellipse cx="46" cy="62" rx="30" ry="24" fill="url(#seal)"/>
+  <path d="M 26 78 Q 22 88 34 91 Q 46 91 45 82 Q 38 76 26 78 Z" fill="url(#sealDark)"/>
+  <path d="M 31 84 Q 35 87 40 86" stroke="#1c2b7a" stroke-width="1.2" fill="none" opacity="0.6"/>
+  <path d="M 33 81 Q 37 84.5 41.5 83.5" stroke="#1c2b7a" stroke-width="1" fill="none" opacity="0.4"/>
+  <ellipse cx="48" cy="71" rx="18" ry="13" fill="#aebcfa"/>
+  <ellipse cx="48" cy="71" rx="18" ry="13" fill="#fff" opacity="0.08"/>
+  <circle cx="76" cy="41" r="17" fill="url(#seal)"/>
+  <circle cx="65" cy="30" r="1.7" fill="#1c2b7a"/>
+  <circle cx="89" cy="32" r="8" fill="url(#seal)"/>
+  <path d="M 84 28 Q 90 24 95 28" stroke="#1c2b7a" stroke-width="1" fill="none" opacity="0.35"/>
+  <circle cx="95.5" cy="27" r="2.4" fill="#0a0c0f"/>
+  <path d="M 92 29 Q 100 27 106 29" stroke="#0a0c0f" stroke-width="0.8" fill="none" opacity="0.55"/>
+  <path d="M 91 32 Q 99 33 104 36" stroke="#0a0c0f" stroke-width="0.8" fill="none" opacity="0.55"/>
+  <path d="M 90 25 Q 96 20 101 18" stroke="#0a0c0f" stroke-width="0.8" fill="none" opacity="0.45"/>
+  <circle cx="74" cy="37" r="2.3" fill="#0a0c0f"/>
+  <circle cx="74.7" cy="36.2" r="0.6" fill="#fff" opacity="0.8"/>
+  <ellipse cx="70" cy="34" rx="6" ry="4" fill="#fff" opacity="0.12"/>
+  <path d="M 84 17 A 12 3.6 -18 0 0 105 12" stroke="#c9924f" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  <circle cx="95" cy="14" r="6.5" fill="url(#planet)"/>
+  <path d="M 90 18 A 6.5 6.5 0 0 1 92 9" stroke="#b8863f" stroke-width="1" fill="none" opacity="0.5"/>
+  <path d="M 84.5 15.5 A 12 3.6 -18 0 1 104.5 10.5" stroke="#f1c988" stroke-width="2.4" fill="none" stroke-linecap="round"/>
 </svg>

@@ -17,14 +17,17 @@ description: "Ruben Gariazzo's diplomas and certifications: Baccalauréat, Breve
 <details class="doc-details" open>
   <summary>Baccalauréat général certificate</summary>
   {% docPreview "/assets/downloads/diplomes/bac.pdf", lang, "Baccalauréat général certificate" %}
+  <p class="doc-links"><a href="/assets/downloads/diplomes/bac.pdf" target="_blank" rel="noopener">{{ ui.openTab }}</a></p>
 </details>
 <details class="doc-details" open>
   <summary>Diplôme National du Brevet certificate</summary>
   {% docPreview "/assets/downloads/diplomes/brevet.pdf", lang, "Diplôme National du Brevet certificate" %}
+  <p class="doc-links"><a href="/assets/downloads/diplomes/brevet.pdf" target="_blank" rel="noopener">{{ ui.openTab }}</a></p>
 </details>
 <details class="doc-details" open>
   <summary>Language proficiency certificate</summary>
   {% docPreview "/assets/downloads/diplomes/langues-vivantes.pdf", lang, "Language proficiency certificate" %}
+  <p class="doc-links"><a href="/assets/downloads/diplomes/langues-vivantes.pdf" target="_blank" rel="noopener">{{ ui.openTab }}</a></p>
 </details>
 
 ## Certifications
@@ -37,10 +40,10 @@ description: "Ruben Gariazzo's diplomas and certifications: Baccalauréat, Breve
 <details class="doc-details" open>
   <summary>Inria / Class'Code badge: Artificial Intelligence</summary>
   {% docPreview "/assets/downloads/diplomes/badge-ia.pdf", lang, "Inria / Class'Code badge: Artificial Intelligence" %}
-  <p class="doc-links"><a href="https://openbadgefactory.com/obv3/credentials/1f7ffa80a17b1081a3287e4b402bb15fa92eaaba" target="_blank" rel="noopener">Verify this badge online</a></p>
+  <p class="doc-links"><a href="/assets/downloads/diplomes/badge-ia.pdf" target="_blank" rel="noopener">{{ ui.openTab }}</a> · <a href="/assets/downloads/diplomes/badge-ia.pdf" download>{{ ui.download }}</a> · <a href="https://openbadgefactory.com/obv3/credentials/1f7ffa80a17b1081a3287e4b402bb15fa92eaaba" target="_blank" rel="noopener">Verify this badge online</a></p>
 </details>
 <details class="doc-details" open>
   <summary>Inria / Class'Code badge: Environmental impacts of digital technology</summary>
   {% docPreview "/assets/downloads/diplomes/badge-impacts.pdf", lang, "Inria / Class'Code badge: Environmental impacts of digital technology" %}
-  <p class="doc-links"><a href="https://openbadgefactory.com/obv3/credentials/0d9ec8853824d3d73f6aca2fbe0d7dbbfc06e401" target="_blank" rel="noopener">Verify this badge online</a></p>
+  <p class="doc-links"><a href="/assets/downloads/diplomes/badge-impacts.pdf" target="_blank" rel="noopener">{{ ui.openTab }}</a> · <a href="/assets/downloads/diplomes/badge-impacts.pdf" download>{{ ui.download }}</a> · <a href="https://openbadgefactory.com/obv3/credentials/0d9ec8853824d3d73f6aca2fbe0d7dbbfc06e401" target="_blank" rel="noopener">Verify this badge online</a></p>
 </details>
