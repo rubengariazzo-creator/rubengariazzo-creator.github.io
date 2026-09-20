@@ -523,7 +523,12 @@ function initInvaderGame() {
   const projectKeys = Object.keys(PROJECT_ICONS).filter((key) => key !== ownKey);
 
   (function scheduleNextSpawn() {
-    const delay = INVADER_SPAWN_MIN_MS + Math.random() * (INVADER_SPAWN_MAX_MS - INVADER_SPAWN_MIN_MS);
+    // Once the easter egg has fired, the game has nothing left to reward --
+    // spawns drop to a tenth of the rate instead of stopping outright, so the
+    // sprites remain a rare, low-key decoration rather than a constant
+    // interruption for a return visitor who already unlocked everything.
+    const slowdown = localStorage.getItem(INVADER_UNLOCKED_KEY) ? 10 : 1;
+    const delay = (INVADER_SPAWN_MIN_MS + Math.random() * (INVADER_SPAWN_MAX_MS - INVADER_SPAWN_MIN_MS)) * slowdown;
     setTimeout(() => {
       spawnInvaderSprite(projectKeys);
       scheduleNextSpawn();
