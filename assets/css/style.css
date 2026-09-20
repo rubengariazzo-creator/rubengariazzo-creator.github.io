@@ -1433,18 +1433,6 @@ body.has-custom-cursor [data-glass-cta] {
   transition: background 0.4s var(--ease-snap), border-color 0.4s var(--ease-snap);
 }
 
-/* Real brand/topic colors, in CS50x curriculum order. */
-.cs50x-progress-list li:nth-child(1)  { --topic-color: #ffab19; }
-.cs50x-progress-list li:nth-child(2)  { --topic-color: #5c9fd6; }
-.cs50x-progress-list li:nth-child(3)  { --topic-color: #2dd4bf; }
-.cs50x-progress-list li:nth-child(4)  { --topic-color: #a78bfa; }
-.cs50x-progress-list li:nth-child(5)  { --topic-color: #fb7185; }
-.cs50x-progress-list li:nth-child(6)  { --topic-color: #818cf8; }
-.cs50x-progress-list li:nth-child(7)  { --topic-color: #ffd43b; }
-.cs50x-progress-list li:nth-child(8)  { --topic-color: #34d399; }
-.cs50x-progress-list li:nth-child(9)  { --topic-color: #e34f26; }
-.cs50x-progress-list li:nth-child(10) { --topic-color: #94a3b8; }
-
 .cs50x-progress-list li.is-complete {
   color: var(--text);
   background: color-mix(in srgb, var(--topic-color) 22%, transparent);
