@@ -912,8 +912,23 @@ html {
 }
 
 @media (max-width: 48rem) {
+  .hero-liquid-stage {
+    gap: 1rem;
+  }
+
   .hero-liquid-mount {
-    display: none;
+    /* On desktop the mount comes first in markup and sits to the H1's left;
+       on mobile Ruben asked for it on the right instead. flex: 1 1 auto (the
+       H1 next to it stays flex: 0 0 auto) lets it fill whatever width the
+       heading doesn't need, up to a cap, instead of a fixed size that
+       ignores how much room is actually free. */
+    order: 1;
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 5rem;
+    max-width: 10rem;
+    aspect-ratio: 1;
+    height: auto;
   }
 }
 
