@@ -1423,13 +1423,13 @@ body.has-custom-cursor [data-glass-cta] {
   --topic-color: var(--accent);
   padding: 0.75rem 1rem;
   border: 1px solid var(--border);
-  border-left: 3px solid var(--border);
+  border-radius: 10px;
   background: var(--bg-elevated);
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 0 0.75rem;
   color: var(--text-muted);
-  transition: border-color 0.4s var(--ease-snap);
+  transition: background 0.4s var(--ease-snap), border-color 0.4s var(--ease-snap);
 }
 
 /* Real brand/topic colors, in CS50x curriculum order. */
@@ -1446,8 +1446,10 @@ body.has-custom-cursor [data-glass-cta] {
 
 .cs50x-progress-list li.is-complete {
   color: var(--text);
-  border-color: var(--border);
-  border-left-color: color-mix(in srgb, var(--topic-color) 55%, var(--border));
+  background: color-mix(in srgb, var(--topic-color) 22%, transparent);
+  border-color: color-mix(in srgb, var(--topic-color) 32%, var(--border));
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
 }
 
 .cs50x-progress-check {
