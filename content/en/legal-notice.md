@@ -18,7 +18,7 @@ This site is hosted by GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco
 
 ## Third-party resources
 
-Every page on this site loads only from GitHub Pages, with one exception: the drone rescue game (on its project page) loads the Pyodide runtime (CPython compiled to WebAssembly) from the public CDN `cdn.jsdelivr.net`, operated by Volentio JSD Limited, so the Python script shown on that page can actually run in your browser. As with any file fetched from a third-party server, this exposes your browser's usual technical connection data (including your IP address) to that CDN; see [jsDelivr's privacy policy](https://www.jsdelivr.com/terms/privacy-policy) for details — it states it uses no cookies and does not track individual users. This only happens if you choose to open and use that specific game; no other page makes any request outside GitHub Pages.
+Every page on this site loads only from GitHub Pages, with one exception: the drone rescue game (on its project page) loads the Pyodide runtime (CPython compiled to WebAssembly) from the public CDN `cdn.jsdelivr.net`, operated by Volentio JSD Limited, so the Python script shown on that page can actually run in your browser. As with any file fetched from a third-party server, this exposes your browser's usual technical connection data (including your IP address) to that CDN; see [jsDelivr's privacy policy](https://www.jsdelivr.com/terms/privacy-policy) for details; it states it uses no cookies and does not track individual users. This only happens if you choose to open and use that specific game; no other page makes any request outside GitHub Pages.
 
 ## Intellectual property
 

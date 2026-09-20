@@ -31,7 +31,7 @@ layout: layouts/base.njk
   {%- endif %}
 
   {%- if category %}
-  <p class="project-meta-tag">{{ category }}{{ " — " + projectNav.index + "/" + projectNav.total if projectNav.total }}</p>
+  <p class="project-meta-tag">{{ category }}{{ " · " + projectNav.index + "/" + projectNav.total if projectNav.total }}</p>
   {%- endif %}
   <h1 id="project-content">{{ title }}</h1>
   {%- if logos and logos.length %}

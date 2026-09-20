@@ -8,7 +8,7 @@ description: "Diplômes et certifications de Ruben Gariazzo : Baccalauréat, Bre
 ---
 ## Diplômes
 
-*Les documents ci-dessous sont les vraies attestations officielles, telles que délivrées : seuls mon QR code de vérification et ma date et lieu de naissance ont été masqués (bandeau noir) pour préserver ma confidentialité, tout le reste est inchangé. Si vous avez besoin du document original avec son QR code (par exemple pour une vérification officielle), vous pouvez me le demander en me [contactant](/contact/) directement — il contient des informations personnelles donc je ne l'affiche pas publiquement ici.*
+*Les documents ci-dessous sont les vraies attestations officielles, telles que délivrées : seuls mon QR code de vérification et ma date et lieu de naissance ont été masqués (bandeau noir) pour préserver ma confidentialité, tout le reste est inchangé. Si vous avez besoin du document original avec son QR code (par exemple pour une vérification officielle), vous pouvez me le demander en me [contactant](/contact/) directement ; il contient des informations personnelles donc je ne l'affiche pas publiquement ici.*
 
 - **Baccalauréat général**, mention Bien, spécialités Mathématiques et Physique-Chimie (session 2025, Académie de Paris)
 - **Diplôme National du Brevet**, mention Très Bien (session 2022, Académie de Paris)

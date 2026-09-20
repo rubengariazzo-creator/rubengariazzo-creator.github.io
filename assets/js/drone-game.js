@@ -3,14 +3,14 @@
 
   // ponytail: pyodide "latest" npm dist-tag currently resolves to an unfamiliar
   // 314.x version scheme (unverifiable against Pyodide's historical 0.x releases at
-  // review time) — pinned instead to the "stable-0.29" dist-tag (0.29.5), which
+  // review time); pinned instead to the "stable-0.29" dist-tag (0.29.5), which
   // matches Pyodide's known versioning and API surface. Revisit if 314.x is
   // confirmed legitimate later.
   const PYODIDE_VERSION = "0.29.5";
   const PYODIDE_JS_URL = `https://cdn.jsdelivr.net/pyodide/v${PYODIDE_VERSION}/full/pyodide.js`;
   const SCRIPT_URL = "/assets/downloads/jeu-de-drones/drone-rescue.py";
 
-  // Exact config used to produce the project's real report — must match drone-rescue.py's expectations.
+  // Exact config used to produce the project's real report; must match drone-rescue.py's expectations.
   const CONFIG = {
     taille: 12,
     nb_drones: 6,
@@ -37,7 +37,7 @@ builtins.input = _js_input
 
   // Fallback for browsers without JSPI (e.g. Safari): a plain native prompt().
   // It cannot render the grid legibly (proportional font breaks column alignment)
-  // and blocks the page while open — known limitations, unavoidable without JSPI.
+  // and blocks the page while open; known limitations, unavoidable without JSPI.
   const PROMPT_INPUT_SHIM = `
 import builtins
 def _js_input(prompt=""):
@@ -195,7 +195,7 @@ run_sync(Promise.resolve(1))
       status.textContent = t.starting;
       // Runs the real, unmodified drone-rescue.py. input() is patched above to
       // suspend Python execution (via JSPI) until the on-page form is submitted,
-      // without blocking the browser or hiding the grid — falls back to a plain
+      // without blocking the browser or hiding the grid; falls back to a plain
       // prompt() only if the browser lacks JSPI support.
       if (await jspiSupported(pyodide)) {
         window.__droneGameAsyncInput = makeAsyncInput(container);

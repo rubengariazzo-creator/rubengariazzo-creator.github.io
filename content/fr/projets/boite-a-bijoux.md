@@ -44,6 +44,6 @@ Les principales difficultés de cette phase ont porté sur le dimensionnement (p
 
 ## V2, avec loquet
 
-Deuxième itération, réalisée en groupe (4 personnes). Un test de chute sur une boîte de taille réduite a révélé la nécessité d'un loquet pour garder la boîte fermée pendant le transport ou en cas de chute — un besoin non anticipé lors de la conception initiale, apparu seulement à l'usage. Plusieurs tailles de cylindre central ont ensuite été testées par impression 3D en PLA pour déterminer la solution la plus adaptée au mécanisme.
+Deuxième itération, réalisée en groupe (4 personnes). Un test de chute sur une boîte de taille réduite a révélé la nécessité d'un loquet pour garder la boîte fermée pendant le transport ou en cas de chute : un besoin non anticipé lors de la conception initiale, apparu seulement à l'usage. Plusieurs tailles de cylindre central ont ensuite été testées par impression 3D en PLA pour déterminer la solution la plus adaptée au mécanisme.
 
 Le loquet (imprimé en bleu sur les prototypes) est conçu pour résister au choc et à la torsion à ses trois points de sollicitation : en bas du cylindre, au niveau de la poignée qui dépasse, et entre les tiroirs. Une première version s'est cassée après plusieurs chutes ; elle a été réimprimée avec des paramètres modifiés pour renforcer sa tenue mécanique : impression à l'horizontale, remplissage hexagonal à 25 % sur 3 couches de parois, en PETG plutôt qu'en PLA. Un test de chute, visible ci-dessous, valide cette tenue au choc sur la version renforcée.

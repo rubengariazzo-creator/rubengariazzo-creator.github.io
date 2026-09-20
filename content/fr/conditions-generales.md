@@ -6,13 +6,13 @@ description: "Conditions générales d'utilisation des fonctionnalités interact
 ---
 ## Champ d'application
 
-La simple lecture des contenus de ce site (les projets, leur présentation, les galeries et téléchargements) n'est soumise à aucune condition autre que le droit d'auteur ordinaire — voir les [Mentions légales](/mentions-legales/). Les présentes conditions s'appliquent spécifiquement aux deux fonctionnalités interactives du site, décrites ci-dessous.
+La simple lecture des contenus de ce site (les projets, leur présentation, les galeries et téléchargements) n'est soumise à aucune condition autre que le droit d'auteur ordinaire (voir les [Mentions légales](/mentions-legales/)). Les présentes conditions s'appliquent spécifiquement aux deux fonctionnalités interactives du site, décrites ci-dessous.
 
 ## Les fonctionnalités interactives
 
 **Jeu de sauvetage par drones** (sur la [page du projet correspondant](/projets/jeu-de-drones/)) : exécute réellement le script Python présenté sur cette page, entièrement dans votre navigateur grâce à Pyodide (CPython compilé en WebAssembly), chargé depuis un CDN public. Rien de ce que vous y saisissez n'est transmis à ce site ni stocké au-delà de votre onglet de navigateur en cours ; tout est réinitialisé dès que vous quittez ou rechargez la page.
 
-**Mini-jeu d'envahisseurs** (apparaît sur toutes les pages du site) : de petits sprites pixélisés que vous pouvez cliquer pour marquer des points, avec une récompense occasionnelle à 20 points. Votre score est conservé uniquement dans le stockage local de votre navigateur, jamais transmis ailleurs — voir les [Mentions légales](/mentions-legales/) pour le détail exact de ce qui est stocké.
+**Mini-jeu d'envahisseurs** (apparaît sur toutes les pages du site) : de petits sprites pixélisés que vous pouvez cliquer pour marquer des points, avec une récompense occasionnelle à 20 points. Votre score est conservé uniquement dans le stockage local de votre navigateur, jamais transmis ailleurs (voir les [Mentions légales](/mentions-legales/) pour le détail exact de ce qui est stocké).
 
 ## Absence de garantie
 

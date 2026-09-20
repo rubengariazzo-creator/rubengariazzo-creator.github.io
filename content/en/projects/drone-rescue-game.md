@@ -24,7 +24,7 @@ cta:
 Built with a partner, Ilyane Haida: a rescue game on a 12x12 grid, where drones must locate survivors and deliver them to a hospital while avoiding storms and buildings, under battery-life constraints.
 
 <div class="drone-game" data-lang="en">
-  <p class="drone-game-intro">Play directly in your browser: this widget actually runs the Python script below (unmodified, fetched live) using <strong>Pyodide</strong> (CPython compiled to WebAssembly) — nothing to install. Moves are entered in the field that appears below the grid, which stays visible the whole time you're answering.</p>
+  <p class="drone-game-intro">Play directly in your browser: this widget actually runs the Python script below (unmodified, fetched live) using <strong>Pyodide</strong> (CPython compiled to WebAssembly), nothing to install. Moves are entered in the field that appears below the grid, which stays visible the whole time you're answering.</p>
   <div class="drone-game-rules">
     <p>Game rules:</p>
     <ul>

@@ -8,7 +8,7 @@ description: "Ruben Gariazzo's diplomas and certifications: Baccalauréat, Breve
 ---
 ## Diplomas
 
-*The documents below are the real official certificates, exactly as issued: only my verification QR code and my date and place of birth have been masked (black bar) to preserve my privacy, everything else is unchanged. If you need the original document with its QR code (for an official verification, for instance), you can ask me for it by [getting in touch](/en/contact/) directly — it contains personal information, so I don't display it publicly here.*
+*The documents below are the real official certificates, exactly as issued: only my verification QR code and my date and place of birth have been masked (black bar) to preserve my privacy, everything else is unchanged. If you need the original document with its QR code (for an official verification, for instance), you can ask me for it by [getting in touch](/en/contact/) directly; it contains personal information, so I don't display it publicly here.*
 
 - **Baccalauréat général** (French high school diploma), highest distinction "Mention Bien", Mathematics and Physics-Chemistry majors (2025 session, Académie de Paris)
 - **Diplôme National du Brevet** (French middle school diploma), highest distinction "Mention Très Bien" (2022 session, Académie de Paris)

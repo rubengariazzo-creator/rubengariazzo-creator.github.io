@@ -44,6 +44,6 @@ The main difficulties at this stage were dimensioning (depth, width, height of t
 
 ## V2, with a latch
 
-Second iteration, built as a 4-person group project. A drop test on a smaller-scale box revealed the need for a latch to keep the box closed during transport or in a fall — a need that wasn't anticipated during the initial design and only emerged through use. Several central-cylinder sizes were then tested via PLA 3D printing to find the best fit for the mechanism.
+Second iteration, built as a 4-person group project. A drop test on a smaller-scale box revealed the need for a latch to keep the box closed during transport or in a fall: a need that wasn't anticipated during the initial design and only emerged through use. Several central-cylinder sizes were then tested via PLA 3D printing to find the best fit for the mechanism.
 
 The latch (printed in blue on the prototypes) is designed to resist shock and torsion at its three load points: the bottom of the cylinder, the protruding handle, and between the drawers. An early version broke after several drops; it was reprinted with modified parameters to reinforce it mechanically: printed horizontally, with a 25% hexagonal infill over 3 wall layers, in PETG rather than PLA. A drop test, shown below, validates the shock resistance of this reinforced version.

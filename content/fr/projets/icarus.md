@@ -62,4 +62,4 @@ Le lancement a été un succès, avec un vol nominal confirmé par une attestati
 
 ## Presse et mentions
 
-Annoncé sur LinkedIn : [« Nominal flight achieved! » — Icarus au C'Space 2026](https://www.linkedin.com/feed/update/urn:li:activity:7506806576557613056/), avec l'animation 3D du projet et les réactions de l'équipe EPF Astronomie.
+Annoncé sur LinkedIn : [« Nominal flight achieved! » (Icarus au C'Space 2026)](https://www.linkedin.com/feed/update/urn:li:activity:7506806576557613056/), avec l'animation 3D du projet et les réactions de l'équipe EPF Astronomie.
