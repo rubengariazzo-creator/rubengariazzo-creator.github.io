@@ -157,9 +157,9 @@ function GlassSeal({ scrollProgress }) {
         <meshPhysicalMaterial
           attach="material-0"
           map={texture}
-          roughness={0.32}
-          clearcoat={0.7}
-          clearcoatRoughness={0.18}
+          roughness={0.55}
+          clearcoat={0.25}
+          clearcoatRoughness={0.55}
         />
         <meshStandardMaterial attach="material-1" color="#05060a" roughness={0.5} />
       </mesh>
