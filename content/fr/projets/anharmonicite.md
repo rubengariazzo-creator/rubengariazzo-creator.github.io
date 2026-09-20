@@ -41,3 +41,13 @@ Le mouvement réel du plateau a été pointé image par image sous Tracker (logi
 - Fréquence moyenne 26,68 Hz, constante de temps τ = 62,55 s, facteur de qualité Q ≈ 5243.
 - Pente d'anharmonicité (fréquence en fonction de l'amplitude) positive, +0,2708 Hz/u.a. : signature d'un puits de potentiel durcissant, cohérente avec la géométrie conique où la force de rappel croît plus vite que linéairement avec l'écart à l'équilibre.
 - La dissipation d'énergie estimée directement à partir du pointage vidéo brut donnait un résultat aberrant (4 J/s), faussé par le bruit de mesure du pointage manuel. En passant par la loi de décroissance exponentielle de l'énergie déduite de τ, la puissance dissipée est estimée à 0,0363 W, plus précise que l'ajustement global MATLAB initial (0,067 W).
+
+## Citer ce travail
+
+Publié en accès ouvert sur Zenodo sous forme de cinq travaux complémentaires :
+
+- R. Gariazzo, *Données Expérimentales : Analyse Cinématique et Énergétique d'un Tronc de Cône sur Support Elliptique*, Zenodo, 2025. [doi.org/10.5281/zenodo.18045758](https://doi.org/10.5281/zenodo.18045758)
+- R. Gariazzo, *De l'anharmonicité à la géométrie : étude du puits de potentiel d'un tronc de cône massif en contact ponctuel*, Zenodo, 2025. [doi.org/10.5281/zenodo.18046830](https://doi.org/10.5281/zenodo.18046830)
+- R. Gariazzo, *Architecture de calcul intégrée pour l'analyse cinématique et acoustique d'un oscillateur en tronc de cône*, Zenodo, 2025. [doi.org/10.5281/zenodo.18046240](https://doi.org/10.5281/zenodo.18046240)
+- R. Gariazzo, *Signature acoustique et de la dissipation d'énergie d'un oscillateur prenant la forme d'un tronc de cône*, Zenodo, 2025. [doi.org/10.5281/zenodo.18046047](https://doi.org/10.5281/zenodo.18046047)
+- R. Gariazzo, *Du suivi cinématique sous Tracker à la caractérisation de l'anharmonicité sous MATLAB*, Zenodo, 2025. [doi.org/10.5281/zenodo.18046629](https://doi.org/10.5281/zenodo.18046629)

@@ -35,3 +35,10 @@ Quatre familles de chiffrement (substitution, transposition simple, grille de Fl
 ## Résultat
 
 Aucun signal statistiquement distinguable du bruit n'a été détecté sur les méthodes A à D, avec une couverture garantie à 100 % sur deux passages indépendants. Le chiffrement Four-square a été couvert à 20,9 % de son espace de recherche, sans signal non plus. Un résultat négatif, documenté en détail avec le code et les données associés.
+
+## Citer ce travail
+
+Publié en accès ouvert sur Zenodo :
+
+- R. Gariazzo, *Le Cryptogramme de D'Agapeyeff (1939) : Anatomie, Reconstruction d'un Solveur et Bilan Statistique*, Zenodo, 2026. [doi.org/10.5281/zenodo.22012346](https://doi.org/10.5281/zenodo.22012346)
+- R. Gariazzo, *Données et code de cryptanalyse computationnelle du cryptogramme de D'Agapeyeff (1939)*, Zenodo, 2026. [doi.org/10.5281/zenodo.21970729](https://doi.org/10.5281/zenodo.21970729)

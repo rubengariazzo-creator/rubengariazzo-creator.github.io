@@ -4,7 +4,7 @@ eleventyExcludeFromCollections: true
 ---
 # {{ site.name }}
 
-Portfolio site presenting engineering, programming, and independent research projects (French, with an English translation under /en/).
+{{ site.name }} is {{ site.bio }}. This site is his portfolio: engineering, programming, and independent research projects (French, with an English translation under /en/). Contact: ruben.gariazzo@epfedu.fr. LinkedIn: {{ site.sameAs[0] }}. GitHub: {{ site.sameAs[1] }}.
 
 ## Projets (français)
 {%- for project in collections.projects %}

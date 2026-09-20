@@ -2,6 +2,10 @@ const Image = require("@11ty/eleventy-img");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
+  // Nunjucks has no built-in `dump`/`tojson` filter (that's a Jinja2-ism) --
+  // used for embedding array/object data (e.g. site.knowsAbout, site.sameAs)
+  // directly into inline JSON-LD in seo-head.njk.
+  eleventyConfig.addFilter("json", (value) => JSON.stringify(value));
 
   eleventyConfig.addNunjucksAsyncShortcode("image", async function (src, alt) {
     if (alt === undefined) throw new Error(`Missing alt text for image: ${src}`);
@@ -23,9 +27,30 @@ module.exports = function (eleventyConfig) {
   // were emitting links to a domain that can't exist). Update this the day a
   // custom domain replaces GitHub Pages -- until then this is the one real
   // domain the deployed site is actually reachable at.
+  // jobTitle/alumniOf/bio/knowsAbout/sameAs feed the sitewide JSON-LD Person
+  // block (seo-head.njk) -- kept here as one source of truth rather than
+  // hardcoded in the template, since these are facts about Ruben, not
+  // per-page content. Only verified, already-published facts: EPF affiliation
+  // and category list are stated on the site itself (experience.md,
+  // projects/index.md); LinkedIn/GitHub are the two profile links already
+  // used elsewhere on the site. Add a Zenodo/ORCID profile URL here too once
+  // one exists -- the homepage bio already mentions Zenodo-published research
+  // but nothing on the site actually links to it yet.
   eleventyConfig.addGlobalData("site", {
     url: "https://rubengariazzo-creator.github.io",
     name: "Ruben Gariazzo",
+    jobTitle: "Engineering Student",
+    alumniOf: "EPF - École d'ingénieurs",
+    bio: "an engineering student at EPF (France) working on aerospace and mechanical design, with independent physics and cryptanalysis research",
+    knowsAbout: [
+      "Aerospace Engineering",
+      "Mechanical Engineering",
+      "CAD Design",
+      "Cryptanalysis",
+      "Physics Research",
+      "Python Programming",
+    ],
+    sameAs: ["https://www.linkedin.com/in/ruben-gariazzo", "https://github.com/rubengariazzo-creator"],
   });
 
   function escapeAttr(value) {

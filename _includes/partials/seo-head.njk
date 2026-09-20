@@ -21,12 +21,22 @@
 <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ collections.byTranslationKey[translationKey].fr }}">
 {%- endif %}
 
-<script type="application/ld+json">
-{
+{#- The whole object goes through the `json` filter in one call rather than
+    interpolating each field into a hand-written JSON literal: a script tag's
+    content isn't HTML-entity-decoded by the browser, so an apostrophe in e.g.
+    alumniOf ("EPF - École d'ingénieurs") would render as the literal text
+    "&#39;" inside the parsed JSON-LD instead of becoming a quote mark once
+    Nunjucks' default auto-escaping got involved -- serializing server-side
+    with JSON.stringify is the only way that's correct for every field,
+    always, not just the ones that happen not to contain a quote today. #}
+<script type="application/ld+json">{{ {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "{{ site.name }}",
-  "url": "{{ site.url }}",
-  "sameAs": ["https://www.linkedin.com/in/ruben-gariazzo"]
-}
-</script>
+  "name": site.name,
+  "url": site.url,
+  "jobTitle": site.jobTitle,
+  "alumniOf": site.alumniOf,
+  "description": site.bio,
+  "knowsAbout": site.knowsAbout,
+  "sameAs": site.sameAs
+} | json | safe }}</script>

@@ -43,3 +43,10 @@ Zeno-effect control would apply, at regular intervals much shorter than the tunn
 By comparing the structural consequences (measurement-photon energy far exceeding bond energy) and thermodynamic consequences (Landauer dissipation) of this active control, the study establishes a no-go theorem: Zeno control of storage DNA is physically and energetically impossible with any conceivable technology. A roadmap of more realistic alternatives (cryogenics, advanced classical error-correcting codes, XNA substrate engineering, machine-learning prediction) is proposed instead.
 
 Full report available below in both French and English.
+
+## Citing this work
+
+Published in open access on Zenodo, in matching French and English versions:
+
+- R. Gariazzo, *The Quantum Zeno Effect as an Error-Correction Algorithm for DNA Data Storage*, Zenodo, 2026. [doi.org/10.5281/zenodo.22308602](https://doi.org/10.5281/zenodo.22308602)
+- R. Gariazzo, *L'Effet Zénon Quantique comme algorithme de correction d'erreurs dans le stockage de données sur ADN*, Zenodo, 2026. [doi.org/10.5281/zenodo.22308582](https://doi.org/10.5281/zenodo.22308582)

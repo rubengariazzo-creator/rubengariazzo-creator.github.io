@@ -35,3 +35,10 @@ Four cipher families (substitution, simple transposition, Fleissner grille, doub
 ## Result
 
 No signal statistically distinguishable from noise was detected across methods A through D, with guaranteed 100% coverage over two independent passes. The Four-square cipher was covered to 20.9% of its search space, also with no signal. A negative result, thoroughly documented with the associated code and data.
+
+## Citing this work
+
+Published in open access on Zenodo:
+
+- R. Gariazzo, *The D'Agapeyeff Cryptogram (1939): Anatomy, Reconstruction of a Solver, and Statistical Assessment*, Zenodo, 2026. [doi.org/10.5281/zenodo.22057249](https://doi.org/10.5281/zenodo.22057249)
+- R. Gariazzo, *Data and code of computational cryptanalysis of the D'Agapeyeff cryptogram (1939)*, Zenodo, 2026. [doi.org/10.5281/zenodo.21970478](https://doi.org/10.5281/zenodo.21970478)

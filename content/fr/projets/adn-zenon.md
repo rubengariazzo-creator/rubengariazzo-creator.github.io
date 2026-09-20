@@ -43,3 +43,10 @@ Le contrôle par effet Zénon consisterait à appliquer, à intervalles régulie
 En comparant les conséquences structurelles (énergie des photons de mesure très supérieure à l'énergie de liaison) et thermodynamiques (dissipation de Landauer) de ce contrôle actif, l'étude établit un théorème de no-go : le contrôle Zénon d'un ADN de stockage est physiquement et énergétiquement impossible avec toute technologie envisageable. Une feuille de route d'alternatives réalistes (cryogénie, codes correcteurs classiques avancés, ingénierie du substrat XNA, prédiction par apprentissage automatique) est proposée à la place.
 
 Rapport complet disponible en français et en anglais ci-dessous.
+
+## Citer ce travail
+
+Publié en accès ouvert sur Zenodo, en français et en anglais :
+
+- R. Gariazzo, *L'Effet Zénon Quantique comme algorithme de correction d'erreurs dans le stockage de données sur ADN*, Zenodo, 2026. [doi.org/10.5281/zenodo.22308582](https://doi.org/10.5281/zenodo.22308582)
+- R. Gariazzo, *The Quantum Zeno Effect as an Error-Correction Algorithm for DNA Data Storage*, Zenodo, 2026. [doi.org/10.5281/zenodo.22308602](https://doi.org/10.5281/zenodo.22308602)

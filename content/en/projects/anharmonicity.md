@@ -41,3 +41,13 @@ The plate's real motion was tracked frame by frame in Tracker (free video analys
 - Mean frequency 26.68 Hz, time constant τ = 62.55 s, quality factor Q ≈ 5243.
 - Anharmonicity slope (frequency versus amplitude) positive, +0.2708 Hz/a.u.: the signature of a hardening potential well, consistent with the conical geometry where the restoring force grows faster than linearly with displacement from equilibrium.
 - Energy dissipation estimated directly from the raw video tracking data gave an aberrant result (4 J/s), skewed by measurement noise from manual tracking. Using the exponential energy decay law derived from τ instead, the dissipated power is estimated at 0.0363 W, more precise than the initial global MATLAB fit (0.067 W).
+
+## Citing this work
+
+Published in open access on Zenodo as five companion records (French-language metadata):
+
+- R. Gariazzo, *Données Expérimentales : Analyse Cinématique et Énergétique d'un Tronc de Cône sur Support Elliptique*, Zenodo, 2025. [doi.org/10.5281/zenodo.18045758](https://doi.org/10.5281/zenodo.18045758)
+- R. Gariazzo, *De l'anharmonicité à la géométrie : étude du puits de potentiel d'un tronc de cône massif en contact ponctuel*, Zenodo, 2025. [doi.org/10.5281/zenodo.18046830](https://doi.org/10.5281/zenodo.18046830)
+- R. Gariazzo, *Architecture de calcul intégrée pour l'analyse cinématique et acoustique d'un oscillateur en tronc de cône*, Zenodo, 2025. [doi.org/10.5281/zenodo.18046240](https://doi.org/10.5281/zenodo.18046240)
+- R. Gariazzo, *Signature acoustique et de la dissipation d'énergie d'un oscillateur prenant la forme d'un tronc de cône*, Zenodo, 2025. [doi.org/10.5281/zenodo.18046047](https://doi.org/10.5281/zenodo.18046047)
+- R. Gariazzo, *Du suivi cinématique sous Tracker à la caractérisation de l'anharmonicité sous MATLAB*, Zenodo, 2025. [doi.org/10.5281/zenodo.18046629](https://doi.org/10.5281/zenodo.18046629)
