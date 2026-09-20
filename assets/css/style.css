@@ -1361,3 +1361,74 @@ body.has-custom-cursor [data-glass-cta] {
 @keyframes intro-scan {
   50% { transform: translateX(250%); }
 }
+
+/* CS50x progress log (content/*/projects/cs50x.md): a live progress bar and
+   reflections list, fetched at build time from a separate public repo
+   (content/_data/cs50x.js) -- see that repo's own README for why it holds no
+   solution code, just completion status and personal reflections. */
+.cs50x-progress {
+  margin: 2.5rem 0;
+}
+
+.cs50x-progress-bar {
+  height: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  overflow: hidden;
+}
+
+.cs50x-progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+  transition: width 0.6s var(--ease-snap);
+}
+
+.cs50x-progress-label {
+  margin: 0.6rem 0 1.5rem;
+  font-family: "SFMono-Regular", ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.cs50x-progress-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.cs50x-progress-list li {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 0.75rem;
+  color: var(--text-muted);
+}
+
+.cs50x-progress-list li.is-complete {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.cs50x-progress-check {
+  font-family: "SFMono-Regular", ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+  color: var(--text-muted);
+}
+
+.cs50x-progress-list li.is-complete .cs50x-progress-check {
+  color: var(--accent-strong);
+}
+
+.cs50x-progress-title {
+  font-weight: 600;
+}
+
+.cs50x-progress-reflection {
+  grid-column: 2;
+  margin: 0.35rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}

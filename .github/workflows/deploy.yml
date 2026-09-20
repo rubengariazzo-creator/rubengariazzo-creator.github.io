@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Fired by cs50x-journey's own workflow whenever progress.json changes there,
+  # so the CS50x project page's progress bar/reflections stay current without
+  # a manual rebuild here. See _data/cs50x.js for the actual fetch.
+  repository_dispatch:
+    types: [cs50x-updated]
 
 permissions:
   contents: read

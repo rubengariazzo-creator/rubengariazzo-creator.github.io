@@ -43,6 +43,26 @@ layout: layouts/base.njk
   {%- endif %}
   {{ content | safe }}
 
+  {%- if showCs50xProgress %}
+  <div class="cs50x-progress">
+    <div class="cs50x-progress-bar">
+      <div class="cs50x-progress-bar-fill" style="width: {{ cs50x.percent }}%"></div>
+    </div>
+    <p class="cs50x-progress-label">{{ cs50x.completed }}/{{ cs50x.total }} {{ "problem sets complete" if lang == "en" else "problèmes résolus" }} ({{ cs50x.percent }}%)</p>
+    {%- if cs50x.items and cs50x.items.length %}
+    <ul class="cs50x-progress-list">
+      {%- for item in cs50x.items %}
+      <li class="{{ 'is-complete' if item.completed }}">
+        <span class="cs50x-progress-check" aria-hidden="true">{{ "✓" if item.completed else "○" }}</span>
+        <span class="cs50x-progress-title">{{ item.title }}</span>
+        {%- if item.reflection %}<p class="cs50x-progress-reflection">{{ item.reflection }}</p>{%- endif %}
+      </li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+  </div>
+  {%- endif %}
+
   {%- if stats and stats.length %}
   <div class="stat-grid">
     {%- for stat in stats %}
