@@ -59,3 +59,7 @@ Flight stability was validated with dedicated simulations modelling the rocket's
 ## The flight
 
 The launch was a success, with a nominal flight confirmed by an official flight certificate.
+
+## Press & mentions
+
+Announced on LinkedIn: ["Nominal flight achieved!" — Icarus at C'Space 2026](https://www.linkedin.com/feed/update/urn:li:activity:7506806576557613056/), with the project's 3D animation and reactions from the EPF Astronomie team.
