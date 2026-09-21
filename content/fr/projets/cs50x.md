@@ -4,6 +4,10 @@ translationKey: cs50x
 category: "Programmation"
 title: "Harvard CS50x : journal de progression"
 description: "Journal de progression en direct pour le CS50x de Harvard, Introduction à l'informatique : les exercices terminés, avec de courtes réflexions sur ce que j'ai appris."
+logos:
+  - src: "assets/img/logos/harvard.png"
+    alt: "Logo Harvard University"
+    url: "https://cs50.harvard.edu/x/"
 showCs50xProgress: true
 cta:
   label: "Voir les projets"

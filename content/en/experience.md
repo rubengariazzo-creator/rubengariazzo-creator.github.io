@@ -12,7 +12,7 @@ cta:
 <details class="experience-item">
 <summary><h2>Quality Control and Metrology Intern, Ampere (Renault Group)</h2>
 <ul class="affiliation-logos">
-  <li><a href="https://www.ampere.cars/en/" target="_blank" rel="noopener"><img src="/assets/img/logos/ampere.jpg" alt="Ampere (Renault Group) logo" loading="lazy"></a></li>
+  <li><a href="https://brand.ampere.cars/" target="_blank" rel="noopener"><img src="/assets/img/logos/ampere.jpg" alt="Ampere (Renault Group) logo" loading="lazy"></a></li>
   <li><a href="https://www.epf.fr/en" target="_blank" rel="noopener"><img src="/assets/img/logos/epf.png" alt="EPF engineering school logo" loading="lazy"></a></li>
 </ul>
 </summary>
@@ -53,7 +53,7 @@ Diagnosed and helped repair, together with the maintenance team, a breakdown of 
 <details class="experience-item">
 <summary><h2>EPF Astronomie</h2>
 <ul class="affiliation-logos">
-  <li><a href="https://epf-astronomie.ovh/" target="_blank" rel="noopener"><img src="/assets/img/logos/epf-astronomie.jpg" alt="EPF Astronomie logo, EPF's aerospace club" loading="lazy"></a></li>
+  <li><a href="https://www.linkedin.com/company/epf-astronomie" target="_blank" rel="noopener"><img src="/assets/img/logos/epf-astronomie.jpg" alt="EPF Astronomie logo, EPF's aerospace club" loading="lazy"></a></li>
   <li><a href="https://www.epf.fr/en" target="_blank" rel="noopener"><img src="/assets/img/logos/epf.png" alt="EPF engineering school logo" loading="lazy"></a></li>
 </ul>
 </summary>

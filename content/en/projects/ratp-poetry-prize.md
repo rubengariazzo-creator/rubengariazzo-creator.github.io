@@ -5,6 +5,10 @@ category: "Creative"
 thumbnail: "assets/img/poesie-ratp/danse-sur-les-dunes.png"
 title: "RATP Poetry Prize, 2025 finalist"
 description: "Finalist at age 17 in the Grand Prix Poésie RATP 2025 with the poem Danse sur les dunes, published by Éditions Bruno Doucey."
+logos:
+  - src: "assets/img/logos/ratp.png"
+    alt: "RATP logo"
+    url: "https://grandprixpoesie.ratp.fr/"
 hero:
   type: image
   src: "assets/img/poesie-ratp/danse-sur-les-dunes.png"

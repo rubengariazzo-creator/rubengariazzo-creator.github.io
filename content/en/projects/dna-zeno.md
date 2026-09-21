@@ -5,6 +5,10 @@ category: "Research"
 thumbnail: "assets/img/adn-zenon/en-theorem.png"
 title: "DNA Zeno, independent research"
 description: "Independent physics study: could the quantum Zeno effect protect DNA-based data storage from mutation?"
+logos:
+  - src: "assets/img/logos/zenodo.png"
+    alt: "Zenodo logo"
+    url: "https://zenodo.org"
 hero:
   type: image
   src: "assets/img/adn-zenon/en-theorem.png"

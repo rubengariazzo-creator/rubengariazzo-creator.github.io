@@ -4,6 +4,10 @@ translationKey: cs50x
 category: "Programming"
 title: "Harvard CS50x: progress log"
 description: "Live progress log for Harvard's CS50x, Introduction to Computer Science: which problem sets are done, plus short reflections on what I learned."
+logos:
+  - src: "assets/img/logos/harvard.png"
+    alt: "Harvard University logo"
+    url: "https://cs50.harvard.edu/x/"
 showCs50xProgress: true
 cta:
   label: "See all projects"

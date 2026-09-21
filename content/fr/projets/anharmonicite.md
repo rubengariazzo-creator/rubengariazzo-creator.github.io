@@ -5,6 +5,10 @@ category: "Recherche"
 thumbnail: "assets/img/anharmonicite/tracker-pointage.png"
 title: "Anharmonicité d'un cône basculant"
 description: "Étude physique indépendante : inertie, anisotropie et dissipation d'un plateau conique qui bascule sur une table, validée par vidéo et analyse spectrale."
+logos:
+  - src: "assets/img/logos/zenodo.png"
+    alt: "Logo Zenodo"
+    url: "https://zenodo.org"
 hero:
   type: image
   src: "assets/img/anharmonicite/tracker-pointage.png"

@@ -12,7 +12,7 @@ cta:
 <details class="experience-item">
 <summary><h2>Stagiaire Contrôle Qualité et Métrologie, Ampere (Groupe Renault)</h2>
 <ul class="affiliation-logos">
-  <li><a href="https://www.ampere.cars/" target="_blank" rel="noopener"><img src="/assets/img/logos/ampere.jpg" alt="Logo Ampere (Groupe Renault)" loading="lazy"></a></li>
+  <li><a href="https://brand.ampere.cars/" target="_blank" rel="noopener"><img src="/assets/img/logos/ampere.jpg" alt="Logo Ampere (Groupe Renault)" loading="lazy"></a></li>
   <li><a href="https://www.epf.fr" target="_blank" rel="noopener"><img src="/assets/img/logos/epf.png" alt="Logo EPF, école d'ingénieurs" loading="lazy"></a></li>
 </ul>
 </summary>
@@ -53,7 +53,7 @@ Diagnostic et réparation, avec l'équipe maintenance, d'une panne du banc de co
 <details class="experience-item">
 <summary><h2>EPF Astronomie</h2>
 <ul class="affiliation-logos">
-  <li><a href="https://epf-astronomie.ovh/" target="_blank" rel="noopener"><img src="/assets/img/logos/epf-astronomie.jpg" alt="Logo EPF Astronomie, club aérospatial de l'EPF" loading="lazy"></a></li>
+  <li><a href="https://www.linkedin.com/company/epf-astronomie" target="_blank" rel="noopener"><img src="/assets/img/logos/epf-astronomie.jpg" alt="Logo EPF Astronomie, club aérospatial de l'EPF" loading="lazy"></a></li>
   <li><a href="https://www.epf.fr" target="_blank" rel="noopener"><img src="/assets/img/logos/epf.png" alt="Logo EPF, école d'ingénieurs" loading="lazy"></a></li>
 </ul>
 </summary>

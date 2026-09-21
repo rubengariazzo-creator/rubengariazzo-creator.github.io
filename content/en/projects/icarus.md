@@ -11,7 +11,7 @@ logos:
     url: "https://www.epf.fr/en"
   - src: "assets/img/logos/epf-astronomie.jpg"
     alt: "EPF Astronomie logo, EPF's aerospace club"
-    url: "https://epf-astronomie.ovh/"
+    url: "https://www.linkedin.com/company/epf-astronomie"
 hero:
   scrollDriven: true
   src: /assets/video/icarus/icarus-3d-hero.mp4

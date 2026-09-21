@@ -5,6 +5,10 @@ category: "Research"
 thumbnail: "assets/img/cryptanalyse-agapeyeff/cryptogram-original-en.png"
 title: "Agapeyeff cipher cryptanalysis"
 description: "A computational cryptanalysis attempt on the unsolved cryptogram published by Alexander D'Agapeyeff in 1939."
+logos:
+  - src: "assets/img/logos/zenodo.png"
+    alt: "Zenodo logo"
+    url: "https://zenodo.org"
 hero:
   type: image
   src: "assets/img/cryptanalyse-agapeyeff/cryptogram-original-en.png"

@@ -5,6 +5,10 @@ category: "Recherche"
 thumbnail: "assets/img/adn-zenon/fr-theoreme.png"
 title: "ADN Zénon, recherche indépendante"
 description: "Étude indépendante en physique : peut-on utiliser l'effet Zénon quantique pour protéger le stockage de données sur ADN des mutations ?"
+logos:
+  - src: "assets/img/logos/zenodo.png"
+    alt: "Logo Zenodo"
+    url: "https://zenodo.org"
 hero:
   type: image
   src: "assets/img/adn-zenon/fr-theoreme.png"

@@ -5,6 +5,10 @@ category: "Research"
 thumbnail: "assets/img/anharmonicite/tracker-pointage.png"
 title: "Anharmonicity of a rocking cone"
 description: "Independent physics study: inertia, anisotropy, and dissipation of a conical plate rocking on a table, validated by video and spectral analysis."
+logos:
+  - src: "assets/img/logos/zenodo.png"
+    alt: "Zenodo logo"
+    url: "https://zenodo.org"
 hero:
   type: image
   src: "assets/img/anharmonicite/tracker-pointage.png"
