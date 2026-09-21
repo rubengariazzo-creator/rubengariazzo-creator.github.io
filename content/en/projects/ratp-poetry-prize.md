@@ -10,6 +10,9 @@ logos:
   - src: "assets/img/logos/ratp.png"
     alt: "RATP logo"
     url: "https://grandprixpoesie.ratp.fr/"
+  - src: "assets/img/logos/bruno-doucey.png"
+    alt: "Éditions Bruno Doucey logo"
+    url: "https://www.editions-brunodoucey.com/"
 hero:
   type: image
   src: "assets/img/poesie-ratp/danse-sur-les-dunes.png"
