@@ -1,5 +1,6 @@
 ---
 layout: layouts/project.njk
+order: 6
 translationKey: cryptanalyse-agapeyeff
 category: "Research"
 thumbnail: "assets/img/cryptanalyse-agapeyeff/cryptogram-original-en.png"

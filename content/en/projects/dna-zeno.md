@@ -1,5 +1,6 @@
 ---
 layout: layouts/project.njk
+order: 8
 translationKey: adn-zenon
 category: "Research"
 thumbnail: "assets/img/adn-zenon/en-theorem.png"

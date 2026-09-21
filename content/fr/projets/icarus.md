@@ -1,5 +1,6 @@
 ---
 layout: layouts/project.njk
+order: 2
 translationKey: icarus
 category: "Aérospatial"
 thumbnail: "assets/img/icarus/IMG_6473.jpg"

@@ -1,5 +1,6 @@
 ---
 layout: layouts/project.njk
+order: 3
 translationKey: jeu-de-drones
 category: "Programmation"
 thumbnail: "assets/img/jeu-de-drones/schema-boucle-jeu-thumb.png"

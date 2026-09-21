@@ -1,5 +1,6 @@
 ---
 layout: layouts/project.njk
+order: 9
 translationKey: cs50x
 category: "Programmation"
 title: "Harvard CS50x : journal de progression"

@@ -1,5 +1,6 @@
 ---
 layout: layouts/project.njk
+order: 8
 translationKey: adn-zenon
 category: "Recherche"
 thumbnail: "assets/img/adn-zenon/fr-theoreme.png"

@@ -1,5 +1,6 @@
 ---
 layout: layouts/project.njk
+order: 5
 translationKey: arrosoir-telescopique
 category: "Mécanique"
 thumbnail: "assets/img/arrosoir/schema-pompe-principe.png"

@@ -1,5 +1,6 @@
 ---
 layout: layouts/project.njk
+order: 7
 translationKey: anharmonicite
 category: "Recherche"
 thumbnail: "assets/img/anharmonicite/tracker-pointage.png"

@@ -1,5 +1,6 @@
 ---
 layout: layouts/project.njk
+order: 1
 translationKey: boite-a-bijoux
 category: "Mécanique"
 thumbnail: "assets/img/boite-a-bijoux/render-cad.jpg"

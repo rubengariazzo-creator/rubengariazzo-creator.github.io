@@ -1,5 +1,6 @@
 ---
 layout: layouts/project.njk
+order: 4
 translationKey: business-plan-revolt
 category: "Business"
 thumbnail: "assets/img/business-plan-revolt/cover-1.png"

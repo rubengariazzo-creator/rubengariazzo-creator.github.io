@@ -18,8 +18,8 @@ description: "Liste des projets d'ingénierie, de programmation et de recherche 
 </div>
 
 <ul class="project-cards">
-{%- for project in collections.projects %}
-{%- if project.data.lang == "fr" %}
+{%- set frProjects = collections.projects | byLang("fr") %}
+{%- for project in frProjects %}
   <li data-category="{{ project.data.category }}">
     <a href="{{ project.url }}">
       <div class="project-card-media">
@@ -37,7 +37,6 @@ description: "Liste des projets d'ingénierie, de programmation et de recherche 
       <p>{{ project.data.description }}</p>
     </a>
   </li>
-{%- endif %}
 {%- endfor %}
 </ul>
 <p class="filter-empty" hidden aria-live="polite">Aucun projet dans cette catégorie pour l'instant.</p>

@@ -7,6 +7,14 @@ module.exports = function (eleventyConfig) {
   // directly into inline JSON-LD in seo-head.njk.
   eleventyConfig.addFilter("json", (value) => JSON.stringify(value));
 
+  // Nunjucks' built-in selectattr only reads a single-level property name,
+  // not a dotted path -- `selectattr("data.lang", "equalto", "fr")` silently
+  // filters everything out instead of erroring, since it looks for a
+  // literal "data.lang" key. Used to pre-filter collections.projects by
+  // language before looping, so the card's own loop.index counts only the
+  // rendered items instead of every item in the mixed-language collection.
+  eleventyConfig.addFilter("byLang", (projects, lang) => projects.filter((p) => p.data.lang === lang));
+
   eleventyConfig.addNunjucksAsyncShortcode("image", async function (src, alt) {
     if (alt === undefined) throw new Error(`Missing alt text for image: ${src}`);
     const metadata = await Image(src, {
@@ -95,18 +103,17 @@ module.exports = function (eleventyConfig) {
     };
   });
 
+  // Explicit order: (set once per project, same number for both language
+  // versions) instead of the previous heuristic -- sorting by "has a
+  // logos: array" happened to work while only a few projects had one, but
+  // broke the moment more projects legitimately gained a logo (RATP,
+  // Zenodo, Harvard): they all jumped to the front as a side effect of
+  // something unrelated to the intended display order.
   eleventyConfig.addCollection("projects", (api) =>
     api
       .getFilteredByGlob("content/**/proj*/*.md")
       .filter((p) => !p.inputPath.endsWith("index.md"))
-      .sort((a, b) => {
-        const weight = (p) => {
-          if (!(p.data.logos && p.data.logos.length)) return 2;
-          if (p.data.translationKey === "arrosoir-telescopique") return 1;
-          return 0;
-        };
-        return weight(a) - weight(b) || a.data.title.localeCompare(b.data.title);
-      })
+      .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999) || a.data.title.localeCompare(b.data.title))
   );
 
   return {

@@ -18,8 +18,8 @@ description: "List of Ruben Gariazzo's engineering, programming, and research pr
 </div>
 
 <ul class="project-cards">
-{%- for project in collections.projects %}
-{%- if project.data.lang == "en" %}
+{%- set enProjects = collections.projects | byLang("en") %}
+{%- for project in enProjects %}
   <li data-category="{{ project.data.category }}">
     <a href="{{ project.url }}">
       <div class="project-card-media">
@@ -37,7 +37,6 @@ description: "List of Ruben Gariazzo's engineering, programming, and research pr
       <p>{{ project.data.description }}</p>
     </a>
   </li>
-{%- endif %}
 {%- endfor %}
 </ul>
 <p class="filter-empty" hidden aria-live="polite">No projects in this category yet.</p>
