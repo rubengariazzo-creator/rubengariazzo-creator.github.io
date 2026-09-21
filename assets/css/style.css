@@ -382,6 +382,17 @@ main {
   border-radius: 0.35rem;
 }
 
+.affiliation-logos a {
+  display: block;
+  opacity: 0.85;
+  transition: opacity 0.15s ease;
+}
+
+.affiliation-logos a:hover,
+.affiliation-logos a:focus-visible {
+  opacity: 1;
+}
+
 .scroll-stage {
   position: relative;
   height: 400vh;
@@ -986,10 +997,24 @@ html {
 
 @media (max-width: 40rem) {
   .site-header-inner {
+    position: relative;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0.85rem var(--space);
+    padding: 0.85rem calc(var(--space) + 3rem) 0.85rem var(--space);
     gap: 0.5rem;
+  }
+
+  /* Pinned next to the brand name instead of wrapping with the nav links --
+     it used to be the last item inside <nav>, so on a narrow viewport it
+     could end up stranded alone on its own third line once the other
+     five links had already wrapped across two. `.site-header nav a` (base
+     rule, two type selectors) otherwise outweighs a single-class selector
+     here regardless of source order, which is why `.lang-switch` alone
+     silently lost this fight the first time. */
+  .site-header nav a.lang-switch {
+    position: absolute;
+    top: 0.85rem;
+    right: var(--space);
   }
 
   .site-header nav {

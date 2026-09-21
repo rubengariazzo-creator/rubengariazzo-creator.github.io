@@ -8,6 +8,7 @@ description: "Group business plan for ReVolt, an electric retrofit startup for c
 logos:
   - src: "assets/img/logos/epf.png"
     alt: "EPF engineering school logo"
+    url: "https://www.epf.fr/en"
 hero:
   type: image
   src: "assets/img/business-plan-revolt/cover-1.png"

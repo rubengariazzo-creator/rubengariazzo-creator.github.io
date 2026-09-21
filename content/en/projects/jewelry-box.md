@@ -8,6 +8,7 @@ description: "CAD design of a jewelry box across two iterations: without and the
 logos:
   - src: "assets/img/logos/epf.png"
     alt: "EPF engineering school logo"
+    url: "https://www.epf.fr/en"
 hero:
   type: image
   src: "assets/img/boite-a-bijoux/render-cad.jpg"

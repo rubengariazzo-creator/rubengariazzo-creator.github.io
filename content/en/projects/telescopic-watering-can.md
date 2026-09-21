@@ -8,6 +8,7 @@ description: "Design of a telescopic-mast watering can for ladder-free watering 
 logos:
   - src: "assets/img/logos/epf.png"
     alt: "EPF engineering school logo"
+    url: "https://www.epf.fr/en"
 hero:
   type: image
   src: "assets/img/arrosoir/schema-pompe-principe.png"

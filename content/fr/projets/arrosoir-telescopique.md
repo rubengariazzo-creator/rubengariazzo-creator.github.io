@@ -8,6 +8,7 @@ description: "Conception d'un arrosoir à mât télescopique pour arroser sans �
 logos:
   - src: "assets/img/logos/epf.png"
     alt: "Logo EPF, école d'ingénieurs"
+    url: "https://www.epf.fr"
 hero:
   type: image
   src: "assets/img/arrosoir/schema-pompe-principe.png"

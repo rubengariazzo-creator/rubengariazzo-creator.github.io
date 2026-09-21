@@ -12,8 +12,8 @@ cta:
 <details class="experience-item">
 <summary><h2>Quality Control and Metrology Intern, Ampere (Renault Group)</h2>
 <ul class="affiliation-logos">
-  <li><img src="/assets/img/logos/ampere.jpg" alt="Ampere (Renault Group) logo" loading="lazy"></li>
-  <li><img src="/assets/img/logos/epf.png" alt="EPF engineering school logo" loading="lazy"></li>
+  <li><a href="https://www.ampere.cars/en/" target="_blank" rel="noopener"><img src="/assets/img/logos/ampere.jpg" alt="Ampere (Renault Group) logo" loading="lazy"></a></li>
+  <li><a href="https://www.epf.fr/en" target="_blank" rel="noopener"><img src="/assets/img/logos/epf.png" alt="EPF engineering school logo" loading="lazy"></a></li>
 </ul>
 </summary>
 
@@ -53,8 +53,8 @@ Diagnosed and helped repair, together with the maintenance team, a breakdown of 
 <details class="experience-item">
 <summary><h2>EPF Astronomie</h2>
 <ul class="affiliation-logos">
-  <li><img src="/assets/img/logos/epf-astronomie.jpg" alt="EPF Astronomie logo, EPF's aerospace club" loading="lazy"></li>
-  <li><img src="/assets/img/logos/epf.png" alt="EPF engineering school logo" loading="lazy"></li>
+  <li><a href="https://epf-astronomie.ovh/" target="_blank" rel="noopener"><img src="/assets/img/logos/epf-astronomie.jpg" alt="EPF Astronomie logo, EPF's aerospace club" loading="lazy"></a></li>
+  <li><a href="https://www.epf.fr/en" target="_blank" rel="noopener"><img src="/assets/img/logos/epf.png" alt="EPF engineering school logo" loading="lazy"></a></li>
 </ul>
 </summary>
 
@@ -68,8 +68,8 @@ Member of the school's aerospace club since September 2025.
 <details class="experience-item">
 <summary><h2>Formula EPF, Event Team Member</h2>
 <ul class="affiliation-logos">
-  <li><img src="/assets/img/logos/formula-epf.jpg" alt="Formula EPF logo, EPF's racing team" loading="lazy"></li>
-  <li><img src="/assets/img/logos/epf.png" alt="EPF engineering school logo" loading="lazy"></li>
+  <li><a href="https://epf-formula-team.odoo.com/" target="_blank" rel="noopener"><img src="/assets/img/logos/formula-epf.jpg" alt="Formula EPF logo, EPF's racing team" loading="lazy"></a></li>
+  <li><a href="https://www.epf.fr/en" target="_blank" rel="noopener"><img src="/assets/img/logos/epf.png" alt="EPF engineering school logo" loading="lazy"></a></li>
 </ul>
 </summary>
 

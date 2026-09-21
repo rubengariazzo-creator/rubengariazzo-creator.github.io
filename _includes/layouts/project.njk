@@ -37,7 +37,7 @@ layout: layouts/base.njk
   {%- if logos and logos.length %}
   <ul class="affiliation-logos">
     {%- for logo in logos %}
-    <li><img src="/{{ logo.src }}" alt="{{ logo.alt }}" loading="lazy"></li>
+    <li>{% if logo.url %}<a href="{{ logo.url }}" target="_blank" rel="noopener">{% endif %}<img src="/{{ logo.src }}" alt="{{ logo.alt }}" loading="lazy">{% if logo.url %}</a>{% endif %}</li>
     {%- endfor %}
   </ul>
   {%- endif %}

@@ -8,8 +8,10 @@ description: "Icarus, une fusée expérimentale conçue, fabriquée et lancée a
 logos:
   - src: "assets/img/logos/epf.png"
     alt: "Logo EPF, école d'ingénieurs"
+    url: "https://www.epf.fr"
   - src: "assets/img/logos/epf-astronomie.jpg"
     alt: "Logo EPF Astronomie, club aérospatial de l'EPF"
+    url: "https://epf-astronomie.ovh/"
 hero:
   scrollDriven: true
   src: /assets/video/icarus/icarus-3d-hero.mp4

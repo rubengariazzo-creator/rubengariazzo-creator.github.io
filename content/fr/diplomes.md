@@ -14,17 +14,17 @@ description: "Diplômes et certifications de Ruben Gariazzo : Baccalauréat, Bre
 - **Diplôme National du Brevet**, mention Très Bien (session 2022, Académie de Paris)
 - **Attestation de compétence en langues vivantes** : Anglais niveau B2, Espagnol niveau B1 (2025)
 
-<details class="doc-details" open>
+<details class="doc-details">
   <summary>Attestation du Baccalauréat général</summary>
   {% docPreview "/assets/downloads/diplomes/bac.pdf", lang, "Attestation du Baccalauréat général" %}
   <p class="doc-links"><a href="/assets/downloads/diplomes/bac.pdf" target="_blank" rel="noopener">{{ ui.openTab }}</a></p>
 </details>
-<details class="doc-details" open>
+<details class="doc-details">
   <summary>Attestation du Diplôme National du Brevet</summary>
   {% docPreview "/assets/downloads/diplomes/brevet.pdf", lang, "Attestation du Diplôme National du Brevet" %}
   <p class="doc-links"><a href="/assets/downloads/diplomes/brevet.pdf" target="_blank" rel="noopener">{{ ui.openTab }}</a></p>
 </details>
-<details class="doc-details" open>
+<details class="doc-details">
   <summary>Attestation de compétence en langues vivantes</summary>
   {% docPreview "/assets/downloads/diplomes/langues-vivantes.pdf", lang, "Attestation de compétence en langues vivantes" %}
   <p class="doc-links"><a href="/assets/downloads/diplomes/langues-vivantes.pdf" target="_blank" rel="noopener">{{ ui.openTab }}</a></p>
@@ -36,14 +36,20 @@ description: "Diplômes et certifications de Ruben Gariazzo : Baccalauréat, Bre
 
 - **L'intelligence artificielle... avec intelligence !**, MOOC Inria / Class'Code, France Université Numérique (mars 2026)
 - **Impacts environnementaux du numérique**, MOOC Inria / Class'Code, France Université Numérique (mars 2026)
+- **10 pixels adoptés** dans les premières images du télescope spatial Nancy Grace Roman, campagne publique « Adopt a Pixel » de la NASA (2026)
 
-<details class="doc-details" open>
+<details class="doc-details">
   <summary>Badge Inria / Class'Code : Intelligence Artificielle</summary>
   {% docPreview "/assets/downloads/diplomes/badge-ia.pdf", lang, "Badge Inria / Class'Code : Intelligence Artificielle" %}
   <p class="doc-links"><a href="/assets/downloads/diplomes/badge-ia.pdf" target="_blank" rel="noopener">{{ ui.openTab }}</a> · <a href="/assets/downloads/diplomes/badge-ia.pdf" download>{{ ui.download }}</a> · <a href="https://openbadgefactory.com/obv3/credentials/1f7ffa80a17b1081a3287e4b402bb15fa92eaaba" target="_blank" rel="noopener">Vérifier ce badge en ligne</a></p>
 </details>
-<details class="doc-details" open>
+<details class="doc-details">
   <summary>Badge Inria / Class'Code : Impacts environnementaux du numérique</summary>
   {% docPreview "/assets/downloads/diplomes/badge-impacts.pdf", lang, "Badge Inria / Class'Code : Impacts environnementaux du numérique" %}
   <p class="doc-links"><a href="/assets/downloads/diplomes/badge-impacts.pdf" target="_blank" rel="noopener">{{ ui.openTab }}</a> · <a href="/assets/downloads/diplomes/badge-impacts.pdf" download>{{ ui.download }}</a> · <a href="https://openbadgefactory.com/obv3/credentials/0d9ec8853824d3d73f6aca2fbe0d7dbbfc06e401" target="_blank" rel="noopener">Vérifier ce badge en ligne</a></p>
+</details>
+<details class="doc-details">
+  <summary>Certificats d'adoption de pixel, télescope spatial Nancy Grace Roman (NASA)</summary>
+  {% docPreview "/assets/downloads/diplomes/roman-space-telescope-pixel-certificates.pdf", lang, "Certificats d'adoption de pixel, télescope spatial Nancy Grace Roman (NASA)" %}
+  <p class="doc-links"><a href="/assets/downloads/diplomes/roman-space-telescope-pixel-certificates.pdf" target="_blank" rel="noopener">{{ ui.openTab }}</a> · <a href="/assets/downloads/diplomes/roman-space-telescope-pixel-certificates.pdf" download>{{ ui.download }}</a> · <a href="https://science.nasa.gov/mission/roman-space-telescope/adopt-a-pixel/" target="_blank" rel="noopener">Voir la campagne officielle de la NASA</a></p>
 </details>

@@ -8,6 +8,7 @@ description: "Jeu en Python : des drones autonomes doivent secourir des survivan
 logos:
   - src: "assets/img/logos/epf.png"
     alt: "Logo EPF, école d'ingénieurs"
+    url: "https://www.epf.fr"
 hero:
   type: image
   src: "assets/img/jeu-de-drones/schema-boucle-jeu.png"

@@ -8,8 +8,10 @@ description: "Icarus, an experimental rocket designed, built, and successfully l
 logos:
   - src: "assets/img/logos/epf.png"
     alt: "EPF engineering school logo"
+    url: "https://www.epf.fr/en"
   - src: "assets/img/logos/epf-astronomie.jpg"
     alt: "EPF Astronomie logo, EPF's aerospace club"
+    url: "https://epf-astronomie.ovh/"
 hero:
   scrollDriven: true
   src: /assets/video/icarus/icarus-3d-hero.mp4

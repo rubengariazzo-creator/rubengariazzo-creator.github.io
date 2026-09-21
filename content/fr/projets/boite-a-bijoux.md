@@ -8,6 +8,7 @@ description: "Conception CAO d'une boîte à bijoux en deux itérations : sans p
 logos:
   - src: "assets/img/logos/epf.png"
     alt: "Logo EPF, école d'ingénieurs"
+    url: "https://www.epf.fr"
 hero:
   type: image
   src: "assets/img/boite-a-bijoux/render-cad.jpg"

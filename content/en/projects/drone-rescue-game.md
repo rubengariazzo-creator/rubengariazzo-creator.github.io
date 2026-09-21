@@ -8,6 +8,7 @@ description: "A Python game: autonomous drones must rescue survivors on a grid a
 logos:
   - src: "assets/img/logos/epf.png"
     alt: "EPF engineering school logo"
+    url: "https://www.epf.fr/en"
 hero:
   type: image
   src: "assets/img/jeu-de-drones/schema-boucle-jeu-en.png"

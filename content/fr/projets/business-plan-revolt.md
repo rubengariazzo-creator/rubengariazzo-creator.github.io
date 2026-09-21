@@ -8,6 +8,7 @@ description: "Business plan de groupe pour ReVolt, une startup de rétrofit éle
 logos:
   - src: "assets/img/logos/epf.png"
     alt: "Logo EPF, école d'ingénieurs"
+    url: "https://www.epf.fr"
 hero:
   type: image
   src: "assets/img/business-plan-revolt/cover-1.png"
