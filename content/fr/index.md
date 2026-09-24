@@ -54,14 +54,4 @@ highlights:
 
 <p class="skill-line"><strong>Compétences</strong> : mathématiques, physique, CATIA, ingénierie de projet, Blender, Python, MATLAB, impression 3D. <strong>Langues</strong> : français, anglais (niveau B2), espagnol (niveau B1).</p>
 
-<section class="thread">
-<h2>Ce qui relie mes projets</h2>
-<p class="thread-thesis">Quand quelque chose casse, je cherche pourquoi, et je recommence mieux.</p>
-<ol class="thread-list">
-<li>Le loquet de la <a href="/projets/boite-a-bijoux/">boîte à bijoux</a> a cédé après plusieurs chutes : réimprimé à l'horizontale, en PETG et avec un remplissage renforcé, il a tenu le test de chute suivant.</li>
-<li>Mon premier solveur pour le <a href="/projets/cryptanalyse-agapeyeff/">cryptogramme de D'Agapeyeff</a> reposait sur un défaut de conception : je l'ai identifié, puis j'ai reconstruit toute l'architecture avant de lancer la recherche systématique.</li>
-<li>Sur le <a href="/projets/anharmonicite/">cône basculant</a>, la dissipation estimée à partir du pointage vidéo brut donnait un résultat aberrant : en passant par la décroissance exponentielle de l'énergie, je l'ai estimée à 0,0363 W, une valeur plus précise que le premier ajustement (0,067 W).</li>
-</ol>
-</section>
-
 <p><a href="/projets/" data-glass-cta>Voir les projets</a></p>

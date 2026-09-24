@@ -927,8 +927,7 @@ html {
   }
 }
 
-/* Homepage "mission dossier": highlight cards, a looking-for callout and the
-   projects' common thread. Local rules: every card = telemetry tag + a headline that
+/* Homepage "mission dossier": highlight cards and a looking-for callout. Local rules: every card = telemetry tag + a headline that
    carries one hard fact + one sentence + at least one link; one accent only. */
 .highlight-grid {
   display: grid;
@@ -1027,45 +1026,6 @@ html {
 
 .looking-for p:last-child {
   margin-bottom: 0;
-}
-
-.thread {
-  max-width: 70ch;
-  margin: 2.5rem 0;
-}
-
-/* The page's one pull-quote: larger type, the thesis the list proves. */
-.thread-thesis {
-  margin: 0 0 1.25rem;
-  font-size: clamp(1.25rem, 2.6vw, 1.7rem);
-  line-height: 1.35;
-  font-weight: 600;
-  color: var(--text);
-}
-
-.thread-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  counter-reset: thread;
-}
-
-.thread-list li {
-  counter-increment: thread;
-  position: relative;
-  padding: 0 0 1.1rem 2.75rem;
-  color: var(--text-muted);
-}
-
-.thread-list li::before {
-  content: counter(thread, decimal-leading-zero);
-  position: absolute;
-  left: 0;
-  top: 0.15rem;
-  font-family: "SFMono-Regular", ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
-  color: var(--accent-strong);
 }
 
 .skill-line {

@@ -54,14 +54,4 @@ highlights:
 
 <p class="skill-line"><strong>Skills</strong>: mathematics, physics, CATIA, project engineering, Blender, Python, MATLAB, 3D printing. <strong>Languages</strong>: French, English (B2), Spanish (B1).</p>
 
-<section class="thread">
-<h2>What ties my projects together</h2>
-<p class="thread-thesis">When something breaks, I find out why, and build it back better.</p>
-<ol class="thread-list">
-<li>The latch of the <a href="/en/projects/jewelry-box/">jewelry box</a> gave way after several drops: reprinted horizontally, in PETG and with a stronger infill, it passed the next drop test.</li>
-<li>My first solver for the <a href="/en/projects/agapeyeff-cryptanalysis/">D'Agapeyeff cryptogram</a> rested on a design flaw: I pinned it down, then rebuilt the whole architecture before running the systematic search.</li>
-<li>On the <a href="/en/projects/anharmonicity/">rocking cone</a>, a dissipation estimate from raw video tracking came out aberrant: working from the exponential energy decay instead gave 0.0363 W, more precise than the initial 0.067 W fit.</li>
-</ol>
-</section>
-
 <p><a href="/en/projects/" data-glass-cta>See the projects</a></p>
