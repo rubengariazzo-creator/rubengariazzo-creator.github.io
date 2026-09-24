@@ -1,8 +1,7 @@
 <footer class="site-footer">
   <p>© {% currentYear %} {{ site.name }}, {{ footer.rights }}</p>
   <p>
-    <a href="{{ '/en/about/' if lang == 'en' else '/a-propos/' }}">{{ footer.about }}</a>
-    · <a href="{{ '/en/legal-notice/' if lang == 'en' else '/mentions-legales/' }}">{{ footer.legalNotice }}</a>
+    <a href="{{ '/en/legal-notice/' if lang == 'en' else '/mentions-legales/' }}">{{ footer.legalNotice }}</a>
     · <a href="{{ '/en/terms/' if lang == 'en' else '/conditions-generales/' }}">{{ footer.terms }}</a>
   </p>
 </footer>

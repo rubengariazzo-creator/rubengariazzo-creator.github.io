@@ -893,7 +893,7 @@ html {
   position: relative;
 }
 
-/* About page: LinkedIn portrait beside the opening paragraphs (Élise Levet's
+/* Homepage intro: LinkedIn portrait beside the opening paragraphs (Élise Levet's
    pattern: the face, with the name in its alt, next to "I'm ..."). */
 .about-intro {
   display: flex;
