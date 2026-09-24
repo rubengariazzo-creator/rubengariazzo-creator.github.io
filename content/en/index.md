@@ -3,9 +3,13 @@ layout: layouts/page.njk
 translationKey: home
 heroBackground: true
 heroLiquid: true
+profilePage: true
 title: "Ruben Gariazzo"
-description: "Ruben Gariazzo's portfolio: mechanical and aerospace engineering, programming, and independent research projects."
+seoTitle: "Ruben Gariazzo · EPF engineering student, aerospace and research"
+description: "Ruben Gariazzo, engineering student at EPF: the Icarus rocket, CAD design, a drone rescue game and independent physics and cryptanalysis research on Zenodo."
 ---
+<p class="project-meta-tag">Engineering student at EPF</p>
+
 <p><a href="/en/projects/" data-glass-cta>See the projects</a></p>
 
 Engineering student at EPF, I design and build things: a rocket that actually flew, everyday objects reimagined (a telescopic watering can, a jewelry box), a drone rescue game, and independent research in physics and cryptanalysis shared in open access on Zenodo.
@@ -14,4 +18,4 @@ Driven by high-performance engineering and multidisciplinary technical projects,
 
 This site gathers my finished projects, from the design process (specifications, CAD) to the final result.
 
-<p><a href="/en/projects/" data-glass-cta>See the projects</a></p>
+<p><a href="/en/about/" data-glass-cta>About me</a></p>

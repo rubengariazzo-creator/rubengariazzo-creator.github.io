@@ -40,11 +40,11 @@ Built with a partner, Ilyane Haida: a rescue game on a 12x12 grid, where drones 
     </ul>
   </div>
   <button type="button" class="drone-game-play">Play the game</button>
-  <p class="drone-game-status"></p>
+  <p class="drone-game-status" aria-live="polite"></p>
   <pre class="drone-game-terminal" hidden></pre>
   <form class="drone-game-input-form" hidden>
-    <label class="drone-game-input-label"></label>
-    <input type="text" class="drone-game-input-field" autocomplete="off">
+    <label class="drone-game-input-label" for="drone-game-input"></label>
+    <input type="text" id="drone-game-input" class="drone-game-input-field" autocomplete="off">
     <button type="submit">Send</button>
   </form>
   <p class="drone-game-fallback-notice" hidden></p>

@@ -382,6 +382,13 @@ main {
   border-radius: 0.35rem;
 }
 
+/* Transparent PNG logos (EPF's magenta, RATP, Harvard...) nearly vanish on
+   the dark background; same white chip the project cards already use. */
+.affiliation-logos img[src$=".png"] {
+  background: #fff;
+  padding: 0.2rem 0.35rem;
+}
+
 .affiliation-logos a {
   display: block;
   opacity: 0.85;
@@ -517,40 +524,9 @@ html {
   background: #fff;
 }
 
-.doc-preview-html {
-  max-height: 70vh;
-  overflow: auto;
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
-  padding: 1rem;
-  background: #fff;
-  color: #111;
-}
-
-.doc-preview-table table {
-  border-collapse: collapse;
-  font-size: 0.85rem;
-}
-
-.doc-preview-table td,
-.doc-preview-table th {
-  border: 1px solid #ccc;
-  padding: 0.25rem 0.5rem;
-}
-
 .doc-links {
   margin-top: 0.75rem;
   font-size: 0.9rem;
-}
-
-.doc-preview-note {
-  font-size: 0.8rem;
-  font-style: italic;
-  color: #555;
-}
-
-.doc-preview-html h4 {
-  margin-top: 1.5rem;
 }
 
 .experience-item {
@@ -583,6 +559,30 @@ html {
   margin: 0;
   font-size: 1.2rem;
   font-weight: 600;
+}
+
+/* The native disclosure marker is hidden above; this chevron gives sighted
+   users back the open/closed cue (points right when closed, down when open). */
+.experience-item summary h2::before {
+  content: "";
+  display: inline-block;
+  width: 0.45em;
+  height: 0.45em;
+  margin: 0 0.7em 0.12em 0.1em;
+  border-right: 2px solid var(--accent-strong);
+  border-bottom: 2px solid var(--accent-strong);
+  transform: rotate(-45deg);
+  transition: transform 0.2s var(--ease-snap);
+}
+
+.experience-item[open] summary h2::before {
+  transform: rotate(45deg);
+}
+
+/* The logos' default bottom margin (meant for project pages) pushed them
+   12px above the title's centre line and padded every closed card. */
+.experience-item summary .affiliation-logos {
+  margin: 0;
 }
 
 .experience-item[open] summary {
@@ -893,6 +893,15 @@ html {
   position: relative;
 }
 
+/* Readable measure: across the 72rem container a paragraph ran ~150
+   characters per line on desktop, about twice the comfortable 60 to 75. */
+.page > p:not(.project-cta),
+.project > p:not(.project-cta),
+.page > ul:not([class]),
+.project > ul:not([class]) {
+  max-width: 70ch;
+}
+
 .hero-liquid-stage {
   position: relative;
   min-height: clamp(9rem, 22vw, 15rem);
@@ -1002,7 +1011,7 @@ html {
     position: relative;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0.85rem calc(var(--space) + 3rem) 0.85rem var(--space);
+    padding: 0.85rem 1rem;
     gap: 0.5rem;
   }
 
@@ -1016,16 +1025,21 @@ html {
   .site-header nav a.lang-switch {
     position: absolute;
     top: 0.85rem;
-    right: var(--space);
+    right: 1rem;
   }
 
+  /* All five sections on one row from ~360px up (measured: ~290px of text
+     at this size); space-between spreads them edge to edge on wider phones,
+     and the wrap only kicks in on the rare narrower screen. */
   .site-header nav {
+    align-self: stretch;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 0.25rem 0.75rem;
+    gap: 0.25rem 0.6rem;
   }
 
   .site-header nav a {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .doc-preview-pdf {

@@ -9,7 +9,7 @@ description: "Independent physics study: inertia, anisotropy, and dissipation of
 logos:
   - src: "assets/img/logos/zenodo.png"
     alt: "Zenodo logo"
-    url: "https://zenodo.org"
+    url: "https://doi.org/10.5281/zenodo.18046830"
 hero:
   type: image
   src: "assets/img/anharmonicite/tracker-pointage.png"
@@ -25,6 +25,32 @@ stats:
 downloads:
   - label: "Full calculation sheet (PDF)"
     href: /assets/downloads/anharmonicite/feuille-de-calculs.pdf
+publications:
+  - title: "Données Expérimentales : Analyse Cinématique et Énergétique d'un Tronc de Cône sur Support Elliptique"
+    doi: "10.5281/zenodo.18045758"
+    date: "2025-12-24"
+    lang: fr
+    type: CreativeWork
+  - title: "De l'anharmonicité à la géométrie : étude du puits de potentiel d'un tronc de cône massif en contact ponctuel"
+    doi: "10.5281/zenodo.18046830"
+    date: "2025-12-24"
+    lang: fr
+    type: ScholarlyArticle
+  - title: "Architecture de calcul intégrée pour l'analyse cinématique et acoustique d'un oscillateur en tronc de cône"
+    doi: "10.5281/zenodo.18046240"
+    date: "2025-12-24"
+    lang: fr
+    type: CreativeWork
+  - title: "Signature acoustique et de la dissipation d'énergie d'un oscillateur prenant la forme d'un tronc de cône"
+    doi: "10.5281/zenodo.18046047"
+    date: "2025-12-24"
+    lang: fr
+    type: CreativeWork
+  - title: "Du suivi cinématique sous Tracker à la caractérisation de l'anharmonicité sous MATLAB"
+    doi: "10.5281/zenodo.18046629"
+    date: "2025-12-24"
+    lang: fr
+    type: CreativeWork
 cta:
   label: "See all projects"
   href: /en/projects/
@@ -50,9 +76,3 @@ The plate's real motion was tracked frame by frame in Tracker (free video analys
 ## Citing this work
 
 Published in open access on Zenodo as five companion records (French-language metadata):
-
-- R. Gariazzo, *Données Expérimentales : Analyse Cinématique et Énergétique d'un Tronc de Cône sur Support Elliptique*, Zenodo, 2025. [doi.org/10.5281/zenodo.18045758](https://doi.org/10.5281/zenodo.18045758)
-- R. Gariazzo, *De l'anharmonicité à la géométrie : étude du puits de potentiel d'un tronc de cône massif en contact ponctuel*, Zenodo, 2025. [doi.org/10.5281/zenodo.18046830](https://doi.org/10.5281/zenodo.18046830)
-- R. Gariazzo, *Architecture de calcul intégrée pour l'analyse cinématique et acoustique d'un oscillateur en tronc de cône*, Zenodo, 2025. [doi.org/10.5281/zenodo.18046240](https://doi.org/10.5281/zenodo.18046240)
-- R. Gariazzo, *Signature acoustique et de la dissipation d'énergie d'un oscillateur prenant la forme d'un tronc de cône*, Zenodo, 2025. [doi.org/10.5281/zenodo.18046047](https://doi.org/10.5281/zenodo.18046047)
-- R. Gariazzo, *Du suivi cinématique sous Tracker à la caractérisation de l'anharmonicité sous MATLAB*, Zenodo, 2025. [doi.org/10.5281/zenodo.18046629](https://doi.org/10.5281/zenodo.18046629)

@@ -41,7 +41,7 @@ Diagnosed and helped repair, together with the maintenance team, a breakdown of 
   </p>
 </details>
 <details class="doc-details">
-  <summary>Rapport de stage, version française (PDF)</summary>
+  <summary lang="fr">Rapport de stage, version française (PDF)</summary>
   {% docPreview "/assets/downloads/experience-ampere/rapport-stage-fr.pdf", lang, "Rapport de stage, version française (PDF)" %}
   <p class="doc-links">
     <a href="/assets/downloads/experience-ampere/rapport-stage-fr.pdf" target="_blank" rel="noopener">{{ ui.openTab }}</a>

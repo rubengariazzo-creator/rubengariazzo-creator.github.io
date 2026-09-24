@@ -35,30 +35,110 @@ module.exports = function (eleventyConfig) {
   // were emitting links to a domain that can't exist). Update this the day a
   // custom domain replaces GitHub Pages -- until then this is the one real
   // domain the deployed site is actually reachable at.
-  // jobTitle/alumniOf/bio/knowsAbout/sameAs feed the sitewide JSON-LD Person
-  // block (seo-head.njk) -- kept here as one source of truth rather than
-  // hardcoded in the template, since these are facts about Ruben, not
-  // per-page content. Only verified, already-published facts: EPF affiliation
-  // and category list are stated on the site itself (experience.md,
-  // projects/index.md); LinkedIn/GitHub are the two profile links already
-  // used elsewhere on the site. Add a Zenodo/ORCID profile URL here too once
-  // one exists -- the homepage bio already mentions Zenodo-published research
-  // but nothing on the site actually links to it yet.
+  // jobTitle/bio/knowsAbout/sameAs feed the sitewide JSON-LD Person node
+  // (seo-head.njk) and llms.txt: one source of truth for facts about Ruben.
+  // Only verified, already-published facts. The ORCID iD is the one attached
+  // to every one of his Zenodo records (checked via the Zenodo API): listing
+  // it in sameAs is what lets search engines and AI assistants tie the
+  // research DOIs to this person rather than to a homonym.
   eleventyConfig.addGlobalData("site", {
     url: "https://rubengariazzo-creator.github.io",
     name: "Ruben Gariazzo",
     jobTitle: "Engineering Student",
-    alumniOf: "EPF - École d'ingénieurs",
-    bio: "an engineering student at EPF (France) working on aerospace and mechanical design, with independent physics and cryptanalysis research",
+    school: { name: "EPF - École d'ingénieurs", url: "https://www.epf.fr" },
+    orcid: "https://orcid.org/0009-0005-9359-215X",
+    bio: "an engineering student at EPF (France) working on aerospace and mechanical design, with independent physics and cryptanalysis research published on Zenodo",
+    bioFr: "élève ingénieur à l'EPF (France), en conception aérospatiale et mécanique, auteur de recherches indépendantes en physique et en cryptanalyse publiées sur Zenodo",
     knowsAbout: [
       "Aerospace Engineering",
       "Mechanical Engineering",
       "CAD Design",
+      "Metrology",
       "Cryptanalysis",
       "Physics Research",
       "Python Programming",
     ],
-    sameAs: ["https://www.linkedin.com/in/ruben-gariazzo", "https://github.com/rubengariazzo-creator"],
+    sameAs: [
+      "https://www.linkedin.com/in/ruben-gariazzo",
+      "https://github.com/rubengariazzo-creator",
+      "https://orcid.org/0009-0005-9359-215X",
+    ],
+  });
+
+  // One JSON-LD @graph per page. Every node (site, profile page, breadcrumb,
+  // each research DOI) points back at the same Person @id, so search engines
+  // and AI assistants merge them into one entity instead of several loose
+  // "Ruben Gariazzo"s -- the homonym problem is exactly what this solves.
+  eleventyConfig.addFilter("structuredData", (page, site) => {
+    const personId = `${site.url}/#person`;
+    const websiteId = `${site.url}/#website`;
+    const fr = page.lang === "fr";
+    const pageUrl = site.url + page.url;
+    const graph = [
+      {
+        "@type": "Person",
+        "@id": personId,
+        name: site.name,
+        givenName: "Ruben",
+        familyName: "Gariazzo",
+        url: `${site.url}/`,
+        jobTitle: site.jobTitle,
+        description: fr ? site.bioFr : site.bio,
+        affiliation: { "@type": "CollegeOrUniversity", name: site.school.name, url: site.school.url },
+        memberOf: { "@type": "Organization", name: "EPF Astronomie" },
+        award: "Grand Prix Poésie RATP 2025 (finalist)",
+        knowsAbout: site.knowsAbout,
+        sameAs: site.sameAs,
+      },
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: `${site.url}/`,
+        name: site.name,
+        inLanguage: ["fr", "en"],
+        author: { "@id": personId },
+      },
+    ];
+    if (page.profile) {
+      graph.push({
+        "@type": "ProfilePage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: page.title,
+        inLanguage: page.lang,
+        isPartOf: { "@id": websiteId },
+        mainEntity: { "@id": personId },
+      });
+    }
+    const home = fr ? "/" : "/en/";
+    const projects = fr ? "/projets/" : "/en/projects/";
+    if (page.url.startsWith(projects) && page.url !== projects) {
+      graph.push({
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: fr ? "Accueil" : "Home", item: site.url + home },
+          { "@type": "ListItem", position: 2, name: fr ? "Projets" : "Projects", item: site.url + projects },
+          { "@type": "ListItem", position: 3, name: page.title, item: pageUrl },
+        ],
+      });
+    }
+    for (const pub of page.publications || []) {
+      graph.push({
+        "@type": pub.type,
+        "@id": `https://doi.org/${pub.doi}`,
+        name: pub.title,
+        author: { "@id": personId },
+        datePublished: pub.date,
+        inLanguage: pub.lang,
+        url: `https://doi.org/${pub.doi}`,
+        sameAs: `https://zenodo.org/records/${pub.doi.split("zenodo.")[1]}`,
+        identifier: { "@type": "PropertyValue", propertyID: "DOI", value: pub.doi },
+        publisher: { "@type": "Organization", name: "Zenodo", url: "https://zenodo.org" },
+        subjectOf: { "@id": `${pageUrl}#webpage`, "@type": "WebPage", url: pageUrl },
+      });
+    }
+    // "<" escaped so no string value can ever close the <script> early.
+    return JSON.stringify({ "@context": "https://schema.org", "@graph": graph }).replace(/</g, "\\u003c");
   });
 
   function escapeAttr(value) {

@@ -43,6 +43,16 @@ layout: layouts/base.njk
   {%- endif %}
   {{ content | safe }}
 
+  {#- Rendered from front matter (not hand-written in the body) so the same
+      entries also feed the page's ScholarlyArticle/Dataset JSON-LD. #}
+  {%- if publications and publications.length %}
+  <ul>
+    {%- for pub in publications %}
+    <li>{{ site.name }}, <cite>{{ pub.title }}</cite>, Zenodo, {{ pub.date.slice(0, 4) }}. <a href="https://doi.org/{{ pub.doi }}">doi.org/{{ pub.doi }}</a></li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+
   {%- if showCs50xProgress %}
   <div class="cs50x-progress">
     <div class="cs50x-progress-bar">

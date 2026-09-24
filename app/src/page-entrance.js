@@ -444,6 +444,8 @@ function rectsOverlap(a, b) {
 // candidate that would overlap one is rejected and retried rather than ever
 // placed. Gives up after 20 tries and skips this spawn cycle entirely rather
 // than forcing a bad placement -- the next scheduled spawn tries again.
+// The page title and the 3D logo are blockers too: a sprite parked on top of
+// "Ruben Gariazzo" was the first thing the site audit screenshot showed.
 function findInvaderSpawnPoint() {
   const header = document.querySelector(".site-header");
   const top = (header ? header.offsetHeight : 80) + 40;
@@ -451,7 +453,7 @@ function findInvaderSpawnPoint() {
   const half = 20;
   const buffer = 14;
   const blockers = Array.from(
-    document.querySelectorAll("a, button, input, textarea, select, [role='button'], [data-glass-cta], .invader-sprite")
+    document.querySelectorAll("a, button, input, textarea, select, [role='button'], [data-glass-cta], .invader-sprite, h1, .hero-liquid-mount")
   ).map((el) => el.getBoundingClientRect());
 
   for (let attempt = 0; attempt < 20; attempt++) {
@@ -619,7 +621,7 @@ function showOpeningSequence(container) {
 function runEntranceTimeline(container, header, isHomeHero) {
   const heading = container.querySelector(":scope > h1, .hero-liquid-stage h1");
   const blocks = Array.from(container.children)
-    .filter((el) => BLOCK_TAGS.includes(el.tagName) && !el.classList.contains("doc-details"))
+    .filter((el) => BLOCK_TAGS.includes(el.tagName) && !el.matches(".doc-details, .project-meta-tag"))
     .slice(0, 6);
 
   try {

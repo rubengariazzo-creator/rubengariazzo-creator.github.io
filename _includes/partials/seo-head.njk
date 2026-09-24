@@ -1,15 +1,24 @@
 {%- set canonicalUrl = site.url + page.url -%}
 {%- set ogImage = socialImage or ("/" + thumbnail if thumbnail else "/assets/img/social-default.jpg") -%}
-<title>{{ title if title == site.name else title + " | " + site.name }}</title>
+<title>{{ seoTitle or (title if title == site.name else title + " | " + site.name) }}</title>
 <meta name="description" content="{{ description }}">
+<meta name="author" content="{{ site.name }}">
 {%- if robots %}
 <meta name="robots" content="{{ robots }}">
 {%- endif %}
 <link rel="canonical" href="{{ canonicalUrl }}">
-<meta property="og:title" content="{{ title }}">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="{{ 'fr_FR' if lang == 'fr' else 'en_US' }}">
+<meta property="og:title" content="{{ seoTitle or title }}">
 <meta property="og:description" content="{{ description }}">
 <meta property="og:url" content="{{ canonicalUrl }}">
+{%- if profilePage %}
+<meta property="og:type" content="profile">
+<meta property="profile:first_name" content="Ruben">
+<meta property="profile:last_name" content="Gariazzo">
+{%- else %}
 <meta property="og:type" content="website">
+{%- endif %}
 <meta property="og:image" content="{{ site.url }}{{ ogImage }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="{{ site.url }}{{ ogImage }}">
@@ -21,22 +30,7 @@
 <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ collections.byTranslationKey[translationKey].fr }}">
 {%- endif %}
 
-{#- The whole object goes through the `json` filter in one call rather than
-    interpolating each field into a hand-written JSON literal: a script tag's
-    content isn't HTML-entity-decoded by the browser, so an apostrophe in e.g.
-    alumniOf ("EPF - École d'ingénieurs") would render as the literal text
-    "&#39;" inside the parsed JSON-LD instead of becoming a quote mark once
-    Nunjucks' default auto-escaping got involved -- serializing server-side
-    with JSON.stringify is the only way that's correct for every field,
-    always, not just the ones that happen not to contain a quote today. #}
-<script type="application/ld+json">{{ {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": site.name,
-  "url": site.url,
-  "jobTitle": site.jobTitle,
-  "alumniOf": site.alumniOf,
-  "description": site.bio,
-  "knowsAbout": site.knowsAbout,
-  "sameAs": site.sameAs
-} | json | safe }}</script>
+{#- Built by the structuredData filter (.eleventy.js) with JSON.stringify:
+    a script tag's content isn't HTML-entity-decoded, so Nunjucks-escaped
+    interpolation would leave literal "&#39;" inside the parsed JSON-LD. #}
+<script type="application/ld+json">{{ { url: page.url, lang: lang, title: title, profile: profilePage, publications: publications } | structuredData(site) | safe }}</script>

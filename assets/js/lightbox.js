@@ -30,6 +30,7 @@
     lastTrigger = trigger;
     img.src = href;
     img.alt = alt || "";
+    overlay.setAttribute("aria-label", alt || "Image");
     overlay.classList.add("is-open");
     document.body.style.overflow = "hidden";
     // backdrop-filter on the sticky header can otherwise paint above a fixed overlay

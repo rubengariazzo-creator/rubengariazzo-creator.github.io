@@ -40,11 +40,11 @@ Projet réalisé en binôme avec Ilyane Haida : un jeu de sauvetage sur une gril
     </ul>
   </div>
   <button type="button" class="drone-game-play">Lancer le jeu</button>
-  <p class="drone-game-status"></p>
+  <p class="drone-game-status" aria-live="polite"></p>
   <pre class="drone-game-terminal" hidden></pre>
   <form class="drone-game-input-form" hidden>
-    <label class="drone-game-input-label"></label>
-    <input type="text" class="drone-game-input-field" autocomplete="off">
+    <label class="drone-game-input-label" for="drone-game-input"></label>
+    <input type="text" id="drone-game-input" class="drone-game-input-field" autocomplete="off">
     <button type="submit">Envoyer</button>
   </form>
   <p class="drone-game-fallback-notice" hidden></p>

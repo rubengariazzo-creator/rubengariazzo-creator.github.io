@@ -9,7 +9,7 @@ description: "A computational cryptanalysis attempt on the unsolved cryptogram p
 logos:
   - src: "assets/img/logos/zenodo.png"
     alt: "Zenodo logo"
-    url: "https://zenodo.org"
+    url: "https://doi.org/10.5281/zenodo.22057249"
 hero:
   type: image
   src: "assets/img/cryptanalyse-agapeyeff/cryptogram-original-en.png"
@@ -27,6 +27,17 @@ downloads:
     href: /assets/downloads/cryptanalyse-agapeyeff/rapport-fr.pdf
   - label: "Report, English version (PDF)"
     href: /assets/downloads/cryptanalyse-agapeyeff/report-en.pdf
+publications:
+  - title: "The D'Agapeyeff Cryptogram (1939): Anatomy, Reconstruction of a Solver, and Statistical Assessment"
+    doi: "10.5281/zenodo.22057249"
+    date: "2026-08-22"
+    lang: en
+    type: ScholarlyArticle
+  - title: "Data and code of computational cryptanalysis of the D'Agapeyeff cryptogram (1939)"
+    doi: "10.5281/zenodo.21970478"
+    date: "2026-08-17"
+    lang: en
+    type: CreativeWork
 cta:
   label: "See all projects"
   href: /en/projects/
@@ -44,6 +55,3 @@ No signal statistically distinguishable from noise was detected across methods A
 ## Citing this work
 
 Published in open access on Zenodo:
-
-- R. Gariazzo, *The D'Agapeyeff Cryptogram (1939): Anatomy, Reconstruction of a Solver, and Statistical Assessment*, Zenodo, 2026. [doi.org/10.5281/zenodo.22057249](https://doi.org/10.5281/zenodo.22057249)
-- R. Gariazzo, *Data and code of computational cryptanalysis of the D'Agapeyeff cryptogram (1939)*, Zenodo, 2026. [doi.org/10.5281/zenodo.21970478](https://doi.org/10.5281/zenodo.21970478)

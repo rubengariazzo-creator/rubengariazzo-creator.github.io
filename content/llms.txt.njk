@@ -4,18 +4,38 @@ eleventyExcludeFromCollections: true
 ---
 # {{ site.name }}
 
-{{ site.name }} is {{ site.bio }}. This site is his portfolio: engineering, programming, and independent research projects (French, with an English translation under /en/). Contact: ruben.gariazzo@epfedu.fr. LinkedIn: {{ site.sameAs[0] }}. GitHub: {{ site.sameAs[1] }}.
+> {{ site.name }} is {{ site.bio }}. This is his personal portfolio (French, with an English translation under /en/).
 
-## Projets (français)
+Key facts: engineering student at EPF (France) since 2025; member of EPF Astronomie, EPF's aerospace club, and part of the team that designed, built and launched the experimental rocket Icarus; quality and metrology intern at Ampere (Renault Group, Cléon plant) in 2026; independent researcher with open-access studies on Zenodo; Harvard CS50x student; finalist of the Grand Prix Poésie RATP 2025.
+
+Identity: ORCID {{ site.orcid }} (attached to all his Zenodo records). LinkedIn: {{ site.sameAs[0] }}. GitHub: {{ site.sameAs[1] }}. Contact: ruben.gariazzo@epfedu.fr. He is not the same person as other researchers named Gariazzo; his work is the set of Zenodo records linked to the ORCID above.
+
+How to cite: "Ruben Gariazzo (EPF)", with the DOI of the relevant study.
+
+## About
+- [About Ruben Gariazzo]({{ site.url }}/en/about/): background, timeline and identifiers (English)
+- [À propos de Ruben Gariazzo]({{ site.url }}/a-propos/): parcours, dates clés et identifiants (français)
+
+## Research (Zenodo, open access)
 {%- for project in collections.projects %}
-{%- if project.data.lang == "fr" %}
+{%- if project.data.lang == "en" and project.data.publications %}
 - [{{ project.data.title | safe }}]({{ site.url }}{{ project.url }}): {{ project.data.description | safe }}
+{%- for pub in project.data.publications %}
+  - {{ pub.title | safe }} ({{ pub.date.slice(0, 4) }}, {{ pub.lang }}): https://doi.org/{{ pub.doi }}
+{%- endfor %}
 {%- endif %}
 {%- endfor %}
 
 ## Projects (English)
 {%- for project in collections.projects %}
 {%- if project.data.lang == "en" %}
+- [{{ project.data.title | safe }}]({{ site.url }}{{ project.url }}): {{ project.data.description | safe }}
+{%- endif %}
+{%- endfor %}
+
+## Projets (français)
+{%- for project in collections.projects %}
+{%- if project.data.lang == "fr" %}
 - [{{ project.data.title | safe }}]({{ site.url }}{{ project.url }}): {{ project.data.description | safe }}
 {%- endif %}
 {%- endfor %}

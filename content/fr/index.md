@@ -3,9 +3,13 @@ layout: layouts/page.njk
 translationKey: home
 heroBackground: true
 heroLiquid: true
+profilePage: true
 title: "Ruben Gariazzo"
-description: "Portfolio de Ruben Gariazzo : projets d'ingénierie mécanique, aérospatiale, programmation et recherche indépendante."
+seoTitle: "Ruben Gariazzo · Élève ingénieur EPF, aérospatial et recherche"
+description: "Ruben Gariazzo, élève ingénieur à l'EPF : fusée Icarus, conception CAO, jeu de drones et recherches indépendantes publiées sur Zenodo (physique, cryptanalyse)."
 ---
+<p class="project-meta-tag">Élève ingénieur à l'EPF</p>
+
 <p><a href="/projets/" data-glass-cta>Voir les projets</a></p>
 
 Étudiant ingénieur à l'EPF, je conçois et je construis : une fusée qui a réellement volé, des objets du quotidien repensés (arrosoir télescopique, boîte à bijoux), un jeu de sauvetage par drones, et des études de recherche indépendantes en physique et en cryptanalyse partagées en accès ouvert sur Zenodo.
@@ -14,4 +18,4 @@ Porté par l'ingénierie de haute performance et les projets techniques pluridis
 
 Ce site rassemble mes projets aboutis, de la conception (cahier des charges, CAD) jusqu'au résultat final.
 
-<p><a href="/projets/" data-glass-cta>Voir les projets</a></p>
+<p><a href="/a-propos/" data-glass-cta>Découvrir mon parcours</a></p>

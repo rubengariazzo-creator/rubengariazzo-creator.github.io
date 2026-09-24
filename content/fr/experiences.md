@@ -41,7 +41,7 @@ Diagnostic et réparation, avec l'équipe maintenance, d'une panne du banc de co
   </p>
 </details>
 <details class="doc-details">
-  <summary>Internship report, English version (PDF)</summary>
+  <summary lang="en">Internship report, English version (PDF)</summary>
   {% docPreview "/assets/downloads/experience-ampere/rapport-stage-en.pdf", lang, "Internship report, English version (PDF)" %}
   <p class="doc-links">
     <a href="/assets/downloads/experience-ampere/rapport-stage-en.pdf" target="_blank" rel="noopener">{{ ui.openTab }}</a>

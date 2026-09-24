@@ -92,6 +92,8 @@ export default function StlViewer({ stlSrc, stlLabel, onReady }) {
         dpr={[1, 2]}
         camera={{ fov: 40 }}
         gl={{ antialias: true, powerPreference: "low-power" }}
+        role="img"
+        aria-label={stlLabel}
         onCreated={({ gl }) => {
           gl.domElement.addEventListener("webglcontextlost", (event) => event.preventDefault(), { once: true });
           onReady?.();

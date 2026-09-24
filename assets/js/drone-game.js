@@ -8,6 +8,9 @@
   // confirmed legitimate later.
   const PYODIDE_VERSION = "0.29.5";
   const PYODIDE_JS_URL = `https://cdn.jsdelivr.net/pyodide/v${PYODIDE_VERSION}/full/pyodide.js`;
+  // Subresource Integrity for that exact file: a tampered CDN copy is refused
+  // instead of executed. Recompute (sha384, base64) whenever the version changes.
+  const PYODIDE_JS_SRI = "sha384-VR47TfKeAmT7vMej7bwOVg0tHTQLLGMSIpsXtFMCZG5OpKZSIXoSLtGY//qHcxc6";
   const SCRIPT_URL = "/assets/downloads/jeu-de-drones/drone-rescue.py";
 
   // Exact config used to produce the project's real report; must match drone-rescue.py's expectations.
@@ -114,6 +117,8 @@ run_sync(Promise.resolve(1))
     if (loaderPromise) return loaderPromise;
     loaderPromise = new Promise((resolve, reject) => {
       const script = document.createElement("script");
+      script.integrity = PYODIDE_JS_SRI;
+      script.crossOrigin = "anonymous";
       script.src = PYODIDE_JS_URL;
       script.onload = () => resolve();
       script.onerror = () => reject(new Error(`Failed to load Pyodide from ${PYODIDE_JS_URL}`));

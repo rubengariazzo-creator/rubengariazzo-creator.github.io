@@ -9,7 +9,7 @@ description: "Tentative de cryptanalyse computationnelle du cryptogramme non ré
 logos:
   - src: "assets/img/logos/zenodo.png"
     alt: "Logo Zenodo"
-    url: "https://zenodo.org"
+    url: "https://doi.org/10.5281/zenodo.22012346"
 hero:
   type: image
   src: "assets/img/cryptanalyse-agapeyeff/cryptogramme-original.png"
@@ -27,6 +27,17 @@ downloads:
     href: /assets/downloads/cryptanalyse-agapeyeff/rapport-fr.pdf
   - label: "Report, English version (PDF)"
     href: /assets/downloads/cryptanalyse-agapeyeff/report-en.pdf
+publications:
+  - title: "Le Cryptogramme de D'Agapeyeff (1939) : Anatomie, Reconstruction d'un Solveur et Bilan Statistique"
+    doi: "10.5281/zenodo.22012346"
+    date: "2026-08-19"
+    lang: fr
+    type: ScholarlyArticle
+  - title: "Données et code de cryptanalyse computationnelle du cryptogramme de D'Agapeyeff (1939)"
+    doi: "10.5281/zenodo.21970729"
+    date: "2026-08-17"
+    lang: fr
+    type: CreativeWork
 cta:
   label: "Voir les projets"
   href: /projets/
@@ -44,6 +55,3 @@ Aucun signal statistiquement distinguable du bruit n'a été détecté sur les m
 ## Citer ce travail
 
 Publié en accès ouvert sur Zenodo :
-
-- R. Gariazzo, *Le Cryptogramme de D'Agapeyeff (1939) : Anatomie, Reconstruction d'un Solveur et Bilan Statistique*, Zenodo, 2026. [doi.org/10.5281/zenodo.22012346](https://doi.org/10.5281/zenodo.22012346)
-- R. Gariazzo, *Données et code de cryptanalyse computationnelle du cryptogramme de D'Agapeyeff (1939)*, Zenodo, 2026. [doi.org/10.5281/zenodo.21970729](https://doi.org/10.5281/zenodo.21970729)

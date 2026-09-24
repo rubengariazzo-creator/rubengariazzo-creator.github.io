@@ -9,7 +9,7 @@ description: "Independent physics study: could the quantum Zeno effect protect D
 logos:
   - src: "assets/img/logos/zenodo.png"
     alt: "Zenodo logo"
-    url: "https://zenodo.org"
+    url: "https://doi.org/10.5281/zenodo.22308602"
 hero:
   type: image
   src: "assets/img/adn-zenon/en-theorem.png"
@@ -29,6 +29,17 @@ downloads:
     href: /assets/downloads/adn-zenon/etude-fr.pdf
   - label: "Full study, English version (PDF)"
     href: /assets/downloads/adn-zenon/study-en.pdf
+publications:
+  - title: "The Quantum Zeno Effect as an Error-Correction Algorithm for DNA Data Storage"
+    doi: "10.5281/zenodo.22308602"
+    date: "2026-09-04"
+    lang: en
+    type: ScholarlyArticle
+  - title: "L'Effet Zénon Quantique comme algorithme de correction d'erreurs dans le stockage de données sur ADN"
+    doi: "10.5281/zenodo.22308582"
+    date: "2026-09-04"
+    lang: fr
+    type: ScholarlyArticle
 cta:
   label: "See all projects"
   href: /en/projects/
@@ -52,6 +63,3 @@ Full report available below in both French and English.
 ## Citing this work
 
 Published in open access on Zenodo, in matching French and English versions:
-
-- R. Gariazzo, *The Quantum Zeno Effect as an Error-Correction Algorithm for DNA Data Storage*, Zenodo, 2026. [doi.org/10.5281/zenodo.22308602](https://doi.org/10.5281/zenodo.22308602)
-- R. Gariazzo, *L'Effet Zénon Quantique comme algorithme de correction d'erreurs dans le stockage de données sur ADN*, Zenodo, 2026. [doi.org/10.5281/zenodo.22308582](https://doi.org/10.5281/zenodo.22308582)
