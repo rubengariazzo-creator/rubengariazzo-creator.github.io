@@ -893,6 +893,40 @@ html {
   position: relative;
 }
 
+/* About page: LinkedIn portrait beside the opening paragraphs (Élise Levet's
+   pattern: the face, with the name in its alt, next to "I'm ..."). */
+.about-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 70ch;
+}
+
+.about-intro p:first-child {
+  margin-top: 0;
+}
+
+.about-portrait {
+  flex: 0 0 auto;
+  width: clamp(8rem, 18vw, 13rem);
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  object-fit: cover;
+}
+
+@media (max-width: 40rem) {
+  .about-intro {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .about-portrait {
+    width: 9rem;
+  }
+}
+
 /* Readable measure: across the 72rem container a paragraph ran ~150
    characters per line on desktop, about twice the comfortable 60 to 75. */
 .page > p:not(.project-cta),
