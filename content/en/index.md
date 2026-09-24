@@ -8,6 +8,47 @@ socialImage: "/assets/img/ruben-gariazzo.jpg"
 title: "Ruben Gariazzo"
 seoTitle: "Ruben Gariazzo · EPF engineering student, aerospace and research"
 description: "Ruben Gariazzo, engineering student at EPF: the Icarus rocket, CAD design, a drone rescue game and independent physics and cryptanalysis research on Zenodo."
+highlights:
+  - tag: "Aerospace"
+    title: "Icarus: nominal flight at C'Space 2026"
+    href: /en/projects/icarus/
+    text: 'A mini-rocket designed, built and launched by a five-person team from EPF Astronomie at the C''Space campaign run by <a href="https://cnes.fr/en">CNES</a> and <a href="https://www.planete-sciences.org">Planète Sciences</a>. My part: the nose cone CAD, 3D-printed parts, stability simulations and the 3D animation in Blender.'
+  - tag: "Research"
+    title: "Three independent studies published on Zenodo"
+    text: 'On the <a href="/en/projects/dna-zeno/">quantum Zeno effect and DNA data storage</a> (2026), the <a href="/en/projects/agapeyeff-cryptanalysis/">D''Agapeyeff cryptogram</a> (2026) and the <a href="/en/projects/anharmonicity/">anharmonicity of a rocking cone</a> (2025).'
+  - tag: "Industry"
+    title: "Quality and metrology internship at Ampere"
+    href: /en/experience/
+    text: "One month in 2026 in the cylinder-block machining shop of the Cléon plant (Renault Group), up to running the 3D metrology station on my own."
+  - tag: "Design"
+    title: "Two everyday objects reimagined"
+    text: 'A <a href="/en/projects/telescopic-watering-can/">telescopic watering can</a> that waters up to 2.50 m without a ladder, and a latched <a href="/en/projects/jewelry-box/">jewelry box</a> printed in 3D, from specifications to prototype.'
+  - tag: "Computer science"
+    title: "Harvard's CS50x and a Python game"
+    text: 'Harvard''s introduction to computer science, tracked problem by problem on the <a href="/en/projects/cs50x/">CS50x</a> page, and a <a href="/en/projects/drone-rescue-game/">drone rescue game</a> playable in the browser.'
+  - tag: "Writing"
+    title: "Finalist, Grand Prix Poésie RATP 2025"
+    href: /en/projects/ratp-poetry-prize/
+    text: "At 17, one of the 100 finalists of France's largest amateur poetry competition, with <em>Danse sur les dunes</em>, published by Éditions Bruno Doucey."
+timeline:
+  - date: "2022"
+    text: 'French national <a href="/en/diplomas/">Brevet diploma</a>, with highest honours.'
+  - date: "2025"
+    text: 'General <a href="/en/diplomas/">Baccalauréat</a> with honours, majoring in Mathematics and Physics-Chemistry.'
+  - date: "August 2025"
+    text: 'Poem published in the finalists'' anthology of the <a href="/en/projects/ratp-poetry-prize/">Grand Prix Poésie RATP</a>.'
+  - date: "September 2025"
+    text: 'Started the engineering programme at <a href="https://www.epf.fr/en">EPF</a>. Joined <a href="/en/experience/">EPF Astronomie</a> (the Icarus project, designing a solid-propellant rocket motor) and Formula EPF''s events team.'
+  - date: "December 2025"
+    text: 'First study published on Zenodo, on the <a href="/en/projects/anharmonicity/">anharmonicity of a rocking cone</a>.'
+  - date: "June to July 2026"
+    text: 'Quality and metrology internship at <a href="/en/experience/">Ampere</a> (Renault Group), Cléon plant.'
+  - date: "Summer 2026"
+    text: 'Nominal flight of the <a href="/en/projects/icarus/">Icarus</a> rocket at the C''Space campaign.'
+  - date: "August 2026"
+    text: 'Study on the <a href="/en/projects/agapeyeff-cryptanalysis/">D''Agapeyeff cryptogram</a> (1939).'
+  - date: "September 2026"
+    text: 'Study on the <a href="/en/projects/dna-zeno/">quantum Zeno effect applied to DNA data storage</a>.'
 ---
 <p class="project-meta-tag">Engineering student at EPF</p>
 
@@ -23,35 +64,19 @@ description: "Ruben Gariazzo, engineering student at EPF: the Icarus rocket, CAD
 
 Alongside my engineering studies, I develop independent technical and research projects and share selected work through open-science platforms such as Zenodo. I am also expanding my computer-science foundations through Harvard's CS50x: Introduction to Computer Science.
 
-## At a glance
+<section class="looking-for">
+<h2>What I'm looking for</h2>
+<p>I am particularly interested in future opportunities in motorsport engineering, Formula 1, aerospace, space technologies, simulation, vehicle dynamics, embedded systems, and software for engineering applications. I welcome connections with engineers, researchers, students, and organisations working on ambitious, high-performance technical challenges: <a href="/en/contact/">get in touch</a>.</p>
+</section>
 
-- **Education**: engineering programme at EPF since 2025; French general Baccalauréat with honours ("mention Bien", 2025, majoring in Mathematics and Physics-Chemistry).
-- **Aerospace**: member of EPF Astronomie, EPF's aerospace club, and of the five-person team that designed, built and launched the experimental mini-rocket [Icarus](/en/projects/icarus/), which achieved a nominal flight at the C'Space 2026 campaign (CNES, Planète Sciences). My part: the nose cone CAD, 3D-printed structural parts, helping run the stability and trajectory simulations, and the project's 3D animation in Blender.
-- **Design**: everyday objects reimagined, the [telescopic watering can](/en/projects/telescopic-watering-can/) and the [jewelry box](/en/projects/jewelry-box/), and a [drone rescue game](/en/projects/drone-rescue-game/) in Python.
-- **Industry**: quality control and metrology internship at Ampere (Renault Group), Cléon plant, in 2026 ([experience](/en/experience/)).
-- **Research**: independent studies on the [quantum Zeno effect applied to DNA data storage](/en/projects/dna-zeno/), the [D'Agapeyeff cryptogram](/en/projects/agapeyeff-cryptanalysis/) and the [anharmonicity of a rocking cone](/en/projects/anharmonicity/).
-- **Computer science**: [CS50x](/en/projects/cs50x/), Harvard University's introduction to computer science.
-- **Writing**: finalist in the [Grand Prix Poésie RATP 2025](/en/projects/ratp-poetry-prize/) at age 17, with the poem published by Éditions Bruno Doucey.
-- **Skills**: mathematics, physics, CATIA, project engineering, Blender, Python, MATLAB, 3D printing.
-- **Languages**: French, English (B2), Spanish (B1).
+## Highlights
+
+{% include "partials/highlights.njk" %}
+
+<p class="skill-line"><strong>Skills</strong>: mathematics, physics, CATIA, project engineering, Blender, Python, MATLAB, 3D printing. <strong>Languages</strong>: French, English (B2), Spanish (B1).</p>
 
 ## Background
 
-- **2022**: French national Brevet diploma, with highest honours ("mention Très Bien").
-- **2025**: general Baccalauréat with honours; finalist in the Grand Prix Poésie RATP. In September, joined EPF, where I became a member of EPF Astronomie (the Icarus project, designing a solid-propellant rocket motor) and of Formula EPF's events team. In December, first study published on Zenodo.
-- **2026**: internship at Ampere (June to July); nominal flight of the Icarus rocket at C'Space; studies on the D'Agapeyeff cryptogram (August) and the quantum Zeno effect (September); 10 pixels adopted in the first images of NASA's Nancy Grace Roman Space Telescope ([diplomas and certifications](/en/diplomas/)).
-
-## What I'm looking for
-
-I am particularly interested in future opportunities in motorsport engineering, Formula 1, aerospace, space technologies, simulation, vehicle dynamics, embedded systems, and software for engineering applications. I welcome connections with engineers, researchers, students, and organisations working on ambitious, high-performance technical challenges.
-
-## Find me
-
-- **ORCID**: [0009-0005-9359-215X](https://orcid.org/0009-0005-9359-215X), the researcher identifier that groups my Zenodo publications.
-- **LinkedIn**: [linkedin.com/in/ruben-gariazzo](https://www.linkedin.com/in/ruben-gariazzo)
-- **GitHub**: [github.com/rubengariazzo-creator](https://github.com/rubengariazzo-creator)
-- **Contact**: [get in touch](/en/contact/)
-
-To cite my work: Ruben Gariazzo (EPF), with the Zenodo DOI listed at the bottom of each research page.
+{% include "partials/timeline.njk" %}
 
 <p><a href="/en/projects/" data-glass-cta>See the projects</a></p>

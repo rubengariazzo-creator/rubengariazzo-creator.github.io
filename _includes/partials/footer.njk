@@ -1,5 +1,10 @@
 <footer class="site-footer">
   <p>© {% currentYear %} {{ site.name }}, {{ footer.rights }}</p>
+  <p class="footer-profiles">
+    <a href="https://www.linkedin.com/in/ruben-gariazzo" rel="me">LinkedIn</a>
+    · <a href="https://github.com/rubengariazzo-creator" rel="me">GitHub</a>
+    · <a href="{{ site.orcid }}" rel="me">ORCID</a>
+  </p>
   <p>
     <a href="{{ '/en/legal-notice/' if lang == 'en' else '/mentions-legales/' }}">{{ footer.legalNotice }}</a>
     · <a href="{{ '/en/terms/' if lang == 'en' else '/conditions-generales/' }}">{{ footer.terms }}</a>

@@ -1,0 +1,9 @@
+<ul class="highlight-grid">
+{%- for h in highlights %}
+<li class="highlight-card">
+<p class="highlight-tag">{{ h.tag }}</p>
+<h3>{% if h.href %}<a href="{{ h.href }}">{{ h.title }}</a>{% else %}{{ h.title }}{% endif %}</h3>
+<p>{{ h.text | safe }}</p>
+</li>
+{%- endfor %}
+</ul>

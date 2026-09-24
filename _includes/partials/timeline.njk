@@ -1,0 +1,5 @@
+<ol class="timeline">
+{%- for item in timeline %}
+<li><span class="timeline-date">{{ item.date }}</span>{{ item.text | safe }}</li>
+{%- endfor %}
+</ol>

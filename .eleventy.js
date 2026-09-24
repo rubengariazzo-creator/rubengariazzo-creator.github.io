@@ -108,9 +108,9 @@ module.exports = function (eleventyConfig) {
         author: { "@id": personId },
       },
     ];
-    if (page.profile) {
+    if (page.profile || page.contact) {
       graph.push({
-        "@type": "ProfilePage",
+        "@type": page.profile ? "ProfilePage" : "ContactPage",
         "@id": `${pageUrl}#webpage`,
         url: pageUrl,
         name: page.title,

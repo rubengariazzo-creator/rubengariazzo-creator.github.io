@@ -33,4 +33,4 @@
 {#- Built by the structuredData filter (.eleventy.js) with JSON.stringify:
     a script tag's content isn't HTML-entity-decoded, so Nunjucks-escaped
     interpolation would leave literal "&#39;" inside the parsed JSON-LD. #}
-<script type="application/ld+json">{{ { url: page.url, lang: lang, title: title, profile: profilePage, publications: publications } | structuredData(site) | safe }}</script>
+<script type="application/ld+json">{{ { url: page.url, lang: lang, title: title, profile: profilePage, contact: contactPage, publications: publications } | structuredData(site) | safe }}</script>
