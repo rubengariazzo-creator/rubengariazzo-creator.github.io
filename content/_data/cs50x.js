@@ -55,7 +55,11 @@ const FR_TRANSLATIONS = {
     reflection:
       "Conception de bases de données relationnelles et SQL : requêtes SELECT/INSERT/UPDATE/DELETE, jointures, index, et pourquoi les requêtes paramétrées évitent les injections SQL.",
   },
-  "Week 8: HTML, CSS, JavaScript": { title: "Semaine 8 : HTML, CSS, JavaScript" },
+  "Week 8: HTML, CSS, JavaScript": {
+    title: "Semaine 8 : HTML, CSS, JavaScript",
+    reflection:
+      "Fonctionnement du web en coulisses : requêtes et réponses HTTP, structure des pages en HTML, mise en forme en CSS et Bootstrap, et interactivité en JavaScript grâce au DOM.",
+  },
   "Week 9: Flask": { title: "Semaine 9 : Flask" },
 };
 
