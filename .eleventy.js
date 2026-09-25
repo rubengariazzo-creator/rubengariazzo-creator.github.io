@@ -28,13 +28,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
 
   // url drives the canonical tag, hreflang alternates, Open Graph/Twitter
-  // image URLs, JSON-LD, sitemap.xml, and llms.txt on every page -- it was
-  // left at the reserved-for-documentation ".example" placeholder (RFC 2606,
-  // guaranteed to never resolve) from the very first commit, so all of those
-  // were silently broken in production (verified: llms.txt and sitemap.xml
-  // were emitting links to a domain that can't exist). Update this the day a
-  // custom domain replaces GitHub Pages -- until then this is the one real
-  // domain the deployed site is actually reachable at.
+  // image URLs, JSON-LD, sitemap.xml, and llms.txt on every page. Custom
+  // domain since 2026-09-25 (DNS at OVH, served by GitHub Pages, which
+  // 301-redirects the old rubengariazzo-creator.github.io URLs here).
   // jobTitle/bio/knowsAbout/sameAs feed the sitewide JSON-LD Person node
   // (seo-head.njk) and llms.txt: one source of truth for facts about Ruben.
   // Only verified, already-published facts. The ORCID iD is the one attached
@@ -42,7 +38,7 @@ module.exports = function (eleventyConfig) {
   // it in sameAs is what lets search engines and AI assistants tie the
   // research DOIs to this person rather than to a homonym.
   eleventyConfig.addGlobalData("site", {
-    url: "https://rubengariazzo-creator.github.io",
+    url: "https://ruben-gariazzo.fr",
     name: "Ruben Gariazzo",
     jobTitle: "Engineering Student",
     school: { name: "EPF - École d'ingénieurs", url: "https://www.epf.fr" },
