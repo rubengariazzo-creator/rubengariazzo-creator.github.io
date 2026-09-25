@@ -3,6 +3,8 @@
 <title>{{ seoTitle or (title if title == site.name else title + " | " + site.name) }}</title>
 <meta name="description" content="{{ description }}">
 <meta name="author" content="{{ site.name }}">
+{#- Bing Webmaster Tools ownership proof for ruben-gariazzo.fr: keep it. #}
+<meta name="msvalidate.01" content="D75141866693B5341E7AFF422A65F9F7">
 {%- if robots %}
 <meta name="robots" content="{{ robots }}">
 {%- endif %}
