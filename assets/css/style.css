@@ -1407,7 +1407,7 @@ body.has-custom-cursor [data-glass-cta] {
      inner element: a CSS animation and GSAP both targeting `transform` on the
      same node fight, and CSS wins while running, silently overriding GSAP's
      centering. */
-  position: fixed;
+  position: absolute;
   width: 40px;
   height: 40px;
   z-index: 220;
@@ -1491,24 +1491,75 @@ body.has-custom-cursor [data-glass-cta] {
   background: var(--accent);
 }
 
-.invader-score {
+/* Opt-in mini-game switch (replaces the old floating score badge): off by
+   default, states the rule, shows the score once playing. */
+.invader-toggle {
   position: fixed;
   right: 1rem;
   bottom: 1rem;
   z-index: 230;
-  padding: 0.3rem 0.6rem;
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.4rem 0.7rem;
   font-family: "SFMono-Regular", ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 0.04em;
-  color: var(--accent-strong);
-  border: 1px solid var(--border);
+  text-transform: uppercase;
+  color: var(--text-muted);
   background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: color 0.2s var(--ease-snap), border-color 0.2s var(--ease-snap);
+}
+
+.invader-toggle:hover,
+.invader-toggle:focus-visible,
+.invader-toggle[aria-pressed="true"] {
+  color: var(--accent-strong);
+  border-color: var(--accent);
+}
+
+.invader-toggle-score:empty {
+  display: none;
+}
+
+.invader-hint {
+  position: fixed;
+  right: 1rem;
+  bottom: 3.5rem;
+  z-index: 230;
+  max-width: min(20rem, calc(100vw - 2rem));
+  margin: 0;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.85rem;
+  color: var(--text);
+  background: var(--bg-elevated);
+  border: 1px solid var(--accent);
+  border-radius: 0.25rem;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.3s var(--ease-snap);
 }
 
-.invader-score.is-visible {
+.invader-hint.is-visible {
   opacity: 1;
+}
+
+/* Phones: text spans the full width, so a floating button would sit on top
+   of it. The toggle drops into the flow at the very bottom of the page. */
+@media (max-width: 48rem) {
+  .invader-toggle {
+    position: static;
+    display: flex;
+    width: fit-content;
+    margin: 0 auto 1.5rem;
+  }
+
+  .invader-hint {
+    bottom: 1rem;
+  }
 }
 
 .invader-easter-egg {

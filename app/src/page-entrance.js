@@ -358,16 +358,11 @@ function showInvaderEasterEgg() {
     .to(overlay, { opacity: 0, duration: 0.4 }, 1.5);
 }
 
-let invaderScoreBadge = null;
+// The score now lives inside the game's own toggle button (see
+// initInvaderGame) instead of a separate floating badge.
+let invaderScoreEl = null;
 function updateInvaderScoreBadge(score) {
-  if (!invaderScoreBadge) {
-    invaderScoreBadge = document.createElement("div");
-    invaderScoreBadge.className = "invader-score";
-    invaderScoreBadge.setAttribute("aria-hidden", "true");
-    document.body.appendChild(invaderScoreBadge);
-  }
-  invaderScoreBadge.textContent = `★ ${score}`;
-  invaderScoreBadge.classList.toggle("is-visible", score > 0);
+  if (invaderScoreEl) invaderScoreEl.textContent = score > 0 ? `★ ${score}` : "";
 }
 
 function addInvaderScore(amount = 1) {
@@ -444,8 +439,10 @@ function rectsOverlap(a, b) {
 // candidate that would overlap one is rejected and retried rather than ever
 // placed. Gives up after 20 tries and skips this spawn cycle entirely rather
 // than forcing a bad placement -- the next scheduled spawn tries again.
-// The page title and the 3D logo are blockers too: a sprite parked on top of
-// "Ruben Gariazzo" was the first thing the site audit screenshot showed.
+// Text and media are blockers too: visitors kept reporting that sprites
+// covered what they were reading, so a sprite may only land in empty space
+// (margins, gaps between blocks). On a dense page that simply means fewer
+// sprites, which is the right trade.
 function findInvaderSpawnPoint() {
   const header = document.querySelector(".site-header");
   const top = (header ? header.offsetHeight : 80) + 40;
@@ -453,7 +450,10 @@ function findInvaderSpawnPoint() {
   const half = 20;
   const buffer = 14;
   const blockers = Array.from(
-    document.querySelectorAll("a, button, input, textarea, select, [role='button'], [data-glass-cta], .invader-sprite, h1, .hero-liquid-mount")
+    document.querySelectorAll(
+      "a, button, input, textarea, select, [role='button'], [data-glass-cta], .invader-sprite, .invader-toggle, " +
+        "h1, h2, h3, p, li, figure, img, video, canvas, table, .hero-liquid-mount, .highlight-card, .stat-item, .looking-for"
+    )
   ).map((el) => el.getBoundingClientRect());
 
   for (let attempt = 0; attempt < 20; attempt++) {
@@ -488,8 +488,10 @@ function spawnInvaderSprite(projectKeys) {
   // and score badge already do for the rest of this game.
   sprite.setAttribute("aria-hidden", "true");
   sprite.innerHTML = `<div class="invader-sprite-bob">${spriteSvg(icon.pattern, icon.colors)}</div>`;
-  sprite.style.left = `${point.x}px`;
-  sprite.style.top = `${point.y}px`;
+  // Page coordinates, not viewport ones: a fixed sprite stayed put while the
+  // text scrolled underneath it, so "spawn only in empty space" did not hold.
+  sprite.style.left = `${point.x + window.scrollX}px`;
+  sprite.style.top = `${point.y + window.scrollY}px`;
   document.body.appendChild(sprite);
 
   // xPercent/yPercent + scale (GSAP's own centering/scaling) instead of a CSS
@@ -516,29 +518,90 @@ function spawnInvaderSprite(projectKeys) {
   });
 }
 
+// Opt-in: the recurring feedback was "we don't know what to do with the
+// sprites" and "they get in the way of reading". So nothing spawns until the
+// visitor presses the corner "Mini-jeu" button, which states the rule; the
+// choice is remembered across pages. Reduced-motion visitors never get here.
+const INVADER_ON_KEY = "invaderGameOn";
+const INVADER_UI = {
+  fr: { label: "Mini-jeu", on: "Mini-jeu actif", hint: "Cliquez sur les envahisseurs qui apparaissent pour marquer des points. 20 points débloquent une surprise. Recliquez ici pour arrêter." },
+  en: { label: "Mini-game", on: "Mini-game on", hint: "Click the invaders that appear to score points. 20 points unlock a surprise. Click here again to stop." },
+};
+
 function initInvaderGame() {
-  updateInvaderScoreBadge(invaderScore());
+  const ui = INVADER_UI[document.documentElement.lang === "fr" ? "fr" : "en"];
   // Every other project's icon is fair game; skip the one whose own page
   // you're standing on (base.njk stamps data-project-key from the page's
   // translationKey front-matter).
   const ownKey = document.body.dataset.projectKey;
   const projectKeys = Object.keys(PROJECT_ICONS).filter((key) => key !== ownKey);
+  let on = false;
+  try {
+    on = localStorage.getItem(INVADER_ON_KEY) === "1";
+  } catch (err) {
+    // Storage blocked: the game just starts off on every page.
+  }
+  let spawnTimer = null;
 
-  (function scheduleNextSpawn() {
+  const toggle = document.createElement("button");
+  toggle.type = "button";
+  toggle.className = "invader-toggle";
+  toggle.title = ui.hint;
+  const labelEl = document.createElement("span");
+  invaderScoreEl = document.createElement("span");
+  invaderScoreEl.className = "invader-toggle-score";
+  toggle.append(labelEl, invaderScoreEl);
+  const hint = document.createElement("p");
+  hint.className = "invader-hint";
+  hint.textContent = ui.hint;
+  document.body.append(toggle, hint);
+
+  function scheduleNextSpawn() {
     // Once the easter egg has fired, the game has nothing left to reward --
-    // spawns drop to a tenth of the rate instead of stopping outright, so the
-    // sprites remain a rare, low-key decoration rather than a constant
-    // interruption for a return visitor who already unlocked everything.
+    // spawns drop to a tenth of the rate instead of stopping outright.
     const slowdown = localStorage.getItem(INVADER_UNLOCKED_KEY) ? 10 : 1;
     const delay = (INVADER_SPAWN_MIN_MS + Math.random() * (INVADER_SPAWN_MAX_MS - INVADER_SPAWN_MIN_MS)) * slowdown;
-    setTimeout(() => {
+    spawnTimer = setTimeout(() => {
       spawnInvaderSprite(projectKeys);
       scheduleNextSpawn();
     }, delay);
-  })();
+  }
+
+  function render() {
+    toggle.setAttribute("aria-pressed", String(on));
+    labelEl.textContent = on ? ui.on : ui.label;
+    updateInvaderScoreBadge(on ? invaderScore() : 0);
+  }
+
+  function setOn(next, showHint) {
+    on = next;
+    try {
+      localStorage.setItem(INVADER_ON_KEY, on ? "1" : "0");
+    } catch (err) {
+      // Not remembered across pages; still works on this one.
+    }
+    clearTimeout(spawnTimer);
+    if (on) {
+      scheduleNextSpawn();
+      if (showHint) {
+        hint.classList.add("is-visible");
+        setTimeout(() => hint.classList.remove("is-visible"), 6000);
+      }
+    } else {
+      hint.classList.remove("is-visible");
+      document.querySelectorAll(".invader-sprite").forEach(despawnInvaderSprite);
+    }
+    render();
+  }
+
+  toggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    setOn(!on, true);
+  });
+  setOn(on, false);
 
   document.addEventListener("click", (event) => {
-    if (event.target.closest(".stl-viewer-mount, .invader-sprite")) return;
+    if (!on || event.target.closest(".stl-viewer-mount, .invader-sprite, .invader-toggle")) return;
     fireInvaderBolt(event.clientX, event.clientY);
   });
 }

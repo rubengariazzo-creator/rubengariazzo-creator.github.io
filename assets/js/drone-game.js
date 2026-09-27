@@ -9,7 +9,8 @@
   const PYODIDE_VERSION = "0.29.5";
   const PYODIDE_JS_URL = `https://cdn.jsdelivr.net/pyodide/v${PYODIDE_VERSION}/full/pyodide.js`;
   // Subresource Integrity for that exact file: a tampered CDN copy is refused
-  // instead of executed. Recompute (sha384, base64) whenever the version changes.
+  // instead of executed. Recompute (sha384, base64) whenever the version changes,
+  // and update the matching CSP path in _includes/layouts/base.njk.
   const PYODIDE_JS_SRI = "sha384-VR47TfKeAmT7vMej7bwOVg0tHTQLLGMSIpsXtFMCZG5OpKZSIXoSLtGY//qHcxc6";
   const SCRIPT_URL = "/assets/downloads/jeu-de-drones/drone-rescue.py";
 
