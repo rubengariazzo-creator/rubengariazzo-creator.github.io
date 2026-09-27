@@ -10,11 +10,15 @@ This site is published on a personal, non-professional basis by Ruben Gariazzo.
 
 Contact: [ruben.gariazzo@epfedu.fr](mailto:ruben.gariazzo@epfedu.fr)
 
+Publication director: Ruben Gariazzo.
+
 Under French law (article 6-III of law n° 2004-575 of 21 June 2004 for confidence in the digital economy), an individual publisher acting in a non-professional capacity is permitted to withhold their personal address from public disclosure.
 
 ## Hosting
 
 This site is hosted by GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA ([github.com](https://github.com)), via the GitHub Pages service. The host may collect technical connection data (including IP addresses) as part of its infrastructure's normal operation; see [GitHub's privacy statement](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement).
+
+The domain name ruben-gariazzo.fr is registered with OVH SAS, 2 rue Kellermann, 59100 Roubaix, France.
 
 ## Third-party resources
 
@@ -27,3 +31,5 @@ Content on this site is the publisher's own work, except for projects carried ou
 ## Personal data
 
 This site sets no non-essential cookies and collects no personal data through any form. It does use your browser's local storage (`localStorage`/`sessionStorage`) for purely functional purposes, never transmitted anywhere: remembering whether the homepage's one-time intro animation has already played during the current session; remembering the last cursor position during the session, for a decorative background effect; remembering whether you have turned on the optional invader mini-game (off by default); and, if you turn it on, keeping its score and whether the 20-point reward has already been unlocked. None of this is personal or identifying information, and all of it can be cleared at any time through your browser's own site-data settings. The contact methods offered are a mail link (`mailto:`), which opens your own email client, and a link to an external LinkedIn profile; no data is transmitted to or stored by the site itself via these links.
+
+Under the GDPR, you can exercise your rights (access, rectification, erasure) by writing to the contact address above, and lodge a complaint with the CNIL, the French data protection authority ([cnil.fr](https://www.cnil.fr)).

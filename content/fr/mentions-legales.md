@@ -10,11 +10,15 @@ Ce site est édité à titre personnel et non professionnel par Ruben Gariazzo.
 
 Contact : [ruben.gariazzo@epfedu.fr](mailto:ruben.gariazzo@epfedu.fr)
 
+Directeur de la publication : Ruben Gariazzo.
+
 Conformément à l'article 6-III de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, l'éditeur, personne physique agissant à titre non professionnel, est autorisé à ne pas communiquer publiquement son adresse personnelle.
 
 ## Hébergement
 
 Ce site est hébergé par GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis ([github.com](https://github.com)), via le service GitHub Pages. L'hébergeur peut collecter des données techniques de connexion (notamment l'adresse IP) dans le cadre du fonctionnement normal de son infrastructure ; voir la [politique de confidentialité de GitHub](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement).
+
+Le nom de domaine ruben-gariazzo.fr est enregistré auprès d'OVH SAS, 2 rue Kellermann, 59100 Roubaix, France.
 
 ## Ressources tierces
 
@@ -27,3 +31,5 @@ Les contenus de ce site sont la production de l'éditeur, à l'exception des pro
 ## Données personnelles
 
 Ce site ne dépose aucun cookie non essentiel et ne collecte aucune donnée personnelle via un formulaire. Il utilise le stockage local de votre navigateur (`localStorage`/`sessionStorage`) pour des usages strictement fonctionnels, jamais transmis : mémoriser si l'animation d'introduction de la page d'accueil a déjà été jouée pendant la session en cours ; retenir la dernière position du curseur pendant la session, pour un effet visuel de fond ; retenir si vous avez activé le mini-jeu optionnel d'envahisseurs (désactivé par défaut) ; et, si vous l'activez, conserver son score et le fait que la récompense à 20 points a déjà été débloquée. Aucune de ces données n'est personnelle ou identifiante, et toutes peuvent être effacées à tout moment via les réglages de données de site de votre navigateur. Les moyens de contact proposés sont un lien de messagerie (`mailto:`), qui ouvre votre propre client de messagerie, et un lien vers un profil LinkedIn externe ; aucune donnée n'est transmise au site ni stockée par lui via ces liens.
+
+Conformément au RGPD, vous pouvez exercer vos droits (accès, rectification, effacement) en écrivant à l'adresse de contact ci-dessus, et introduire une réclamation auprès de la CNIL ([cnil.fr](https://www.cnil.fr)).
