@@ -12,7 +12,7 @@ Simply reading the content on this site (the projects, their write-ups, gallerie
 
 **Drone rescue game** (on the [drone rescue game project page](/en/projects/drone-rescue-game/)): runs the actual Python script shown on that page, executed entirely in your browser via Pyodide (CPython compiled to WebAssembly), loaded from a public CDN. Nothing you type into it is sent to this site or stored anywhere beyond your current browser tab; it resets the moment you leave or reload the page.
 
-**Invader mini-game** (appears while browsing any page): small pixel sprites you can click for points, with an occasional reward at 20 points. Your score is kept in your browser's local storage only, never transmitted anywhere (see the [Legal notice](/en/legal-notice/) for exactly what's stored).
+**Invader mini-game** (off by default, turned on with the "Mini-game" button on every page): once on, small pixel sprites appear that you can click for points, with a reward at 20 points. Your on/off choice and your score are kept in your browser's local storage only, never transmitted anywhere (see the [Legal notice](/en/legal-notice/) for exactly what's stored).
 
 ## No warranty
 

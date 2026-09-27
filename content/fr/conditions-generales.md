@@ -12,7 +12,7 @@ La simple lecture des contenus de ce site (les projets, leur présentation, les 
 
 **Jeu de sauvetage par drones** (sur la [page du projet correspondant](/projets/jeu-de-drones/)) : exécute réellement le script Python présenté sur cette page, entièrement dans votre navigateur grâce à Pyodide (CPython compilé en WebAssembly), chargé depuis un CDN public. Rien de ce que vous y saisissez n'est transmis à ce site ni stocké au-delà de votre onglet de navigateur en cours ; tout est réinitialisé dès que vous quittez ou rechargez la page.
 
-**Mini-jeu d'envahisseurs** (apparaît sur toutes les pages du site) : de petits sprites pixélisés que vous pouvez cliquer pour marquer des points, avec une récompense occasionnelle à 20 points. Votre score est conservé uniquement dans le stockage local de votre navigateur, jamais transmis ailleurs (voir les [Mentions légales](/mentions-legales/) pour le détail exact de ce qui est stocké).
+**Mini-jeu d'envahisseurs** (désactivé par défaut, à activer via le bouton « Mini-jeu » présent sur chaque page) : une fois activé, de petits sprites pixélisés apparaissent, que vous pouvez cliquer pour marquer des points, avec une récompense à 20 points. Votre choix d'activation et votre score sont conservés uniquement dans le stockage local de votre navigateur, jamais transmis ailleurs (voir les [Mentions légales](/mentions-legales/) pour le détail exact de ce qui est stocké).
 
 ## Absence de garantie
 
