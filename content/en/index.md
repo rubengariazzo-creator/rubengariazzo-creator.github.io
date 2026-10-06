@@ -36,7 +36,7 @@ highlights:
 <p><a href="/en/projects/" data-glass-cta>See the projects</a></p>
 
 <div class="about-intro">
-<img class="about-portrait" src="/assets/img/ruben-gariazzo-400.jpg" srcset="/assets/img/ruben-gariazzo-400.jpg 400w, /assets/img/ruben-gariazzo.jpg 800w" sizes="13rem" width="400" height="400" alt="Portrait of Ruben Gariazzo, engineering student at EPF">
+<img class="about-portrait" src="/assets/img/ruben-gariazzo-studio-400.jpg" srcset="/assets/img/ruben-gariazzo-studio-400.jpg 400w, /assets/img/ruben-gariazzo-studio.jpg 768w" sizes="11rem" width="400" height="533" alt="Black and white portrait of Ruben Gariazzo, engineering student at EPF">
 <div>
 <p>I'm Ruben Gariazzo, an engineering student at <a href="https://www.epf.fr/en">EPF</a> in Paris since 2025. What drives me is high-performance engineering: Formula 1, motorsport, aerospace and space systems.</p>
 <p>I like to hold a problem from both ends: model it, design it, code it, then test it against experiments and data. Mechanical design, simulation, programming, electronics, prototyping: this site shows where that has taken me.</p>

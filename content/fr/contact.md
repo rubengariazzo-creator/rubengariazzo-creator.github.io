@@ -7,9 +7,14 @@ contactPage: true
 title: "Contact"
 description: "Contacter Ruben Gariazzo : e-mail, LinkedIn, GitHub, identifiant ORCID, et comment citer ses recherches publiées sur Zenodo."
 ---
-Une question sur un projet, une opportunité, ou simplement envie d'échanger : n'hésitez pas à m'écrire.
+<div class="about-intro">
+<img class="about-portrait about-portrait--square" src="/assets/img/ruben-gariazzo-400.jpg" srcset="/assets/img/ruben-gariazzo-400.jpg 400w, /assets/img/ruben-gariazzo.jpg 800w" sizes="13rem" width="400" height="400" alt="Ruben Gariazzo souriant">
+<div>
+<p>Une question sur un projet, une opportunité, ou simplement envie d'échanger : n'hésitez pas à m'écrire.</p>
 
 <p><a href="mailto:ruben.gariazzo@epfedu.fr" data-glass-cta>Me contacter</a></p>
+</div>
+</div>
 
 ## Me retrouver
 

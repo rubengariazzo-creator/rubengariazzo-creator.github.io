@@ -7,9 +7,14 @@ contactPage: true
 title: "Contact"
 description: "Get in touch with Ruben Gariazzo: email, LinkedIn, GitHub, ORCID iD, and how to cite his research published on Zenodo."
 ---
-A question about a project, an opportunity, or just want to chat: feel free to reach out.
+<div class="about-intro">
+<img class="about-portrait about-portrait--square" src="/assets/img/ruben-gariazzo-400.jpg" srcset="/assets/img/ruben-gariazzo-400.jpg 400w, /assets/img/ruben-gariazzo.jpg 800w" sizes="13rem" width="400" height="400" alt="Smiling portrait of Ruben Gariazzo">
+<div>
+<p>A question about a project, an opportunity, or just want to chat: feel free to reach out.</p>
 
 <p><a href="mailto:ruben.gariazzo@epfedu.fr" data-glass-cta>Get in touch</a></p>
+</div>
+</div>
 
 ## Find me
 
