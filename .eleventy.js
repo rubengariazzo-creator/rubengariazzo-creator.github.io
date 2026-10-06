@@ -46,6 +46,8 @@ module.exports = function (eleventyConfig) {
     // Same portrait and wording as his LinkedIn profile, so every profile
     // describes one recognisable person.
     image: "/assets/img/ruben-gariazzo.jpg",
+    // Studio portrait, listed first in the Person JSON-LD so Google Images has it.
+    studioImage: "/assets/img/ruben-gariazzo-studio.jpg",
     headline: "Engineering Student at EPF | Computer Science, Space Engineering & Research Projects",
     bio: "an engineering student at EPF Engineering School (Paris, France) focused on computer science, space engineering and research projects, with independent physics and cryptanalysis studies published on Zenodo",
     bioFr: "élève ingénieur à l'EPF (Paris, France), tourné vers l'informatique, l'ingénierie spatiale et les projets de recherche, auteur d'études indépendantes en physique et en cryptanalyse publiées sur Zenodo",
@@ -85,7 +87,7 @@ module.exports = function (eleventyConfig) {
         givenName: "Ruben",
         familyName: "Gariazzo",
         url: `${site.url}/`,
-        image: site.url + site.image,
+        image: [site.url + site.studioImage, site.url + site.image],
         jobTitle: site.jobTitle,
         description: fr ? site.bioFr : site.bio,
         homeLocation: { "@type": "Place", name: "Paris, France" },
