@@ -23,6 +23,39 @@
   var tailBuffer = 2;
   var scrubStart = null;
   var scrubRangeEnd = null;
+  // The scroll position sets a target time; the video eases toward it each
+  // frame (and only seeks once the previous seek is done), instead of seeking
+  // on every scroll event, which stuttered on desktop.
+  var targetTime = 0;
+  var shownTime = 0;
+  var easing = false;
+
+  function ease() {
+    if (launched) {
+      easing = false;
+      return;
+    }
+    var diff = targetTime - shownTime;
+    if (Math.abs(diff) < 0.005) {
+      shownTime = targetTime;
+      if (!video.seeking) video.currentTime = shownTime;
+      easing = false;
+      return;
+    }
+    if (!video.seeking) {
+      shownTime += diff * 0.2;
+      video.currentTime = shownTime;
+    }
+    requestAnimationFrame(ease);
+  }
+
+  function easeTo(time) {
+    targetTime = time;
+    if (!easing) {
+      easing = true;
+      requestAnimationFrame(ease);
+    }
+  }
 
   function update() {
     var rect = stage.getBoundingClientRect();
@@ -35,11 +68,15 @@
     var progress = Math.min(Math.max(-rect.top / scrollable, 0), 1);
 
     if (progress < scrubEnd) {
-      if (launched) video.pause();
+      if (launched) {
+        video.pause();
+        shownTime = video.currentTime;
+      }
       launched = false;
-      video.currentTime = scrubStart + (progress / scrubEnd) * (scrubRangeEnd - scrubStart);
+      easeTo(scrubStart + (progress / scrubEnd) * (scrubRangeEnd - scrubStart));
     } else if (!launched) {
       launched = true;
+      targetTime = shownTime = scrubRangeEnd;
       video.play().catch(function () {});
     }
   }

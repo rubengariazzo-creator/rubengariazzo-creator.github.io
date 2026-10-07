@@ -1252,12 +1252,20 @@ html {
    pages) -- never a decorative statistic. */
 .stat-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
   gap: 2rem;
   margin: 3rem 0;
   padding: 2rem 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+}
+
+/* Six figures read best as a 3 x 2 block on a wide screen; narrower
+   auto-fit columns wrapped values like "230 m" across two lines. */
+@media (min-width: 40.01rem) {
+  .stat-grid:has(> :nth-child(5)) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 /* Two columns on phones: one figure per row turned Icarus's six stats into
@@ -1280,9 +1288,10 @@ html {
 .stat-value {
   display: block;
   font-family: "SFMono-Regular", ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
-  font-size: clamp(2.75rem, 3vw + 1.5rem, 4.5rem);
+  font-size: clamp(2.25rem, 2vw + 1rem, 3.5rem);
   font-weight: 700;
   line-height: 1;
+  white-space: nowrap;
   color: var(--accent-strong);
   letter-spacing: -0.02em;
 }
@@ -1821,4 +1830,15 @@ body.has-custom-cursor [data-glass-cta] {
   width: 100%;
   min-width: 52rem;
   height: auto;
+}
+
+/* Lenis drives the smooth scroll on the scroll-video pages; the browser's own
+   smooth scrolling must be off there or the two fight. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+html.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
 }
