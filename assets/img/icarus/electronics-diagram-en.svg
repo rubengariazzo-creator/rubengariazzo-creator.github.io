@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 345" width="1200" height="345" role="img" aria-label="Diagram of Icarus's electronics block" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<title>Diagram of Icarus's electronics block</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#5cc4cc"/></marker></defs>
+<rect x="25" y="30" width="190" height="235" rx="10" fill="#14171c" stroke="#2c333d" stroke-width="1.5"/>
+<circle cx="49" cy="57" r="13" fill="#1f9aa3"/>
+<text x="49" y="62" text-anchor="middle" font-size="15" font-weight="700" fill="#0a0c0f">1</text>
+<text x="71" y="63" font-size="17" font-weight="700" fill="#edeff2">On the rail</text>
+<circle cx="63" cy="108" r="13" fill="#ff5a5a" opacity="0.22"/><circle cx="63" cy="108" r="8" fill="#ff5a5a"/>
+<circle cx="101" cy="108" r="8" fill="none" stroke="#4a525d" stroke-width="2"/>
+<circle cx="139" cy="108" r="8" fill="none" stroke="#4a525d" stroke-width="2"/>
+<text x="41" y="160" font-size="13.5" fill="#adb3bc">Jack plug connected</text>
+<text x="41" y="184" font-size="13.5" fill="#adb3bc">Red LED on</text>
+<text x="41" y="208" font-size="13.5" fill="#adb3bc">Timer on standby</text>
+<line x1="221" y1="147.5" x2="257" y2="147.5" stroke="#5cc4cc" stroke-width="2.5" marker-end="url(#ar)"/>
+<rect x="265" y="30" width="190" height="235" rx="10" fill="#14171c" stroke="#2c333d" stroke-width="1.5"/>
+<circle cx="289" cy="57" r="13" fill="#1f9aa3"/>
+<text x="289" y="62" text-anchor="middle" font-size="15" font-weight="700" fill="#0a0c0f">2</text>
+<text x="311" y="63" font-size="17" font-weight="700" fill="#edeff2">Liftoff</text>
+<circle cx="303" cy="108" r="8" fill="none" stroke="#4a525d" stroke-width="2"/>
+<circle cx="341" cy="108" r="13" fill="none" stroke="#5a9bff" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.8"/><circle cx="341" cy="108" r="8" fill="#5a9bff"/>
+<circle cx="379" cy="108" r="8" fill="none" stroke="#4a525d" stroke-width="2"/>
+<text x="281" y="160" font-size="13.5" fill="#adb3bc">Jack plug pulled out</text>
+<text x="281" y="184" font-size="13.5" fill="#adb3bc">Red LED off</text>
+<text x="281" y="208" font-size="13.5" fill="#adb3bc">Blue LED blinking</text>
+<text x="281" y="232" font-size="13.5" fill="#adb3bc">The countdown starts</text>
+<line x1="461" y1="147.5" x2="497" y2="147.5" stroke="#5cc4cc" stroke-width="2.5" marker-end="url(#ar)"/>
+<rect x="505" y="30" width="190" height="235" rx="10" fill="#14171c" stroke="#2c333d" stroke-width="1.5"/>
+<circle cx="529" cy="57" r="13" fill="#1f9aa3"/>
+<text x="529" y="62" text-anchor="middle" font-size="15" font-weight="700" fill="#0a0c0f">3</text>
+<text x="551" y="63" font-size="17" font-weight="700" fill="#edeff2">Ascent</text>
+<circle cx="543" cy="108" r="8" fill="none" stroke="#4a525d" stroke-width="2"/>
+<circle cx="581" cy="108" r="13" fill="none" stroke="#5a9bff" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.8"/><circle cx="581" cy="108" r="8" fill="#5a9bff"/>
+<circle cx="619" cy="108" r="8" fill="none" stroke="#4a525d" stroke-width="2"/>
+<text x="521" y="160" font-size="13.5" fill="#adb3bc">Countdown set from the</text>
+<text x="521" y="184" font-size="13.5" fill="#adb3bc">StabTraj simulations</text>
+<text x="521" y="208" font-size="13.5" fill="#adb3bc">Ends just after</text>
+<text x="521" y="232" font-size="13.5" fill="#adb3bc">apogee (230 m, 6.7 s)</text>
+<line x1="701" y1="147.5" x2="737" y2="147.5" stroke="#5cc4cc" stroke-width="2.5" marker-end="url(#ar)"/>
+<rect x="745" y="30" width="190" height="235" rx="10" fill="#14171c" stroke="#2c333d" stroke-width="1.5"/>
+<circle cx="769" cy="57" r="13" fill="#1f9aa3"/>
+<text x="769" y="62" text-anchor="middle" font-size="15" font-weight="700" fill="#0a0c0f">4</text>
+<text x="791" y="63" font-size="17" font-weight="700" fill="#edeff2">Deployment</text>
+<circle cx="783" cy="108" r="8" fill="none" stroke="#4a525d" stroke-width="2"/>
+<circle cx="821" cy="108" r="13" fill="none" stroke="#5a9bff" stroke-width="1.5" stroke-dasharray="3 4" opacity="0.8"/><circle cx="821" cy="108" r="8" fill="#5a9bff"/>
+<circle cx="859" cy="108" r="8" fill="none" stroke="#4a525d" stroke-width="2"/>
+<text x="761" y="160" font-size="13.5" fill="#adb3bc">The servo turns and</text>
+<text x="761" y="184" font-size="13.5" fill="#adb3bc">releases a tensioned</text>
+<text x="761" y="208" font-size="13.5" fill="#adb3bc">spring that pushes the</text>
+<text x="761" y="232" font-size="13.5" fill="#adb3bc">hatch: parachute out</text>
+<line x1="941" y1="147.5" x2="977" y2="147.5" stroke="#5cc4cc" stroke-width="2.5" marker-end="url(#ar)"/>
+<rect x="985" y="30" width="190" height="235" rx="10" fill="#14171c" stroke="#2c333d" stroke-width="1.5"/>
+<circle cx="1009" cy="57" r="13" fill="#1f9aa3"/>
+<text x="1009" y="62" text-anchor="middle" font-size="15" font-weight="700" fill="#0a0c0f">5</text>
+<text x="1031" y="63" font-size="17" font-weight="700" fill="#edeff2">Descent</text>
+<circle cx="1023" cy="108" r="8" fill="none" stroke="#4a525d" stroke-width="2"/>
+<circle cx="1061" cy="108" r="8" fill="none" stroke="#4a525d" stroke-width="2"/>
+<circle cx="1099" cy="108" r="13" fill="#3ddc84" opacity="0.22"/><circle cx="1099" cy="108" r="8" fill="#3ddc84"/>
+<text x="1001" y="160" font-size="13.5" fill="#adb3bc">Blue LED off</text>
+<text x="1001" y="184" font-size="13.5" fill="#adb3bc">Green LED on</text>
+<text x="1001" y="208" font-size="13.5" fill="#adb3bc">Rocket under parachute</text>
+<rect x="25" y="291" width="1150" height="40" rx="8" fill="none" stroke="#2c333d" stroke-width="1.5"/>
+<text x="600" y="316" text-anchor="middle" font-size="15" fill="#edeff2">5 V battery  ·  Arduino Nano board (timer)  ·  Servo and 3 LEDs</text>
+</svg>

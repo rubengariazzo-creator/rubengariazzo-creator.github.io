@@ -48,6 +48,8 @@ downloads:
     href: /assets/downloads/icarus/plan-coiffe.pdf
   - label: "Stability and trajectory results (PDF)"
     href: /assets/downloads/icarus/stabilite-trajectoire-en.pdf
+  - label: "Parachute release mechanism (PDF)"
+    href: /assets/downloads/icarus/parachute-mechanism-en.pdf
 cta:
   label: "See all projects"
   href: /en/projects/
@@ -74,6 +76,24 @@ The simulations meet Planète Sciences' stability criteria: a slenderness ratio 
 On the trajectory side: rail exit at 23 m/s, maximum velocity of 74 m/s, maximum acceleration of 135 m/s² (almost 14 g) and apogee at 230 m after 6.7 s. The parachute opens at 8 s and brings the rocket down at 9.9 m/s, for a full flight of 31 s. Without a parachute, the impact would happen at 56 m/s with close to 2,500 J of energy: that is what the recovery system is for.
 
 The full results are available below.
+
+## The recovery electronics
+
+<div class="diagram-scroll" tabindex="0" role="group" aria-label="Electronics diagram, scrolls horizontally">
+<img class="diagram" src="/assets/img/icarus/electronics-diagram-en.svg" alt="Five-step diagram of Icarus's electronics block: on the rail, liftoff, ascent, servo deployment, descent under parachute" width="1200" height="345" loading="lazy">
+</div>
+
+Icarus's electronics block has a single job: opening the parachute at the right moment. It consists of a 5 V battery, an Arduino Nano board acting as a timer, a servo and three indicator LEDs (red, blue and green).
+
+Here is how it works, step by step:
+
+1. **On the rail**: the jack plug is connected and the red LED shows that the system is powered and on standby.
+2. **At liftoff**: the jack plug is pulled out. The red LED goes off, the blue LED starts blinking and the countdown begins.
+3. **During the ascent**: the countdown delay was set using the StabTraj simulations. It ends just after apogee (simulated at 6.7 s), when the rocket has almost finished climbing and its speed is low.
+4. **At deployment**: the servo turns and releases a tensioned spring, which violently pushes the hatch open. The parachute is ejected.
+5. **During the descent**: the blue LED goes off and the green LED comes on, showing that the sequence ran all the way through.
+
+Three photos of the mechanism (hatch closed, hatch open, servo and its arm) are gathered in a downloadable document below.
 
 ## The flight
 

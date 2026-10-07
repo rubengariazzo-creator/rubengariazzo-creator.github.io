@@ -1784,3 +1784,17 @@ body.has-custom-cursor [data-glass-cta] {
   font-size: 0.9rem;
   color: var(--text-muted);
 }
+
+/* Wide process diagrams: scroll sideways on phones instead of shrinking the
+   text to nothing. */
+.diagram-scroll {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.diagram {
+  display: block;
+  width: 100%;
+  min-width: 52rem;
+  height: auto;
+}
