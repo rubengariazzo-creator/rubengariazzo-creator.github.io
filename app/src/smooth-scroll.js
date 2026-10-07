@@ -1,28 +1,45 @@
 import Lenis from "lenis";
 
-// Smooth wheel scrolling for the pages whose hero video is scrubbed by scroll
-// (data-scroll-video). Lenis keeps native scrolling and just eases it, so the
-// scroll events scroll-video.js listens to still fire. Skipped for touch
+// Smooth wheel scrolling for the scrubbed hero video (data-scroll-video) only.
+// Lenis exists while that hero is on screen and is destroyed as soon as the
+// visitor scrolls past it, so the rest of the page keeps plain native scrolling
+// (and a trackpad's own momentum) with nothing fighting it. Skipped for touch
 // devices (already smooth) and reduced-motion visitors.
+const stage = document.querySelector("[data-scroll-video]");
 const smoothOk =
-  document.querySelector("[data-scroll-video]") &&
+  stage &&
   window.matchMedia("(hover: hover) and (pointer: fine)").matches &&
   !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (smoothOk) {
-  const lenis = new Lenis({ lerp: 0.09, wheelMultiplier: 1 });
+  let lenis = null;
+  let frame = 0;
+
   const raf = (time) => {
     lenis.raf(time);
-    requestAnimationFrame(raf);
+    frame = requestAnimationFrame(raf);
   };
-  requestAnimationFrame(raf);
 
-  // The "scroll down" arrow scrolls through Lenis too, not the browser's own
-  // smooth scroll (which would fight it).
+  const start = () => {
+    if (lenis) return;
+    lenis = new Lenis({ lerp: 0.09 });
+    frame = requestAnimationFrame(raf);
+  };
+
+  const stop = () => {
+    if (!lenis) return;
+    cancelAnimationFrame(frame);
+    lenis.destroy();
+    lenis = null;
+  };
+
+  new IntersectionObserver(([entry]) => (entry.isIntersecting ? start() : stop())).observe(stage);
+
+  // The "scroll down" arrow goes through Lenis while it is active.
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (e) => {
       const target = document.querySelector(link.getAttribute("href"));
-      if (!target) return;
+      if (!target || !lenis) return;
       e.preventDefault();
       lenis.scrollTo(target);
     });
