@@ -1,5 +1,6 @@
 ---
 layout: layouts/project.njk
+youtube: true
 order: 2
 translationKey: icarus
 category: "Aerospace"
@@ -98,6 +99,23 @@ Three photos of the mechanism (hatch closed, hatch open, servo and its arm) are 
 
 Icarus lifted off in summer 2026 at C'Space, at the Ger military camp, for a nominal flight confirmed by the official flight certificate (see the gallery).
 
+## The videos
+
+The EPF Astronomie team's two videos: the preparation on the launch rail, then the full flight. They only load from YouTube when you click.
+
+<div class="video-pair">
+<figure>
+<button type="button" class="video-frame" data-youtube="ln1xKORxIPM" data-title="[ICARUS] Launch rail operations, C'Space 2026" aria-label="Play video: [ICARUS] Launch rail operations, C'Space 2026"><img src="/assets/img/icarus/video-operations-rampe.jpg" alt="" width="960" height="540" loading="lazy"></button>
+<figcaption>[ICARUS] Launch rail operations, C'Space 2026</figcaption>
+</figure>
+<figure>
+<button type="button" class="video-frame" data-youtube="rKllDS1oF5s" data-title="[ICARUS] Full flight at C'Space 2026" aria-label="Play video: [ICARUS] Full flight at C'Space 2026"><img src="/assets/img/icarus/video-vol-complet.jpg" alt="" width="960" height="540" loading="lazy"></button>
+<figcaption>[ICARUS] Full flight at C'Space 2026</figcaption>
+</figure>
+</div>
+
 ## Press & mentions
 
 Announced on LinkedIn: ["Nominal flight achieved!" (Icarus at C'Space 2026)](https://www.linkedin.com/feed/update/urn:li:activity:7506806576557613056/), with the project's 3D animation and reactions from the EPF Astronomie team.
+
+Also on LinkedIn: [EPF Astronomie's look back at C'Space 2026](https://www.linkedin.com/posts/epf-astronomie_retour-sur-le-cspace-2026-activity-7511855360081588224-CDHw) and Chimène Tabaste's post, ["From design to nominal flight: Icarus"](https://fr.linkedin.com/posts/chim%C3%A8ne-tabaste-969aa4331_de-la-conception-au-vol-nominal-icarus-activity-7485954383550205952-eefN) (in French).

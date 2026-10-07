@@ -1842,3 +1842,74 @@ html.lenis body {
 html.lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
+
+/* Side-by-side video players: a thumbnail button until clicked, then the
+   YouTube iframe takes its place. Stacks on phones. */
+.video-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+@media (max-width: 40rem) {
+  .video-pair {
+    grid-template-columns: 1fr;
+  }
+}
+
+.video-pair figure {
+  margin: 0;
+}
+
+.video-pair figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.video-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #000;
+  cursor: pointer;
+}
+
+iframe.video-frame {
+  display: block;
+}
+
+.video-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-frame::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(10, 12, 15, 0.72) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%235cc4cc' d='M9 6.5v11l9-5.5z'/%3E%3C/svg%3E") center / 60% no-repeat;
+  border: 1px solid var(--accent-strong);
+}
+
+.video-frame:hover::after,
+.video-frame:focus-visible::after {
+  background-color: rgba(31, 154, 163, 0.5);
+}
+
+iframe.video-frame::after {
+  content: none;
+}

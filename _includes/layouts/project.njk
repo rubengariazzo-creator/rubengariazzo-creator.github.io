@@ -123,3 +123,6 @@ layout: layouts/base.njk
 {%- if gallery and gallery.length %}
 <script src="/assets/js/lightbox.js" defer></script>
 {%- endif %}
+{%- if youtube %}
+<script src="/assets/js/youtube-facade.js?v={{ buildId }}" defer></script>
+{%- endif %}

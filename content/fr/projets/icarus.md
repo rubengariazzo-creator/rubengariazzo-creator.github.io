@@ -1,5 +1,6 @@
 ---
 layout: layouts/project.njk
+youtube: true
 order: 2
 translationKey: icarus
 category: "Aérospatial"
@@ -98,6 +99,23 @@ Trois photos du mécanisme (trappe fermée, trappe ouverte, servomoteur et son b
 
 Icarus a décollé à l'été 2026 lors du C'Space, au camp de Ger, pour un vol nominal confirmé par l'attestation de vol officielle (voir la galerie).
 
+## Les vidéos
+
+Les deux vidéos de l'équipe EPF Astronomie : la préparation en rampe, puis le vol complet. Elles ne se chargent depuis YouTube qu'au clic.
+
+<div class="video-pair">
+<figure>
+<button type="button" class="video-frame" data-youtube="ln1xKORxIPM" data-title="[ICARUS] Opérations en rampe C'Space 2026" aria-label="Lire la vidéo : [ICARUS] Opérations en rampe C'Space 2026"><img src="/assets/img/icarus/video-operations-rampe.jpg" alt="" width="960" height="540" loading="lazy"></button>
+<figcaption>[ICARUS] Opérations en rampe C'Space 2026</figcaption>
+</figure>
+<figure>
+<button type="button" class="video-frame" data-youtube="rKllDS1oF5s" data-title="[ICARUS] Vol complet au C'Space 2026" aria-label="Lire la vidéo : [ICARUS] Vol complet au C'Space 2026"><img src="/assets/img/icarus/video-vol-complet.jpg" alt="" width="960" height="540" loading="lazy"></button>
+<figcaption>[ICARUS] Vol complet au C'Space 2026</figcaption>
+</figure>
+</div>
+
 ## Presse et mentions
 
 Annoncé sur LinkedIn : [« Nominal flight achieved! » (Icarus au C'Space 2026)](https://www.linkedin.com/feed/update/urn:li:activity:7506806576557613056/), avec l'animation 3D du projet et les réactions de l'équipe EPF Astronomie.
+
+Aussi sur LinkedIn : le [retour sur le C'Space 2026 publié par EPF Astronomie](https://www.linkedin.com/posts/epf-astronomie_retour-sur-le-cspace-2026-activity-7511855360081588224-CDHw) et le post de Chimène Tabaste, [« De la conception au vol nominal : Icarus »](https://fr.linkedin.com/posts/chim%C3%A8ne-tabaste-969aa4331_de-la-conception-au-vol-nominal-icarus-activity-7485954383550205952-eefN).
