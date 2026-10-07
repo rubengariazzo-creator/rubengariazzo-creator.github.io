@@ -10,7 +10,13 @@ const smoothOk =
   !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (smoothOk) {
-  const lenis = new Lenis({ lerp: 0.09, wheelMultiplier: 1 });
+  // Trackpads already scroll smoothly with their own momentum; smoothing them
+  // again made the glide stutter when the finger lifted. So only coarse wheel
+  // notches go through Lenis, small trackpad deltas stay native.
+  const lenis = new Lenis({
+    lerp: 0.09,
+    virtualScroll: ({ event }) => !(event.type === "wheel" && event.deltaMode === 0 && Math.abs(event.deltaY) < 50),
+  });
   const raf = (time) => {
     lenis.raf(time);
     requestAnimationFrame(raf);

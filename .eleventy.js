@@ -37,6 +37,9 @@ module.exports = function (eleventyConfig) {
   // to every one of his Zenodo records (checked via the Zenodo API): listing
   // it in sameAs is what lets search engines and AI assistants tie the
   // research DOIs to this person rather than to a homonym.
+  // New value on every build so browsers refetch the stylesheet right after a
+  // deploy instead of serving a stale copy for up to 10 minutes.
+  eleventyConfig.addGlobalData("buildId", Date.now().toString(36));
   eleventyConfig.addGlobalData("site", {
     url: "https://ruben-gariazzo.fr",
     name: "Ruben Gariazzo",

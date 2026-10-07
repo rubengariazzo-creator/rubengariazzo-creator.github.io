@@ -19,7 +19,7 @@ layout: layouts/base.njk
       <a href="#project-content" class="scroll-hint" aria-label="{{ ui.scrollHint }}">↓</a>
     </div>
   </div>
-  <script src="/assets/js/scroll-video.js" defer></script>
+  <script src="/assets/js/scroll-video.js?v={{ buildId }}" defer></script>
   <script type="module" src="/assets/app-dist/smooth-scroll.js"></script>
   {%- elif hero %}
   <figure class="project-hero">
