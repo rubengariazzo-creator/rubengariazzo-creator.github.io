@@ -1833,13 +1833,15 @@ body.has-custom-cursor [data-glass-cta] {
 }
 
 /* Lenis drives the smooth scroll on the scroll-video pages; the browser's own
-   smooth scrolling must be off there or the two fight. */
+   smooth scrolling must be off there at all times (not only while Lenis is
+   mid-glide) or each of its per-frame scroll updates gets re-smoothed and
+   the page jumps, most visibly when scrolling back up. */
 html.lenis,
 html.lenis body {
   height: auto;
 }
 
-html.lenis.lenis-smooth {
+html.lenis {
   scroll-behavior: auto !important;
 }
 
