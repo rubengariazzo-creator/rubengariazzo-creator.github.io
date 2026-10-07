@@ -5,7 +5,7 @@
     {%- if item.type == "video" %}
     <video src="{{ item.src }}" poster="{{ item.poster }}" controls preload="none" aria-label="{{ item.alt }}"></video>
     {%- else %}
-    {% image item.src, item.alt %}
+    <a class="media-gallery-photo" href="/{{ item.src }}" data-lightbox data-lightbox-alt="{{ item.alt }}">{% image item.src, item.alt %}</a>
     {%- endif %}
     {%- if item.link %}
     <p class="media-gallery-caption"><a href="{{ item.link }}" data-lightbox data-lightbox-alt="{{ item.alt }}" data-glass-cta>{{ item.linkLabel }}</a></p>

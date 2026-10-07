@@ -288,6 +288,30 @@ main {
   text-align: center;
 }
 
+.media-gallery-photo {
+  display: block;
+  line-height: 0;
+  cursor: zoom-in;
+}
+
+/* Phones: a two-column mosaic of square tiles instead of one tall photo per
+   row; tapping a tile opens it full size in the lightbox. */
+@media (max-width: 40rem) {
+  .media-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .media-gallery img {
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .media-gallery-caption {
+    font-size: 0.8rem;
+  }
+}
+
 .lightbox-overlay {
   position: fixed;
   inset: 0;

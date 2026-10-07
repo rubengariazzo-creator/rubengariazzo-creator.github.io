@@ -119,6 +119,6 @@ layout: layouts/base.njk
   <p class="project-cta"><a href="{{ cta.href }}" data-glass-cta>{{ cta.label }}</a></p>
   {%- endif %}
 </article>
-{%- if gallery and (gallery | selectattr("link") | list | length) %}
+{%- if gallery and gallery.length %}
 <script src="/assets/js/lightbox.js" defer></script>
 {%- endif %}

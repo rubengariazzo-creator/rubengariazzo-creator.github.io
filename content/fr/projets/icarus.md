@@ -5,7 +5,7 @@ translationKey: icarus
 category: "Aérospatial"
 thumbnail: "assets/img/icarus/IMG_6473.jpg"
 title: "Icarus : mini-fusée lancée au C'Space 2026"
-description: "Icarus, mini-fusée d'EPF Astronomie lancée au C'Space 2026 (CNES, Planète Sciences) : coiffe CAO imprimée en 3D, simulations StabTraj et animation Blender."
+description: "Icarus, mini-fusée d'EPF Astronomie lancée au C'Space 2026 (CNES, Planète Sciences) : coiffe CAO imprimée en 3D, simulations StabTraj, électronique de récupération Arduino et animation Blender."
 logos:
   - src: "assets/img/logos/epf.png"
     alt: "Logo EPF, école d'ingénieurs"
@@ -80,7 +80,7 @@ Le détail complet des résultats est disponible ci-dessous.
 ## L'électronique de récupération
 
 <div class="diagram-scroll" tabindex="0" role="group" aria-label="Schéma de l'électronique, défilement horizontal">
-<img class="diagram" src="/assets/img/icarus/electronique-schema-fr.svg" alt="Schéma en cinq étapes du bloc électronique d'Icarus : sur la rampe, décollage, montée, déclenchement du servomoteur, descente sous parachute" width="1200" height="345" loading="lazy">
+<img class="diagram" src="/assets/img/icarus/electronique-schema-fr.svg" alt="Schéma en quatre étapes du bloc électronique d'Icarus : sur la rampe, décollage, montée, déclenchement du servomoteur et allumage de la LED verte" width="1200" height="370" loading="lazy">
 </div>
 
 Le bloc électronique d'Icarus a une seule mission : ouvrir le parachute au bon moment. Il se compose d'une pile de 5 V, d'une carte Arduino Nano qui joue le rôle de minuteur, d'un servomoteur et de trois LED de contrôle (rouge, bleue et verte).
@@ -90,8 +90,7 @@ Voici son fonctionnement, étape par étape :
 1. **Sur la rampe** : la prise jack est branchée et la LED rouge indique que le système est sous tension et en attente.
 2. **Au décollage** : la prise jack se débranche. La LED rouge s'éteint, la LED bleue se met à clignoter et le décompte démarre.
 3. **Pendant la montée** : le délai du décompte a été réglé grâce aux simulations StabTraj. Il se termine un peu après l'apogée (simulée à 6,7 s), quand la fusée a presque fini de monter et que sa vitesse est réduite.
-4. **Au déclenchement** : le servomoteur tourne et libère un ressort tendu, qui pousse violemment la trappe. Le parachute est éjecté.
-5. **À la descente** : la LED bleue s'éteint et la LED verte s'allume, signe que la séquence s'est déroulée jusqu'au bout.
+4. **Au déclenchement** : le servomoteur tourne et libère un ressort tendu, qui pousse violemment la trappe. Le parachute est éjecté, la LED bleue s'éteint et la LED verte s'allume, signe que la séquence s'est déroulée jusqu'au bout.
 
 Trois photos du mécanisme (trappe fermée, trappe ouverte, servomoteur et son bras) sont réunies dans un document à télécharger ci-dessous.
 

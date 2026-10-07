@@ -5,7 +5,7 @@ translationKey: icarus
 category: "Aerospace"
 thumbnail: "assets/img/icarus/IMG_6473.jpg"
 title: "Icarus: mini-rocket flown at C'Space 2026"
-description: "Icarus, an EPF Astronomie mini-rocket flown at C'Space 2026 (CNES, Planète Sciences): 3D-printed CAD nose cone, StabTraj simulations and a Blender animation."
+description: "Icarus, an EPF Astronomie mini-rocket flown at C'Space 2026 (CNES, Planète Sciences): 3D-printed CAD nose cone, StabTraj simulations, Arduino recovery electronics and a Blender animation."
 logos:
   - src: "assets/img/logos/epf.png"
     alt: "EPF engineering school logo"
@@ -80,7 +80,7 @@ The full results are available below.
 ## The recovery electronics
 
 <div class="diagram-scroll" tabindex="0" role="group" aria-label="Electronics diagram, scrolls horizontally">
-<img class="diagram" src="/assets/img/icarus/electronics-diagram-en.svg" alt="Five-step diagram of Icarus's electronics block: on the rail, liftoff, ascent, servo deployment, descent under parachute" width="1200" height="345" loading="lazy">
+<img class="diagram" src="/assets/img/icarus/electronics-diagram-en.svg" alt="Four-step diagram of Icarus's electronics block: on the rail, liftoff, ascent, servo deployment and green LED coming on" width="1200" height="370" loading="lazy">
 </div>
 
 Icarus's electronics block has a single job: opening the parachute at the right moment. It consists of a 5 V battery, an Arduino Nano board acting as a timer, a servo and three indicator LEDs (red, blue and green).
@@ -90,8 +90,7 @@ Here is how it works, step by step:
 1. **On the rail**: the jack plug is connected and the red LED shows that the system is powered and on standby.
 2. **At liftoff**: the jack plug is pulled out. The red LED goes off, the blue LED starts blinking and the countdown begins.
 3. **During the ascent**: the countdown delay was set using the StabTraj simulations. It ends just after apogee (simulated at 6.7 s), when the rocket has almost finished climbing and its speed is low.
-4. **At deployment**: the servo turns and releases a tensioned spring, which violently pushes the hatch open. The parachute is ejected.
-5. **During the descent**: the blue LED goes off and the green LED comes on, showing that the sequence ran all the way through.
+4. **At deployment**: the servo turns and releases a tensioned spring, which violently pushes the hatch open. The parachute is ejected, the blue LED goes off and the green LED comes on, showing that the sequence ran all the way through.
 
 Three photos of the mechanism (hatch closed, hatch open, servo and its arm) are gathered in a downloadable document below.
 
