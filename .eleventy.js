@@ -89,6 +89,10 @@ module.exports = function (eleventyConfig) {
         name: site.name,
         givenName: "Ruben",
         familyName: "Gariazzo",
+        alternateName: ["Ruben Gariazzo EPF", "Ruben Gariazzo ingénieur"],
+        disambiguatingDescription: fr
+          ? "Ruben Gariazzo, élève ingénieur à l'EPF (Paris), auteur du projet de mini-fusée Icarus et d'études publiées sur Zenodo."
+          : "Ruben Gariazzo, EPF engineering student (Paris), behind the Icarus mini-rocket project and studies published on Zenodo.",
         url: `${site.url}/`,
         image: [site.url + site.studioImage, site.url + site.image],
         jobTitle: site.jobTitle,
