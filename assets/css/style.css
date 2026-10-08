@@ -1651,14 +1651,6 @@ body.has-custom-cursor [data-glass-cta] {
   opacity: 1;
 }
 
-/* Phones: the toggle stays fixed bottom right like on desktop; only the hint
-   moves down to sit beside it. */
-@media (max-width: 48rem) {
-  .invader-hint {
-    bottom: 1rem;
-  }
-}
-
 .invader-easter-egg {
   position: fixed;
   inset: 0;
