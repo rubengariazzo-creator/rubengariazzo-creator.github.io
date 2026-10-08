@@ -1,5 +1,5 @@
 {%- if gallery and gallery.length %}
-<ul class="media-gallery">
+<ul class="media-gallery{{ " media-gallery--tiles" if galleryTiles }}">
   {%- for item in gallery %}
   <li>
     {%- if item.type == "video" %}

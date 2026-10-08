@@ -288,6 +288,13 @@ main {
   text-align: center;
 }
 
+/* Mixed diagrams, renders and drawings: equal tiles, whole image visible. */
+.media-gallery--tiles img {
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: var(--bg-elevated);
+}
+
 .media-gallery-photo {
   display: block;
   line-height: 0;
@@ -309,6 +316,11 @@ main {
 
   .media-gallery-caption {
     font-size: 0.8rem;
+  }
+
+  .media-gallery--tiles img {
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
   }
 }
 
