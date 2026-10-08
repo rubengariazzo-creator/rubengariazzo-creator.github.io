@@ -590,6 +590,15 @@ function initInvaderGame() {
     } else {
       hint.classList.remove("is-visible");
       document.querySelectorAll(".invader-sprite").forEach(despawnInvaderSprite);
+      // Turning the game off resets it: score and the unlocked surprise start over next time.
+      if (showHint) {
+        try {
+          localStorage.removeItem(INVADER_SCORE_KEY);
+          localStorage.removeItem(INVADER_UNLOCKED_KEY);
+        } catch (err) {
+          // Storage blocked: nothing was saved anyway.
+        }
+      }
     }
     render();
   }
