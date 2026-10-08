@@ -44,6 +44,14 @@ stats:
     label: "Masse au décollage"
   - value: "31 s"
     label: "Durée du vol prévue"
+stlModels:
+  - src: "/assets/models/icarus/icarus-coiffe.stl"
+    label: "Coiffe d'Icarus, modèle CAO (glisser pour orbiter)"
+    download:
+      href: /assets/models/icarus/icarus-coiffe.stl
+      label: "Télécharger le STL"
+    config:
+      zUp: true
 downloads:
   - label: "Plan technique de la coiffe (PDF)"
     href: /assets/downloads/icarus/plan-coiffe.pdf
@@ -69,6 +77,10 @@ Icarus mesure 1,14 m pour 1,66 kg au décollage (1,50 kg sans moteur). Elle est 
 - **Les pièces de structure.** J'ai imprimé en 3D la cage de fixation des ailerons (PLA, 6 h 37 d'impression) et les bagues de maintien du moteur (PETG, 1 h 36).
 - **La dynamique de vol.** J'ai simulé la stabilité et la trajectoire avec StabTraj, l'outil de référence de Planète Sciences, pour confirmer qu'Icarus suivrait un vol rectiligne et nominal plutôt que de partir en vrille.
 - **L'animation 3D.** Je l'ai réalisée sous Blender et déclinée en plusieurs formats (écrans TV, bornes, réseaux sociaux). Elle est restée secrète jusqu'à sa révélation à la rentrée.
+
+{% include "partials/stl-viewers.njk" %}
+
+Le modèle de la coiffe ci-dessus se manipule à la souris, et le bouton permet d'en télécharger le fichier STL.
 
 ## Stabilité et trajectoire
 

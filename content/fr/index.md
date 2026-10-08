@@ -7,7 +7,7 @@ profilePage: true
 socialImage: "/assets/img/ruben-gariazzo.jpg"
 title: "Ruben Gariazzo"
 seoTitle: "Ruben Gariazzo · Élève ingénieur EPF, aérospatial et recherche"
-description: "Ruben Gariazzo, élève ingénieur à l'EPF : fusée Icarus, conception CAO, jeu de drones et recherches indépendantes publiées sur Zenodo (physique, cryptanalyse)."
+description: "Ruben Gariazzo, élève ingénieur à l'EPF : fusée Icarus, parapluie ROSEAU, conception CAO, jeu de drones et recherches indépendantes publiées sur Zenodo."
 highlights:
   - tag: "Aérospatial"
     title: "Icarus, vol nominal à C'Space 2026"
@@ -20,6 +20,10 @@ highlights:
     title: "Stage qualité et métrologie chez Ampere"
     href: /experiences/
     text: "Un mois en 2026 dans l'atelier d'usinage de carters-cylindres du site de Cléon (Groupe Renault), avec au bout la responsabilité du poste de métrologie 3D, tout seul."
+  - tag: "Projet personnel"
+    title: "ROSEAU, un parapluie qui plie mais ne rompt pas"
+    href: /projets/roseau/
+    text: "Une pince élastique calibrée qui lâche la baleine d'un parapluie vers 60 km/h au lieu de la laisser casser. J'ai mené ce projet seul, du besoin à une maquette modélisée, avec un rapport, des plans cotés et un modèle 3D à manipuler."
   - tag: "Conception"
     title: "Deux objets du quotidien repensés"
     text: 'Un <a href="/projets/arrosoir-telescopique/">arrosoir télescopique</a> pour arroser jusqu''à 2,50 m sans monter sur une échelle, et une <a href="/projets/boite-a-bijoux/">boîte à bijoux</a> à loquet imprimée en 3D, en première année à l''EPF.'

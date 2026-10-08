@@ -44,6 +44,14 @@ stats:
     label: "Liftoff mass"
   - value: "31 s"
     label: "Predicted flight time"
+stlModels:
+  - src: "/assets/models/icarus/icarus-coiffe.stl"
+    label: "Icarus nose cone, CAD model (drag to orbit)"
+    download:
+      href: /assets/models/icarus/icarus-coiffe.stl
+      label: "Download the STL"
+    config:
+      zUp: true
 downloads:
   - label: "Nose cone technical drawing (PDF)"
     href: /assets/downloads/icarus/plan-coiffe.pdf
@@ -69,6 +77,10 @@ Icarus is 1.14 m long and weighs 1.66 kg at liftoff (1.50 kg without its motor).
 - **Structural parts.** I 3D-printed the fin mounting cage (PLA, 6 h 37 min) and the motor retaining rings (PETG, 1 h 36 min).
 - **Flight dynamics.** I simulated stability and trajectory with StabTraj, Planète Sciences' reference tool, to confirm that Icarus would hold a straight, nominal flight path rather than tumbling.
 - **The 3D animation.** I made it in Blender and delivered it in several formats (TV screens, kiosks, social media). It stayed under wraps until its back-to-school reveal.
+
+{% include "partials/stl-viewers.njk" %}
+
+You can turn the nose cone model above with the mouse, and the button downloads its STL file.
 
 ## Stability and trajectory
 

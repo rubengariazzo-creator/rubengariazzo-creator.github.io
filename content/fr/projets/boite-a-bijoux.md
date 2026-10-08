@@ -3,7 +3,7 @@ layout: layouts/project.njk
 order: 1
 translationKey: boite-a-bijoux
 category: "Mécanique"
-thumbnail: "assets/img/boite-a-bijoux/render-cad.jpg"
+thumbnail: "assets/img/boite-a-bijoux/boite-ouverte-stl.jpg"
 title: "Boîte à bijoux"
 description: "Conception CAO d'une boîte à bijoux en deux itérations : sans puis avec système de loquet, jusqu'à l'impression 3D."
 logos:
@@ -12,8 +12,8 @@ logos:
     url: "https://www.epf.fr"
 hero:
   type: image
-  src: "assets/img/boite-a-bijoux/render-cad.jpg"
-  alt: "Rendu CAO de la boîte à bijoux"
+  src: "assets/img/boite-a-bijoux/boite-ouverte-stl.jpg"
+  alt: "Modèle 3D de la boîte à bijoux ouverte : le loquet est relevé et les deux tiroirs ont pivoté, tiroirs et plaque du haut bien visibles"
 gallery:
   - src: "assets/img/boite-a-bijoux/croquis-concept.jpg"
     alt: "Croquis d'exploration de forme pour la boîte à bijoux"

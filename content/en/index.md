@@ -7,7 +7,7 @@ profilePage: true
 socialImage: "/assets/img/ruben-gariazzo.jpg"
 title: "Ruben Gariazzo"
 seoTitle: "Ruben Gariazzo · EPF engineering student, aerospace and research"
-description: "Ruben Gariazzo, engineering student at EPF: the Icarus rocket, CAD design, a drone rescue game and independent physics and cryptanalysis research on Zenodo."
+description: "Ruben Gariazzo, engineering student at EPF: the Icarus rocket, the ROSEAU umbrella, CAD design, a drone rescue game and independent research on Zenodo."
 highlights:
   - tag: "Aerospace"
     title: "Icarus, nominal flight at C'Space 2026"
@@ -20,6 +20,10 @@ highlights:
     title: "Quality and metrology internship at Ampere"
     href: /en/experience/
     text: "One month in 2026 in the cylinder-block machining shop of the Cléon plant (Renault Group), ending with me running the 3D metrology station on my own."
+  - tag: "Personal project"
+    title: "ROSEAU, an umbrella that bends but does not break"
+    href: /en/projects/roseau-umbrella/
+    text: "A calibrated elastic clip that lets an umbrella rib go at about 60 km/h instead of breaking. I carried this project out alone, from the need to a modelled mock-up, with a report, dimensioned drawings and a 3D model you can handle."
   - tag: "Design"
     title: "Two everyday objects reimagined"
     text: 'A <a href="/en/projects/telescopic-watering-can/">telescopic watering can</a> that reaches 2.50 m without climbing a ladder, and a latched <a href="/en/projects/jewelry-box/">jewelry box</a> printed in 3D, in my first year at EPF.'

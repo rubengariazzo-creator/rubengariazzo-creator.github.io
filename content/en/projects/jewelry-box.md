@@ -3,7 +3,7 @@ layout: layouts/project.njk
 order: 1
 translationKey: boite-a-bijoux
 category: "Mechanical"
-thumbnail: "assets/img/boite-a-bijoux/render-cad.jpg"
+thumbnail: "assets/img/boite-a-bijoux/boite-ouverte-stl.jpg"
 title: "Jewelry box"
 description: "CAD design of a jewelry box across two iterations: without and then with a latch mechanism, through to 3D printing."
 logos:
@@ -12,8 +12,8 @@ logos:
     url: "https://www.epf.fr/en"
 hero:
   type: image
-  src: "assets/img/boite-a-bijoux/render-cad.jpg"
-  alt: "CAD render of the jewelry box"
+  src: "assets/img/boite-a-bijoux/boite-ouverte-stl.jpg"
+  alt: "3D model of the open jewelry box, with the latch raised and both drawers swung out so the drawers and the top plate are clearly visible"
 gallery:
   - src: "assets/img/boite-a-bijoux/croquis-concept.jpg"
     alt: "Early shape-exploration sketches for the jewelry box"

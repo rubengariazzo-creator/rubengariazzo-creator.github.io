@@ -8,11 +8,12 @@
 // unpositioned mesh. A raw STL export per-part has no shared coordinate system --
 // overlaying several of those directly produces a jumbled, misaligned mess, which
 // is exactly what happened before switching to the .3mf export for the jewelry box.
-import { Suspense, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import { OrbitControls, Center } from "@react-three/drei";
 import { STLLoader } from "three/addons/loaders/STLLoader.js";
 import { ThreeMFLoader } from "three/addons/loaders/3MFLoader.js";
+import { toCreasedNormals } from "three/addons/utils/BufferGeometryUtils.js";
 import { Box3, MeshStandardMaterial, Quaternion, Vector3 } from "three";
 import { supportsWebGL, ErrorBoundary } from "../shared/webgl.jsx";
 import StudioEnvironment from "../shared/StudioEnvironment.jsx";
@@ -24,10 +25,12 @@ import StudioEnvironment from "../shared/StudioEnvironment.jsx";
 // light had no relationship to the hero's lighting at all).
 const MATERIAL_PROPS = { color: "#c7ccd4", metalness: 0.3, roughness: 0.4, envMapIntensity: 1.1 };
 
-function StlPart({ src }) {
-  const geometry = useLoader(STLLoader, src);
+function StlPart({ src, config }) {
+  const raw = useLoader(STLLoader, src);
+  // Smooth shading on curved surfaces (an STL has none), sharp edges kept.
+  const geometry = useMemo(() => toCreasedNormals(raw, Math.PI / 6), [raw]);
   return (
-    <mesh geometry={geometry} castShadow receiveShadow>
+    <mesh geometry={geometry} rotation={config?.zUp ? [-Math.PI / 2, 0, 0] : [0, 0, 0]} castShadow receiveShadow>
       <meshStandardMaterial {...MATERIAL_PROPS} />
     </mesh>
   );
@@ -111,7 +114,7 @@ function ThreeMFAssembly({ src, mode, config, stateRef, reduced }) {
 }
 
 function Model({ src, ...animation }) {
-  return src.toLowerCase().endsWith(".3mf") ? <ThreeMFAssembly src={src} {...animation} /> : <StlPart src={src} />;
+  return src.toLowerCase().endsWith(".3mf") ? <ThreeMFAssembly src={src} {...animation} /> : <StlPart src={src} config={animation.config} />;
 }
 
 // Positions the camera from the model's *actual* loaded size instead of a
@@ -163,6 +166,9 @@ export default function StlViewer({ stlSrc, stlLabel, stlMode, stlConfig, stlTog
   const config = parseConfig(stlConfig);
   const labels = (stlToggle || "").split("|");
   const [on, setOn] = useState(config.start === 1 ? 1 : 0);
+  // The model turns by itself until the visitor first grabs it, then it stays
+  // still so one spot can be studied without interruption.
+  const [spinning, setSpinning] = useState(true);
   const stateRef = useRef(on);
   useEffect(() => {
     stateRef.current = on;
@@ -194,7 +200,7 @@ export default function StlViewer({ stlSrc, stlLabel, stlMode, stlConfig, stlTog
           </group>
           <AutoFrameCamera groupRef={groupRef} margin={stlMode === "drawers" ? 1.7 : stlMode === "explode" ? 0.9 : 1.4} />
         </Suspense>
-        <OrbitControls enablePan={false} autoRotate={!reducedMotion} autoRotateSpeed={1.2} />
+        <OrbitControls enablePan={false} autoRotate={spinning && !reducedMotion} autoRotateSpeed={1.2} onStart={() => setSpinning(false)} />
       </Canvas>
       {stlLabel ? <span className="stl-viewer-label">{stlLabel}</span> : null}
       {animated || stlDownload ? (
