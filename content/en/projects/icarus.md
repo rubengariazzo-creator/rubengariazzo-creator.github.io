@@ -6,7 +6,7 @@ translationKey: icarus
 category: "Aerospace"
 thumbnail: "assets/img/icarus/IMG_6473.jpg"
 title: "Icarus: mini-rocket flown at C'Space 2026"
-description: "Icarus, an EPF Astronomie mini-rocket flown at C'Space 2026 (CNES, Planète Sciences): 3D-printed CAD nose cone, StabTraj simulations, Arduino recovery electronics and a Blender animation."
+description: "Icarus, an EPF Astronomie mini-rocket flown at C'Space 2026: 3D-printed CAD nose cone, StabTraj simulations, Arduino electronics, Blender animation."
 logos:
   - src: "assets/img/logos/epf.png"
     alt: "EPF engineering school logo"

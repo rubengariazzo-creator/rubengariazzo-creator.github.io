@@ -2,7 +2,7 @@
 layout: layouts/page.njk
 translationKey: mentions-legales
 title: "Mentions légales"
-description: "Mentions légales du site de Ruben Gariazzo."
+description: "Mentions légales du site de Ruben Gariazzo : éditeur, directeur de la publication, hébergeur GitHub Pages, nom de domaine, données personnelles et RGPD."
 ---
 ## Éditeur du site
 

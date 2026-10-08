@@ -6,7 +6,7 @@ translationKey: icarus
 category: "Aérospatial"
 thumbnail: "assets/img/icarus/IMG_6473.jpg"
 title: "Icarus : mini-fusée lancée au C'Space 2026"
-description: "Icarus, mini-fusée d'EPF Astronomie lancée au C'Space 2026 (CNES, Planète Sciences) : coiffe CAO imprimée en 3D, simulations StabTraj, électronique de récupération Arduino et animation Blender."
+description: "Icarus, mini-fusée d'EPF Astronomie lancée au C'Space 2026 : coiffe CAO imprimée en 3D, simulations StabTraj, électronique Arduino, animation Blender."
 logos:
   - src: "assets/img/logos/epf.png"
     alt: "Logo EPF, école d'ingénieurs"

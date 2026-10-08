@@ -2,7 +2,7 @@
 layout: layouts/page.njk
 translationKey: mentions-legales
 title: "Legal notice"
-description: "Legal notice for Ruben Gariazzo's website."
+description: "Legal notice for Ruben Gariazzo's website: publisher, publication director, GitHub Pages host, domain name, personal data and GDPR."
 ---
 ## Publisher
 
