@@ -20,13 +20,9 @@ highlights:
     title: "Quality and metrology internship at Ampere"
     href: /en/experience/
     text: "One month in 2026 in the cylinder-block machining shop of the Cléon plant (Renault Group), ending with me running the 3D metrology station on my own."
-  - tag: "Personal project"
-    title: "ROSEAU, an umbrella that bends but does not break"
-    href: /en/projects/roseau-umbrella/
-    text: "A calibrated elastic clip that lets an umbrella rib go at about 60 km/h instead of breaking. I carried this project out alone, from the need to a modelled mock-up, with a report, dimensioned drawings and a 3D model you can handle."
   - tag: "Design"
-    title: "Two everyday objects reimagined"
-    text: 'A <a href="/en/projects/telescopic-watering-can/">telescopic watering can</a> that reaches 2.50 m without climbing a ladder, and a latched <a href="/en/projects/jewelry-box/">jewelry box</a> printed in 3D, in my first year at EPF.'
+    title: "Three everyday objects reimagined"
+    text: 'A <a href="/en/projects/telescopic-watering-can/">telescopic watering can</a> that reaches 2.50 m without climbing a ladder, a latched <a href="/en/projects/jewelry-box/">jewelry box</a> printed in 3D, and my personal project <a href="/en/projects/roseau-umbrella/">ROSEAU</a>, an umbrella that lets go before it breaks.'
   - tag: "Computer science"
     title: "Harvard's CS50x and a Python game"
     text: 'Harvard''s introduction to computer science, which I follow problem after problem on the <a href="/en/projects/cs50x/">CS50x</a> page, and a <a href="/en/projects/drone-rescue-game/">drone rescue game</a> you can play right in the browser.'

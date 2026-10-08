@@ -20,13 +20,9 @@ highlights:
     title: "Stage qualité et métrologie chez Ampere"
     href: /experiences/
     text: "Un mois en 2026 dans l'atelier d'usinage de carters-cylindres du site de Cléon (Groupe Renault), avec au bout la responsabilité du poste de métrologie 3D, tout seul."
-  - tag: "Projet personnel"
-    title: "ROSEAU, un parapluie qui plie mais ne rompt pas"
-    href: /projets/roseau/
-    text: "Une pince élastique calibrée qui lâche la baleine d'un parapluie vers 60 km/h au lieu de la laisser casser. J'ai mené ce projet seul, du besoin à une maquette modélisée, avec un rapport, des plans cotés et un modèle 3D à manipuler."
   - tag: "Conception"
-    title: "Deux objets du quotidien repensés"
-    text: 'Un <a href="/projets/arrosoir-telescopique/">arrosoir télescopique</a> pour arroser jusqu''à 2,50 m sans monter sur une échelle, et une <a href="/projets/boite-a-bijoux/">boîte à bijoux</a> à loquet imprimée en 3D, en première année à l''EPF.'
+    title: "Trois objets du quotidien repensés"
+    text: 'Un <a href="/projets/arrosoir-telescopique/">arrosoir télescopique</a> pour arroser jusqu''à 2,50 m sans monter sur une échelle, une <a href="/projets/boite-a-bijoux/">boîte à bijoux</a> à loquet imprimée en 3D, et mon projet personnel <a href="/projets/roseau/">ROSEAU</a>, un parapluie qui lâche avant de casser.'
   - tag: "Informatique"
     title: "CS50x de Harvard et un jeu en Python"
     text: 'Le cours d''introduction à l''informatique de Harvard, que je suis problème après problème sur la page <a href="/projets/cs50x/">CS50x</a>, et un <a href="/projets/jeu-de-drones/">jeu de sauvetage par drones</a> auquel on peut jouer directement dans le navigateur.'
