@@ -38,8 +38,8 @@ highlights:
 <div class="about-intro">
 <img class="about-portrait" src="/assets/img/ruben-gariazzo-studio-400.jpg" srcset="/assets/img/ruben-gariazzo-studio-400.jpg 400w, /assets/img/ruben-gariazzo-studio.jpg 768w" sizes="11rem" width="400" height="533" alt="Black and white portrait of Ruben Gariazzo, engineering student at EPF">
 <div>
-<p>My name is Ruben Gariazzo and I've been an engineering student at <a href="https://www.epf.fr/en">EPF</a> in Paris since 2025. What makes me tick is engineering that moves fast and doesn't forgive approximation, the kind you find in Formula 1, motorsport, aerospace and space.</p>
-<p>I like to grab a problem by both ends. I model it, I draw it, I code it, then I see what experiments and data have to say about it. Mechanical design, simulation, programming, electronics, prototyping, this site shows where that has taken me so far.</p>
+<p>I'm Ruben Gariazzo, an engineering student at <a href="https://www.epf.fr/en">EPF</a> in Paris since 2025. High-performance engineering is what excites me most, whether it is Formula 1, motorsport, aerospace or space systems. I am drawn to fields where every detail matters and where performance can be measured.</p>
+<p>My approach is to treat a problem as a whole, from modelling to design and then code, before testing the result against experiments and data. This site presents the projects where I have applied that approach, in mechanical design, simulation, programming, electronics and prototyping.</p>
 </div>
 </div>
 

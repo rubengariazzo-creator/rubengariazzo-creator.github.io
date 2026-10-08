@@ -31,6 +31,9 @@ stlModels:
   - src: "/assets/models/boite-a-bijoux/boite-assemblee.3mf"
     label: "Assemblage CAO complet, V2 (glisser pour orbiter)"
     mode: drawers
+    download:
+      href: /assets/downloads/boite-a-bijoux/boite-a-bijoux-v2-stl.zip
+      label: "Télécharger les STL"
     toggle: ["Ouvrir", "Fermer"]
     config:
       zUp: true
@@ -39,7 +42,7 @@ stlModels:
       drawersPivot: [-50.3232, 55.6333]
       drawersAngle: 70
       latch: ["loquet", "loquet_cylindre"]
-      latchLift: 80
+      latchLift: 110
 cta:
   label: "Voir les projets"
   href: /projets/
@@ -48,7 +51,7 @@ J'ai conçu sous CATIA une boîte à bijoux compacte et personnalisable (taille,
 
 {% include "partials/stl-viewers.njk" %}
 
-Voici comment elle s'ouvre. Le loquet se soulève, puis les deux tiroirs pivotent autour du cylindre central, chacun dans un sens opposé, pendant que les plaques du haut et du bas restent fixes. Sous CATIA, cela donne trois liaisons cinématiques. Il y a un pivot entre les tiroirs et le cylindre central, des appuis plans entre les pièces empilées et une glissière pour le loquet. Le bouton du visualiseur ci-dessus montre le mouvement en 3D.
+Voici comment elle s'ouvre. Le loquet se soulève, puis les deux tiroirs pivotent autour du cylindre central, chacun dans un sens opposé, pendant que les plaques du haut et du bas restent fixes. Sous CATIA, cela donne trois liaisons cinématiques. Il y a un pivot entre les tiroirs et le cylindre central, des appuis plans entre les pièces empilées et une glissière pour le loquet. Les boutons du visualiseur ci-dessus montrent le mouvement en 3D et permettent de télécharger les fichiers STL de la version 2.
 
 ## V1, sans loquet
 

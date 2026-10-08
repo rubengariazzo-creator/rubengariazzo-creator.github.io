@@ -31,6 +31,9 @@ stlModels:
   - src: "/assets/models/boite-a-bijoux/boite-assemblee.3mf"
     label: "Full CAD assembly, V2 (drag to orbit)"
     mode: drawers
+    download:
+      href: /assets/downloads/boite-a-bijoux/boite-a-bijoux-v2-stl.zip
+      label: "Download the STL files"
     toggle: ["Open", "Close"]
     config:
       zUp: true
@@ -39,7 +42,7 @@ stlModels:
       drawersPivot: [-50.3232, 55.6333]
       drawersAngle: 70
       latch: ["loquet", "loquet_cylindre"]
-      latchLift: 80
+      latchLift: 110
 cta:
   label: "See all projects"
   href: /en/projects/
@@ -48,7 +51,7 @@ I designed a compact, customizable jewelry box (size, number of drawers) in CATI
 
 {% include "partials/stl-viewers.njk" %}
 
-Here is how it opens. The latch lifts, then the two drawers pivot around the central cylinder, each in the opposite direction, while the top and bottom plates stay fixed. In CATIA, that gives three kinematic joints. There is a pivot between the drawers and the central cylinder, planar supports between the stacked parts and a slide for the latch. The button on the viewer above shows the movement in 3D.
+Here is how it opens. The latch lifts, then the two drawers pivot around the central cylinder, each in the opposite direction, while the top and bottom plates stay fixed. In CATIA, that gives three kinematic joints. There is a pivot between the drawers and the central cylinder, planar supports between the stacked parts and a slide for the latch. The buttons on the viewer above show the movement in 3D and let you download the STL files of version 2.
 
 ## V1, without a latch
 
