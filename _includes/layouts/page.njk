@@ -9,7 +9,10 @@ layout: layouts/base.njk
   {%- if heroLiquid %}
   <div class="hero-liquid-stage">
     <div class="hero-liquid-mount" data-react-island="glass-hero" aria-hidden="true"></div>
-    <h1>{{ title }}</h1>
+    <div class="hero-liquid-title">
+      <h1>{{ title }}</h1>
+      {%- if heroTag %}<p class="project-meta-tag">{{ heroTag }}</p>{% endif %}
+    </div>
   </div>
   <script type="module" src="/assets/app-dist/app.js"></script>
   {%- else %}

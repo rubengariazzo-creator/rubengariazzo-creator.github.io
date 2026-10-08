@@ -3,6 +3,7 @@ layout: layouts/page.njk
 translationKey: home
 heroBackground: true
 heroLiquid: true
+heroTag: "Engineering student at EPF"
 profilePage: true
 socialImage: "/assets/img/ruben-gariazzo.jpg"
 title: "Ruben Gariazzo"
@@ -31,8 +32,6 @@ highlights:
     href: /en/projects/ratp-poetry-prize/
     text: "At 17, one of the 100 finalists of France's largest amateur poetry competition, with <em>Danse sur les dunes</em>, published by Éditions Bruno Doucey."
 ---
-<p class="project-meta-tag">Engineering student at EPF</p>
-
 <p><a href="/en/projects/" data-glass-cta>See the projects</a></p>
 
 <div class="about-intro">

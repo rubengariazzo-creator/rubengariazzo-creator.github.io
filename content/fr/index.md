@@ -3,6 +3,7 @@ layout: layouts/page.njk
 translationKey: home
 heroBackground: true
 heroLiquid: true
+heroTag: "Élève ingénieur à l'EPF"
 profilePage: true
 socialImage: "/assets/img/ruben-gariazzo.jpg"
 title: "Ruben Gariazzo"
@@ -31,8 +32,6 @@ highlights:
     href: /projets/poesie-ratp/
     text: "À 17 ans, parmi les 100 finalistes du plus grand concours de poésie amateur de France, avec <em>Danse sur les dunes</em>, publié aux Éditions Bruno Doucey."
 ---
-<p class="project-meta-tag">Élève ingénieur à l'EPF</p>
-
 <p><a href="/projets/" data-glass-cta>Voir les projets</a></p>
 
 <div class="about-intro">

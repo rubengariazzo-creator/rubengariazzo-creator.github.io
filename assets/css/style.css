@@ -1120,6 +1120,16 @@ html {
   gap: clamp(1.5rem, 4vw, 3rem);
 }
 
+.hero-liquid-title {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+}
+
+.hero-liquid-title .project-meta-tag {
+  margin: 0.5rem 0 0;
+}
+
 .hero-liquid-stage h1 {
   position: relative;
   z-index: 1;
