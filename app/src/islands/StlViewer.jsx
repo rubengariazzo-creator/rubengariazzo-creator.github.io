@@ -46,7 +46,7 @@ function swivel(object, base, [px, py], angle) {
 
 // Two ways to animate a loaded 3MF, both driven by one 0..1 progress value:
 //   "explode": each named part slides along its own offset vector (exploded <-> assembled);
-//   "lid":     a latch turns 90 degrees about its pin, then the lid swings about a vertical pivot pin.
+//   "drawers": a latch rises, then two stacked drawers turn about a vertical pin, one each way.
 // Parts are matched by the object names written in the 3MF file.
 function ThreeMFAssembly({ src, mode, config, stateRef, reduced }) {
   const group = useLoader(ThreeMFLoader, src);
@@ -62,14 +62,19 @@ function ThreeMFAssembly({ src, mode, config, stateRef, reduced }) {
           if (obj.name === name && b) obj.position.copy(b.p).addScaledVector(new Vector3(...off), e);
         }
       }
-    } else if (mode === "lid") {
-      const latch = smooth(clamp01(p / 0.35));
-      const lid = smooth(clamp01((p - 0.25) / 0.75));
+    } else if (mode === "drawers") {
+      // The latch rises first, then the two drawers turn about the central pin, one each way;
+      // the top and bottom plates never move.
+      const lift = smooth(clamp01(p / 0.35));
+      const turn = smooth(clamp01((p - 0.25) / 0.75));
       for (const obj of group.children) {
         const b = bases.current.get(obj);
         if (!b) continue;
-        if (obj.name === config.lid) swivel(obj, b, config.lidPivot, (config.lidAngle * Math.PI * lid) / 180);
-        if (obj.name === config.latch) swivel(obj, b, config.latchPivot, (config.latchAngle * Math.PI * latch) / 180);
+        if (config.latch.includes(obj.name)) obj.position.copy(b.p).add(new Vector3(0, 0, config.latchLift * lift));
+        if (obj.name === config.drawers) {
+          const sens = b.p.z < config.drawersSplitZ ? 1 : -1;
+          swivel(obj, b, config.drawersPivot, (sens * config.drawersAngle * Math.PI * turn) / 180);
+        }
       }
     }
   };
@@ -147,7 +152,7 @@ function parseConfig(raw) {
 // front-matter array), so an assembled CAD model (multiple parts) renders as one
 // scene instead of a separate viewer per part.
 // Optional (all set from the project's front matter):
-//   stlMode "explode" | "lid" + stlConfig (JSON) : animated 3MF, see ThreeMFAssembly;
+//   stlMode "explode" | "drawers" + stlConfig (JSON) : animated 3MF, see ThreeMFAssembly;
 //   stlToggle "label when off|label when on"    : the side button that flips the animation;
 //   stlDownload / stlDownloadLabel               : a small download button on the viewer.
 export default function StlViewer({ stlSrc, stlLabel, stlMode, stlConfig, stlToggle, stlDownload, stlDownloadLabel, onReady }) {
@@ -187,7 +192,7 @@ export default function StlViewer({ stlSrc, stlLabel, stlMode, stlConfig, stlTog
               ))}
             </Center>
           </group>
-          <AutoFrameCamera groupRef={groupRef} margin={stlMode === "lid" ? 1.7 : stlMode === "explode" ? 0.9 : 1.4} />
+          <AutoFrameCamera groupRef={groupRef} margin={stlMode === "drawers" ? 1.7 : stlMode === "explode" ? 0.9 : 1.4} />
         </Suspense>
         <OrbitControls enablePan={false} autoRotate={!reducedMotion} autoRotateSpeed={1.2} />
       </Canvas>
