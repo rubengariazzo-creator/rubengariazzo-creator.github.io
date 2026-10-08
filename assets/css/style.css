@@ -952,6 +952,10 @@ html {
   object-fit: cover;
 }
 
+.about-portrait--lg {
+  width: clamp(12rem, 24vw, 16.5rem);
+}
+
 .about-portrait--square {
   width: clamp(8rem, 18vw, 13rem);
   aspect-ratio: 1;
@@ -965,6 +969,10 @@ html {
 
   .about-portrait {
     width: 9rem;
+  }
+
+  .about-portrait--lg {
+    width: 13.5rem;
   }
 }
 
