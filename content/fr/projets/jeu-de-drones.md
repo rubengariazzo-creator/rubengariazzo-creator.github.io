@@ -23,20 +23,20 @@ cta:
   label: "Voir les projets"
   href: /projets/
 ---
-Projet réalisé en binôme avec Ilyane Haida : un jeu de sauvetage sur une grille de 12x12 cases, où des drones doivent localiser des survivants et les acheminer vers un hôpital tout en évitant les tempêtes et les bâtiments, sous contrainte d'autonomie de batterie.
+Avec Ilyane Haida, en binôme, nous avons programmé un jeu de sauvetage sur une grille de 12x12 cases. Des drones doivent localiser des survivants et les amener à un hôpital en évitant les tempêtes et les bâtiments, avec une batterie qui s'épuise.
 
 <div class="drone-game" data-lang="fr">
-  <p class="drone-game-intro">Jouez directement dans le navigateur : ce module exécute réellement le script Python ci-dessous (inchangé, téléchargé en direct), grâce à <strong>Pyodide</strong> (CPython compilé en WebAssembly), sans rien installer. Les déplacements se saisissent dans le champ qui apparaît sous la grille, qui reste visible pendant que vous répondez.</p>
+  <p class="drone-game-intro">Vous pouvez y jouer directement dans le navigateur. Ce module exécute réellement le script Python ci-dessous (inchangé, téléchargé en direct) grâce à <strong>Pyodide</strong> (CPython compilé en WebAssembly), sans rien installer. Les déplacements se saisissent dans le champ qui apparaît sous la grille, et il reste visible pendant que vous répondez.</p>
   <div class="drone-game-rules">
-    <p>Règles du jeu :</p>
+    <p>Les règles du jeu en bref.</p>
     <ul>
-      <li>Grille 12×12 : colonnes <code>A</code> à <code>L</code>, lignes <code>0</code> à <code>11</code>.</li>
-      <li>Symboles : <code>B</code> bâtiment, <code>H</code> hôpital, <code>S</code> survivant, <code>T</code> tempête, <code>D</code> drone.</li>
+      <li>La grille fait 12×12, avec les colonnes <code>A</code> à <code>L</code> et les lignes <code>0</code> à <code>11</code>.</li>
+      <li>Sur la grille, <code>B</code> est un bâtiment, <code>H</code> l'hôpital, <code>S</code> un survivant, <code>T</code> une tempête et <code>D</code> un drone.</li>
       <li>Chaque tour, déplacez jusqu'à 3 drones d'une case (diagonales incluses) pour récupérer les survivants et les ramener à l'hôpital.</li>
       <li>Chaque déplacement coûte 1 point de batterie (+2 pour récupérer un survivant) ; la batterie se recharge sur l'hôpital.</li>
       <li>Une tempête désactive pendant 2 tours tout drone actif qu'elle touche en se déplaçant.</li>
-      <li>+1 point par survivant déposé à l'hôpital. Fin de partie : tous les survivants sauvés, tous les drones hors service, ou 40 tours écoulés.</li>
-      <li>Pour jouer : entrez l'identifiant du drone à déplacer (ou <code>f</code> pour finir le tour), puis sa destination au format <code>colonne ligne</code> (ex. <code>C 5</code>).</li>
+      <li>Chaque survivant déposé à l'hôpital rapporte 1 point. La partie s'arrête quand tous les survivants sont sauvés, quand tous les drones sont hors service ou après 40 tours.</li>
+      <li>Pour jouer, entrez l'identifiant du drone à déplacer (ou <code>f</code> pour finir le tour), puis sa destination au format <code>colonne ligne</code>, par exemple <code>C 5</code>.</li>
     </ul>
   </div>
   <button type="button" class="drone-game-play">Lancer le jeu</button>
@@ -56,4 +56,4 @@ Projet réalisé en binôme avec Ilyane Haida : un jeu de sauvetage sur une gril
 
 ## Architecture
 
-Le programme est structuré en cinq parties : chargement de la configuration (JSON), placement aléatoire des entités, fonctions d'affichage, moteur de déplacement et de règles, et système de score, documentées en détail dans le rapport de projet.
+Le programme tient en cinq parties, le chargement de la configuration (JSON), le placement aléatoire des entités, les fonctions d'affichage, le moteur de déplacement et de règles, et le système de score. Le rapport de projet les détaille toutes.

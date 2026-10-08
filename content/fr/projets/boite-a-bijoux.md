@@ -44,18 +44,20 @@ cta:
   label: "Voir les projets"
   href: /projets/
 ---
-Conception d'une boîte à bijoux modélisée sous CATIA, développée en deux itérations successives, avec pour objectif un rangement compact et personnalisable (taille, nombre de tiroirs).
+J'ai conçu sous CATIA une boîte à bijoux compacte et personnalisable (taille, nombre de tiroirs), en deux itérations successives.
 
-Trois liaisons cinématiques structurent l'ensemble : une liaison pivot entre le couvercle et le corps de la boîte pour l'ouverture et la fermeture, des appuis plans, et une liaison glissière pour les tiroirs.
+{% include "partials/stl-viewers.njk" %}
+
+Voici comment elle s'ouvre. Le loquet se soulève, puis les deux tiroirs pivotent autour du cylindre central, chacun dans un sens opposé, pendant que les plaques du haut et du bas restent fixes. Sous CATIA, cela donne trois liaisons cinématiques. Il y a un pivot entre les tiroirs et le cylindre central, des appuis plans entre les pièces empilées et une glissière pour le loquet. Le bouton du visualiseur ci-dessus montre le mouvement en 3D.
 
 ## V1, sans loquet
 
-Première itération : un corps cylindrique et son couvercle. Les premiers croquis ont servi à déterminer la forme générale de la boîte et le fonctionnement du système de fermeture, ainsi que la position du corps par rapport à son support et l'intégration du cylindre assurant le verrouillage. Ce corps et son couvercle ont ensuite été modélisés puis exportés en STL pour une première impression 3D.
+La première itération était un corps cylindrique avec son couvercle. Mes premiers croquis ont servi à fixer la forme générale de la boîte et le fonctionnement de la fermeture, ainsi que la position du corps sur son support et l'intégration du cylindre qui assure le verrouillage. J'ai ensuite modélisé le corps et son couvercle, puis je les ai exportés en STL pour une première impression 3D.
 
-Les principales difficultés de cette phase ont porté sur le dimensionnement (profondeur, largeur, hauteur des différentes parties) et le nombre de compartiments à intégrer, ainsi que sur le transfert des fichiers CAO vers le logiciel d'impression, préparé et ajusté sous OrcaSlicer.
+Le plus délicat a été le dimensionnement (profondeur, largeur, hauteur des différentes parties), le nombre de compartiments à prévoir, et le passage des fichiers CAO au logiciel d'impression, où je préparais et ajustais tout sous OrcaSlicer.
 
 ## V2, avec loquet
 
-Deuxième itération, réalisée en groupe (4 personnes). Un test de chute sur une boîte de taille réduite a révélé la nécessité d'un loquet pour garder la boîte fermée pendant le transport ou en cas de chute : un besoin non anticipé lors de la conception initiale, apparu seulement à l'usage. Plusieurs tailles de cylindre central ont ensuite été testées par impression 3D en PLA pour déterminer la solution la plus adaptée au mécanisme.
+La deuxième itération s'est faite en groupe de quatre. Un test de chute sur une boîte de taille réduite nous a montré qu'il fallait un loquet pour que la boîte reste fermée pendant le transport ou après une chute. Nous ne l'avions pas anticipé, il n'est apparu qu'à l'usage. Nous avons ensuite testé plusieurs tailles de cylindre central imprimées en 3D en PLA pour trouver la plus adaptée au mécanisme.
 
-Le loquet (imprimé en bleu sur les prototypes) est conçu pour résister au choc et à la torsion à ses trois points de sollicitation : en bas du cylindre, au niveau de la poignée qui dépasse, et entre les tiroirs. Une première version s'est cassée après plusieurs chutes ; elle a été réimprimée avec des paramètres modifiés pour renforcer sa tenue mécanique : impression à l'horizontale, remplissage hexagonal à 25 % sur 3 couches de parois, en PETG plutôt qu'en PLA. Un test de chute, visible ci-dessous, valide cette tenue au choc sur la version renforcée.
+Le loquet (imprimé en bleu sur les prototypes) doit résister au choc et à la torsion en trois points, en bas du cylindre, au niveau de la poignée qui dépasse et entre les tiroirs. La première version s'est cassée après plusieurs chutes. Nous l'avons réimprimée en changeant les paramètres pour la renforcer, à l'horizontale, avec un remplissage hexagonal à 25 % sur 3 couches de parois, et en PETG plutôt qu'en PLA. Le test de chute ci-dessous montre qu'elle encaisse maintenant le choc.

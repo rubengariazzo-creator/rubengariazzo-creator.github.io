@@ -10,7 +10,7 @@ description: "Get in touch with Ruben Gariazzo: email, LinkedIn, GitHub, ORCID i
 <div class="about-intro">
 <img class="about-portrait about-portrait--square" src="/assets/img/ruben-gariazzo-400.jpg" srcset="/assets/img/ruben-gariazzo-400.jpg 400w, /assets/img/ruben-gariazzo.jpg 800w" sizes="13rem" width="400" height="400" alt="Smiling portrait of Ruben Gariazzo">
 <div>
-<p>A question about a project, an opportunity, or just want to chat: feel free to reach out.</p>
+<p>A question about a project, an opportunity to discuss, or just a wish to chat? Write to me, I'm happy to answer.</p>
 
 <p><a href="mailto:ruben.gariazzo@epfedu.fr" data-glass-cta>Get in touch</a></p>
 </div>
@@ -24,4 +24,4 @@ description: "Get in touch with Ruben Gariazzo: email, LinkedIn, GitHub, ORCID i
 
 ## Citing my work
 
-My studies are independent research, published in open access on Zenodo. To cite one: Ruben Gariazzo, followed by the title and DOI listed at the bottom of each research page ([DNA Zeno](/en/projects/dna-zeno/), [D'Agapeyeff cryptogram](/en/projects/agapeyeff-cryptanalysis/), [anharmonicity](/en/projects/anharmonicity/)).
+My studies are independent research, published in open access on Zenodo. To cite one, give Ruben Gariazzo as the author, then the title and the DOI you'll find at the bottom of each research page ([DNA Zeno](/en/projects/dna-zeno/), [D'Agapeyeff cryptogram](/en/projects/agapeyeff-cryptanalysis/), [anharmonicity](/en/projects/anharmonicity/)).

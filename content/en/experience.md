@@ -17,17 +17,17 @@ cta:
 </ul>
 </summary>
 
-One-month execution internship (June-July 2026) in the diesel cylinder block machining workshop (M9R engine) at Ampere's Cleon plant, completed as part of the first year of the engineering program at EPF, fully integrated into the team.
+A one-month execution internship (June-July 2026) in the diesel cylinder block machining workshop (M9R engine) at Ampere's Cleon plant, during my first year of the engineering program at EPF. I was fully integrated into the team.
 
-Tasks: dimensional inspection of machined parts on Mahr metrology machines, visual quality control, measurements on a Zeiss Prismo coordinate measuring machine (3D metrology), leak tightness testing on a dedicated bench (ATEQ), preparation and adjustment of cutting tools (inserts, milling cutters, honing heads), and quality sorting of non-conforming parts.
+Day to day, I checked the dimensions of machined parts on Mahr metrology machines, did visual quality control, measured on the Zeiss Prismo coordinate measuring machine, tested leak tightness on an ATEQ bench, prepared and adjusted cutting tools (inserts, milling cutters, honing heads) and sorted the non-conforming parts.
 
-Diagnosed and helped repair, together with the maintenance team, a breakdown of the leak tightness testing bench. Gained increasing autonomy throughout the internship, eventually running the 3D metrology station and the workshop quality control alone.
+With the maintenance team, I also diagnosed and helped repair a breakdown of the leak tightness bench. I gained autonomy week after week, until I was running the 3D metrology station and the workshop quality control on my own.
 
 <ul class="media-gallery">
   <li>{% image "assets/img/experience-ampere/atelier.jpeg", "View of the diesel cylinder block machining workshop, Ampere Cleon plant" %}</li>
   <li>{% image "assets/img/experience-ampere/zeiss-prismo.jpeg", "Measuring a cylinder block on a Zeiss Prismo coordinate measuring machine" %}</li>
   <li>{% image "assets/img/experience-ampere/reglage-broches.jpeg", "Spindle adjustment station" %}</li>
-  <li>{% image "assets/img/experience-ampere/chariot-outils.jpeg", "Cutting tool cart: milling cutters, drills, and honing heads" %}</li>
+  <li>{% image "assets/img/experience-ampere/chariot-outils.jpeg", "Cutting tool cart, with milling cutters, drills and honing heads" %}</li>
 </ul>
 
 <h3>Documents</h3>
@@ -60,9 +60,9 @@ Diagnosed and helped repair, together with the maintenance team, a breakdown of 
 
 Member of the school's aerospace club since September 2025.
 
-**Solid Fuel Rocket Engine Conceptor** (since September 2025): designing a solid-fuel rocket engine.
+**Solid Fuel Rocket Engine Conceptor** (since September 2025). I'm designing a solid-fuel rocket engine.
 
-**Icarus Project Member** (September 2025 - August 2026): design and manufacturing of a mini rocket for the C'Space launch campaign, within a multidisciplinary team of five. See the [Icarus](/en/projects/icarus/) project.
+**Icarus Project Member** (September 2025 - August 2026). In a multidisciplinary team of five, I designed and built a mini rocket for the C'Space launch campaign. See the [Icarus](/en/projects/icarus/) project.
 </details>
 
 <details class="experience-item">
@@ -73,5 +73,5 @@ Member of the school's aerospace club since September 2025.
 </ul>
 </summary>
 
-Member of the event team at Formula EPF (September 2025 - July 2026): contributed to organizing and delivering events related to the team (presentation days, booths, competitions, partner visits) to promote the association and strengthen its connections with students, faculty, and partners.
+I was part of the event team at Formula EPF (September 2025 - July 2026). We organized the team's events (presentation days, booths, competitions, partner visits) to get the association known and strengthen its ties with students, faculty and partners.
 </details>

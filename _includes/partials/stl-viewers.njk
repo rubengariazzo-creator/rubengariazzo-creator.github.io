@@ -1,0 +1,11 @@
+{%- if stlModels and stlModels.length %}
+<div class="stl-viewer-grid{{ " stl-viewer-grid--single" if stlModels.length == 1 }}">
+{%- for model in stlModels %}
+{%- set parts = model.src if model.src is iterable and model.src is not string else [model.src] %}
+<div class="stl-viewer-mount" data-react-island="stl-viewer" data-stl-src="{{ parts | join('|') }}" data-stl-label="{{ model.label }}"
+{%- if model.mode %} data-stl-mode="{{ model.mode }}" data-stl-config="{{ model.config | dump }}" data-stl-toggle="{{ model.toggle | join('|') }}"{% endif %}
+{%- if model.download %} data-stl-download="{{ model.download.href }}" data-stl-download-label="{{ model.download.label }}"{% endif %}></div>
+{%- endfor %}
+</div>
+<script type="module" src="/assets/app-dist/app.js"></script>
+{%- endif %}

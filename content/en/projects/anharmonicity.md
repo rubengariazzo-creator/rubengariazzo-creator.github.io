@@ -55,24 +55,24 @@ cta:
   label: "See all projects"
   href: /en/projects/
 ---
-Independent physics study of the free rocking motion of a conical glass plate (an inverted cone frustum with a circular base, mass M = 1.087 kg, base radius R = 0.16 m) resting on a table.
+I studied, in physics and independently, the free rocking of a conical glass plate standing on a table, an inverted truncated cone with a circular base, of mass M = 1.087 kg and base radius R = 0.16 m.
 
 ## Theoretical model
 
-The moment of inertia of the cone frustum is computed in polar coordinates from its surface mass density. The real axis of rotation is not the plate's center but its contact point with the table, offset from the center of mass by a distance d experimentally confirmed at about 2.94 cm via video tracking: the Huygens-Steiner theorem then gives the real inertia at the pivot, I ≈ 0.01485 kg·m².
+I compute the moment of inertia of the truncated cone in polar coordinates, from its surface mass density. The real axis of rotation is not the center of the plate but the contact point with the ground, offset from the center of mass by a distance d that video tracking confirms at about 2.94 cm. The Huygens-Steiner theorem then gives the real inertia at the pivot, I ≈ 0.01485 kg·m².
 
-Since the cone frustum has an elliptical cross-section, its radius of curvature differs along the ellipse's minor and major axes: the restoring stiffness, and therefore the oscillation frequency, depends on the rocking axis (anisotropy). The angular momentum theorem applied at the pivot shows that only the torque from this offset d of the center of mass sets the system in motion.
+Because the truncated cone has an elliptical cross-section, its radius of curvature differs along the minor and major axes of the ellipse. The restoring stiffness, and therefore the oscillation frequency, depends on the rocking axis (this is the anisotropy). The angular momentum theorem applied at the pivot shows that only the torque due to this offset d of the center of mass sets the system in motion.
 
 ## Experimental validation
 
-The plate's real motion was tracked frame by frame in Tracker (free video analysis software) to extract position, velocity, and angular acceleration. In parallel, the contact sound was recorded and analyzed in MATLAB via short-time Fourier transform (STFT), to follow the frequency's evolution over time despite damping and anharmonicity.
+I tracked the real motion of the plate frame by frame in Tracker (free video-analysis software) to extract position, velocity and angular acceleration. In parallel, I recorded the contact noise and analyzed it in MATLAB with a short-time Fourier transform (STFT), to follow how the frequency evolves over time despite damping and anharmonicity.
 
 ## Results
 
-- Mean frequency 26.68 Hz, time constant τ = 62.55 s, quality factor Q ≈ 5243.
-- Anharmonicity slope (frequency versus amplitude) positive, +0.2708 Hz/a.u.: the signature of a hardening potential well, consistent with the conical geometry where the restoring force grows faster than linearly with displacement from equilibrium.
-- Energy dissipation estimated directly from the raw video tracking data gave an aberrant result (4 J/s), skewed by measurement noise from manual tracking. Using the exponential energy decay law derived from τ instead, the dissipated power is estimated at 0.0363 W, more precise than the initial global MATLAB fit (0.067 W).
+- The mean frequency is 26.68 Hz, the time constant τ = 62.55 s and the quality factor Q ≈ 5243.
+- The anharmonicity slope (frequency against amplitude) is positive, +0.2708 Hz/a.u. This is the signature of a hardening potential well, consistent with the conical geometry, where the restoring force grows faster than linearly with the distance from equilibrium.
+- Estimated directly from the raw video tracking, the energy dissipation gave an absurd result (4 J/s), skewed by the noise of manual tracking. Going through the exponential decay law of the energy deduced from τ, I get a dissipated power of 0.0363 W, more precise than the initial global MATLAB fit (0.067 W).
 
 ## Citing this work
 
-Published in open access on Zenodo as five companion records (French-language metadata):
+Published in open access on Zenodo as five companion records (with French-language metadata).

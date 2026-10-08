@@ -8,11 +8,11 @@ description: "Diplômes et certifications de Ruben Gariazzo : Baccalauréat, Bre
 ---
 ## Diplômes
 
-*Les documents ci-dessous sont les vraies attestations officielles, telles que délivrées : seuls mon QR code de vérification et ma date et lieu de naissance ont été masqués (bandeau noir) pour préserver ma confidentialité, tout le reste est inchangé. Si vous avez besoin du document original avec son QR code (par exemple pour une vérification officielle), vous pouvez me le demander en me [contactant](/contact/) directement ; il contient des informations personnelles donc je ne l'affiche pas publiquement ici.*
+*Les documents ci-dessous sont les vraies attestations officielles, telles que délivrées. Seuls mon QR code de vérification et ma date et lieu de naissance ont été masqués (bandeau noir) pour préserver ma confidentialité, tout le reste est inchangé. Si vous avez besoin du document original avec son QR code (par exemple pour une vérification officielle), vous pouvez me le demander en me [contactant](/contact/) directement ; il contient des informations personnelles donc je ne l'affiche pas publiquement ici.*
 
 - **Baccalauréat général**, mention Bien, spécialités Mathématiques et Physique-Chimie (session 2025, Académie de Paris)
 - **Diplôme National du Brevet**, mention Très Bien (session 2022, Académie de Paris)
-- **Attestation de compétence en langues vivantes** : Anglais niveau B2, Espagnol niveau B1 (2025)
+- **Attestation de compétence en langues vivantes**, anglais niveau B2 et espagnol niveau B1 (2025)
 
 <details class="doc-details">
   <summary>Attestation du Baccalauréat général</summary>
@@ -32,20 +32,20 @@ description: "Diplômes et certifications de Ruben Gariazzo : Baccalauréat, Bre
 
 ## Certifications
 
-*Ces badges ne comportent aucune information personnelle au-delà du nom, donc aucun masquage n'a été nécessaire ; seule la première page du certificat (qui contient toute l'information utile) est affichée ci-dessous, avec le lien officiel de vérification en ligne.*
+*Ces badges ne comportent aucune information personnelle au-delà du nom, donc aucun masquage n'a été nécessaire. Seule la première page du certificat (qui contient toute l'information utile) est affichée ci-dessous, avec le lien officiel de vérification en ligne.*
 
 - **L'intelligence artificielle... avec intelligence !**, MOOC Inria / Class'Code, France Université Numérique (mars 2026)
 - **Impacts environnementaux du numérique**, MOOC Inria / Class'Code, France Université Numérique (mars 2026)
 - **10 pixels adoptés** dans les premières images du télescope spatial Nancy Grace Roman, campagne publique « Adopt a Pixel » de la NASA (2026)
 
 <details class="doc-details">
-  <summary>Badge Inria / Class'Code : Intelligence Artificielle</summary>
-  {% docPreview "/assets/downloads/diplomes/badge-ia.pdf", lang, "Badge Inria / Class'Code : Intelligence Artificielle" %}
+  <summary>Badge Inria / Class'Code, intelligence artificielle</summary>
+  {% docPreview "/assets/downloads/diplomes/badge-ia.pdf", lang, "Badge Inria / Class'Code, intelligence artificielle" %}
   <p class="doc-links"><a href="/assets/downloads/diplomes/badge-ia.pdf" target="_blank" rel="noopener">{{ ui.openTab }}</a> · <a href="/assets/downloads/diplomes/badge-ia.pdf" download>{{ ui.download }}</a> · <a href="https://openbadgefactory.com/obv3/credentials/1f7ffa80a17b1081a3287e4b402bb15fa92eaaba" target="_blank" rel="noopener">Vérifier ce badge en ligne</a></p>
 </details>
 <details class="doc-details">
-  <summary>Badge Inria / Class'Code : Impacts environnementaux du numérique</summary>
-  {% docPreview "/assets/downloads/diplomes/badge-impacts.pdf", lang, "Badge Inria / Class'Code : Impacts environnementaux du numérique" %}
+  <summary>Badge Inria / Class'Code, impacts environnementaux du numérique</summary>
+  {% docPreview "/assets/downloads/diplomes/badge-impacts.pdf", lang, "Badge Inria / Class'Code, impacts environnementaux du numérique" %}
   <p class="doc-links"><a href="/assets/downloads/diplomes/badge-impacts.pdf" target="_blank" rel="noopener">{{ ui.openTab }}</a> · <a href="/assets/downloads/diplomes/badge-impacts.pdf" download>{{ ui.download }}</a> · <a href="https://openbadgefactory.com/obv3/credentials/0d9ec8853824d3d73f6aca2fbe0d7dbbfc06e401" target="_blank" rel="noopener">Vérifier ce badge en ligne</a></p>
 </details>
 <details class="doc-details">

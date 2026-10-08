@@ -44,18 +44,20 @@ cta:
   label: "See all projects"
   href: /en/projects/
 ---
-Design of a jewelry box modeled in CATIA, developed across two successive iterations, aiming for compact, customizable storage (size, number of drawers).
+I designed a compact, customizable jewelry box (size, number of drawers) in CATIA, over two successive iterations.
 
-Three kinematic joints structure the assembly: a pivot joint between the lid and the body for opening and closing, planar supports, and a sliding joint for the drawers.
+{% include "partials/stl-viewers.njk" %}
+
+Here is how it opens. The latch lifts, then the two drawers pivot around the central cylinder, each in the opposite direction, while the top and bottom plates stay fixed. In CATIA, that gives three kinematic joints. There is a pivot between the drawers and the central cylinder, planar supports between the stacked parts and a slide for the latch. The button on the viewer above shows the movement in 3D.
 
 ## V1, without a latch
 
-First iteration: a cylindrical body and its lid. Early sketches were used to work out the box's general shape and closing mechanism, along with the body's position relative to its support and the integration of the cylinder handling the locking. This body and lid were then modeled and exported to STL for an initial 3D print.
+The first iteration was a cylindrical body with its lid. My early sketches were used to fix the box's general shape and closing mechanism, along with the body's position on its support and the integration of the cylinder that handles the locking. I then modeled the body and lid and exported them to STL for an initial 3D print.
 
-The main difficulties at this stage were dimensioning (depth, width, height of the various parts) and the number of compartments to fit in, as well as transferring the CAD files to the slicing software, prepared and adjusted in OrcaSlicer.
+The trickiest parts were the dimensioning (depth, width, height of the various parts), the number of compartments to fit in, and moving the CAD files to the slicing software, where I prepared and adjusted everything in OrcaSlicer.
 
 ## V2, with a latch
 
-Second iteration, built as a 4-person group project. A drop test on a smaller-scale box revealed the need for a latch to keep the box closed during transport or in a fall: a need that wasn't anticipated during the initial design and only emerged through use. Several central-cylinder sizes were then tested via PLA 3D printing to find the best fit for the mechanism.
+The second iteration was a group project of four. A drop test on a smaller-scale box showed us that a latch was needed to keep the box closed during transport or after a fall. We hadn't anticipated it, and it only emerged through use. We then tested several central-cylinder sizes, 3D-printed in PLA, to find the best fit for the mechanism.
 
-The latch (printed in blue on the prototypes) is designed to resist shock and torsion at its three load points: the bottom of the cylinder, the protruding handle, and between the drawers. An early version broke after several drops; it was reprinted with modified parameters to reinforce it mechanically: printed horizontally, with a 25% hexagonal infill over 3 wall layers, in PETG rather than PLA. A drop test, shown below, validates the shock resistance of this reinforced version.
+The latch (printed in blue on the prototypes) has to resist shock and torsion at three points, the bottom of the cylinder, the protruding handle and between the drawers. The first version broke after several drops. We reprinted it with modified parameters to reinforce it, printed horizontally, with a 25% hexagonal infill over 3 wall layers, in PETG rather than PLA. The drop test below shows that it now takes the shock.

@@ -10,7 +10,7 @@ description: "Contacter Ruben Gariazzo : e-mail, LinkedIn, GitHub, identifiant O
 <div class="about-intro">
 <img class="about-portrait about-portrait--square" src="/assets/img/ruben-gariazzo-400.jpg" srcset="/assets/img/ruben-gariazzo-400.jpg 400w, /assets/img/ruben-gariazzo.jpg 800w" sizes="13rem" width="400" height="400" alt="Ruben Gariazzo souriant">
 <div>
-<p>Une question sur un projet, une opportunité, ou simplement envie d'échanger : n'hésitez pas à m'écrire.</p>
+<p>Une question sur un projet, une opportunité à discuter, ou juste l'envie d'échanger ? Écrivez-moi, je réponds volontiers.</p>
 
 <p><a href="mailto:ruben.gariazzo@epfedu.fr" data-glass-cta>Me contacter</a></p>
 </div>
@@ -24,4 +24,4 @@ description: "Contacter Ruben Gariazzo : e-mail, LinkedIn, GitHub, identifiant O
 
 ## Citer mes travaux
 
-Mes études sont des recherches indépendantes, publiées en accès ouvert sur Zenodo. Pour en citer une : Ruben Gariazzo, suivi du titre et du DOI indiqués en bas de chaque page de recherche ([ADN Zénon](/projets/adn-zenon/), [cryptogramme de D'Agapeyeff](/projets/cryptanalyse-agapeyeff/), [anharmonicité](/projets/anharmonicite/)).
+Mes études sont des recherches indépendantes, publiées en accès ouvert sur Zenodo. Pour en citer une, indiquez Ruben Gariazzo comme auteur, puis le titre et le DOI que vous trouverez en bas de chaque page de recherche ([ADN Zénon](/projets/adn-zenon/), [cryptogramme de D'Agapeyeff](/projets/cryptanalyse-agapeyeff/), [anharmonicité](/projets/anharmonicite/)).

@@ -55,9 +55,9 @@ cta:
   label: "Voir les projets"
   href: /projets/
 ---
-Icarus est une mini-fusée expérimentale conçue, fabriquée et lancée avec un vol nominal lors du C'Space 2026, la campagne de lancement étudiante organisée par le CNES et Planète Sciences au camp militaire de Ger, avec le soutien du 1er RHP.
+Icarus est une mini-fusée expérimentale que nous avons conçue, fabriquée et lancée au C'Space 2026, la campagne de lancement étudiante organisée par le CNES et Planète Sciences au camp militaire de Ger, avec le soutien du 1er RHP. Son vol a été nominal.
 
-Le projet a été mené en équipe de cinq au sein d'EPF Astronomie, le club aérospatial de l'EPF : Camille Gaudeaux (cheffe de projet), Margaux Vahlas, Chimène Tabaste, Ambroise Denduang Wolber et moi-même.
+Nous étions cinq dans EPF Astronomie, le club aérospatial de l'EPF. Camille Gaudeaux dirigeait le projet, avec Margaux Vahlas, Chimène Tabaste, Ambroise Denduang Wolber et moi.
 
 ## La fusée
 
@@ -65,16 +65,16 @@ Icarus mesure 1,14 m pour 1,66 kg au décollage (1,50 kg sans moteur). Elle est 
 
 ## Ma contribution
 
-- **La coiffe** : modélisée sous CATIA, une ogive de 210 mm dimensionnée pour le diamètre de 83 mm du corps, puis imprimée en 3D en PETG (6 h 44 d'impression). Son plan technique est téléchargeable plus bas.
-- **Les pièces de structure** : impression 3D de la cage de fixation des ailerons (PLA, 6 h 37 d'impression) et des bagues de maintien du moteur (PETG, 1 h 36).
-- **La dynamique de vol** : simulations de stabilité et de trajectoire avec StabTraj, l'outil de référence de Planète Sciences, pour confirmer qu'Icarus suivrait un vol rectiligne et nominal plutôt que de partir en vrille.
-- **L'animation 3D** : réalisée sous Blender et déclinée en plusieurs formats (écrans TV, bornes, réseaux sociaux), tenue secrète jusqu'à sa révélation à la rentrée.
+- **La coiffe.** Je l'ai modélisée sous CATIA, une ogive de 210 mm dimensionnée pour le diamètre de 83 mm du corps, puis imprimée en 3D en PETG (6 h 44 d'impression). Son plan technique est téléchargeable plus bas.
+- **Les pièces de structure.** J'ai imprimé en 3D la cage de fixation des ailerons (PLA, 6 h 37 d'impression) et les bagues de maintien du moteur (PETG, 1 h 36).
+- **La dynamique de vol.** J'ai simulé la stabilité et la trajectoire avec StabTraj, l'outil de référence de Planète Sciences, pour confirmer qu'Icarus suivrait un vol rectiligne et nominal plutôt que de partir en vrille.
+- **L'animation 3D.** Je l'ai réalisée sous Blender et déclinée en plusieurs formats (écrans TV, bornes, réseaux sociaux). Elle est restée secrète jusqu'à sa révélation à la rentrée.
 
 ## Stabilité et trajectoire
 
-Les simulations respectent les critères de stabilité de Planète Sciences : une finesse de 14,3 (attendue entre 10 et 20), une portance (Cnα) de 21 (entre 15 et 30) et une marge statique de 6,2 à 6,5 calibres selon que le moteur est plein ou vide. Cette marge dépasse légèrement le maximum conseillé de 6 : le verdict est « surstable », c'est-à-dire une fusée très stable en vol, avec une tendance à s'orienter face au vent.
+Les simulations respectent les critères de stabilité de Planète Sciences. La finesse est de 14,3 (attendue entre 10 et 20), la portance (Cnα) de 21 (entre 15 et 30) et la marge statique de 6,2 à 6,5 calibres selon que le moteur est plein ou vide. Cette marge dépasse légèrement le maximum conseillé de 6. Le verdict est donc « surstable », ce qui veut dire une fusée très stable en vol, avec une tendance à s'orienter face au vent.
 
-Côté trajectoire : sortie de rampe à 23 m/s, vitesse maximale de 74 m/s, accélération maximale de 135 m/s² (près de 14 g) et apogée à 230 m au bout de 6,7 s. Le parachute s'ouvre à 8 s et ramène la fusée à 9,9 m/s, pour un vol complet de 31 s. Sans parachute, l'impact se ferait à 56 m/s avec une énergie de près de 2 500 J : c'est tout l'enjeu du système de récupération.
+Côté trajectoire, la fusée quitte la rampe à 23 m/s, atteint 74 m/s au maximum, subit jusqu'à 135 m/s² (près de 14 g) et culmine à 230 m au bout de 6,7 s. Le parachute s'ouvre à 8 s et ramène la fusée à 9,9 m/s, pour un vol complet de 31 s. Sans parachute, elle toucherait le sol à 56 m/s avec près de 2 500 J, et c'est tout l'enjeu du système de récupération.
 
 Le détail complet des résultats est disponible ci-dessous.
 
@@ -84,14 +84,14 @@ Le détail complet des résultats est disponible ci-dessous.
 <img class="diagram" src="/assets/img/icarus/electronique-schema-fr.svg" alt="Schéma en quatre étapes du bloc électronique d'Icarus : sur la rampe, décollage, montée, déclenchement du servomoteur et allumage de la LED verte" width="1200" height="370" loading="lazy">
 </div>
 
-Le bloc électronique d'Icarus a une seule mission : ouvrir le parachute au bon moment. Il se compose d'une pile de 5 V, d'une carte Arduino Nano qui joue le rôle de minuteur, d'un servomoteur et de trois LED de contrôle (rouge, bleue et verte).
+Le bloc électronique d'Icarus a une seule mission, ouvrir le parachute au bon moment. Il se compose d'une pile de 5 V, d'une carte Arduino Nano qui joue le rôle de minuteur, d'un servomoteur et de trois LED de contrôle (rouge, bleue et verte).
 
-Voici son fonctionnement, étape par étape :
+Voici comment il fonctionne, étape par étape.
 
-1. **Sur la rampe** : la prise jack est branchée et la LED rouge indique que le système est sous tension et en attente.
-2. **Au décollage** : la prise jack se débranche. La LED rouge s'éteint, la LED bleue se met à clignoter et le décompte démarre.
-3. **Pendant la montée** : le délai du décompte a été réglé grâce aux simulations StabTraj. Il se termine un peu après l'apogée (simulée à 6,7 s), quand la fusée a presque fini de monter et que sa vitesse est réduite.
-4. **Au déclenchement** : le servomoteur tourne et libère un ressort tendu, qui pousse violemment la trappe. Le parachute est éjecté, la LED bleue s'éteint et la LED verte s'allume, signe que la séquence s'est déroulée jusqu'au bout.
+1. **Sur la rampe.** La prise jack est branchée et la LED rouge indique que le système est sous tension et en attente.
+2. **Au décollage.** La prise jack se débranche. La LED rouge s'éteint, la LED bleue se met à clignoter et le décompte démarre.
+3. **Pendant la montée.** Le délai du décompte a été réglé grâce aux simulations StabTraj. Il se termine un peu après l'apogée (simulée à 6,7 s), quand la fusée a presque fini de monter et que sa vitesse est réduite.
+4. **Au déclenchement.** Le servomoteur tourne et libère un ressort tendu, qui pousse violemment la trappe. Le parachute est éjecté, la LED bleue s'éteint et la LED verte s'allume, signe que la séquence est allée jusqu'au bout.
 
 Trois photos du mécanisme (trappe fermée, trappe ouverte, servomoteur et son bras) sont réunies dans un document à télécharger ci-dessous.
 
@@ -101,7 +101,7 @@ Icarus a décollé à l'été 2026 lors du C'Space, au camp de Ger, pour un vol 
 
 ## Les vidéos
 
-Les deux vidéos de l'équipe EPF Astronomie : la préparation en rampe, puis le vol complet. Elles ne se chargent depuis YouTube qu'au clic.
+Voici deux vidéos de l'équipe EPF Astronomie, la préparation en rampe puis le vol complet. Elles ne se chargent depuis YouTube qu'au clic.
 
 <div class="video-pair">
 <figure>
@@ -116,6 +116,6 @@ Les deux vidéos de l'équipe EPF Astronomie : la préparation en rampe, puis le
 
 ## Presse et mentions
 
-Annoncé sur LinkedIn : [« Nominal flight achieved! » (Icarus au C'Space 2026)](https://www.linkedin.com/feed/update/urn:li:activity:7506806576557613056/), avec l'animation 3D du projet et les réactions de l'équipe EPF Astronomie.
+Nous l'avons annoncé sur LinkedIn avec [« Nominal flight achieved! » (Icarus au C'Space 2026)](https://www.linkedin.com/feed/update/urn:li:activity:7506806576557613056/), accompagné de l'animation 3D du projet et des réactions de l'équipe EPF Astronomie.
 
-Aussi sur LinkedIn : le [retour sur le C'Space 2026 publié par EPF Astronomie](https://www.linkedin.com/posts/epf-astronomie_retour-sur-le-cspace-2026-activity-7511855360081588224-CDHw) et le post de Chimène Tabaste, [« De la conception au vol nominal : Icarus »](https://fr.linkedin.com/posts/chim%C3%A8ne-tabaste-969aa4331_de-la-conception-au-vol-nominal-icarus-activity-7485954383550205952-eefN).
+On en parle aussi sur LinkedIn, avec le [retour sur le C'Space 2026 publié par EPF Astronomie](https://www.linkedin.com/posts/epf-astronomie_retour-sur-le-cspace-2026-activity-7511855360081588224-CDHw) et le post de Chimène Tabaste, [« De la conception au vol nominal : Icarus »](https://fr.linkedin.com/posts/chim%C3%A8ne-tabaste-969aa4331_de-la-conception-au-vol-nominal-icarus-activity-7485954383550205952-eefN).

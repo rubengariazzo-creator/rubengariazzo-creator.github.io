@@ -44,22 +44,22 @@ cta:
   label: "See all projects"
   href: /en/projects/
 ---
-Independent research study exploring whether the quantum Zeno effect could freeze proton tunneling in DNA base pairs (a mechanism behind mutation-inducing tautomers) to protect DNA-based data storage.
+In this independent study, I asked whether the quantum Zeno effect could freeze the tunneling of protons in DNA base pairs, a mechanism behind tautomeric mutations, in order to protect data stored on DNA.
 
 ## The physical mechanism
 
-The proton in a hydrogen bond (for instance between an adenine and a thymine) has a nonzero probability of crossing the energy barrier separating its canonical position from its tautomeric one, through plain quantum tunneling. This is the switch, a source of mutations during replication, that the study seeks to control.
+The proton of a hydrogen bond (for example between an adenine and a thymine) has a non-zero probability of crossing the energy barrier that separates its canonical position from its tautomeric one, through plain quantum tunneling. This switch, a source of mutations during replication, is what the study tries to control.
 
 ## The algorithm studied
 
-Zeno-effect control would apply, at regular intervals much shorter than the tunneling effect's characteristic time, a projective measurement operator forcing the system to stay in its initial canonical state rather than letting it evolve freely into a superposition. The study formalizes this algorithm mathematically, something the existing literature never spells out.
+Zeno control would consist in applying, at regular intervals much shorter than the characteristic tunneling time, a projective measurement operator that forces the system to stay in its initial canonical state, rather than letting it evolve freely toward a superposition. I formalized this algorithm mathematically, and it had never been spelled out in the existing literature.
 
 ## Theorem and conclusion
 
-By comparing the structural consequences (measurement-photon energy far exceeding bond energy) and thermodynamic consequences (Landauer dissipation) of this active control, the study establishes a no-go theorem: Zeno control of storage DNA is physically and energetically impossible with any conceivable technology. A roadmap of more realistic alternatives (cryogenics, advanced classical error-correcting codes, XNA substrate engineering, machine-learning prediction) is proposed instead.
+I compared the structural consequences of this active control (a measurement photon energy far above the binding energy) and its thermodynamic consequences (Landauer dissipation). From that I draw a no-go theorem. Zeno control of a storage DNA is physically and energetically impossible with any foreseeable technology. I propose instead a roadmap of realistic alternatives (cryogenics, advanced classical error-correcting codes, XNA substrate engineering, machine-learning prediction).
 
-Full report available below in both French and English.
+The full report is available in French and English below.
 
 ## Citing this work
 
-Published in open access on Zenodo, in matching French and English versions:
+Published in open access on Zenodo, in matching French and English versions.

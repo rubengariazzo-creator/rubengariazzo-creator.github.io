@@ -17,17 +17,17 @@ cta:
 </ul>
 </summary>
 
-Stage d'exécution d'un mois (juin-juillet 2026) au sein de l'atelier d'usinage de carters-cylindres diesel (moteur M9R) du site Ampere de Cléon, réalisé dans le cadre de la première année du cycle ingénieur à l'EPF, intégré directement aux équipes.
+Un mois de stage d'exécution (juin-juillet 2026) dans l'atelier d'usinage de carters-cylindres diesel (moteur M9R) du site Ampere de Cléon, pendant ma première année du cycle ingénieur à l'EPF. J'ai été intégré directement aux équipes.
 
-Missions : contrôle dimensionnel des pièces usinées sur machines de métrologie Mahr, contrôle visuel qualité, mesures sur machine de métrologie tridimensionnelle Zeiss Prismo (3D), contrôle d'étanchéité sur banc dédié (ATEQ), préparation et réglage des outils coupants (plaquettes, fraises, têtes de rôdage), et tri qualité des pièces non conformes.
+Au quotidien, je contrôlais les dimensions des pièces usinées sur des machines de métrologie Mahr, je faisais le contrôle visuel qualité, je mesurais sur la machine tridimensionnelle Zeiss Prismo, je testais l'étanchéité sur un banc ATEQ, je préparais et réglais les outils coupants (plaquettes, fraises, têtes de rôdage) et je triais les pièces non conformes.
 
-Diagnostic et réparation, avec l'équipe maintenance, d'une panne du banc de contrôle d'étanchéité. Autonomie progressive tout au long du stage, jusqu'à assurer seul le poste de métrologie 3D et le contrôle qualité de l'atelier.
+Avec l'équipe maintenance, j'ai aussi diagnostiqué puis réparé une panne du banc de contrôle d'étanchéité. J'ai gagné en autonomie semaine après semaine, jusqu'à tenir seul le poste de métrologie 3D et le contrôle qualité de l'atelier.
 
 <ul class="media-gallery">
   <li>{% image "assets/img/experience-ampere/atelier.jpeg", "Vue de l'atelier d'usinage de carters-cylindres diesel, site Ampere de Cléon" %}</li>
   <li>{% image "assets/img/experience-ampere/zeiss-prismo.jpeg", "Mesure d'un carter-cylindre sur machine de métrologie tridimensionnelle Zeiss Prismo" %}</li>
   <li>{% image "assets/img/experience-ampere/reglage-broches.jpeg", "Poste de réglage des broches de perçage" %}</li>
-  <li>{% image "assets/img/experience-ampere/chariot-outils.jpeg", "Chariot d'outils coupants : fraises, forets et têtes de rôdage" %}</li>
+  <li>{% image "assets/img/experience-ampere/chariot-outils.jpeg", "Chariot d'outils coupants, avec fraises, forets et têtes de rôdage" %}</li>
 </ul>
 
 <h3>Documents</h3>
@@ -60,9 +60,9 @@ Diagnostic et réparation, avec l'équipe maintenance, d'une panne du banc de co
 
 Membre du club aérospatial de l'école depuis septembre 2025.
 
-**Solid Fuel Rocket Engine Conceptor** (depuis septembre 2025) : conception d'un moteur-fusée à propergol solide.
+**Solid Fuel Rocket Engine Conceptor** (depuis septembre 2025). Je conçois un moteur-fusée à propergol solide.
 
-**Icarus Project Member** (septembre 2025 - août 2026) : conception et fabrication d'une mini-fusée pour la campagne de lancement C'Space, au sein d'une équipe pluridisciplinaire de cinq personnes. Voir le projet [Icarus](/projets/icarus/).
+**Icarus Project Member** (septembre 2025 - août 2026). Dans une équipe pluridisciplinaire de cinq personnes, j'ai conçu et fabriqué une mini-fusée pour la campagne de lancement C'Space. Voir le projet [Icarus](/projets/icarus/).
 </details>
 
 <details class="experience-item">
@@ -73,5 +73,5 @@ Membre du club aérospatial de l'école depuis septembre 2025.
 </ul>
 </summary>
 
-Membre du pôle événement de Formula EPF (septembre 2025 - juillet 2026) : organisation et réussite des événements liés à l'équipe (journées de présentation, stands, compétitions, visites partenaires), pour promouvoir l'association et renforcer ses liens avec les étudiants, les enseignants et les partenaires.
+J'ai fait partie du pôle événement de Formula EPF (septembre 2025 - juillet 2026). Nous organisions les événements de l'équipe (journées de présentation, stands, compétitions, visites partenaires) pour faire connaître l'association et resserrer ses liens avec les étudiants, les enseignants et les partenaires.
 </details>

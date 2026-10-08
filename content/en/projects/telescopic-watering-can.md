@@ -34,47 +34,47 @@ cta:
   label: "See all projects"
   href: /en/projects/
 ---
-Six-person group project carried out in late 2025 during my first year at EPF, as part of an innovation challenge: designing a watering can that reaches hard-to-access plants (hanging baskets, tall hedges, wall planters) without a ladder.
+There were six of us in late 2025, in our first year at EPF, with an innovation challenge to take on. We had to design a watering can able to water hard-to-reach plants without a ladder (hanging baskets, tall hedges, window boxes on a facade).
 
 ## The need
 
-The functional specification targets private individuals, tenants who cannot install automatic watering, amateur gardeners, small businesses (florists, schools, associations) and elderly people or people with reduced mobility who want to avoid carrying heavy loads or climbing a ladder.
+The functional specification targets private individuals, tenants who can't install automatic watering, amateur gardeners, small businesses (florists, schools, associations) and elderly or less mobile people who want to avoid carrying heavy loads or climbing a ladder.
 
-The analysis of existing products revealed the missing link. A classic watering can has a limited reach and becomes risky when lifted full above your head. Watering poles are heavy and unstable. Backpack sprayers mean carrying several kilos. Automatic systems are expensive, noisy and hard to set up at home.
+Looking at what already exists, we saw where the missing link was hiding. A classic watering can has a limited reach and becomes dangerous when you lift it full above your head. Watering poles are heavy and unstable. Backpack sprayers mean carrying several kilos. Automatic systems are expensive, noisy and hard to install at home.
 
 ## The specification
 
-The functional specification (version 3) focuses on the "what" rather than the "how":
+The functional specification (version 3) says what the watering can must do, not how it must do it. Among other things, it requires the following.
 
-- water at a nozzle height of at least 2.50 m, with a pressure of at least 0.25 bar;
-- hold up to 8 L of water, with an empty mass of 2.5 kg at most;
-- be usable and carried by a single person, with one-handed spray adjustment;
-- run only on the user's own energy, with an effort below 30 N;
-- stay easy to maintain: an opening of at least 80 mm and parts that come apart without tools.
+- Water from an outlet at least 2.50 m high, at a pressure of at least 0.25 bar.
+- Hold up to 8 L of water, for an empty mass of at most 2.5 kg.
+- Stay usable and portable by a single person, with a jet adjustable with one hand.
+- Run only on the user's own energy, with an effort below 30 N.
+- Stay easy to maintain, with an opening of at least 80 mm and parts that come apart without tools.
 
 ## Design process
 
-After the specification, the team deliberately widened the range of ideas (brainstorming, mind maps) before converging. Two inspirations shaped the concept: the rings of a fishing rod, to guide the hose along the mast, and the piston pump of inflatable mattresses, to pressurize the water without electricity.
+Once the specification was set, we deliberately widened the field of ideas (brainstorming, mind maps) before converging. Two inspirations guided the concept. A fishing rod's guide rings gave us the idea of guiding the hose along the mast, and the piston pump of an inflatable mattress gave us the idea of pressurizing the water without electricity.
 
-Each subsystem was then decided with a Pugh matrix against a reference (a sprayer can with a diaphragm pump). The pedal beat the push button, the crank and the lever; the piston pump beat the diaphragm, screw and centrifugal pumps; plastic beat aluminium and stainless steel; and a flexible hose with a rigid nozzle beat fixed nozzles.
+We then settled each subsystem with a Pugh matrix, against a reference (a watering can with a sprayer and diaphragm pump). The pedal beat the button, the crank and the lever. The piston pump beat diaphragm, screw and centrifugal pumps, plastic beat aluminium and stainless steel, and the flexible hose with a rigid nozzle beat fixed nozzles.
 
-Four technical hurdles were solved:
+Four technical locks still had to be opened.
 
-- **Pressurizing**: a pedal-driven piston pump, with intake and discharge valves that turn muscle effort into pressure in the tank.
-- **The hose**: an automatic reel connected to the pump through a hollow-shaft rotary joint with O-rings, for a watertight link between the fixed part and the spinning drum.
-- **Stability**: a lowered centre of gravity by putting the heavy mechanics in the base, and a ground triangulation with wide-set wheels and a flared rear foot.
-- **Guiding at height**: a telescopic mast fitted with rings that follow the hose as it extends, with no tangling.
+- **Pressurizing.** A piston pump driven by a pedal, with intake and delivery valves, turns muscle effort into pressure in the tank.
+- **The hose.** An automatic reel is connected to the pump by a rotary joint with a hollow shaft and O-rings, for a watertight link between the fixed part and the rotating drum.
+- **Stability.** We lower the center of gravity by putting the heavy mechanics in the base, and we triangulate on the ground with widely spaced wheels and a flared rear foot.
+- **Guiding at height.** A telescopic mast fitted with rings accompanies the hose as it extends, without tangling.
 
 ## Chosen solution
 
 - Metal telescopic mast, maximum extension 2.50 m, stored at 1.20 m
 - 8 L tank (10.5 kg full, 2.5 kg empty)
 - Built-in manual piston pump (0.3 bar, 1.5 L/min)
-- Adjustable nozzle (jet / shower)
-- Compact automatic hose reel and swivelling front wheels for mobility
+- Adjustable nozzle (jet or rain)
+- Compact automatic reel and swivel front wheels for mobility
 
 ## What the project taught me
 
-Innovating also means dropping good ideas to keep only the one that best meets the need. The project was also an exercise in running a project: splitting the work into tasks and using a Gantt chart to meet the successive deadlines.
+Innovating also means knowing when to drop good ideas and keep only the one that best answers the need. The project also taught me to steer. We split the work into tasks and followed a Gantt schedule to hit the successive deadlines.
 
-The full details (needs, decision matrices, planning and drawings) are available in the documents below.
+The needs, decision matrices, planning and drawings are detailed in the documents below.

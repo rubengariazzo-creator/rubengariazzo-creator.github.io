@@ -26,7 +26,7 @@ cta:
   label: "Voir les projets"
   href: /projets/
 ---
-Business plan réalisé en groupe (Sonia, Auxence, Ruben, Ilyane) et présenté le 12 mai 2026 pour **ReVolt**, un concept de startup de rétrofit électrique : convertir des véhicules thermiques en électriques plutôt que les remplacer.
+Nous avons construit ce business plan à quatre (Sonia, Auxence, Ilyane et moi) et nous l'avons présenté le 12 mai 2026. Il porte sur **ReVolt**, un concept de startup de rétrofit électrique, c'est-à-dire convertir des véhicules thermiques en électriques plutôt que les remplacer.
 
 ## Le concept
 
@@ -38,18 +38,16 @@ Avec chaque client, un profil d'usage (kilométrage quotidien, zones de circulat
 
 Le marché français du rétrofit est évalué à 150-200 M€ en 2024 (Avere-France), avec une croissance annuelle de 20 à 30 %, portée par la réglementation (fin des voitures thermiques neuves en 2035, zones à faibles émissions) et les aides publiques. Environ 60 % des propriétaires de véhicules anciens ou professionnels envisagent le rétrofit.
 
-Les 5 forces de Porter et une matrice SWOT ont structuré la stratégie : un marché encore peu occupé mais qui grandit vite, des clients sensibles au prix et à la fiabilité (d'où des garanties étendues et des coûts transparents), et des contraintes fortes comme l'homologation des kits. Principales menaces identifiées : l'évolution des subventions et la vitesse d'évolution des batteries.
+Nous avons structuré la stratégie avec les 5 forces de Porter et une matrice SWOT. Il en ressort un marché encore peu occupé mais qui grandit vite, des clients sensibles au prix et à la fiabilité (d'où des garanties étendues et des coûts transparents) et des contraintes fortes, comme l'homologation des kits. Les principales menaces sont l'évolution des subventions et la vitesse à laquelle les batteries progressent.
 
 ## L'offre
 
-Trois packs « tout compris » pour utilitaires légers et lourds : kit moteur, batterie lithium-fer-phosphate (LFP) pour la longévité, pose certifiée, homologation UTAC et garantie de 2 ans.
+Nous proposons trois packs « tout compris » pour utilitaires légers et lourds, avec un kit moteur, une batterie lithium-fer-phosphate (LFP) pour la longévité, une pose certifiée, l'homologation UTAC et une garantie de 2 ans.
 
-Le premier marché visé est l'Île-de-France, où la zone à faibles émissions du Grand Paris pousse les propriétaires de véhicules thermiques à trouver une solution, avec deux segments : les véhicules de collection et les utilitaires légers. En cumulant les aides de l'État (prime à la conversion jusqu'à 5 000 €, bonus écologique, prêt à taux zéro) et celles de la Région et de la Ville de Paris, plus de la moitié du coût peut être couverte. Grâce à la subrogation, ces aides sont déduites directement de la facture : le reste à charge commence à 4 442 € pour un utilitaire de 170 km d'autonomie chez les foyers les plus modestes, et ReVolt conserve environ 4 500 € de marge par véhicule, quelles que soient les aides.
+Notre premier marché est l'Île-de-France, où la zone à faibles émissions du Grand Paris pousse les propriétaires de véhicules thermiques à trouver une solution, avec deux segments, les véhicules de collection et les utilitaires légers. En cumulant les aides de l'État (prime à la conversion jusqu'à 5 000 €, bonus écologique, prêt à taux zéro) et celles de la Région et de la Ville de Paris, plus de la moitié du coût peut être couverte. Grâce à la subrogation, ces aides sont déduites directement de la facture. Le reste à charge commence à 4 442 € pour un utilitaire de 170 km d'autonomie chez les foyers les plus modestes, et ReVolt conserve environ 4 500 € de marge par véhicule, quelles que soient les aides.
 
 ## Chiffrage
 
-- Chiffre d'affaires prévisionnel 2026 : 2,6 M€
-- Coûts variables (kits, batteries, assurances) : 1,66 M€ ; coûts fixes : 370 k€, dont 174 k€ de salaires et 140 k€ d'entrepôt
-- Résultat prévisionnel : 560 k€
-- 180 véhicules convertis dès la première année
-- Besoin de financement : 315 k€ (homologation UTAC, stock initial de 15 kits, réserve de 4 mois de salaires, équipement d'atelier), couvert par 100 k€ de capital et 200 k€ d'emprunt, sous forme de SAS
+Nous prévoyons 2,6 M€ de chiffre d'affaires en 2026, avec 180 véhicules convertis dès la première année. Les coûts variables (kits, batteries, assurances) s'élèvent à 1,66 M€ et les coûts fixes à 370 k€, dont 174 k€ de salaires et 140 k€ d'entrepôt, ce qui laisse un résultat prévisionnel de 560 k€.
+
+Le besoin de financement est de 315 k€ (homologation UTAC, stock initial de 15 kits, réserve de 4 mois de salaires, équipement d'atelier). Il serait couvert par 100 k€ de capital et 200 k€ d'emprunt, sous forme de SAS.

@@ -44,22 +44,22 @@ cta:
   label: "Voir les projets"
   href: /projets/
 ---
-Étude de recherche indépendante explorant si l'effet Zénon quantique pourrait figer le phénomène d'effet tunnel des protons dans les paires de bases de l'ADN (un mécanisme à l'origine de mutations tautomériques) afin de protéger des données stockées sur ADN.
+Dans cette étude indépendante, je me suis demandé si l'effet Zénon quantique pouvait figer l'effet tunnel des protons dans les paires de bases de l'ADN, un mécanisme à l'origine de mutations tautomériques, afin de protéger des données stockées sur ADN.
 
 ## Le mécanisme physique
 
-Le proton d'une liaison hydrogène (par exemple entre une adénine et une thymine) possède une probabilité non nulle de franchir la barrière énergétique séparant sa position canonique de sa position tautomérique, par simple effet tunnel quantique. C'est ce basculement, source de mutations lors de la réplication, que l'étude cherche à contrôler.
+Le proton d'une liaison hydrogène (par exemple entre une adénine et une thymine) a une probabilité non nulle de franchir la barrière énergétique qui sépare sa position canonique de sa position tautomérique, par simple effet tunnel quantique. C'est ce basculement, source de mutations lors de la réplication, que l'étude cherche à contrôler.
 
 ## L'algorithme étudié
 
-Le contrôle par effet Zénon consisterait à appliquer, à intervalles réguliers très inférieurs au temps caractéristique de l'effet tunnel, un opérateur de mesure projective forçant le système à rester dans son état canonique initial, plutôt que de le laisser évoluer librement vers une superposition. L'étude formalise mathématiquement cet algorithme, jamais explicité dans la littérature existante.
+Le contrôle par effet Zénon consisterait à appliquer, à intervalles réguliers très inférieurs au temps caractéristique de l'effet tunnel, un opérateur de mesure projective qui force le système à rester dans son état canonique initial, plutôt que de le laisser évoluer librement vers une superposition. J'ai formalisé mathématiquement cet algorithme, qui n'avait jamais été explicité dans la littérature existante.
 
 ## Théorème et conclusion
 
-En comparant les conséquences structurelles (énergie des photons de mesure très supérieure à l'énergie de liaison) et thermodynamiques (dissipation de Landauer) de ce contrôle actif, l'étude établit un théorème de no-go : le contrôle Zénon d'un ADN de stockage est physiquement et énergétiquement impossible avec toute technologie envisageable. Une feuille de route d'alternatives réalistes (cryogénie, codes correcteurs classiques avancés, ingénierie du substrat XNA, prédiction par apprentissage automatique) est proposée à la place.
+J'ai comparé les conséquences structurelles de ce contrôle actif (une énergie des photons de mesure très supérieure à l'énergie de liaison) et ses conséquences thermodynamiques (la dissipation de Landauer). J'en tire un théorème de no-go. Le contrôle Zénon d'un ADN de stockage est physiquement et énergétiquement impossible avec toute technologie envisageable. Je propose à la place une feuille de route d'alternatives réalistes (cryogénie, codes correcteurs classiques avancés, ingénierie du substrat XNA, prédiction par apprentissage automatique).
 
-Rapport complet disponible en français et en anglais ci-dessous.
+Le rapport complet est disponible en français et en anglais ci-dessous.
 
 ## Citer ce travail
 
-Publié en accès ouvert sur Zenodo, en français et en anglais :
+Publié en accès ouvert sur Zenodo, en français et en anglais.

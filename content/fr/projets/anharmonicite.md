@@ -55,24 +55,24 @@ cta:
   label: "Voir les projets"
   href: /projets/
 ---
-Étude physique indépendante du basculement libre d'un plateau conique en verre (tronc de cône retourné à base circulaire, masse M = 1,087 kg, rayon de base R = 0,16 m) posé sur une table.
+J'ai étudié, en physique et de manière indépendante, le basculement libre d'un plateau conique en verre posé sur une table, un tronc de cône retourné à base circulaire, de masse M = 1,087 kg et de rayon de base R = 0,16 m.
 
 ## Modèle théorique
 
-Le moment d'inertie du tronc de cône est calculé en coordonnées polaires à partir de sa masse surfacique. L'axe de rotation réel n'est pas le centre du plateau mais le point de contact au sol, décalé du centre de masse d'une distance d confirmée expérimentalement à environ 2,94 cm par le pointage vidéo : le théorème de Huygens-Steiner donne alors l'inertie réelle au pivot, I ≈ 0,01485 kg·m².
+Je calcule le moment d'inertie du tronc de cône en coordonnées polaires, à partir de sa masse surfacique. L'axe de rotation réel n'est pas le centre du plateau mais le point de contact au sol, décalé du centre de masse d'une distance d que le pointage vidéo confirme à environ 2,94 cm. Le théorème de Huygens-Steiner donne alors l'inertie réelle au pivot, I ≈ 0,01485 kg·m².
 
-Le tronc de cône ayant une section elliptique, son rayon de courbure diffère selon le petit axe et le grand axe de l'ellipse : la raideur de rappel, et donc la fréquence d'oscillation, dépend de l'axe de basculement (anisotropie). Le théorème du moment cinétique appliqué au pivot montre que seul le couple dû à ce décalage d du centre de masse met le système en mouvement.
+Le tronc de cône ayant une section elliptique, son rayon de courbure diffère selon le petit axe et le grand axe de l'ellipse. La raideur de rappel, et donc la fréquence d'oscillation, dépend de l'axe de basculement (c'est l'anisotropie). Le théorème du moment cinétique appliqué au pivot montre que seul le couple dû à ce décalage d du centre de masse met le système en mouvement.
 
 ## Validation expérimentale
 
-Le mouvement réel du plateau a été pointé image par image sous Tracker (logiciel libre d'analyse vidéo) pour extraire position, vitesse et accélération angulaire. En parallèle, le bruit de contact a été enregistré et analysé sous MATLAB par transformée de Fourier à court terme (STFT), pour suivre l'évolution de la fréquence dans le temps malgré l'amortissement et l'anharmonicité.
+J'ai pointé le mouvement réel du plateau image par image sous Tracker (un logiciel libre d'analyse vidéo) pour extraire la position, la vitesse et l'accélération angulaire. En parallèle, j'ai enregistré le bruit de contact et je l'ai analysé sous MATLAB par transformée de Fourier à court terme (STFT), pour suivre l'évolution de la fréquence dans le temps malgré l'amortissement et l'anharmonicité.
 
 ## Résultats
 
-- Fréquence moyenne 26,68 Hz, constante de temps τ = 62,55 s, facteur de qualité Q ≈ 5243.
-- Pente d'anharmonicité (fréquence en fonction de l'amplitude) positive, +0,2708 Hz/u.a. : signature d'un puits de potentiel durcissant, cohérente avec la géométrie conique où la force de rappel croît plus vite que linéairement avec l'écart à l'équilibre.
-- La dissipation d'énergie estimée directement à partir du pointage vidéo brut donnait un résultat aberrant (4 J/s), faussé par le bruit de mesure du pointage manuel. En passant par la loi de décroissance exponentielle de l'énergie déduite de τ, la puissance dissipée est estimée à 0,0363 W, plus précise que l'ajustement global MATLAB initial (0,067 W).
+- La fréquence moyenne est de 26,68 Hz, la constante de temps τ = 62,55 s et le facteur de qualité Q ≈ 5243.
+- La pente d'anharmonicité (fréquence en fonction de l'amplitude) est positive, +0,2708 Hz/u.a. C'est la signature d'un puits de potentiel durcissant, cohérente avec la géométrie conique, où la force de rappel croît plus vite que linéairement avec l'écart à l'équilibre.
+- Estimée directement sur le pointage vidéo brut, la dissipation d'énergie donnait un résultat aberrant (4 J/s), faussé par le bruit du pointage manuel. En passant par la loi de décroissance exponentielle de l'énergie déduite de τ, j'obtiens une puissance dissipée de 0,0363 W, plus précise que l'ajustement global MATLAB initial (0,067 W).
 
 ## Citer ce travail
 
-Publié en accès ouvert sur Zenodo sous forme de cinq travaux complémentaires :
+Publié en accès ouvert sur Zenodo sous forme de cinq travaux complémentaires.

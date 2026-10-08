@@ -55,26 +55,26 @@ cta:
   label: "See all projects"
   href: /en/projects/
 ---
-Icarus is an experimental mini-rocket designed, built, and flown to a nominal flight at C'Space 2026, the student launch campaign organized by CNES and Planète Sciences at the Ger military camp, hosted by the 1er RHP.
+Icarus is an experimental mini-rocket that we designed, built and flew at C'Space 2026, the student launch campaign organized by CNES and Planète Sciences at the Ger military camp, hosted by the 1er RHP. Its flight was nominal.
 
-The project was carried out by a five-person team within EPF Astronomie, EPF's aerospace club: Camille Gaudeaux (project lead), Margaux Vahlas, Chimène Tabaste, Ambroise Denduang Wolber, and myself.
+There were five of us in EPF Astronomie, EPF's aerospace club. Camille Gaudeaux led the project, with Margaux Vahlas, Chimène Tabaste, Ambroise Denduang Wolber and me.
 
 ## The rocket
 
-Icarus is 1.14 m long and weighs 1.66 kg at liftoff (1.50 kg without its motor). It is powered by a Pandora motor (Pro24-6G), stabilized by four fins and topped with a pointed ogive nose cone. It lifts off from a 2.5 m rail tilted at 80° and comes back down under a 0.26 m² cross parachute.
+Icarus is 1.14 m long and weighs 1.66 kg at liftoff (1.50 kg without its motor). It is powered by a Pandora motor (Pro24-6G), stabilized by four fins and topped with a pointed ogive nose cone. It lifts off from a 2.5 m rail inclined at 80° and comes back down under a 0.26 m² cross parachute.
 
 ## My contribution
 
-- **The nose cone**: modelled in CATIA, a 210 mm ogive sized for the 83 mm airframe diameter, then 3D-printed in PETG (6 h 44 min of printing). Its technical drawing can be downloaded below.
-- **Structural parts**: 3D printing of the fin mounting cage (PLA, 6 h 37 min) and the motor retaining rings (PETG, 1 h 36 min).
-- **Flight dynamics**: stability and trajectory simulations with StabTraj, Planète Sciences' reference tool, confirming that Icarus would hold a straight, nominal flight path rather than tumbling.
-- **The 3D animation**: made in Blender and delivered in several formats (TV screens, kiosks, social media), kept under wraps until its back-to-school reveal.
+- **The nose cone.** I modelled it in CATIA, a 210 mm ogive sized for the 83 mm airframe diameter, then 3D-printed it in PETG (6 h 44 min of printing). Its technical drawing can be downloaded below.
+- **Structural parts.** I 3D-printed the fin mounting cage (PLA, 6 h 37 min) and the motor retaining rings (PETG, 1 h 36 min).
+- **Flight dynamics.** I simulated stability and trajectory with StabTraj, Planète Sciences' reference tool, to confirm that Icarus would hold a straight, nominal flight path rather than tumbling.
+- **The 3D animation.** I made it in Blender and delivered it in several formats (TV screens, kiosks, social media). It stayed under wraps until its back-to-school reveal.
 
 ## Stability and trajectory
 
-The simulations meet Planète Sciences' stability criteria: a slenderness ratio of 14.3 (expected between 10 and 20), a lift coefficient (Cnα) of 21 (between 15 and 30) and a static margin of 6.2 to 6.5 calibers depending on whether the motor is full or spent. That margin slightly exceeds the recommended maximum of 6: the verdict is "overstable", meaning a very stable rocket in flight, with a tendency to turn into the wind.
+The simulations meet Planète Sciences' stability criteria. The fineness is 14.3 (expected between 10 and 20), the lift coefficient (Cnα) is 21 (between 15 and 30) and the static margin is 6.2 to 6.5 calibers depending on whether the motor is full or empty. That margin slightly exceeds the recommended maximum of 6. The verdict is therefore "overstable", which means a rocket that is very stable in flight, with a tendency to turn into the wind.
 
-On the trajectory side: rail exit at 23 m/s, maximum velocity of 74 m/s, maximum acceleration of 135 m/s² (almost 14 g) and apogee at 230 m after 6.7 s. The parachute opens at 8 s and brings the rocket down at 9.9 m/s, for a full flight of 31 s. Without a parachute, the impact would happen at 56 m/s with close to 2,500 J of energy: that is what the recovery system is for.
+On the trajectory side, the rocket leaves the rail at 23 m/s, reaches 74 m/s at most, takes up to 135 m/s² (almost 14 g) and peaks at 230 m after 6.7 s. The parachute opens at 8 s and brings the rocket down at 9.9 m/s, for a full flight of 31 s. Without a parachute, it would hit the ground at 56 m/s with almost 2,500 J, and that is the whole point of the recovery system.
 
 The full results are available below.
 
@@ -84,14 +84,14 @@ The full results are available below.
 <img class="diagram" src="/assets/img/icarus/electronics-diagram-en.svg" alt="Four-step diagram of Icarus's electronics block: on the rail, liftoff, ascent, servo deployment and green LED coming on" width="1200" height="370" loading="lazy">
 </div>
 
-Icarus's electronics block has a single job: opening the parachute at the right moment. It consists of a 5 V battery, an Arduino Nano board acting as a timer, a servo and three indicator LEDs (red, blue and green).
+Icarus's electronics block has a single job, opening the parachute at the right moment. It consists of a 5 V battery, an Arduino Nano board acting as a timer, a servo and three indicator LEDs (red, blue and green).
 
-Here is how it works, step by step:
+Here is how it works, step by step.
 
-1. **On the rail**: the jack plug is connected and the red LED shows that the system is powered and on standby.
-2. **At liftoff**: the jack plug is pulled out. The red LED goes off, the blue LED starts blinking and the countdown begins.
-3. **During the ascent**: the countdown delay was set using the StabTraj simulations. It ends just after apogee (simulated at 6.7 s), when the rocket has almost finished climbing and its speed is low.
-4. **At deployment**: the servo turns and releases a tensioned spring, which violently pushes the hatch open. The parachute is ejected, the blue LED goes off and the green LED comes on, showing that the sequence ran all the way through.
+1. **On the rail.** The jack plug is connected and the red LED shows that the system is powered and on standby.
+2. **At liftoff.** The jack plug is pulled out. The red LED goes off, the blue LED starts blinking and the countdown begins.
+3. **During the ascent.** The countdown delay was set using the StabTraj simulations. It ends just after apogee (simulated at 6.7 s), when the rocket has almost finished climbing and its speed is low.
+4. **At deployment.** The servo turns and releases a tensioned spring, which violently pushes the hatch open. The parachute is ejected, the blue LED goes off and the green LED comes on, showing that the sequence ran all the way through.
 
 Three photos of the mechanism (hatch closed, hatch open, servo and its arm) are gathered in a downloadable document below.
 
@@ -101,7 +101,7 @@ Icarus lifted off in summer 2026 at C'Space, at the Ger military camp, for a nom
 
 ## The videos
 
-The EPF Astronomie team's two videos: the preparation on the launch rail, then the full flight. They only load from YouTube when you click.
+Here are two videos from the EPF Astronomie team, the preparation on the launch rail and then the full flight. They only load from YouTube when you click.
 
 <div class="video-pair">
 <figure>
@@ -116,6 +116,6 @@ The EPF Astronomie team's two videos: the preparation on the launch rail, then t
 
 ## Press & mentions
 
-Announced on LinkedIn: ["Nominal flight achieved!" (Icarus at C'Space 2026)](https://www.linkedin.com/feed/update/urn:li:activity:7506806576557613056/), with the project's 3D animation and reactions from the EPF Astronomie team.
+We announced it on LinkedIn with ["Nominal flight achieved!" (Icarus at C'Space 2026)](https://www.linkedin.com/feed/update/urn:li:activity:7506806576557613056/), alongside the project's 3D animation and reactions from the EPF Astronomie team.
 
-Also on LinkedIn: [EPF Astronomie's look back at C'Space 2026](https://www.linkedin.com/posts/epf-astronomie_retour-sur-le-cspace-2026-activity-7511855360081588224-CDHw) and Chimène Tabaste's post, ["From design to nominal flight: Icarus"](https://fr.linkedin.com/posts/chim%C3%A8ne-tabaste-969aa4331_de-la-conception-au-vol-nominal-icarus-activity-7485954383550205952-eefN) (in French).
+It is also covered on LinkedIn, with [EPF Astronomie's look back at C'Space 2026](https://www.linkedin.com/posts/epf-astronomie_retour-sur-le-cspace-2026-activity-7511855360081588224-CDHw) and Chimène Tabaste's post, ["From design to nominal flight: Icarus"](https://fr.linkedin.com/posts/chim%C3%A8ne-tabaste-969aa4331_de-la-conception-au-vol-nominal-icarus-activity-7485954383550205952-eefN) (in French).
