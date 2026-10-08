@@ -1651,16 +1651,9 @@ body.has-custom-cursor [data-glass-cta] {
   opacity: 1;
 }
 
-/* Phones: text spans the full width, so a floating button would sit on top
-   of it. The toggle drops into the flow at the very bottom of the page. */
+/* Phones: the toggle stays fixed bottom right like on desktop; only the hint
+   moves down to sit beside it. */
 @media (max-width: 48rem) {
-  .invader-toggle {
-    position: static;
-    display: flex;
-    width: fit-content;
-    margin: 0 auto 1.5rem;
-  }
-
   .invader-hint {
     bottom: 1rem;
   }
