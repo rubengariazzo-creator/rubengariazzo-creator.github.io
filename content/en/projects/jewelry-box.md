@@ -30,6 +30,16 @@ gallery:
 stlModels:
   - src: "/assets/models/boite-a-bijoux/boite-assemblee.3mf"
     label: "Full CAD assembly, V2 (drag to orbit)"
+    mode: lid
+    toggle: ["Open", "Close"]
+    config:
+      zUp: true
+      lid: "haut_bas_boite.1"
+      lidPivot: [-50.3232, 55.6333]
+      lidAngle: -115
+      latch: "loquet"
+      latchPivot: [-172.305, 77.9126]
+      latchAngle: 90
 cta:
   label: "See all projects"
   href: /en/projects/

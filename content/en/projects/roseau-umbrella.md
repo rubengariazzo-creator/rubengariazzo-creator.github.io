@@ -12,16 +12,14 @@ hero:
   alt: "3D render of the ROSEAU umbrella during a gust: part of the canopy lifts and the rib is released from its rod"
 galleryTiles: true
 gallery:
+  - src: "assets/img/roseau/plan-ensemble.jpg"
+    alt: "Dimensioned assembly drawing of the demonstrator: front view and section of the upper pin"
   - src: "assets/img/roseau/principe.jpg"
     alt: "Working principle in three steps: the clip holds in ordinary wind, opens in a gust, snaps back by hand"
-  - src: "assets/img/roseau/liaison-eclatee.jpg"
-    alt: "Exploded view of the fuse link: clevis glued onto the rib, 3 mm pin and elastic clip at the end of the rod"
   - src: "assets/img/roseau/demonstrateur.jpg"
     alt: "The full-scale demonstrator: bracket, rib, green clevis and orange fuse rod"
   - src: "assets/img/roseau/effort-rafale.jpg"
     alt: "Gust force in the return rod against wind speed, with the thresholds of the three clip settings"
-  - src: "assets/img/roseau/plan-ensemble.jpg"
-    alt: "Dimensioned assembly drawing of the demonstrator: front view and section of the upper pin"
 stats:
   - value: "10 M"
     label: "Umbrellas thrown away per year in France"
@@ -35,6 +33,33 @@ stats:
     label: "Estimated extra cost (8 ribs)"
   - value: "67 g"
     label: "Filament for the mock-up"
+stlModels:
+  - src: "/assets/models/roseau/roseau-demonstrateur.3mf"
+    label: "Demonstrator, exploded and assembled (drag to orbit)"
+    mode: explode
+    toggle: ["Explode", "Assemble"]
+    download:
+      href: /assets/downloads/roseau/roseau-fichiers-stl.zip
+      label: "Download the STL files"
+    config:
+      start: 1
+      zUp: true
+      offsets:
+        R12_potence: [0, 0, 0]
+        R14_rondelle: [0, -20, 0]
+        R10_baleine: [0, -44, 0]
+        R04D_tige_fusible_B_nominal: [0, -44, 0]
+        R03M_chape: [-7.25, -44, -27.05]
+        R09_axe: [-7.25, -72, -27.05]
+        R15_capuchon: [0, -80, 0]
+      colors:
+        R12_potence: "#8d96a3"
+        R10_baleine: "#d8d4c8"
+        R14_rondelle: "#d8d4c8"
+        R15_capuchon: "#d8d4c8"
+        R03M_chape: "#2a9d8f"
+        R04D_tige_fusible_B_nominal: "#f08a3c"
+        R09_axe: "#c4cad3"
 downloads:
   - label: "Project report (PDF, in French)"
     href: /assets/downloads/roseau/rapport-projet.pdf
@@ -70,7 +95,7 @@ The sizing is an analytical model (simplified fluid mechanics and strength of ma
 
 ## The mock-up
 
-The demonstrator reproduces one rib's fuse link at full scale: bracket, shortened rib, clevis, pin and fuse rod. It comes down to 9 printable parts in PETG and PLA, using about 67 g of filament, modelled parametrically: the calculations, the dimensioned drawings and the print files share the same dimensions. The [9 STL files can be downloaded as an archive](/assets/downloads/roseau/roseau-fichiers-stl.zip), along with the manufacturing and assembly guide and the set of drawings below.
+The demonstrator reproduces one rib's fuse link at full scale: bracket, shortened rib, clevis, pin and fuse rod. It comes down to 9 printable parts in PETG and PLA, using about 67 g of filament, modelled parametrically: the calculations, the dimensioned drawings and the print files share the same dimensions. The viewer below shows the assembly in an exploded view, with a button to see it assembled and another to download the 9 STL files. The manufacturing and assembly guide and the set of drawings are in the documents.
 
 ## Limits and next steps
 

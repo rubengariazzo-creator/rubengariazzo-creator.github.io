@@ -1325,6 +1325,10 @@ html {
   margin: 2rem 0;
 }
 
+.stl-viewer-grid--single {
+  grid-template-columns: minmax(0, 680px);
+}
+
 .stl-viewer-mount {
   position: relative;
   aspect-ratio: 4 / 3;
@@ -1340,6 +1344,38 @@ html {
 
 .stl-viewer-mount canvas:active {
   cursor: grabbing;
+}
+
+.stl-viewer-controls {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+.stl-viewer-btn {
+  padding: 0.3rem 0.65rem;
+  font-family: "SFMono-Regular", ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.stl-viewer-btn:hover,
+.stl-viewer-btn:focus-visible,
+.stl-viewer-btn[aria-pressed="true"] {
+  color: var(--accent-strong);
+  border-color: var(--accent);
 }
 
 .stl-viewer-label {

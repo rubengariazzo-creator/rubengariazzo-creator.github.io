@@ -12,16 +12,14 @@ hero:
   alt: "Rendu 3D du parapluie ROSEAU pendant une rafale : une part de la toile se soulève, la baleine est libérée de sa tige"
 galleryTiles: true
 gallery:
+  - src: "assets/img/roseau/plan-ensemble.jpg"
+    alt: "Plan d'ensemble coté du démonstrateur : vue de face et coupe de l'axe supérieur"
   - src: "assets/img/roseau/principe.jpg"
     alt: "Principe de fonctionnement en trois temps : la pince tient par vent ordinaire, s'ouvre en rafale, se reclipse à la main"
-  - src: "assets/img/roseau/liaison-eclatee.jpg"
-    alt: "Éclaté de la liaison fusible : chape collée sur la baleine, axe Ø3 et pince élastique au bout de la tige"
   - src: "assets/img/roseau/demonstrateur.jpg"
     alt: "Le démonstrateur à l'échelle 1 : potence, baleine, chape verte et tige-fusible orange"
   - src: "assets/img/roseau/effort-rafale.jpg"
     alt: "Courbe de l'effort de rafale dans la tige de rappel en fonction de la vitesse du vent, avec les seuils des trois réglages de la pince"
-  - src: "assets/img/roseau/plan-ensemble.jpg"
-    alt: "Plan d'ensemble coté du démonstrateur : vue de face et coupe de l'axe supérieur"
 stats:
   - value: "10 M"
     label: "Parapluies jetés par an en France"
@@ -35,6 +33,33 @@ stats:
     label: "Surcoût estimé (8 baleines)"
   - value: "67 g"
     label: "Filament de la maquette"
+stlModels:
+  - src: "/assets/models/roseau/roseau-demonstrateur.3mf"
+    label: "Démonstrateur en éclaté et assemblé (glisser pour orbiter)"
+    mode: explode
+    toggle: ["Éclater", "Assembler"]
+    download:
+      href: /assets/downloads/roseau/roseau-fichiers-stl.zip
+      label: "Télécharger les STL"
+    config:
+      start: 1
+      zUp: true
+      offsets:
+        R12_potence: [0, 0, 0]
+        R14_rondelle: [0, -20, 0]
+        R10_baleine: [0, -44, 0]
+        R04D_tige_fusible_B_nominal: [0, -44, 0]
+        R03M_chape: [-7.25, -44, -27.05]
+        R09_axe: [-7.25, -72, -27.05]
+        R15_capuchon: [0, -80, 0]
+      colors:
+        R12_potence: "#8d96a3"
+        R10_baleine: "#d8d4c8"
+        R14_rondelle: "#d8d4c8"
+        R15_capuchon: "#d8d4c8"
+        R03M_chape: "#2a9d8f"
+        R04D_tige_fusible_B_nominal: "#f08a3c"
+        R09_axe: "#c4cad3"
 downloads:
   - label: "Rapport de projet (PDF)"
     href: /assets/downloads/roseau/rapport-projet.pdf
@@ -70,7 +95,7 @@ Le dimensionnement est un modèle analytique (mécanique des fluides simplifiée
 
 ## La maquette
 
-Le démonstrateur reproduit à l'échelle 1 la liaison fusible d'une baleine : potence, baleine raccourcie, chape, axe et tige-fusible. Il tient en 9 pièces imprimables en PETG et en PLA, pour environ 67 g de filament, modélisées de façon paramétrique : les calculs, les plans cotés et les fichiers d'impression partagent les mêmes cotes. Les [9 fichiers STL sont à télécharger en archive](/assets/downloads/roseau/roseau-fichiers-stl.zip), avec la notice de fabrication et de montage et le dossier de plans ci-dessous.
+Le démonstrateur reproduit à l'échelle 1 la liaison fusible d'une baleine : potence, baleine raccourcie, chape, axe et tige-fusible. Il tient en 9 pièces imprimables en PETG et en PLA, pour environ 67 g de filament, modélisées de façon paramétrique : les calculs, les plans cotés et les fichiers d'impression partagent les mêmes cotes. Le visualiseur ci-dessous montre le montage en vue éclatée, avec un bouton pour le voir assemblé et un autre pour télécharger les 9 fichiers STL. La notice de fabrication et de montage et le dossier de plans sont dans les documents.
 
 ## Limites et suites
 
