@@ -1,19 +1,28 @@
 @font-face {
-  font-family: "Space Grotesk";
+  font-family: "Fraunces";
   font-style: normal;
-  font-weight: 500 700;
+  font-weight: 400 700;
   font-display: swap;
-  src: url("/assets/fonts/space-grotesk-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122;
+  src: url("/assets/fonts/fraunces-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-  font-family: "Space Grotesk";
+  font-family: "Fraunces";
   font-style: normal;
-  font-weight: 500 700;
+  font-weight: 400 700;
   font-display: swap;
-  src: url("/assets/fonts/space-grotesk-latin-ext.woff2") format("woff2");
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF;
+  src: url("/assets/fonts/fraunces-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/assets/fonts/fraunces-italic-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 :root {
@@ -66,8 +75,8 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-weight: 500;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-weight: 400;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
@@ -99,6 +108,16 @@ body {
 
 @keyframes galaxy-turn {
   to { transform: rotate(360deg); }
+}
+
+/* Narrow screens: vmax is the tall side, so the same size would put the bright core
+   behind the text. Push it to the edge and dim it. */
+@media (max-width: 48rem) {
+  .galaxy {
+    left: 88%;
+    top: 28%;
+    opacity: 0.2;
+  }
 }
 
 /* Hull and bulkheads: two quiet vertical seams either side of the reading
@@ -144,7 +163,7 @@ a:hover, a:focus-visible {
 h1, h2, h3 {
   line-height: 1.1;
   font-weight: 700;
-  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
   letter-spacing: -0.02em;
 }
 
@@ -218,7 +237,7 @@ h2:hover {
 }
 
 .site-header .brand {
-  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
   font-weight: 700;
   text-decoration: none;
   color: var(--text);
@@ -1523,34 +1542,66 @@ html {
   background: var(--accent);
 }
 
-/* Opt-in mini-game switch (replaces the old floating score badge): off by
-   default, states the rule, shows the score once playing. */
+/* Opt-in mini-game switch, drawn as a small porthole: a metal bezel around a
+   dark glass disc with the pixel invader inside. Off by default (the invader
+   is dim), lit amber while the game runs. The score, once there is one, sits
+   to its left. No text on the control itself; its name is in aria-label. */
 .invader-toggle {
   position: fixed;
   right: 1rem;
   bottom: 1rem;
   z-index: 230;
-  display: inline-flex;
-  gap: 0.5rem;
-  align-items: center;
-  padding: 0.4rem 0.7rem;
-  font-family: "SFMono-Regular", ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
   color: var(--text-muted);
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: 0.25rem;
+  background:
+    radial-gradient(circle at 50% 45%, #14181e 0 58%, transparent 60%),
+    conic-gradient(from 210deg, #5b6068, #2a2e34 25%, #7b8088 50%, #2a2e34 75%, #5b6068);
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5), 0 0.4rem 1rem rgba(0, 0, 0, 0.45);
   cursor: pointer;
-  transition: color 0.2s var(--ease-snap), border-color 0.2s var(--ease-snap);
+  transition: color 0.2s var(--ease-snap), box-shadow 0.2s var(--ease-snap);
+}
+
+.invader-toggle-icon {
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.invader-toggle-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .invader-toggle:hover,
-.invader-toggle:focus-visible,
+.invader-toggle:focus-visible {
+  color: var(--text);
+}
+
+.invader-toggle:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 3px;
+}
+
 .invader-toggle[aria-pressed="true"] {
   color: var(--accent-strong);
-  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5), 0 0 1rem rgba(196, 144, 63, 0.35), 0 0.4rem 1rem rgba(0, 0, 0, 0.45);
+}
+
+.invader-toggle-score {
+  position: absolute;
+  right: calc(100% + 0.6rem);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  color: var(--accent-strong);
 }
 
 .invader-toggle-score:empty {
@@ -1560,7 +1611,7 @@ html {
 .invader-hint {
   position: fixed;
   right: 1rem;
-  bottom: 3.5rem;
+  bottom: 4.6rem;
   z-index: 230;
   max-width: min(20rem, calc(100vw - 2rem));
   margin: 0;
@@ -1655,6 +1706,7 @@ html {
 .intro-wheel-thin {
   stroke-width: 1.4;
   stroke-opacity: 0.8;
+  stroke-linecap: butt;
 }
 
 .intro-wheel-accent {

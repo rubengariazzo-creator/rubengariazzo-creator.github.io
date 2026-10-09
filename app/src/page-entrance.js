@@ -317,7 +317,11 @@ const INVADER_EASTER_EGGS = {
 const INVADER_DEFAULT_EGG = { fr: "MISSION ACCOMPLIE", en: "MISSION ACCOMPLISHED" };
 
 function invaderScore() {
-  return Number(localStorage.getItem(INVADER_SCORE_KEY) || 0);
+  try {
+    return Number(localStorage.getItem(INVADER_SCORE_KEY) || 0);
+  } catch (err) {
+    return 0;
+  }
 }
 
 // A pixel rocket (the same Icarus icon pattern used in the mini-game, scaled
@@ -542,24 +546,37 @@ function initInvaderGame() {
     // Storage blocked: the game just starts off on every page.
   }
   let spawnTimer = null;
+  let hintTimer = null;
 
   const toggle = document.createElement("button");
   toggle.type = "button";
   toggle.className = "invader-toggle";
   toggle.title = ui.hint;
-  const labelEl = document.createElement("span");
+  toggle.setAttribute("aria-label", ui.label);
+  // A porthole with the pixel invader in it, no text: lit amber while the game is on.
+  const icon = document.createElement("span");
+  icon.className = "invader-toggle-icon";
+  icon.setAttribute("aria-hidden", "true");
+  icon.innerHTML = spriteSvg(INVADER_PATTERN, INVADER_COLORS);
   invaderScoreEl = document.createElement("span");
   invaderScoreEl.className = "invader-toggle-score";
-  toggle.append(labelEl, invaderScoreEl);
+  invaderScoreEl.setAttribute("aria-hidden", "true");
+  toggle.append(icon, invaderScoreEl);
   const hint = document.createElement("p");
   hint.className = "invader-hint";
+  hint.setAttribute("aria-hidden", "true");
   hint.textContent = ui.hint;
   document.body.append(toggle, hint);
 
   function scheduleNextSpawn() {
     // Once the easter egg has fired, the game has nothing left to reward --
     // spawns drop to a tenth of the rate instead of stopping outright.
-    const slowdown = localStorage.getItem(INVADER_UNLOCKED_KEY) ? 10 : 1;
+    let slowdown = 1;
+    try {
+      if (localStorage.getItem(INVADER_UNLOCKED_KEY)) slowdown = 10;
+    } catch (err) {
+      // Storage blocked: full spawn rate.
+    }
     const delay = (INVADER_SPAWN_MIN_MS + Math.random() * (INVADER_SPAWN_MAX_MS - INVADER_SPAWN_MIN_MS)) * slowdown;
     spawnTimer = setTimeout(() => {
       spawnInvaderSprite(projectKeys);
@@ -569,7 +586,7 @@ function initInvaderGame() {
 
   function render() {
     toggle.setAttribute("aria-pressed", String(on));
-    labelEl.textContent = on ? ui.on : ui.label;
+    // Stable name; aria-pressed carries the on/off state.
     updateInvaderScoreBadge(on ? invaderScore() : 0);
   }
 
@@ -585,7 +602,8 @@ function initInvaderGame() {
       scheduleNextSpawn();
       if (showHint) {
         hint.classList.add("is-visible");
-        setTimeout(() => hint.classList.remove("is-visible"), 6000);
+        clearTimeout(hintTimer);
+        hintTimer = setTimeout(() => hint.classList.remove("is-visible"), 6000);
       }
     } else {
       hint.classList.remove("is-visible");
@@ -625,7 +643,7 @@ function initInvaderGame() {
 // progress bar built on it fake despite looking real. Watching main.jsx's own
 // "is-ready" class (added the moment the WebGL canvas is created and about to
 // render its first frame) is the actually-honest equivalent for this
-// specific hero. A hard 3.5s safety timeout and a 500ms display floor mean it
+// specific hero. A hard 4.8s safety timeout and a 500ms display floor mean it
 // never hangs on a slow/blocked load and never flashes on a warm cache.
 const INTRO_SESSION_KEY = "introShown";
 const INTRO_MAX_WAIT_MS = 4800;
@@ -745,6 +763,7 @@ function showOpeningSequence(container) {
       if (settled || !heroReady || !animDone) return;
       settled = true;
       clearTimeout(safety);
+      window.removeEventListener("keydown", skip);
       gsap
         .timeline({ onComplete: () => { overlay.remove(); resolve(); } })
         .to(overlay, { clipPath: "inset(0 0 100% 0)", duration: 0.7, ease: "expo.inOut" });
@@ -848,7 +867,9 @@ function init() {
       // Best-effort; see above.
     }
     try {
-      showOpeningSequence(container).then(() => runEntranceTimeline(container, header, isHomeHero));
+      showOpeningSequence(container)
+        .catch(() => document.querySelector(".intro-overlay")?.remove())
+        .then(() => runEntranceTimeline(container, header, isHomeHero));
     } catch (err) {
       runEntranceTimeline(container, header, isHomeHero);
     }
