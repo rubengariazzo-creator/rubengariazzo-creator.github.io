@@ -858,26 +858,46 @@ html {
 }
 
 .filter-pill {
-  font: inherit;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 0.25rem;
-  padding: 0.45rem 1rem;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #cdd2d9;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.7);
+  border: 0;
+  border-radius: 3px;
+  padding: 0.5rem 1.1rem;
   cursor: pointer;
-  transition: color 0.15s var(--ease-snap), border-color 0.2s var(--ease-snap), background 0.2s var(--ease-snap);
+  /* Dark gunmetal plate: fine horizontal grain over a vertical gradient,
+     lit edge on top, shadow underneath. Same family as the label plates. */
+  background:
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0 1px, rgba(0, 0, 0, 0.05) 1px 2px),
+    linear-gradient(180deg, #3b424b, #272c33 60%, #1f2328);
+  box-shadow: inset 0 1px 0 rgba(170, 196, 224, 0.28), inset 0 -1px 0 rgba(0, 0, 0, 0.6), 0 1px 0 rgba(0, 0, 0, 0.7), 0 2px 5px rgba(0, 0, 0, 0.35);
+  transition: color 0.15s var(--ease-snap), box-shadow 0.2s var(--ease-snap), background 0.2s var(--ease-snap);
 }
 
 .filter-pill:hover {
-  color: var(--text);
-  border-color: var(--accent);
+  color: #fff;
+  background:
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0 1px, rgba(0, 0, 0, 0.05) 1px 2px),
+    linear-gradient(180deg, #4a525c, #323840 60%, #292e35);
 }
 
+.filter-pill:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+/* The selected category is lit: the brushed-steel plate, dark engraved text. */
 .filter-pill.is-active {
-  color: var(--text);
-  border-color: var(--accent);
-  background: rgba(95, 208, 255, 0.1);
+  color: #0f1216;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.38);
+  background:
+    linear-gradient(100deg, transparent 15%, rgba(255, 255, 255, 0.22) 45%, transparent 75%),
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.09) 0 1px, rgba(0, 0, 0, 0.06) 1px 2px),
+    linear-gradient(180deg, #b5bbc3, #8f959d 55%, #7b8189);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.45), 0 1px 0 rgba(0, 0, 0, 0.7), 0 0 0.9rem rgba(196, 144, 63, 0.35);
 }
 
 .filter-empty {
@@ -911,7 +931,7 @@ html {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(95, 208, 255, 0.28), transparent 60%);
+  background: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(196, 144, 63, 0.26), transparent 60%);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -2090,4 +2110,17 @@ iframe.video-frame::after {
 
 .project-cards li:hover .project-card-tag {
   transform: translateY(-1px);
+}
+
+/* First page of the session: keep everything but the intro overlay hidden until
+   page-entrance.js has put the overlay up (see assets/js/intro-gate.js). The
+   animation is the failsafe: if the script never runs, the page appears after
+   5 seconds regardless. */
+html.intro-pending body > *:not(.intro-overlay) {
+  visibility: hidden;
+  animation: intro-failsafe 0s linear 5s forwards;
+}
+
+@keyframes intro-failsafe {
+  to { visibility: visible; }
 }

@@ -664,7 +664,7 @@ function initInvaderGame() {
   });
 }
 
-// Session-gated opening sequence, homepage only, plays once per browser
+// Session-gated opening sequence, on whichever page is opened first, plays once per browser
 // session (sessionStorage-gated so a second visit or a reload never repeats
 // it). Its "progress" is the real mount of GlassHero -- NOT drei's
 // useProgress hook as originally planned: GlassHero's scene is entirely
@@ -817,6 +817,7 @@ function showOpeningSequence(container) {
     const parts = buildWheelIntro();
     overlay.appendChild(parts.svg);
     document.body.appendChild(overlay);
+    document.documentElement.classList.remove("intro-pending");
 
     let heroReady = false;
     let animDone = false;
@@ -910,7 +911,10 @@ function init() {
 
   const header = document.querySelector(".site-header");
   const container = document.querySelector(".page, .project");
-  if (!container) return;
+  if (!container) {
+    document.documentElement.classList.remove("intro-pending");
+    return;
+  }
 
   const isHomeHero = !!container.querySelector(".hero-liquid-stage");
 
@@ -923,7 +927,7 @@ function init() {
     // repeating one on every navigation.
   }
 
-  if (isHomeHero && !introAlreadyShown) {
+  if (!introAlreadyShown) {
     try {
       sessionStorage.setItem(INTRO_SESSION_KEY, "1");
     } catch (err) {
@@ -931,12 +935,17 @@ function init() {
     }
     try {
       showOpeningSequence(container)
-        .catch(() => document.querySelector(".intro-overlay")?.remove())
+        .catch(() => {
+          document.querySelector(".intro-overlay")?.remove();
+          document.documentElement.classList.remove("intro-pending");
+        })
         .then(() => runEntranceTimeline(container, header, isHomeHero));
     } catch (err) {
+      document.documentElement.classList.remove("intro-pending");
       runEntranceTimeline(container, header, isHomeHero);
     }
   } else {
+    document.documentElement.classList.remove("intro-pending");
     runEntranceTimeline(container, header, isHomeHero);
   }
 
