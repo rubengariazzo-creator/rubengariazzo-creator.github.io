@@ -120,11 +120,18 @@ body {
   }
 }
 
-/* Hull and bulkheads: two quiet vertical seams either side of the reading
-   column, each a pair of hairlines with a row of rivets between them, fading
-   out toward the top and bottom of the window. No text, nothing technical to
-   read: it only says the page is a compartment. Hidden when the viewport is
-   too narrow to leave room beside the column. */
+/* Hull and bulkheads. Beside the reading column, a bulkhead seam (a pair of
+   hairlines with a row of rivets between them) and, outside it, hull plating:
+   a dark metal band cut into panels by horizontal joints, each joint carrying
+   its own small rivets. Across the column, every section heading sits under a
+   bulkhead joint, and the header and footer edges carry a rivet row. No text,
+   nothing technical to read. Everything is drawn in CSS gradients. */
+:root {
+  --rivet: rgba(226, 218, 200, 0.34);
+  --seam: rgba(226, 218, 200, 0.16);
+  --panel-h: 15rem;
+}
+
 .hull {
   position: fixed;
   inset: 0;
@@ -132,23 +139,91 @@ body {
   pointer-events: none;
 }
 
-.hull i {
+.hull i,
+.hull b {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 9px;
-  border-left: 1px solid rgba(255, 255, 255, 0.07);
-  border-right: 1px solid rgba(255, 255, 255, 0.07);
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 1px, transparent 1.6px) center 0 / 9px 30px repeat-y;
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
-  mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
 }
 
-.hull i:first-child { left: calc(50% - var(--max-width) / 2 - 2.5rem); }
-.hull i:last-child { left: calc(50% + var(--max-width) / 2 + 2.5rem - 9px); }
+.hull i {
+  width: 13px;
+  border-left: 1px solid var(--seam);
+  border-right: 1px solid var(--seam);
+  background: radial-gradient(circle, var(--rivet) 1.3px, transparent 2px) center 0 / 13px 28px repeat-y;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
+}
 
+.hull i:nth-of-type(1) { left: calc(50% - var(--max-width) / 2 - 2.5rem); }
+.hull i:nth-of-type(2) { left: calc(50% + var(--max-width) / 2 + 2.5rem - 13px); }
+
+/* Hull plating: the whole margin outside each seam. */
+.hull b {
+  width: calc(50% - var(--max-width) / 2 - 2.5rem);
+  background:
+    radial-gradient(circle, var(--rivet) 1.2px, transparent 1.9px) 14px 7px / var(--panel-h) var(--panel-h) repeat,
+    linear-gradient(to bottom, transparent calc(var(--panel-h) - 2px), rgba(0, 0, 0, 0.35) calc(var(--panel-h) - 2px), rgba(0, 0, 0, 0.35) calc(var(--panel-h) - 1px), var(--seam) calc(var(--panel-h) - 1px)) 0 0 / 100% var(--panel-h) repeat-y;
+}
+
+.hull b:nth-of-type(1) {
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.012);
+  mask-image: linear-gradient(to right, #000 30%, transparent);
+  -webkit-mask-image: linear-gradient(to right, #000 30%, transparent);
+}
+
+.hull b:nth-of-type(2) {
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.012);
+  mask-image: linear-gradient(to left, #000 30%, transparent);
+  -webkit-mask-image: linear-gradient(to left, #000 30%, transparent);
+}
+
+/* Section bulkheads: a joint with its rivet row above every h2 that is a
+   direct child of the page. */
+.page > h2,
+.project > h2 {
+  position: relative;
+}
+
+.page > h2::before,
+.project > h2::before {
+  content: "";
+  position: absolute;
+  left: 0.6rem;
+  top: -1.6rem;
+  width: calc(min(100vw, var(--max-width)) - 2 * var(--space));
+  height: 7px;
+  border-top: 1px solid var(--seam);
+  border-bottom: 1px solid var(--seam);
+  background: radial-gradient(circle, var(--rivet) 1.2px, transparent 1.9px) 0 center / 24px 7px repeat-x;
+  pointer-events: none;
+}
+
+.site-header::after,
+.site-footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: radial-gradient(circle, var(--rivet) 1.1px, transparent 1.7px) 0 center / 22px 4px repeat-x;
+  pointer-events: none;
+}
+
+.site-header::after { bottom: -5px; }
+.site-footer::before { top: 4px; }
+.site-footer { position: relative; }
+
+/* Narrow screens: the seams hug the screen edges and the plating goes. */
 @media (max-width: 82rem) {
-  .hull { display: none; }
+  .hull b { display: none; }
+  .hull i { width: 9px; background-size: 9px 28px; }
+  .hull i:nth-of-type(1) { left: 0.3rem; }
+  .hull i:nth-of-type(2) { left: auto; right: 0.3rem; }
+  .page > h2::before,
+  .project > h2::before { left: 0.6rem; width: calc(100vw - 2 * var(--space)); }
 }
 
 a {
@@ -1542,46 +1617,54 @@ html {
   background: var(--accent);
 }
 
-/* Opt-in mini-game switch, drawn as a small porthole: a metal bezel around a
-   dark glass disc with the pixel invader inside. Off by default (the invader
-   is dim), lit amber while the game runs. The score, once there is one, sits
-   to its left. No text on the control itself; its name is in aria-label. */
+/* Opt-in mini-game switch, drawn as a ship's porthole (the SVG is built in
+   page-entrance.js, portholeSvg): riveted bezel, dark glass, the Icarus rocket
+   inside. Off by default (the rocket is dim), lit while the game runs. The
+   score, once there is one, sits to its left. No text on the control itself;
+   its name is in aria-label. */
 .invader-toggle {
   position: fixed;
   right: 1rem;
   bottom: 1rem;
   z-index: 230;
-  display: grid;
-  place-items: center;
-  width: 2.75rem;
-  height: 2.75rem;
+  display: block;
+  width: 3.5rem;
+  height: 3.5rem;
   padding: 0;
-  color: var(--text-muted);
-  background:
-    radial-gradient(circle at 50% 45%, #14181e 0 58%, transparent 60%),
-    conic-gradient(from 210deg, #5b6068, #2a2e34 25%, #7b8088 50%, #2a2e34 75%, #5b6068);
+  background: none;
   border: 0;
   border-radius: 50%;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5), 0 0.4rem 1rem rgba(0, 0, 0, 0.45);
+  filter: drop-shadow(0 0.35rem 0.7rem rgba(0, 0, 0, 0.55));
   cursor: pointer;
-  transition: color 0.2s var(--ease-snap), box-shadow 0.2s var(--ease-snap);
+  transition: transform 0.2s var(--ease-snap);
 }
 
-.invader-toggle-icon {
-  display: block;
-  width: 1.2rem;
-  height: 1.2rem;
+.invader-toggle:hover {
+  transform: scale(1.05);
 }
 
+.invader-toggle-icon,
 .invader-toggle-icon svg {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.invader-toggle:hover,
-.invader-toggle:focus-visible {
-  color: var(--text);
+.invader-toggle .porthole-sprite {
+  filter: grayscale(0.85) brightness(0.75);
+  opacity: 0.7;
+  transition: filter 0.3s var(--ease-snap), opacity 0.3s var(--ease-snap);
+}
+
+.invader-toggle .porthole-lamp {
+  opacity: 0;
+  transition: opacity 0.3s var(--ease-snap);
+}
+
+.invader-toggle:hover .porthole-sprite,
+.invader-toggle:focus-visible .porthole-sprite {
+  filter: grayscale(0.3) brightness(0.95);
+  opacity: 0.95;
 }
 
 .invader-toggle:focus-visible {
@@ -1590,8 +1673,16 @@ html {
 }
 
 .invader-toggle[aria-pressed="true"] {
-  color: var(--accent-strong);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5), 0 0 1rem rgba(196, 144, 63, 0.35), 0 0.4rem 1rem rgba(0, 0, 0, 0.45);
+  filter: drop-shadow(0 0 0.8rem rgba(196, 144, 63, 0.4)) drop-shadow(0 0.35rem 0.7rem rgba(0, 0, 0, 0.55));
+}
+
+.invader-toggle[aria-pressed="true"] .porthole-sprite {
+  filter: none;
+  opacity: 1;
+}
+
+.invader-toggle[aria-pressed="true"] .porthole-lamp {
+  opacity: 0.85;
 }
 
 .invader-toggle-score {
@@ -1611,7 +1702,7 @@ html {
 .invader-hint {
   position: fixed;
   right: 1rem;
-  bottom: 4.6rem;
+  bottom: 5.2rem;
   z-index: 230;
   max-width: min(20rem, calc(100vw - 2rem));
   margin: 0;
@@ -1686,7 +1777,7 @@ html {
 }
 
 .intro-overlay-wheel {
-  width: min(16rem, 62vw);
+  width: min(24rem, 80vw);
   height: auto;
   overflow: visible;
 }
@@ -1707,6 +1798,20 @@ html {
   stroke-width: 1.4;
   stroke-opacity: 0.8;
   stroke-linecap: butt;
+}
+
+.intro-wheel-dot,
+.intro-wheel-glint {
+  fill: var(--text);
+  stroke: none;
+}
+
+.intro-wheel-glint {
+  opacity: 0.6;
+}
+
+.intro-wheel-guide {
+  stroke-dasharray: 2 6;
 }
 
 .intro-wheel-accent {

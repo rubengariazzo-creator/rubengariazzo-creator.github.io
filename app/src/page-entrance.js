@@ -532,6 +532,37 @@ const INVADER_UI = {
   en: { label: "Mini-game", on: "Mini-game on", hint: "Click the invaders that appear to score points. 20 points unlock a surprise. Click here again to stop." },
 };
 
+// The mini-game button: a ship's porthole. A riveted metal bezel around dark
+// glass with a glare on it, and the Icarus rocket sprite inside, dim while the
+// game is off and lit (with an amber ring on the glass) while it runs.
+function portholeSvg() {
+  const rocket = PROJECT_ICONS.icarus;
+  const sprite = spriteSvg(rocket.pattern, rocket.colors).replace(
+    "<svg ",
+    '<svg class="porthole-sprite" x="19.5" y="16" width="17" height="22" ',
+  );
+  let rivets = "";
+  for (let i = 0; i < 8; i++) {
+    const a = (i / 8) * Math.PI * 2 + Math.PI / 8;
+    rivets += `<circle cx="${(28 + 24.2 * Math.cos(a)).toFixed(2)}" cy="${(28 + 24.2 * Math.sin(a)).toFixed(2)}" r="1.35" fill="#d8d2c4" stroke="#14171c" stroke-width="0.5"/>`;
+  }
+  return `<svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs>
+<linearGradient id="ph-metal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9aa0a8"/><stop offset="0.5" stop-color="#4a4f57"/><stop offset="1" stop-color="#22262b"/></linearGradient>
+<linearGradient id="ph-lip" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#7d838b"/><stop offset="1" stop-color="#1d2025"/></linearGradient>
+<radialGradient id="ph-glass" cx="0.4" cy="0.35" r="0.8"><stop offset="0" stop-color="#1f2833"/><stop offset="1" stop-color="#080a0d"/></radialGradient>
+</defs>
+<circle cx="28" cy="28" r="27" fill="url(#ph-metal)" stroke="#0a0c0f" stroke-width="1"/>
+<circle cx="28" cy="28" r="21.5" fill="url(#ph-lip)"/>
+${rivets}
+<circle cx="28" cy="28" r="18.5" fill="url(#ph-glass)"/>
+<circle class="porthole-lamp" cx="28" cy="28" r="18.5" fill="none" stroke="#e9c186" stroke-width="1.6"/>
+${sprite}
+<path d="M13.5 22.5A16 16 0 0 1 24 12.5" fill="none" stroke="#fff" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round"/>
+<path d="M41 40A16 16 0 0 1 33 44.5" fill="none" stroke="#fff" stroke-opacity="0.1" stroke-width="1.5" stroke-linecap="round"/>
+</svg>`;
+}
+
 function initInvaderGame() {
   const ui = INVADER_UI[document.documentElement.lang === "fr" ? "fr" : "en"];
   // Every other project's icon is fair game; skip the one whose own page
@@ -553,11 +584,11 @@ function initInvaderGame() {
   toggle.className = "invader-toggle";
   toggle.title = ui.hint;
   toggle.setAttribute("aria-label", ui.label);
-  // A porthole with the pixel invader in it, no text: lit amber while the game is on.
+  // A porthole with the Icarus rocket in it, no text: lit while the game is on.
   const icon = document.createElement("span");
   icon.className = "invader-toggle-icon";
   icon.setAttribute("aria-hidden", "true");
-  icon.innerHTML = spriteSvg(INVADER_PATTERN, INVADER_COLORS);
+  icon.innerHTML = portholeSvg();
   invaderScoreEl = document.createElement("span");
   invaderScoreEl.className = "invader-toggle-score";
   invaderScoreEl.setAttribute("aria-hidden", "true");
@@ -648,16 +679,19 @@ function initInvaderGame() {
 const INTRO_SESSION_KEY = "introShown";
 const INTRO_MAX_WAIT_MS = 4800;
 
-// One 300x300 SVG, two colours. A pendulum swings left to right; at the right
-// extreme its rod rolls itself up, end first, into a closed ring (the rod is
-// exactly one circumference long, L = 2*pi*R), the bob slides to the centre as
-// the hub and spokes are drawn, and the wheel makes a partial turn. Geometry is
-// integrated from curvature each frame, so the curl is a real roll-up and not a
-// cross-fade between two shapes.
+// One 300x300 SVG, two colours (light line, amber accent), played as a single
+// movement. A pendulum hangs from a bracket and swings left to right. Before
+// it has even come to rest, its rod starts rolling itself up end first (the rod
+// is exactly one circumference long, L = 2*pi*R) into a ring that slides to the
+// centre; the bob, still travelling, drops into the middle as the hub, ten
+// spokes and five lug nuts are drawn, and the wheel keeps turning with the
+// swing's momentum, slowing to a stop. Geometry is integrated from curvature
+// every frame, so the roll-up is a real roll-up and not a cross-fade.
 const WHEEL_R = 38;
 const WHEEL_L = 2 * Math.PI * WHEEL_R;
-const WHEEL_PIVOT = [150, 20];
+const WHEEL_PIVOT = [150, 24];
 const WHEEL_SPOKES = 10;
+const WHEEL_LUGS = 5;
 const WHEEL_SWING = (38 * Math.PI) / 180;
 const smoothstep01 = (t) => {
   const c = Math.min(1, Math.max(0, t));
@@ -686,7 +720,7 @@ function wheelGeometry(phi, curl, shift) {
   const cy = WHEEL_PIVOT[1] + WHEEL_R * Math.cos(theta0);
   const dx = shift * (150 - cx);
   const dy = shift * (150 - cy);
-  return { pts: pts.map(([px, py]) => [px + dx, py + dy]), dx, dy, cx: cx + dx, cy: cy + dy };
+  return { pts: pts.map(([px, py]) => [px + dx, py + dy]), cx: cx + dx, cy: cy + dy };
 }
 
 function buildWheelIntro() {
@@ -700,46 +734,89 @@ function buildWheelIntro() {
     parent.appendChild(el);
     return el;
   };
-  const pivot = make("circle", { cx: WHEEL_PIVOT[0], cy: WHEEL_PIVOT[1], r: 2.2, class: "intro-wheel-line" });
+  const [px, py] = WHEEL_PIVOT;
+  // Faint guide: the arc the bob is about to sweep.
+  const a0 = Math.PI / 2 - -WHEEL_SWING;
+  const a1 = Math.PI / 2 - WHEEL_SWING;
+  const arc = make("path", {
+    d: `M${(px + WHEEL_L * Math.cos(a0)).toFixed(1)} ${(py + WHEEL_L * Math.sin(a0)).toFixed(1)}A${WHEEL_L.toFixed(1)} ${WHEEL_L.toFixed(1)} 0 0 0 ${(px + WHEEL_L * Math.cos(a1)).toFixed(1)} ${(py + WHEEL_L * Math.sin(a1)).toFixed(1)}`,
+    class: "intro-wheel-thin intro-wheel-guide",
+  });
+  // Mounting bracket and pivot.
+  const mount = make("g", { class: "intro-wheel-mount" });
+  make("rect", { x: px - 18, y: py - 15, width: 36, height: 7, rx: 2.5, class: "intro-wheel-thin" }, mount);
+  make("circle", { cx: px - 11, cy: py - 11.5, r: 1.3, class: "intro-wheel-dot" }, mount);
+  make("circle", { cx: px + 11, cy: py - 11.5, r: 1.3, class: "intro-wheel-dot" }, mount);
+  make("line", { x1: px, y1: py - 8, x2: px, y2: py, class: "intro-wheel-thin" }, mount);
+  const pivot = make("circle", { cx: px, cy: py, r: 2.6, class: "intro-wheel-line" }, mount);
+  // Motion trail: three ghosts of the rod, only while it is still straight.
+  const trails = [0, 1, 2].map(() => make("line", { class: "intro-wheel-thin", opacity: 0 }));
   const wheel = make("g", {});
   const inner = make("circle", { cx: 150, cy: 150, r: WHEEL_R * 0.84, class: "intro-wheel-thin", opacity: 0 }, wheel);
   const spokes = [];
   for (let i = 0; i < WHEEL_SPOKES; i++) {
     const a = (i / WHEEL_SPOKES) * Math.PI * 2;
     spokes.push(make("line", {
-      x1: 150 + 8 * Math.cos(a), y1: 150 + 8 * Math.sin(a),
+      x1: 150 + 10 * Math.cos(a), y1: 150 + 10 * Math.sin(a),
       x2: 150 + WHEEL_R * 0.84 * Math.cos(a), y2: 150 + WHEEL_R * 0.84 * Math.sin(a),
       pathLength: 1, class: "intro-wheel-thin", "stroke-dasharray": 1, "stroke-dashoffset": 1,
     }, wheel));
   }
+  const lugs = [];
+  for (let i = 0; i < WHEEL_LUGS; i++) {
+    const a = (i / WHEEL_LUGS) * Math.PI * 2 - Math.PI / 2;
+    lugs.push(make("circle", { cx: 150 + 15.5 * Math.cos(a), cy: 150 + 15.5 * Math.sin(a), r: 1.7, class: "intro-wheel-dot", opacity: 0 }, wheel));
+  }
   const rod = make("path", { class: "intro-wheel-line", fill: "none" }, wheel);
-  const bob = make("circle", { r: 6, class: "intro-wheel-accent" });
-  return { svg, pivot, wheel, inner, spokes, rod, bob };
+  const bob = make("circle", { r: 6.5, class: "intro-wheel-accent" });
+  const glint = make("circle", { r: 1.9, class: "intro-wheel-glint" });
+  return { svg, arc, mount, pivot, trails, wheel, inner, spokes, lugs, rod, bob, glint };
 }
 
 function playWheelIntro(parts, onDone) {
-  const st = { phi: -WHEEL_SWING, curl: 0, shift: 0, hub: 0, slide: 0 };
+  const st = { phi: -WHEEL_SWING, curl: 0, shift: 0, slide: 0 };
+  let prevPhi = st.phi;
+  const [px, py] = WHEEL_PIVOT;
   const draw = () => {
     const g = wheelGeometry(st.phi, st.curl, st.shift);
-    // Before the curl the rod is a straight line from the pivot to the bob.
     parts.rod.setAttribute("d", "M" + g.pts.map((p) => p[0].toFixed(1) + " " + p[1].toFixed(1)).join("L"));
     const tip = g.pts[g.pts.length - 1];
     const bx = tip[0] + (g.cx - tip[0]) * st.slide;
     const by = tip[1] + (g.cy - tip[1]) * st.slide;
+    const br = 6.5 + 2.2 * st.slide;
     parts.bob.setAttribute("cx", bx.toFixed(1));
     parts.bob.setAttribute("cy", by.toFixed(1));
-    parts.bob.setAttribute("r", (6 + 2 * st.slide).toFixed(1));
-    parts.pivot.setAttribute("opacity", Math.max(0, 1 - st.shift * 2).toFixed(2));
+    parts.bob.setAttribute("r", br.toFixed(1));
+    parts.glint.setAttribute("cx", (bx - br * 0.35).toFixed(1));
+    parts.glint.setAttribute("cy", (by - br * 0.35).toFixed(1));
+    // Everything that belongs to the pendulum fades as the rod rolls up.
+    const straight = Math.max(0, 1 - st.curl / (WHEEL_L * 0.18));
+    const d = Math.max(-0.05, Math.min(0.05, st.phi - prevPhi));
+    parts.trails.forEach((t, k) => {
+      const a = Math.PI / 2 - (st.phi - d * 5 * (k + 1));
+      t.setAttribute("x1", px);
+      t.setAttribute("y1", py);
+      t.setAttribute("x2", (px + WHEEL_L * Math.cos(a)).toFixed(1));
+      t.setAttribute("y2", (py + WHEEL_L * Math.sin(a)).toFixed(1));
+      t.setAttribute("opacity", (Math.min(0.28, Math.abs(d) * 14) * straight / (k + 1)).toFixed(3));
+    });
+    prevPhi = st.phi;
+    parts.arc.setAttribute("opacity", (0.4 * straight).toFixed(2));
+    parts.mount.setAttribute("opacity", Math.max(0, 1 - st.shift * 1.6).toFixed(2));
   };
   draw();
   return gsap
     .timeline({ onUpdate: draw, onComplete: onDone })
-    .to(st, { phi: WHEEL_SWING, duration: 1.1, ease: "sine.inOut" })
-    .to(st, { curl: WHEEL_L + 6, shift: 1, duration: 1.0, ease: "power2.inOut" })
-    .to(st, { slide: 1, duration: 0.35, ease: "power2.inOut" })
-    .to(parts.inner, { opacity: 1, duration: 0.3 }, "<")
-    .to(parts.spokes, { attr: { "stroke-dashoffset": 0 }, duration: 0.45, stagger: 0.035, ease: "power1.out" }, "-=0.2")
-    .to(parts.wheel, { rotation: 140, svgOrigin: "150 150", duration: 1.0, ease: "power2.out" }, "-=0.55");
+    // The swing, left extreme to right extreme.
+    .to(st, { phi: WHEEL_SWING, duration: 0.95, ease: "sine.inOut" }, 0)
+    // The roll-up begins while the rod is still travelling (same movement).
+    .to(st, { curl: WHEEL_L + 6, shift: 1, duration: 1.0, ease: "power2.inOut" }, 0.5)
+    // The bob drops into the centre and becomes the hub.
+    .to(st, { slide: 1, duration: 0.4, ease: "power3.inOut" }, 1.1)
+    .to([parts.inner, ...parts.lugs], { opacity: 1, duration: 0.3 }, 1.2)
+    .to(parts.spokes, { attr: { "stroke-dashoffset": 0 }, duration: 0.4, stagger: 0.03, ease: "power1.out" }, 1.2)
+    // The wheel carries on turning with the swing's momentum.
+    .to(parts.wheel, { rotation: 215, svgOrigin: "150 150", duration: 1.0, ease: "power3.out" }, 1.0);
 }
 
 function showOpeningSequence(container) {
@@ -766,7 +843,7 @@ function showOpeningSequence(container) {
       window.removeEventListener("keydown", skip);
       gsap
         .timeline({ onComplete: () => { overlay.remove(); resolve(); } })
-        .to(overlay, { clipPath: "inset(0 0 100% 0)", duration: 0.7, ease: "expo.inOut" });
+        .to(overlay, { clipPath: "inset(0 0 100% 0)", duration: 0.55, ease: "expo.inOut" });
     };
 
     const timeline = playWheelIntro(parts, () => {
