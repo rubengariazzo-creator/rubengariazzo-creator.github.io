@@ -2052,3 +2052,42 @@ iframe.video-frame {
 iframe.video-frame::after {
   content: none;
 }
+
+/* Label plates. Every category tag (under the page title, on the project
+   cards, above each homepage highlight) is a small studded plate of brushed
+   steel with the text engraved into it: fine horizontal grain, a sheen, a
+   bevel, a stud at each end. Dark text on mid steel, about 7:1 contrast. */
+.project-meta-tag,
+.project-card-tag,
+.highlight-tag {
+  display: inline-block;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #0f1216;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.38);
+  padding: 0.3rem 1.2rem;
+  border: 0;
+  border-radius: 3px;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  background:
+    radial-gradient(circle at 50% 50%, #f3f5f7 0 0.7px, #8a9098 1.2px, #3b4047 1.9px, transparent 2.3px) 0.42rem 50% / 7px 7px no-repeat,
+    radial-gradient(circle at 50% 50%, #f3f5f7 0 0.7px, #8a9098 1.2px, #3b4047 1.9px, transparent 2.3px) calc(100% - 0.42rem) 50% / 7px 7px no-repeat,
+    linear-gradient(100deg, transparent 15%, rgba(255, 255, 255, 0.22) 45%, transparent 75%),
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.09) 0 1px, rgba(0, 0, 0, 0.06) 1px 2px),
+    linear-gradient(180deg, #b5bbc3, #8f959d 55%, #7b8189);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.45), 0 1px 0 rgba(0, 0, 0, 0.7), 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.project-meta-tag { margin: 0 0 0.5rem; }
+.hero-liquid-title .project-meta-tag { margin-top: 0.55rem; }
+.highlight-tag { margin: 0 0 0.6rem; }
+.project-card-tag { top: 0.7rem; left: 0.7rem; }
+
+.project-cards li:hover .project-card-tag {
+  transform: translateY(-1px);
+}
