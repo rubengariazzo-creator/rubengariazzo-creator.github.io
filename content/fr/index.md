@@ -35,8 +35,9 @@ highlights:
 <div class="about-intro">
 <img class="about-portrait about-portrait--lg" src="/assets/img/ruben-gariazzo-studio-400.jpg" srcset="/assets/img/ruben-gariazzo-studio-400.jpg 400w, /assets/img/ruben-gariazzo-studio-768.jpg 768w, /assets/img/ruben-gariazzo-studio.jpg 1536w" sizes="17rem" width="400" height="533" alt="Portrait en noir et blanc de Ruben Gariazzo, élève ingénieur à l'EPF">
 <div>
-<p>Je suis Ruben Gariazzo, élève ingénieur à l'<a href="https://www.epf.fr">EPF</a>, à Paris, depuis 2025. L'ingénierie de haute performance me passionne, qu'il s'agisse de Formule 1, de sport automobile, d'aérospatial ou de systèmes spatiaux. J'aime les domaines où chaque détail compte et où la performance se mesure.</p>
-<p>Ma démarche consiste à traiter un problème dans son ensemble, de la modélisation à la conception puis au code, avant de confronter le résultat à l'expérience et aux données. Ce site présente les projets où j'ai appliqué cette démarche, en conception mécanique, simulation, programmation, électronique et prototypage.</p>
+<p>Je m'appelle Ruben Gariazzo et je suis élève ingénieur à l'<a href="https://www.epf.fr">EPF</a>, à Paris, depuis 2025. Ce qui me motive dans l'ingénierie, c'est la curiosité. J'ai besoin de comprendre comment les choses fonctionnent avant d'essayer de les améliorer, et j'aime que cette compréhension aboutisse à un objet concret.</p>
+<p>La Formule 1 et le spatial m'attirent particulièrement, parce qu'on y cherche la performance avec rigueur et en équipe. Je m'intéresse aussi à des sujets plus éloignés, comme l'écriture ou les objets du quotidien, car ils entretiennent ma curiosité et ma façon de regarder un problème.</p>
+<p>Ce site rassemble quelques-uns de mes travaux, présentés tels qu'ils se sont déroulés, avec leurs réussites comme leurs ajustements. Je serais heureux d'échanger avec vous si l'un d'eux vous intéresse.</p>
 </div>
 </div>
 
