@@ -749,8 +749,6 @@ function buildWheelIntro() {
   make("circle", { cx: px + 11, cy: py - 11.5, r: 1.3, class: "intro-wheel-dot" }, mount);
   make("line", { x1: px, y1: py - 8, x2: px, y2: py, class: "intro-wheel-thin" }, mount);
   const pivot = make("circle", { cx: px, cy: py, r: 2.6, class: "intro-wheel-line" }, mount);
-  // Motion trail: three ghosts of the rod, only while it is still straight.
-  const trails = [0, 1, 2].map(() => make("line", { class: "intro-wheel-thin", opacity: 0 }));
   const wheel = make("g", {});
   const inner = make("circle", { cx: 150, cy: 150, r: WHEEL_R * 0.84, class: "intro-wheel-thin", opacity: 0 }, wheel);
   const spokes = [];
@@ -770,13 +768,11 @@ function buildWheelIntro() {
   const rod = make("path", { class: "intro-wheel-line", fill: "none" }, wheel);
   const bob = make("circle", { r: 6.5, class: "intro-wheel-accent" });
   const glint = make("circle", { r: 1.9, class: "intro-wheel-glint" });
-  return { svg, arc, mount, pivot, trails, wheel, inner, spokes, lugs, rod, bob, glint };
+  return { svg, arc, mount, pivot, wheel, inner, spokes, lugs, rod, bob, glint };
 }
 
 function playWheelIntro(parts, onDone) {
   const st = { phi: -WHEEL_SWING, curl: 0, shift: 0, slide: 0 };
-  let prevPhi = st.phi;
-  const [px, py] = WHEEL_PIVOT;
   const draw = () => {
     const g = wheelGeometry(st.phi, st.curl, st.shift);
     parts.rod.setAttribute("d", "M" + g.pts.map((p) => p[0].toFixed(1) + " " + p[1].toFixed(1)).join("L"));
@@ -791,16 +787,6 @@ function playWheelIntro(parts, onDone) {
     parts.glint.setAttribute("cy", (by - br * 0.35).toFixed(1));
     // Everything that belongs to the pendulum fades as the rod rolls up.
     const straight = Math.max(0, 1 - st.curl / (WHEEL_L * 0.18));
-    const d = Math.max(-0.05, Math.min(0.05, st.phi - prevPhi));
-    parts.trails.forEach((t, k) => {
-      const a = Math.PI / 2 - (st.phi - d * 5 * (k + 1));
-      t.setAttribute("x1", px);
-      t.setAttribute("y1", py);
-      t.setAttribute("x2", (px + WHEEL_L * Math.cos(a)).toFixed(1));
-      t.setAttribute("y2", (py + WHEEL_L * Math.sin(a)).toFixed(1));
-      t.setAttribute("opacity", (Math.min(0.28, Math.abs(d) * 14) * straight / (k + 1)).toFixed(3));
-    });
-    prevPhi = st.phi;
     parts.arc.setAttribute("opacity", (0.4 * straight).toFixed(2));
     parts.mount.setAttribute("opacity", Math.max(0, 1 - st.shift * 1.6).toFixed(2));
   };
