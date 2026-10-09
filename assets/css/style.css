@@ -21,8 +21,8 @@
   --bg-elevated: #14171c;
   --text: #edeff2;
   --text-muted: #adb3bc;
-  --accent: #1f9aa3;
-  --accent-strong: #5cc4cc;
+  --accent: #c4903f;
+  --accent-strong: #e9c186;
   --border: #232830;
   --max-width: 72rem;
   --space: 1.5rem;
@@ -99,6 +99,37 @@ body {
 
 @keyframes galaxy-turn {
   to { transform: rotate(360deg); }
+}
+
+/* Hull and bulkheads: two quiet vertical seams either side of the reading
+   column, each a pair of hairlines with a row of rivets between them, fading
+   out toward the top and bottom of the window. No text, nothing technical to
+   read: it only says the page is a compartment. Hidden when the viewport is
+   too narrow to leave room beside the column. */
+.hull {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hull i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 9px;
+  border-left: 1px solid rgba(255, 255, 255, 0.07);
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 1px, transparent 1.6px) center 0 / 9px 30px repeat-y;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+}
+
+.hull i:first-child { left: calc(50% - var(--max-width) / 2 - 2.5rem); }
+.hull i:last-child { left: calc(50% + var(--max-width) / 2 + 2.5rem - 9px); }
+
+@media (max-width: 82rem) {
+  .hull { display: none; }
 }
 
 a {
@@ -349,7 +380,7 @@ main {
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 0.3rem;
-  border: 1px solid rgba(155, 232, 255, 0.3);
+  border: 1px solid rgba(233, 193, 134, 0.3);
   background: rgba(20, 23, 28, 0.7);
   color: var(--text);
   font-size: 1.75rem;
@@ -464,7 +495,7 @@ main {
   height: 3rem;
   border-radius: 0.3rem;
   background: rgba(20, 23, 28, 0.7);
-  border: 1px solid rgba(155, 232, 255, 0.3);
+  border: 1px solid rgba(233, 193, 134, 0.3);
   color: var(--text);
   font-size: 1.25rem;
   text-decoration: none;
@@ -626,7 +657,7 @@ html {
   display: inline-block;
   position: relative;
   background: rgba(20, 23, 28, 0.7);
-  border: 1px solid rgba(155, 232, 255, 0.3);
+  border: 1px solid rgba(233, 193, 134, 0.3);
   color: var(--text);
   padding: 0.75rem 1.5rem;
   border-radius: 0.25rem;
@@ -903,7 +934,7 @@ html {
   text-transform: uppercase;
   color: var(--accent-strong);
   background: rgba(10, 12, 15, 0.65);
-  border: 1px solid rgba(155, 232, 255, 0.25);
+  border: 1px solid rgba(233, 193, 134, 0.25);
   border-radius: 0.3rem;
   padding: 0.15rem 0.45rem;
   backdrop-filter: blur(4px);
@@ -967,8 +998,8 @@ html {
 }
 
 /* Homepage highlights: a flight-log ledger, not boxes. Local rules: no fills,
-   hairline rows only; teal at rest = tag + tick; every link underlined in
-   text colour with a teal underline; corner brackets stay for the CTAs and
+   hairline rows only; accent at rest = tag + tick; every link underlined in
+   text colour with an accent underline; corner brackets stay for the CTAs and
    the looking-for callout. */
 .highlight-grid {
   display: grid;
@@ -1049,7 +1080,7 @@ html {
   max-width: 70ch;
   margin: 2rem 0;
   padding: 1.25rem 1.5rem;
-  border: 1px solid rgba(155, 232, 255, 0.3);
+  border: 1px solid rgba(233, 193, 134, 0.3);
   border-radius: 0.25rem;
   background: rgba(20, 23, 28, 0.55);
 }
@@ -1132,7 +1163,7 @@ html {
   /* No mask-image here on purpose: that circular fade existed to hide the
      edge of the old bright Lightformer backdrop (the "white halo"), which
      GlassHero no longer renders -- the medallion's own rounded-square shape
-     is now the only visible edge. A soft teal contact-shadow replaces it for
+     is now the only visible edge. A soft amber contact-shadow replaces it for
      a touch of lift instead of a stark glow. */
   flex: 0 0 auto;
   width: clamp(9rem, 16vw, 15rem);
@@ -1140,7 +1171,7 @@ html {
   pointer-events: none;
   opacity: 0;
   transition: opacity 1.2s var(--ease);
-  filter: drop-shadow(0 0.5rem 1.5rem rgba(31, 154, 163, 0.35));
+  filter: drop-shadow(0 0.5rem 1.5rem rgba(196, 144, 63, 0.30));
 }
 
 .hero-liquid-mount.is-ready {
@@ -1834,13 +1865,13 @@ iframe.video-frame {
   height: 3.5rem;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: rgba(10, 12, 15, 0.72) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%235cc4cc' d='M9 6.5v11l9-5.5z'/%3E%3C/svg%3E") center / 60% no-repeat;
+  background: rgba(10, 12, 15, 0.72) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23e9c186' d='M9 6.5v11l9-5.5z'/%3E%3C/svg%3E") center / 60% no-repeat;
   border: 1px solid var(--accent-strong);
 }
 
 .video-frame:hover::after,
 .video-frame:focus-visible::after {
-  background-color: rgba(31, 154, 163, 0.5);
+  background-color: rgba(196, 144, 63, 0.5);
 }
 
 iframe.video-frame::after {
