@@ -1,8 +1,7 @@
 // Shared window-level pointer-position tracker: one rAF-throttled pointermove
-// listener dispatching a "pointer:move" custom event, instead of gradient-bg.js
-// and cursor.js each running their own independent listener for the same raw
-// position. Skipped entirely under prefers-reduced-motion or on coarse
-// (touch-only) pointers, since neither consumer needs it there.
+// listener dispatching a "pointer:move" custom event for gradient-bg.js.
+// Skipped entirely under prefers-reduced-motion or on coarse (touch-only)
+// pointers, since the consumer does not need it there.
 (() => {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   if (window.matchMedia("(pointer: coarse)").matches) return;

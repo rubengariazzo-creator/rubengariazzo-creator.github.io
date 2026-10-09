@@ -32,8 +32,6 @@ highlights:
     href: /projets/poesie-ratp/
     text: "À 17 ans, parmi les 100 finalistes du plus grand concours de poésie amateur de France, avec <em>Danse sur les dunes</em>, publié aux Éditions Bruno Doucey."
 ---
-<p><a href="/projets/" data-glass-cta>Voir les projets</a></p>
-
 <div class="about-intro">
 <img class="about-portrait about-portrait--lg" src="/assets/img/ruben-gariazzo-studio-400.jpg" srcset="/assets/img/ruben-gariazzo-studio-400.jpg 400w, /assets/img/ruben-gariazzo-studio-768.jpg 768w, /assets/img/ruben-gariazzo-studio.jpg 1536w" sizes="17rem" width="400" height="533" alt="Portrait en noir et blanc de Ruben Gariazzo, élève ingénieur à l'EPF">
 <div>

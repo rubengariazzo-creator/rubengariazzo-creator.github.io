@@ -32,8 +32,6 @@ highlights:
     href: /en/projects/ratp-poetry-prize/
     text: "At 17, one of the 100 finalists of France's largest amateur poetry competition, with <em>Danse sur les dunes</em>, published by Éditions Bruno Doucey."
 ---
-<p><a href="/en/projects/" data-glass-cta>See the projects</a></p>
-
 <div class="about-intro">
 <img class="about-portrait about-portrait--lg" src="/assets/img/ruben-gariazzo-studio-400.jpg" srcset="/assets/img/ruben-gariazzo-studio-400.jpg 400w, /assets/img/ruben-gariazzo-studio-768.jpg 768w, /assets/img/ruben-gariazzo-studio.jpg 1536w" sizes="17rem" width="400" height="533" alt="Black and white portrait of Ruben Gariazzo, engineering student at EPF">
 <div>

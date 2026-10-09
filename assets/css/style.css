@@ -473,18 +473,12 @@ main {
   font-size: 1.25rem;
   text-decoration: none;
   transition: border-color 0.2s var(--ease-snap), background 0.2s var(--ease-snap);
-  animation: scroll-hint-bounce 2s ease-in-out infinite;
 }
 
 .scroll-hint:hover,
 .scroll-hint:focus-visible {
   border-color: var(--accent);
   background: rgba(28, 32, 39, 0.85);
-}
-
-@keyframes scroll-hint-bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-8px); }
 }
 
 html {
@@ -1403,99 +1397,6 @@ html {
   font-size: 0.8rem;
   color: var(--text-muted);
   pointer-events: none;
-}
-
-/* Sitewide custom cursor (assets/js/cursor.js): a crosshair of four corner
-   brackets. Only ever created on fine-pointer/hover-capable devices, so this
-   CSS has no effect (and .has-custom-cursor is never added) on touch. */
-body.has-custom-cursor,
-body.has-custom-cursor a,
-body.has-custom-cursor button,
-body.has-custom-cursor [data-glass-cta] {
-  cursor: none;
-}
-
-.cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 28px;
-  height: 28px;
-  pointer-events: none;
-  z-index: 200;
-  opacity: 0;
-  /* No transform declared here at all, and no transform transition while free-
-     following -- JS sets `transform: translate(x,y) translate(-50%,-50%)`
-     directly every pointer move, and must stay instant (1:1 with the real
-     cursor position), not eased through a moving target. Position (this
-     element, JS-driven) and idle rotation (.cursor-dot-spin, CSS-driven) are on
-     two different elements on purpose: a CSS animation and inline JS both
-     targeting `transform` on the *same* element conflict -- the animation wins
-     while active, so the position JS was silently setting was getting
-     overridden every 6s cycle, making the dot appear to jump toward the
-     top-left corner and back instead of following the mouse. */
-  transition: width 0.2s var(--ease-snap), height 0.2s var(--ease-snap), opacity 0.2s var(--ease-snap);
-}
-
-.cursor-dot.is-hovering {
-  /* Only the discrete hover-snap (jumping to frame a newly-hovered element)
-     gets an eased transform -- easing helps there, unlike continuous tracking. */
-  transition: width 0.2s var(--ease-snap), height 0.2s var(--ease-snap), opacity 0.2s var(--ease-snap),
-    transform 0.2s var(--ease-snap);
-}
-
-.cursor-dot.is-active {
-  opacity: 1;
-}
-
-.cursor-dot-spin {
-  position: absolute;
-  inset: 0;
-}
-
-.cursor-dot span {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border: 1.5px solid var(--accent);
-}
-
-.cursor-dot span:nth-child(1) { top: 0; left: 0; border-right: none; border-bottom: none; }
-.cursor-dot span:nth-child(2) { top: 0; right: 0; border-left: none; border-bottom: none; }
-.cursor-dot span:nth-child(3) { bottom: 0; right: 0; border-left: none; border-top: none; }
-.cursor-dot span:nth-child(4) { bottom: 0; left: 0; border-right: none; border-top: none; }
-
-@media (prefers-reduced-motion: no-preference) {
-  .cursor-dot:not(.is-hovering) .cursor-dot-spin {
-    animation: cursor-spin 6s linear infinite;
-  }
-}
-
-@keyframes cursor-spin {
-  to { transform: rotate(360deg); }
-}
-
-/* Always tracks the real pointer position, even while .cursor-dot's brackets
-   are snapped to frame a large hovered target (a whole project card) -- Ruben's
-   report: once that frame gets big, the brackets alone no longer show where
-   the mouse actually is inside it. A separate element (see cursor.js) with its
-   own transform, never touched by anything else, so no transform-conflict risk. */
-.cursor-center-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--accent-strong);
-  pointer-events: none;
-  z-index: 201;
-  opacity: 0;
-  transition: opacity 0.2s var(--ease-snap);
-}
-
-.cursor-center-dot.is-active {
-  opacity: 1;
 }
 
 /* Invader mini-game (app/src/page-entrance.js): a couple of ambient sprites
