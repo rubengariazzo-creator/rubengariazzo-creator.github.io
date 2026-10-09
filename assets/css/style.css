@@ -97,7 +97,7 @@ body {
   pointer-events: none;
   mix-blend-mode: screen;
   background: url("/assets/img/decor/galaxy.webp") center / contain no-repeat;
-  opacity: 0.34;
+  opacity: 0.42;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -116,20 +116,24 @@ body {
   .galaxy {
     left: 88%;
     top: 28%;
-    opacity: 0.2;
+    opacity: 0.32;
   }
 }
 
-/* Hull and bulkheads. Beside the reading column, a bulkhead seam (a pair of
-   hairlines with a row of rivets between them) and, outside it, hull plating:
-   a dark metal band cut into panels by horizontal joints, each joint carrying
-   its own small rivets. Across the column, every section heading sits under a
-   bulkhead joint, and the header and footer edges carry a rivet row. No text,
-   nothing technical to read. Everything is drawn in CSS gradients. */
+/* Hull. The page is the inside of a ship's bridge, drawn the way a model
+   maker would: slate-blue steel, chunky chamfered beams, plating cut into
+   panels (vents, recessed inserts, a few amber and red indicator lights), all
+   from one tileable greeble texture (assets/img/decor/greeble.webp, generated
+   once, 15 KB) plus bevels. Nothing is text, nothing round: two structural
+   pylons either side of the reading column, plating outside them, a trapezoid
+   beam above every section heading, and the same plating under the header and
+   the footer. Everything sits outside the reading column; on narrow screens
+   the pylons shrink to thin strips at the screen edges. */
 :root {
-  --rivet: rgba(226, 218, 200, 0.34);
-  --seam: rgba(226, 218, 200, 0.16);
-  --panel-h: 15rem;
+  --steel-hi: rgba(170, 196, 224, 0.26);
+  --steel-lo: rgba(0, 0, 0, 0.7);
+  --hull-tile: url("/assets/img/decor/greeble.webp");
+  --pylon-w: 2.4rem;
 }
 
 .hull {
@@ -146,42 +150,35 @@ body {
   bottom: 0;
 }
 
-.hull i {
-  width: 13px;
-  border-left: 1px solid var(--seam);
-  border-right: 1px solid var(--seam);
-  background: radial-gradient(circle, var(--rivet) 1.3px, transparent 2px) center 0 / 13px 28px repeat-y;
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
-  mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
-}
-
-.hull i:nth-of-type(1) { left: calc(50% - var(--max-width) / 2 - 2.5rem); }
-.hull i:nth-of-type(2) { left: calc(50% + var(--max-width) / 2 + 2.5rem - 13px); }
-
-/* Hull plating: the whole margin outside each seam. */
+/* Plating outside the pylons, dimmer toward the screen edge. */
 .hull b {
   width: calc(50% - var(--max-width) / 2 - 2.5rem);
   background:
-    radial-gradient(circle, var(--rivet) 1.2px, transparent 1.9px) 14px 7px / var(--panel-h) var(--panel-h) repeat,
-    linear-gradient(to bottom, transparent calc(var(--panel-h) - 2px), rgba(0, 0, 0, 0.35) calc(var(--panel-h) - 2px), rgba(0, 0, 0, 0.35) calc(var(--panel-h) - 1px), var(--seam) calc(var(--panel-h) - 1px)) 0 0 / 100% var(--panel-h) repeat-y;
+    linear-gradient(var(--plate-fade, to right), rgba(7, 9, 12, 0.88), rgba(7, 9, 12, 0.58)),
+    var(--hull-tile) 0 0 / 300px 300px;
 }
 
-.hull b:nth-of-type(1) {
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.012);
-  mask-image: linear-gradient(to right, #000 30%, transparent);
-  -webkit-mask-image: linear-gradient(to right, #000 30%, transparent);
+.hull b:nth-of-type(1) { left: 0; }
+.hull b:nth-of-type(2) { right: 0; --plate-fade: to left; }
+
+/* Structural pylon: lit from the reading side, cut into segments by dark joints
+   with a highlight under each, and a plated face. */
+.hull i {
+  width: var(--pylon-w);
+  background:
+    linear-gradient(var(--pylon-light, to right), rgba(170, 196, 224, 0.20), rgba(170, 196, 224, 0.03) 70%, rgba(0, 0, 0, 0.35)),
+    repeating-linear-gradient(to bottom, transparent 0, transparent calc(18rem - 4px), var(--steel-lo) calc(18rem - 4px), var(--steel-lo) calc(18rem - 1px), var(--steel-hi) calc(18rem - 1px), var(--steel-hi) 18rem),
+    linear-gradient(rgba(7, 9, 12, 0.5), rgba(7, 9, 12, 0.5)),
+    var(--hull-tile) 0 0 / 190px 190px;
+  box-shadow: inset 2px 0 0 var(--steel-hi), inset -2px 0 0 rgba(0, 0, 0, 0.7), 0 0 1.4rem rgba(0, 0, 0, 0.55);
 }
 
-.hull b:nth-of-type(2) {
-  right: 0;
-  background-color: rgba(255, 255, 255, 0.012);
-  mask-image: linear-gradient(to left, #000 30%, transparent);
-  -webkit-mask-image: linear-gradient(to left, #000 30%, transparent);
-}
+.hull i:nth-of-type(1) { left: calc(50% - var(--max-width) / 2 - 2.5rem - var(--pylon-w)); --pylon-light: to left; }
+.hull i:nth-of-type(2) { left: calc(50% + var(--max-width) / 2 + 2.5rem); --pylon-light: to right; }
+.hull i:nth-of-type(1) { box-shadow: inset -2px 0 0 var(--steel-hi), inset 2px 0 0 rgba(0, 0, 0, 0.7), 0 0 1.4rem rgba(0, 0, 0, 0.55); }
 
-/* Section bulkheads: a joint with its rivet row above every h2 that is a
-   direct child of the page. */
+/* Bulkhead beam above every section heading: a trapezoid (chamfered ends)
+   of plating with a bevel and two indicator lights at its right end. */
 .page > h2,
 .project > h2 {
   position: relative;
@@ -192,36 +189,25 @@ body {
   content: "";
   position: absolute;
   left: 0.6rem;
-  top: -1.6rem;
+  top: -2.1rem;
   width: calc(min(100vw, var(--max-width)) - 2 * var(--space));
-  height: 7px;
-  border-top: 1px solid var(--seam);
-  border-bottom: 1px solid var(--seam);
-  background: radial-gradient(circle, var(--rivet) 1.2px, transparent 1.9px) 0 center / 24px 7px repeat-x;
+  height: 22px;
+  clip-path: polygon(22px 0, calc(100% - 22px) 0, 100% 100%, 0 100%);
+  background:
+    linear-gradient(#f0b050, #f0b050) calc(100% - 44px) 9px / 14px 4px no-repeat,
+    linear-gradient(#e0583a, #e0583a) calc(100% - 70px) 9px / 10px 4px no-repeat,
+    linear-gradient(to bottom, var(--steel-hi), transparent 3px, transparent calc(100% - 3px), var(--steel-lo)),
+    linear-gradient(rgba(7, 9, 12, 0.55), rgba(7, 9, 12, 0.55)),
+    var(--hull-tile) 0 0 / 200px 200px;
   pointer-events: none;
 }
 
-.site-header::after,
-.site-footer::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: radial-gradient(circle, var(--rivet) 1.1px, transparent 1.7px) 0 center / 22px 4px repeat-x;
-  pointer-events: none;
-}
-
-.site-header::after { bottom: -5px; }
-.site-footer::before { top: 4px; }
-.site-footer { position: relative; }
-
-/* Narrow screens: the seams hug the screen edges and the plating goes. */
+/* Narrow screens: no plating, the pylons shrink to thin strips on the edges. */
 @media (max-width: 82rem) {
+  :root { --pylon-w: 0.7rem; }
   .hull b { display: none; }
-  .hull i { width: 9px; background-size: 9px 28px; }
-  .hull i:nth-of-type(1) { left: 0.3rem; }
-  .hull i:nth-of-type(2) { left: auto; right: 0.3rem; }
+  .hull i:nth-of-type(1) { left: 0; }
+  .hull i:nth-of-type(2) { left: auto; right: 0; }
   .page > h2::before,
   .project > h2::before { left: 0.6rem; width: calc(100vw - 2 * var(--space)); }
 }
@@ -290,10 +276,14 @@ h2:hover {
   top: 0;
   z-index: 20;
   width: 100%;
-  background: rgba(10, 12, 15, 0.78);
+  /* Hull plating under a dark veil, bevelled lower edge (see the Hull block). */
+  background:
+    linear-gradient(rgba(8, 10, 13, 0.9), rgba(8, 10, 13, 0.9)),
+    var(--hull-tile) 0 0 / 360px 360px;
   backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--steel-hi);
+  box-shadow: 0 2px 0 var(--steel-lo), 0 0.5rem 1.4rem rgba(0, 0, 0, 0.45);
   transition: transform 0.3s var(--ease);
 }
 
@@ -381,7 +371,11 @@ main {
 }
 
 .site-footer {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--steel-hi);
+  background:
+    linear-gradient(rgba(8, 10, 13, 0.9), rgba(8, 10, 13, 0.9)),
+    var(--hull-tile) 0 0 / 360px 360px;
+  box-shadow: inset 0 2px 0 var(--steel-lo);
   color: var(--text-muted);
   text-align: center;
   padding: var(--space);
@@ -1277,6 +1271,14 @@ html {
     gap: 1rem;
   }
 
+  /* The serif name is wider than the old sans one: let it shrink and wrap
+     instead of pushing the medallion past the right edge of the screen. */
+  .hero-liquid-stage h1 {
+    flex: 0 1 auto;
+    min-width: 0;
+    font-size: clamp(1.9rem, 8vw, 2.25rem);
+  }
+
   .hero-liquid-mount {
     /* On desktop the mount comes first in markup and sits to the H1's left;
        on mobile Ruben asked for it on the right instead. flex: 1 1 auto (the
@@ -1719,6 +1721,22 @@ html {
 
 .invader-hint.is-visible {
   opacity: 1;
+}
+
+/* Phones: a smaller, slightly translucent porthole tucked into the corner so
+   it covers as little text as possible. */
+@media (max-width: 48rem) {
+  .invader-toggle {
+    width: 2.7rem;
+    height: 2.7rem;
+    right: 0.9rem;
+    bottom: 0.6rem;
+    opacity: 0.88;
+  }
+
+  .invader-hint {
+    bottom: 3.8rem;
+  }
 }
 
 .invader-easter-egg {
