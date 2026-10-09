@@ -35,7 +35,7 @@ highlights:
 <p><a href="/projets/" data-glass-cta>Voir les projets</a></p>
 
 <div class="about-intro">
-<img class="about-portrait about-portrait--lg" src="/assets/img/ruben-gariazzo-studio-400.jpg" srcset="/assets/img/ruben-gariazzo-studio-400.jpg 400w, /assets/img/ruben-gariazzo-studio.jpg 768w" sizes="17rem" width="400" height="533" alt="Portrait en noir et blanc de Ruben Gariazzo, élève ingénieur à l'EPF">
+<img class="about-portrait about-portrait--lg" src="/assets/img/ruben-gariazzo-studio-400.jpg" srcset="/assets/img/ruben-gariazzo-studio-400.jpg 400w, /assets/img/ruben-gariazzo-studio-768.jpg 768w, /assets/img/ruben-gariazzo-studio.jpg 1536w" sizes="17rem" width="400" height="533" alt="Portrait en noir et blanc de Ruben Gariazzo, élève ingénieur à l'EPF">
 <div>
 <p>Je suis Ruben Gariazzo, élève ingénieur à l'<a href="https://www.epf.fr">EPF</a>, à Paris, depuis 2025. L'ingénierie de haute performance me passionne, qu'il s'agisse de Formule 1, de sport automobile, d'aérospatial ou de systèmes spatiaux. J'aime les domaines où chaque détail compte et où la performance se mesure.</p>
 <p>Ma démarche consiste à traiter un problème dans son ensemble, de la modélisation à la conception puis au code, avant de confronter le résultat à l'expérience et aux données. Ce site présente les projets où j'ai appliqué cette démarche, en conception mécanique, simulation, programmation, électronique et prototypage.</p>

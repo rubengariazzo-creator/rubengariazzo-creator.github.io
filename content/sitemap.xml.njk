@@ -3,12 +3,16 @@ permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 {%- for entry in collections.all %}
 {%- if entry.url and not (entry.url.endsWith("404.html")) %}
   <url>
     <loc>{{ site.url }}{{ entry.url }}</loc>
     <lastmod>{{ entry.date.toISOString().slice(0, 10) }}</lastmod>
+{%- if entry.data.translationKey == "home" %}
+    <image:image><image:loc>{{ site.url }}{{ site.studioImage }}</image:loc></image:image>
+    <image:image><image:loc>{{ site.url }}{{ site.image }}</image:loc></image:image>
+{%- endif %}
   </url>
 {%- endif %}
 {%- endfor %}
