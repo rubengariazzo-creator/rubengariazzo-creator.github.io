@@ -734,79 +734,50 @@ html {
   margin-bottom: 1rem;
 }
 
-/* Instrument-panel kit: replaces the frosted-glass-pill recipe (gradient fill +
-   backdrop-filter blur) that used to be copy-pasted across every interactive
-   element on the site -- the single most generic "AI portfolio template" tell
-   found in the v3 audit. Sharp corners instead of a pill, a flat dark fill
-   instead of glass, corner brackets that snap into view on hover/focus instead
-   of a blur, --ease-snap instead of a generic ease. */
+/* Buttons are plates, like everything else on the hull: the primary action is
+   a brushed-steel plate with dark engraved text; hover lights an amber glow and
+   lifts it a pixel. (This replaces the old instrument-panel kit with its
+   corner-bracket reticle.) */
 .project-cta a,
 [data-glass-cta] {
   display: inline-block;
   position: relative;
-  background: rgba(20, 23, 28, 0.7);
-  border: 1px solid rgba(233, 193, 134, 0.3);
-  color: var(--text);
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.25rem;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #0f1216;
   text-decoration: none;
-  font-weight: 600;
-  transition: background 0.2s var(--ease-snap), transform 0.2s var(--ease-snap), border-color 0.2s var(--ease-snap);
-}
-
-.project-cta a::before,
-.project-cta a::after,
-[data-glass-cta]::before,
-[data-glass-cta]::after {
-  content: "";
-  position: absolute;
-  width: 0.55rem;
-  height: 0.55rem;
-  border: 1px solid var(--accent);
-  opacity: 0;
-  transition: opacity 0.2s var(--ease-snap);
-}
-
-.project-cta a::before,
-[data-glass-cta]::before {
-  top: -1px;
-  left: -1px;
-  border-right: none;
-  border-bottom: none;
-}
-
-.project-cta a::after,
-[data-glass-cta]::after {
-  bottom: -1px;
-  right: -1px;
-  border-left: none;
-  border-top: none;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.38);
+  padding: 0.7rem 1.5rem;
+  border: 0;
+  border-radius: 3px;
+  background:
+    linear-gradient(100deg, transparent 15%, rgba(255, 255, 255, 0.22) 45%, transparent 75%),
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.09) 0 1px, rgba(0, 0, 0, 0.06) 1px 2px),
+    linear-gradient(180deg, #b5bbc3, #8f959d 55%, #7b8189);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.45), 0 1px 0 rgba(0, 0, 0, 0.7), 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.2s var(--ease-snap), transform 0.2s var(--ease-snap);
 }
 
 .project-cta a:hover,
 .project-cta a:focus-visible,
 [data-glass-cta]:hover,
 [data-glass-cta]:focus-visible {
-  background: rgba(28, 32, 39, 0.85);
-  color: var(--text);
-  border-color: var(--accent);
-  transform: translateY(-2px);
+  color: #0f1216;
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.45), 0 1px 0 rgba(0, 0, 0, 0.7), 0 0 1rem rgba(196, 144, 63, 0.5);
 }
 
-.project-cta a:hover::before,
-.project-cta a:hover::after,
-.project-cta a:focus-visible::before,
-.project-cta a:focus-visible::after,
-[data-glass-cta]:hover::before,
-[data-glass-cta]:hover::after,
-[data-glass-cta]:focus-visible::before,
-[data-glass-cta]:focus-visible::after {
-  opacity: 1;
+.project-cta a:focus-visible,
+[data-glass-cta]:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 3px;
 }
 
 .project-cta a:active,
 [data-glass-cta]:active {
-  transform: translateY(0);
+  transform: translateY(1px);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(0, 0, 0, 0.7);
 }
 
 .project-pager {
@@ -840,7 +811,7 @@ html {
 }
 
 .project-pager-arrow {
-  font-family: "SFMono-Regular", ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
   flex-shrink: 0;
 }
 
@@ -1454,7 +1425,7 @@ html {
 
 .stat-value {
   display: block;
-  font-family: "SFMono-Regular", ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
   font-size: clamp(2.25rem, 2vw + 1rem, 3.5rem);
   font-weight: 700;
   line-height: 1;
@@ -1466,7 +1437,7 @@ html {
 .stat-label {
   display: block;
   margin-top: 0.5rem;
-  font-family: "SFMono-Regular", ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
   font-size: 0.8rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -1513,24 +1484,42 @@ html {
 }
 
 .stl-viewer-btn {
-  padding: 0.3rem 0.65rem;
-  font-family: "SFMono-Regular", ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
+  padding: 0.3rem 0.75rem;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--text-muted);
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: 0.25rem;
+  color: #cdd2d9;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.7);
+  border: 0;
+  border-radius: 3px;
   cursor: pointer;
+  background:
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0 1px, rgba(0, 0, 0, 0.05) 1px 2px),
+    linear-gradient(180deg, #3b424b, #272c33 60%, #1f2328);
+  box-shadow: inset 0 1px 0 rgba(170, 196, 224, 0.28), inset 0 -1px 0 rgba(0, 0, 0, 0.6), 0 1px 0 rgba(0, 0, 0, 0.7), 0 2px 5px rgba(0, 0, 0, 0.35);
 }
 
 .stl-viewer-btn:hover,
-.stl-viewer-btn:focus-visible,
+.stl-viewer-btn:focus-visible {
+  color: #fff;
+}
+
+.stl-viewer-btn:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
 .stl-viewer-btn[aria-pressed="true"] {
-  color: var(--accent-strong);
-  border-color: var(--accent);
+  color: #0f1216;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.38);
+  background:
+    linear-gradient(100deg, transparent 15%, rgba(255, 255, 255, 0.22) 45%, transparent 75%),
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.09) 0 1px, rgba(0, 0, 0, 0.06) 1px 2px),
+    linear-gradient(180deg, #b5bbc3, #8f959d 55%, #7b8189);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.45), 0 1px 0 rgba(0, 0, 0, 0.7), 0 0 0.8rem rgba(196, 144, 63, 0.35);
 }
 
 .stl-viewer-label {
@@ -1899,7 +1888,7 @@ html {
 
 .cs50x-progress-label {
   margin: 0.6rem 0 1.5rem;
-  font-family: "SFMono-Regular", ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
   font-size: 0.85rem;
   letter-spacing: 0.04em;
   color: var(--text-muted);
