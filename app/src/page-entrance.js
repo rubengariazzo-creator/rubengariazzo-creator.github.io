@@ -628,13 +628,103 @@ function initInvaderGame() {
 // specific hero. A hard 3.5s safety timeout and a 500ms display floor mean it
 // never hangs on a slow/blocked load and never flashes on a warm cache.
 const INTRO_SESSION_KEY = "introShown";
-const INTRO_MAX_WAIT_MS = 3500;
-const INTRO_MIN_DISPLAY_MS = 500;
+const INTRO_MAX_WAIT_MS = 4800;
+
+// One 300x300 SVG, two colours. A pendulum swings left to right; at the right
+// extreme its rod rolls itself up, end first, into a closed ring (the rod is
+// exactly one circumference long, L = 2*pi*R), the bob slides to the centre as
+// the hub and spokes are drawn, and the wheel makes a partial turn. Geometry is
+// integrated from curvature each frame, so the curl is a real roll-up and not a
+// cross-fade between two shapes.
+const WHEEL_R = 38;
+const WHEEL_L = 2 * Math.PI * WHEEL_R;
+const WHEEL_PIVOT = [150, 20];
+const WHEEL_SPOKES = 10;
+const WHEEL_SWING = (38 * Math.PI) / 180;
+const smoothstep01 = (t) => {
+  const c = Math.min(1, Math.max(0, t));
+  return c * c * (3 - 2 * c);
+};
+
+function wheelGeometry(phi, curl, shift) {
+  // Heading is measured from +x with y pointing down, so straight down is 90deg.
+  const theta0 = Math.PI / 2 - phi;
+  const N = 120;
+  const ds = WHEEL_L / N;
+  const edge = 4;
+  let x = WHEEL_PIVOT[0];
+  let y = WHEEL_PIVOT[1];
+  let th = theta0;
+  const pts = [[x, y]];
+  for (let i = 0; i < N; i++) {
+    const s = i * ds;
+    const k = smoothstep01((s - (WHEEL_L - curl) + edge) / (2 * edge)) / WHEEL_R;
+    th += ds * k;
+    x += ds * Math.cos(th);
+    y += ds * Math.sin(th);
+    pts.push([x, y]);
+  }
+  const cx = WHEEL_PIVOT[0] - WHEEL_R * Math.sin(theta0);
+  const cy = WHEEL_PIVOT[1] + WHEEL_R * Math.cos(theta0);
+  const dx = shift * (150 - cx);
+  const dy = shift * (150 - cy);
+  return { pts: pts.map(([px, py]) => [px + dx, py + dy]), dx, dy, cx: cx + dx, cy: cy + dy };
+}
+
+function buildWheelIntro() {
+  const NS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(NS, "svg");
+  svg.setAttribute("viewBox", "0 0 300 300");
+  svg.setAttribute("class", "intro-overlay-wheel");
+  const make = (tag, attrs, parent = svg) => {
+    const el = document.createElementNS(NS, tag);
+    Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+    parent.appendChild(el);
+    return el;
+  };
+  const pivot = make("circle", { cx: WHEEL_PIVOT[0], cy: WHEEL_PIVOT[1], r: 2.2, class: "intro-wheel-line" });
+  const wheel = make("g", {});
+  const inner = make("circle", { cx: 150, cy: 150, r: WHEEL_R * 0.84, class: "intro-wheel-thin", opacity: 0 }, wheel);
+  const spokes = [];
+  for (let i = 0; i < WHEEL_SPOKES; i++) {
+    const a = (i / WHEEL_SPOKES) * Math.PI * 2;
+    spokes.push(make("line", {
+      x1: 150 + 8 * Math.cos(a), y1: 150 + 8 * Math.sin(a),
+      x2: 150 + WHEEL_R * 0.84 * Math.cos(a), y2: 150 + WHEEL_R * 0.84 * Math.sin(a),
+      pathLength: 1, class: "intro-wheel-thin", "stroke-dasharray": 1, "stroke-dashoffset": 1,
+    }, wheel));
+  }
+  const rod = make("path", { class: "intro-wheel-line", fill: "none" }, wheel);
+  const bob = make("circle", { r: 6, class: "intro-wheel-accent" });
+  return { svg, pivot, wheel, inner, spokes, rod, bob };
+}
+
+function playWheelIntro(parts, onDone) {
+  const st = { phi: -WHEEL_SWING, curl: 0, shift: 0, hub: 0, slide: 0 };
+  const draw = () => {
+    const g = wheelGeometry(st.phi, st.curl, st.shift);
+    // Before the curl the rod is a straight line from the pivot to the bob.
+    parts.rod.setAttribute("d", "M" + g.pts.map((p) => p[0].toFixed(1) + " " + p[1].toFixed(1)).join("L"));
+    const tip = g.pts[g.pts.length - 1];
+    const bx = tip[0] + (g.cx - tip[0]) * st.slide;
+    const by = tip[1] + (g.cy - tip[1]) * st.slide;
+    parts.bob.setAttribute("cx", bx.toFixed(1));
+    parts.bob.setAttribute("cy", by.toFixed(1));
+    parts.bob.setAttribute("r", (6 + 2 * st.slide).toFixed(1));
+    parts.pivot.setAttribute("opacity", Math.max(0, 1 - st.shift * 2).toFixed(2));
+  };
+  draw();
+  return gsap
+    .timeline({ onUpdate: draw, onComplete: onDone })
+    .to(st, { phi: WHEEL_SWING, duration: 1.1, ease: "sine.inOut" })
+    .to(st, { curl: WHEEL_L + 6, shift: 1, duration: 1.0, ease: "power2.inOut" })
+    .to(st, { slide: 1, duration: 0.35, ease: "power2.inOut" })
+    .to(parts.inner, { opacity: 1, duration: 0.3 }, "<")
+    .to(parts.spokes, { attr: { "stroke-dashoffset": 0 }, duration: 0.45, stagger: 0.035, ease: "power1.out" }, "-=0.2")
+    .to(parts.wheel, { rotation: 140, svgOrigin: "150 150", duration: 1.0, ease: "power2.out" }, "-=0.55");
+}
 
 function showOpeningSequence(container) {
-  const lang = document.documentElement.lang === "fr" ? "fr" : "en";
-  const label = lang === "fr" ? "INITIALISATION" : "INITIALIZING";
-
   return new Promise((resolve) => {
     const overlay = document.createElement("div");
     overlay.className = "intro-overlay";
@@ -643,15 +733,16 @@ function showOpeningSequence(container) {
     // the page underneath is fully present in the accessibility tree the
     // entire time, never itself hidden behind this).
     overlay.setAttribute("aria-hidden", "true");
-    overlay.innerHTML = `<div class="intro-overlay-panel"><p class="intro-overlay-label">${label}</p><div class="intro-overlay-bar"><span class="intro-overlay-bar-fill"></span></div></div>`;
+    const parts = buildWheelIntro();
+    overlay.appendChild(parts.svg);
     document.body.appendChild(overlay);
 
     let heroReady = false;
-    let minDisplayPassed = false;
+    let animDone = false;
     let settled = false;
 
     const maybeFinish = () => {
-      if (settled || !heroReady || !minDisplayPassed) return;
+      if (settled || !heroReady || !animDone) return;
       settled = true;
       clearTimeout(safety);
       gsap
@@ -659,10 +750,21 @@ function showOpeningSequence(container) {
         .to(overlay, { clipPath: "inset(0 0 100% 0)", duration: 0.7, ease: "expo.inOut" });
     };
 
-    setTimeout(() => {
-      minDisplayPassed = true;
+    const timeline = playWheelIntro(parts, () => {
+      animDone = true;
       maybeFinish();
-    }, INTRO_MIN_DISPLAY_MS);
+    });
+
+    // A click or key press skips straight to the end instead of making the
+    // visitor sit through a decoration.
+    const skip = () => {
+      timeline.progress(1);
+      heroReady = true;
+      animDone = true;
+      maybeFinish();
+    };
+    overlay.addEventListener("pointerdown", skip, { once: true });
+    window.addEventListener("keydown", skip, { once: true });
 
     const heroMount = container.querySelector(".hero-liquid-mount");
     const narrowViewport = window.matchMedia("(max-width: 48rem)").matches;
@@ -680,9 +782,12 @@ function showOpeningSequence(container) {
       }).observe(heroMount, { attributes: true, attributeFilter: ["class"] });
     }
 
+    // Hard stop: a slow or blocked hero never leaves the visitor stuck behind
+    // the overlay.
     const safety = setTimeout(() => {
       heroReady = true;
-      minDisplayPassed = true;
+      timeline.progress(1);
+      animDone = true;
       maybeFinish();
     }, INTRO_MAX_WAIT_MS);
 
