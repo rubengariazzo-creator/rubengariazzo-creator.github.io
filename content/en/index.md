@@ -13,7 +13,7 @@ highlights:
   - tag: "Aerospace"
     title: "Icarus, nominal flight at C'Space 2026"
     href: /en/projects/icarus/
-    text: 'A mini-rocket designed, built and launched by five of us from EPF Astronomie at the C''Space campaign run by <a href="https://cnes.fr/en">CNES</a> and <a href="https://www.planete-sciences.org">Planète Sciences</a>. I drew the nose cone in CATIA, 3D-printed parts, took part in the stability simulations and made the 3D animation in Blender.'
+    text: 'A mini-rocket designed, built and launched by five of us among the members of EPF Astronomie at the C''Space campaign run by <a href="https://cnes.fr/en">CNES</a> and <a href="https://www.planete-sciences.org">Planète Sciences</a>. I drew the nose cone in CATIA, 3D-printed parts, took part in the stability simulations and made the 3D animation in Blender.'
   - tag: "Research"
     title: "Three independent studies published on Zenodo"
     text: 'I dug into the <a href="/en/projects/dna-zeno/">quantum Zeno effect applied to DNA data storage</a> (2026), the <a href="/en/projects/agapeyeff-cryptanalysis/">D''Agapeyeff cryptogram</a>, which nobody has solved since 1939 (2026), and the <a href="/en/projects/anharmonicity/">anharmonicity of a rocking cone</a> (2025).'

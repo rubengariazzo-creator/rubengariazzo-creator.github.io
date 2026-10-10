@@ -65,7 +65,7 @@ cta:
 ---
 Icarus is an experimental mini-rocket that we designed, built and flew at C'Space 2026, the student launch campaign organized by CNES and Planète Sciences at the Ger military camp, hosted by the 1er RHP. Its flight was nominal.
 
-There were five of us in EPF Astronomie, EPF's aerospace club. Camille Gaudeaux led the project, with Margaux Vahlas, Chimène Tabaste, Ambroise Denduang Wolber and me.
+There were five of us among the members of EPF Astronomie, EPF's aerospace club. Camille Gaudeaux led the project, with Margaux Vahlas, Chimène Tabaste, Ambroise Denduang Wolber and me.
 
 ## The rocket
 
@@ -128,6 +128,6 @@ Here are two videos from the EPF Astronomie team, the preparation on the launch 
 
 ## Press & mentions
 
-We announced it on LinkedIn with ["Nominal flight achieved!" (Icarus at C'Space 2026)](https://www.linkedin.com/feed/update/urn:li:activity:7506806576557613056/), alongside the project's 3D animation and reactions from the EPF Astronomie team.
+EPF Astronomie covers it in its [look back at C'Space 2026](https://www.linkedin.com/posts/epf-astronomie_retour-sur-le-cspace-2026-activity-7511855360081588224-CDHw), published on LinkedIn.
 
-It is also covered on LinkedIn, with [EPF Astronomie's look back at C'Space 2026](https://www.linkedin.com/posts/epf-astronomie_retour-sur-le-cspace-2026-activity-7511855360081588224-CDHw) and Chimène Tabaste's post, ["From design to nominal flight: Icarus"](https://fr.linkedin.com/posts/chim%C3%A8ne-tabaste-969aa4331_de-la-conception-au-vol-nominal-icarus-activity-7485954383550205952-eefN) (in French).
+It is also covered by ["Nominal flight achieved!" (Icarus at C'Space 2026)](https://www.linkedin.com/feed/update/urn:li:activity:7506806576557613056/), a post alongside the project's 3D animation with reactions from the EPF Astronomie team, and by Chimène Tabaste's post, ["From design to nominal flight: Icarus"](https://fr.linkedin.com/posts/chim%C3%A8ne-tabaste-969aa4331_de-la-conception-au-vol-nominal-icarus-activity-7485954383550205952-eefN) (in French).

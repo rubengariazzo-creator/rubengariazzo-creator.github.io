@@ -65,7 +65,7 @@ cta:
 ---
 Icarus est une mini-fusée expérimentale que nous avons conçue, fabriquée et lancée au C'Space 2026, la campagne de lancement étudiante organisée par le CNES et Planète Sciences au camp militaire de Ger, avec le soutien du 1er RHP. Son vol a été nominal.
 
-Nous étions cinq dans EPF Astronomie, le club aérospatial de l'EPF. Camille Gaudeaux dirigeait le projet, avec Margaux Vahlas, Chimène Tabaste, Ambroise Denduang Wolber et moi.
+Nous étions cinq parmi les membres d'EPF Astronomie, le club aérospatial de l'EPF. Camille Gaudeaux dirigeait le projet, avec Margaux Vahlas, Chimène Tabaste, Ambroise Denduang Wolber et moi.
 
 ## La fusée
 
@@ -128,6 +128,6 @@ Voici deux vidéos de l'équipe EPF Astronomie, la préparation en rampe puis le
 
 ## Presse et mentions
 
-Nous l'avons annoncé sur LinkedIn avec [« Nominal flight achieved! » (Icarus au C'Space 2026)](https://www.linkedin.com/feed/update/urn:li:activity:7506806576557613056/), accompagné de l'animation 3D du projet et des réactions de l'équipe EPF Astronomie.
+EPF Astronomie en parle dans son [retour sur le C'Space 2026](https://www.linkedin.com/posts/epf-astronomie_retour-sur-le-cspace-2026-activity-7511855360081588224-CDHw), publié sur LinkedIn.
 
-On en parle aussi sur LinkedIn, avec le [retour sur le C'Space 2026 publié par EPF Astronomie](https://www.linkedin.com/posts/epf-astronomie_retour-sur-le-cspace-2026-activity-7511855360081588224-CDHw) et le post de Chimène Tabaste, [« De la conception au vol nominal : Icarus »](https://fr.linkedin.com/posts/chim%C3%A8ne-tabaste-969aa4331_de-la-conception-au-vol-nominal-icarus-activity-7485954383550205952-eefN).
+On en parle aussi avec [« Nominal flight achieved! » (Icarus au C'Space 2026)](https://www.linkedin.com/feed/update/urn:li:activity:7506806576557613056/), un post accompagné de l'animation 3D du projet et des réactions de l'équipe EPF Astronomie, et avec le post de Chimène Tabaste, [« De la conception au vol nominal : Icarus »](https://fr.linkedin.com/posts/chim%C3%A8ne-tabaste-969aa4331_de-la-conception-au-vol-nominal-icarus-activity-7485954383550205952-eefN).
