@@ -165,7 +165,11 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addNunjucksAsyncShortcode("docPreview", async function (href, lang, label) {
     const title = label || href;
-    return `<iframe src="${escapeAttr(href)}" class="doc-preview-pdf" title="${escapeAttr(title)}" loading="lazy"></iframe>`;
+    // Desktop keeps the browser's own PDF viewer in an iframe; touch screens get
+    // the pdf.js reader (app/src/pdf-viewer.js), because phone browsers cannot
+    // scroll or zoom an embedded PDF. CSS shows exactly one of the two.
+    return `<iframe src="${escapeAttr(href)}" class="doc-preview-pdf" title="${escapeAttr(title)}" loading="lazy"></iframe>` +
+      `<div class="doc-pdf-viewer" data-pdf-src="${escapeAttr(href)}" data-title="${escapeAttr(title)}"></div>`;
   });
 
   eleventyConfig.addCollection("byTranslationKey", (api) => {

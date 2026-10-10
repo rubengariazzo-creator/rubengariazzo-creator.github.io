@@ -13,6 +13,7 @@ export default defineConfig({
         app: resolve(__dirname, "src/main.jsx"),
         "page-entrance": resolve(__dirname, "src/page-entrance.js"),
         "smooth-scroll": resolve(__dirname, "src/smooth-scroll.js"),
+        "pdf-viewer": resolve(__dirname, "src/pdf-viewer.js"),
       },
       output: {
         entryFileNames: "[name].js",

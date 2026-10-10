@@ -1370,17 +1370,15 @@ html {
     font-size: 0.85rem;
   }
 
-  .doc-preview-pdf {
-    display: none;
-  }
-
   .doc-links a {
     display: inline-block;
-    padding: 0.6rem 1.1rem;
-    border-radius: 999px;
-    background: var(--bg-elevated);
-    border: 1px solid var(--border);
+    padding: 0.55rem 1rem;
     margin: 0.25rem 0.35rem 0.25rem 0;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #cdd2d9;
+    background: linear-gradient(180deg, #3b424b, #272c33 60%, #1f2328);
+    box-shadow: inset 0 1px 0 rgba(170, 196, 224, 0.28), inset 0 -1px 0 rgba(0, 0, 0, 0.6), 0 2px 5px rgba(0, 0, 0, 0.35);
   }
 }
 
@@ -2112,4 +2110,98 @@ html.intro-pending body > *:not(.intro-overlay) {
 
 @keyframes intro-failsafe {
   to { visibility: visible; }
+}
+
+/* PDF reader for touch screens (app/src/pdf-viewer.js). Desktop shows the
+   browser's own viewer in the iframe; phones and tablets show this reader. */
+.doc-pdf-viewer {
+  display: none;
+}
+
+@media (max-width: 48rem), (pointer: coarse) {
+  .doc-preview-pdf {
+    display: none;
+  }
+
+  .doc-pdf-viewer {
+    display: block;
+  }
+}
+
+.pdf-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.pdf-status {
+  flex: 1;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.pdf-btn {
+  min-width: 2.6rem;
+  height: 2.2rem;
+  padding: 0 0.7rem;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #cdd2d9;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  background:
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0 1px, rgba(0, 0, 0, 0.05) 1px 2px),
+    linear-gradient(180deg, #3b424b, #272c33 60%, #1f2328);
+  box-shadow: inset 0 1px 0 rgba(170, 196, 224, 0.28), inset 0 -1px 0 rgba(0, 0, 0, 0.6), 0 1px 0 rgba(0, 0, 0, 0.7), 0 2px 5px rgba(0, 0, 0, 0.35);
+}
+
+.pdf-btn:active {
+  color: #fff;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.pdf-btn:focus-visible,
+.pdf-scroller:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+/* One finger scrolls both ways; two fingers are left to the pinch handler. */
+.pdf-scroller {
+  height: 72vh;
+  overflow: auto;
+  touch-action: pan-x pan-y;
+  background: #14171c;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pdf-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: max-content;
+  min-width: 100%;
+}
+
+.pdf-page {
+  background: #fff;
+  flex: none;
+  overflow: hidden;
+}
+
+.pdf-page canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.pdf-error {
+  margin: 0;
+  color: var(--text-muted);
 }
