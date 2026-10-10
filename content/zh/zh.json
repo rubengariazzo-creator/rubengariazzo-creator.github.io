@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "首页",
+    "projects": "项目",
+    "experience": "经历",
+    "diplomas": "学历",
+    "contact": "联系"
+  },
+  "footer": {
+    "rights": "保留所有权利。",
+    "legalNotice": "法律声明",
+    "terms": "使用条款"
+  },
+  "ui": {
+    "download": "下载",
+    "openTab": "在新标签页中打开",
+    "scrollHint": "跳到正文"
+  }
+}

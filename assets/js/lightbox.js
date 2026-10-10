@@ -2,7 +2,8 @@
   const triggers = document.querySelectorAll("[data-lightbox]");
   if (!triggers.length) return;
 
-  const closeLabel = document.documentElement.lang === "en" ? "Close" : "Fermer";
+  const pageLang = document.documentElement.lang;
+  const closeLabel = pageLang.startsWith("zh") ? "关闭" : pageLang === "en" ? "Close" : "Fermer";
   const overlay = document.createElement("div");
   overlay.className = "lightbox-overlay";
   overlay.setAttribute("role", "dialog");

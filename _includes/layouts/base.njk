@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ lang }}">
+<html lang="{{ 'zh-Hans' if lang == 'zh' else lang }}">
 <head>
   <meta charset="UTF-8">
   <!-- script-src/connect-src include the pinned Pyodide path on cdn.jsdelivr.net (keep in sync with
@@ -32,7 +32,7 @@
 <body data-category="{{ category }}" data-project-key="{{ translationKey }}">
   <div class="galaxy" aria-hidden="true"></div>
   <div class="hull" aria-hidden="true"><b></b><b></b><i></i><i></i></div>
-  <a class="skip-link" href="#main">{{ 'Aller au contenu' if lang == 'fr' else 'Skip to content' }}</a>
+  <a class="skip-link" href="#main">{{ {'fr': 'Aller au contenu', 'en': 'Skip to content', 'zh': '跳到正文'}[lang] }}</a>
   {%- include "partials/nav.njk" %}
   <main id="main">
     {{ content | safe }}

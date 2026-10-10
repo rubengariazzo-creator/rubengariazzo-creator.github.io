@@ -1356,6 +1356,11 @@ html {
     right: 1rem;
   }
 
+  /* Three languages: the second switch sits to the left of the first. */
+  .site-header nav a.lang-switch + a.lang-switch {
+    right: 4.4rem;
+  }
+
   /* All five sections on one row from ~360px up (measured: ~290px of text
      at this size); space-between spreads them edge to edge on wider phones,
      and the wrap only kicks in on the rare narrower screen. */
@@ -2204,4 +2209,41 @@ html.intro-pending body > *:not(.intro-overlay) {
 .pdf-error {
   margin: 0;
   color: var(--text-muted);
+}
+
+/* Simplified Chinese: Fraunces has no CJK glyphs, so Han characters fall back to
+   the best serif the visitor's system has (no web font: a CJK font is megabytes).
+   Latin letters and digits inside Chinese text keep Fraunces. */
+:lang(zh) body,
+body:lang(zh),
+:lang(zh) h1,
+:lang(zh) h2,
+:lang(zh) h3,
+:lang(zh) .project-meta-tag,
+:lang(zh) .highlight-tag,
+:lang(zh) .project-card-tag,
+:lang(zh) .filter-pill,
+:lang(zh) .stl-viewer-btn,
+:lang(zh) .pdf-btn,
+:lang(zh) .stat-value,
+:lang(zh) .stat-label {
+  font-family: "Fraunces", "Source Han Serif SC", "Noto Serif CJK SC", "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+}
+
+:lang(zh) body {
+  line-height: 1.8;
+}
+
+:lang(zh) h1,
+:lang(zh) h2,
+:lang(zh) h3 {
+  letter-spacing: 0;
+}
+
+:lang(zh) .project-meta-tag,
+:lang(zh) .highlight-tag,
+:lang(zh) .project-card-tag,
+:lang(zh) .stl-viewer-btn,
+:lang(zh) .stat-label {
+  letter-spacing: 0.04em;
 }

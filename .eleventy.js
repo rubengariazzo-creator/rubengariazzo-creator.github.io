@@ -53,6 +53,7 @@ module.exports = function (eleventyConfig) {
     studioImage: "/assets/img/ruben-gariazzo-studio.jpg",
     headline: "Engineering Student at EPF | Computer Science, Space Engineering & Research Projects",
     bio: "an engineering student at EPF Engineering School (Paris, France) focused on computer science, space engineering and research projects, with independent physics and cryptanalysis studies published on Zenodo",
+    bioZh: "法国巴黎 EPF 工程师学院在读工程师学生，专注于计算机科学、航天工程和研究项目，并在 Zenodo 上发表物理学与密码分析方面的独立研究",
     bioFr: "élève ingénieur à l'EPF (Paris, France), tourné vers l'informatique, l'ingénierie spatiale et les projets de recherche, auteur d'études indépendantes en physique et en cryptanalyse publiées sur Zenodo",
     knowsAbout: [
       "Aerospace Engineering",
@@ -80,7 +81,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("structuredData", (page, site) => {
     const personId = `${site.url}/#person`;
     const websiteId = `${site.url}/#website`;
-    const fr = page.lang === "fr";
+    const L = page.lang;
+    const pick = (fr, en, zh) => (L === "fr" ? fr : L === "zh" ? zh : en);
     const pageUrl = site.url + page.url;
     const graph = [
       {
@@ -90,13 +92,15 @@ module.exports = function (eleventyConfig) {
         givenName: "Ruben",
         familyName: "Gariazzo",
         alternateName: ["Ruben Gariazzo EPF", "Ruben Gariazzo ingénieur"],
-        disambiguatingDescription: fr
-          ? "Ruben Gariazzo, élève ingénieur à l'EPF (Paris), auteur du projet de mini-fusée Icarus et d'études publiées sur Zenodo."
-          : "Ruben Gariazzo, EPF engineering student (Paris), behind the Icarus mini-rocket project and studies published on Zenodo.",
+        disambiguatingDescription: pick(
+          "Ruben Gariazzo, élève ingénieur à l'EPF (Paris), auteur du projet de mini-fusée Icarus et d'études publiées sur Zenodo.",
+          "Ruben Gariazzo, EPF engineering student (Paris), behind the Icarus mini-rocket project and studies published on Zenodo.",
+          "Ruben Gariazzo，巴黎 EPF 工程师学院在读工程师学生，伊卡洛斯（Icarus）迷你火箭项目参与者，并在 Zenodo 上发表独立研究。"
+        ),
         url: `${site.url}/`,
         image: [site.url + site.studioImage, site.url + site.image],
         jobTitle: site.jobTitle,
-        description: fr ? site.bioFr : site.bio,
+        description: pick(site.bioFr, site.bio, site.bioZh),
         homeLocation: { "@type": "Place", name: "Paris, France" },
         affiliation: { "@type": "CollegeOrUniversity", name: site.school.name, url: site.school.url },
         memberOf: { "@type": "Organization", name: "EPF Astronomie" },
@@ -109,7 +113,7 @@ module.exports = function (eleventyConfig) {
         "@id": websiteId,
         url: `${site.url}/`,
         name: site.name,
-        inLanguage: ["fr", "en"],
+        inLanguage: ["fr", "en", "zh-Hans"],
         author: { "@id": personId },
       },
     ];
@@ -119,19 +123,19 @@ module.exports = function (eleventyConfig) {
         "@id": `${pageUrl}#webpage`,
         url: pageUrl,
         name: page.title,
-        inLanguage: page.lang,
+        inLanguage: L === "zh" ? "zh-Hans" : L,
         isPartOf: { "@id": websiteId },
         mainEntity: { "@id": personId },
       });
     }
-    const home = fr ? "/" : "/en/";
-    const projects = fr ? "/projets/" : "/en/projects/";
+    const home = pick("/", "/en/", "/zh/");
+    const projects = pick("/projets/", "/en/projects/", "/zh/projects/");
     if (page.url.startsWith(projects) && page.url !== projects) {
       graph.push({
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: fr ? "Accueil" : "Home", item: site.url + home },
-          { "@type": "ListItem", position: 2, name: fr ? "Projets" : "Projects", item: site.url + projects },
+          { "@type": "ListItem", position: 1, name: pick("Accueil", "Home", "首页"), item: site.url + home },
+          { "@type": "ListItem", position: 2, name: pick("Projets", "Projects", "项目"), item: site.url + projects },
           { "@type": "ListItem", position: 3, name: page.title, item: pageUrl },
         ],
       });

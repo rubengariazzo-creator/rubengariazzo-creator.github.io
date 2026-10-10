@@ -59,7 +59,7 @@ layout: layouts/base.njk
     <div class="cs50x-progress-bar">
       <div class="cs50x-progress-bar-fill" style="width: {{ cs50x.percent }}%"></div>
     </div>
-    <p class="cs50x-progress-label">{{ cs50x.completed }}/{{ cs50x.total }} {{ "problem sets complete" if lang == "en" else "problèmes résolus" }} ({{ cs50x.percent }}%)</p>
+    <p class="cs50x-progress-label">{{ cs50x.completed }}/{{ cs50x.total }} {{ {"en": "problem sets complete", "fr": "problèmes résolus", "zh": "个习题集已完成"}[lang] }} ({{ cs50x.percent }}%)</p>
     {%- if cs50x.items and cs50x.items.length %}
     <ul class="cs50x-progress-list">
       {%- for item in cs50x.items %}
@@ -90,7 +90,7 @@ layout: layouts/base.njk
   {%- include "partials/download-list.njk" %}
 
   {%- if projectNav.prev or projectNav.next %}
-  <nav class="project-pager" aria-label="{{ 'Navigation entre projets' if lang == 'fr' else 'Project navigation' }}">
+  <nav class="project-pager" aria-label="{{ {'fr': 'Navigation entre projets', 'en': 'Project navigation', 'zh': '项目导航'}[lang] }}">
     {%- if projectNav.prev %}
     <a href="{{ projectNav.prev.url }}" rel="prev" class="project-pager-link project-pager-prev">
       <span class="project-pager-arrow">←</span>

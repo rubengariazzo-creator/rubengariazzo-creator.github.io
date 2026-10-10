@@ -8,9 +8,10 @@
 const TOUCH = "(max-width: 48rem), (pointer: coarse)";
 const UI = {
   fr: { zoomIn: "Zoom avant", zoomOut: "Zoom arrière", fit: "Pleine largeur", page: "Page", of: "sur", loading: "Chargement du document", error: "Impossible d'afficher ce document ici. Utilisez les liens ci-dessous." },
+  zh: { zoomIn: "放大", zoomOut: "缩小", fit: "适合宽度", page: "第", of: "页，共", end: "页", loading: "正在加载文档", error: "无法在此显示该文档，请使用下方链接。" },
   en: { zoomIn: "Zoom in", zoomOut: "Zoom out", fit: "Fit width", page: "Page", of: "of", loading: "Loading document", error: "This document cannot be shown here. Use the links below." },
 };
-const lang = document.documentElement.lang === "fr" ? "fr" : "en";
+const lang = (document.documentElement.lang.startsWith("zh") ? "zh" : document.documentElement.lang === "fr" ? "fr" : "en");
 const t = UI[lang];
 const MAX_ZOOM = 5;
 const MAX_CANVAS_PIXELS = 12e6;
@@ -83,7 +84,7 @@ async function mount(root) {
     const page = await pdf.getPage(i);
     const base = page.getViewport({ scale: 1 });
     const holder = el("div", "pdf-page");
-    const canvas = el("canvas", "", { role: "img", "aria-label": `${t.page} ${i} ${t.of} ${n}` });
+    const canvas = el("canvas", "", { role: "img", "aria-label": `${t.page} ${i} ${t.of} ${n}${t.end || ""}` });
     holder.append(canvas);
     stack.append(holder);
     pages.push({ page, base, holder, canvas, renderedWidth: 0, task: null });
@@ -164,7 +165,7 @@ async function mount(root) {
     const mid = scroller.scrollTop + scroller.clientHeight / 2;
     let cur = 1;
     pages.forEach((p, i) => { if (p.holder.offsetTop <= mid) cur = i + 1; });
-    status.textContent = `${t.page} ${cur} ${t.of} ${n}`;
+    status.textContent = `${t.page} ${cur} ${t.of} ${n}${t.end || ""}`;
   };
   updateStatus();
   scroller.addEventListener("scroll", updateStatus, { passive: true });

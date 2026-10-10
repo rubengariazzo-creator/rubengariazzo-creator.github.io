@@ -10,7 +10,7 @@
 {%- endif %}
 <link rel="canonical" href="{{ canonicalUrl }}">
 <meta property="og:site_name" content="{{ site.name }}">
-<meta property="og:locale" content="{{ 'fr_FR' if lang == 'fr' else 'en_US' }}">
+<meta property="og:locale" content="{{ {'fr': 'fr_FR', 'en': 'en_US', 'zh': 'zh_CN'}[lang] }}">
 <meta property="og:title" content="{{ seoTitle or title }}">
 <meta property="og:description" content="{{ description }}">
 <meta property="og:url" content="{{ canonicalUrl }}">
@@ -27,7 +27,7 @@
 
 {%- if translationKey and collections.byTranslationKey[translationKey] %}
 {%- for lang, url in collections.byTranslationKey[translationKey] %}
-<link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}{{ url }}">
+<link rel="alternate" hreflang="{{ 'zh-Hans' if lang == 'zh' else lang }}" href="{{ site.url }}{{ url }}">
 {%- endfor %}
 <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ collections.byTranslationKey[translationKey].fr }}">
 {%- endif %}

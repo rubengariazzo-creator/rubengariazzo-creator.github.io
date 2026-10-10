@@ -1,20 +1,31 @@
-{%- set home = "/en/" if lang == "en" else "/" -%}
-{%- set projectsHref = "/en/projects/" if lang == "en" else "/projets/" -%}
-{%- set experienceHref = "/en/experience/" if lang == "en" else "/experiences/" -%}
-{%- set diplomasHref = "/en/diplomas/" if lang == "en" else "/diplomes/" -%}
-{%- set contactHref = "/en/contact/" if lang == "en" else "/contact/" -%}
-{%- set otherLang = "fr" if lang == "en" else "en" -%}
-{%- set otherLangUrl = collections.byTranslationKey[translationKey][otherLang] if translationKey and collections.byTranslationKey[translationKey] and collections.byTranslationKey[translationKey][otherLang] else ("/" if lang == "en" else "/en/") -%}
+{%- set paths = {
+  "fr": { "home": "/", "projects": "/projets/", "experience": "/experiences/", "diplomas": "/diplomes/", "contact": "/contact/" },
+  "en": { "home": "/en/", "projects": "/en/projects/", "experience": "/en/experience/", "diplomas": "/en/diplomas/", "contact": "/en/contact/" },
+  "zh": { "home": "/zh/", "projects": "/zh/projects/", "experience": "/zh/experience/", "diplomas": "/zh/diplomas/", "contact": "/zh/contact/" }
+} -%}
+{%- set p = paths[lang] -%}
+{%- set home = p.home -%}
+{%- set projectsHref = p.projects -%}
+{%- set experienceHref = p.experience -%}
+{%- set diplomasHref = p.diplomas -%}
+{%- set contactHref = p.contact -%}
+{%- set langLabels = { "fr": "FR", "en": "EN", "zh": "中文" } -%}
+{%- set langAttrs = { "fr": "fr", "en": "en", "zh": "zh-Hans" } -%}
 <header class="site-header">
   <div class="site-header-inner">
     <a class="brand" href="{{ home }}">{{ site.name }}</a>
-    <nav aria-label="{{ 'Navigation principale' if lang == 'fr' else 'Main navigation' }}">
+    <nav aria-label="{{ {'fr': 'Navigation principale', 'en': 'Main navigation', 'zh': '主导航'}[lang] }}">
       <a href="{{ home }}"{% if page.url == home %} aria-current="page"{% endif %}>{{ nav.home }}</a>
       <a href="{{ projectsHref }}"{% if page.url.startsWith(projectsHref) %} aria-current="page"{% endif %}>{{ nav.projects }}</a>
       <a href="{{ experienceHref }}"{% if page.url == experienceHref %} aria-current="page"{% endif %}>{{ nav.experience }}</a>
       <a href="{{ diplomasHref }}"{% if page.url == diplomasHref %} aria-current="page"{% endif %}>{{ nav.diplomas }}</a>
       <a href="{{ contactHref }}"{% if page.url == contactHref %} aria-current="page"{% endif %}>{{ nav.contact }}</a>
-      <a href="{{ otherLangUrl }}" class="lang-switch" hreflang="{{ otherLang }}">{{ otherLang | upper }}</a>
+      {%- for other in ["fr", "en", "zh"] %}
+      {%- if other != lang %}
+      {%- set otherUrl = collections.byTranslationKey[translationKey][other] if translationKey and collections.byTranslationKey[translationKey] and collections.byTranslationKey[translationKey][other] else paths[other].home %}
+      <a href="{{ otherUrl }}" class="lang-switch" hreflang="{{ langAttrs[other] }}" lang="{{ langAttrs[other] }}">{{ langLabels[other] }}</a>
+      {%- endif %}
+      {%- endfor %}
     </nav>
   </div>
 </header>

@@ -6,7 +6,7 @@
     · <a href="{{ site.orcid }}" rel="me">ORCID</a>
   </p>
   <p>
-    <a href="{{ '/en/legal-notice/' if lang == 'en' else '/mentions-legales/' }}">{{ footer.legalNotice }}</a>
-    · <a href="{{ '/en/terms/' if lang == 'en' else '/conditions-generales/' }}">{{ footer.terms }}</a>
+    <a href="{{ {'fr': '/mentions-legales/', 'en': '/en/legal-notice/', 'zh': '/zh/legal-notice/'}[lang] }}">{{ footer.legalNotice }}</a>
+    · <a href="{{ {'fr': '/conditions-generales/', 'en': '/en/terms/', 'zh': '/zh/terms/'}[lang] }}">{{ footer.terms }}</a>
   </p>
 </footer>

@@ -302,19 +302,25 @@ const INVADER_SCORE_TO_UNLOCK = 20;
 // caught by actually checking a French project page, where it was silently
 // falling through to the generic default instead of its category's line.
 const INVADER_EASTER_EGGS = {
-  Aerospace: { fr: "SÉQUENCE DE LANCEMENT ENGAGÉE", en: "LAUNCH SEQUENCE ENGAGED" },
-  "Aérospatial": { fr: "SÉQUENCE DE LANCEMENT ENGAGÉE", en: "LAUNCH SEQUENCE ENGAGED" },
-  Mechanical: { fr: "TOLÉRANCES VALIDÉES", en: "TOLERANCES VALIDATED" },
-  "Mécanique": { fr: "TOLÉRANCES VALIDÉES", en: "TOLERANCES VALIDATED" },
-  Programming: { fr: "COMPILATION RÉUSSIE", en: "BUILD SUCCEEDED" },
-  Programmation: { fr: "COMPILATION RÉUSSIE", en: "BUILD SUCCEEDED" },
-  Research: { fr: "HYPOTHÈSE CONFIRMÉE", en: "HYPOTHESIS CONFIRMED" },
-  Recherche: { fr: "HYPOTHÈSE CONFIRMÉE", en: "HYPOTHESIS CONFIRMED" },
-  Business: { fr: "OBJECTIFS ATTEINTS", en: "TARGETS MET" },
-  Creative: { fr: "ŒUVRE DÉBLOQUÉE", en: "PIECE UNLOCKED" },
-  "Créatif": { fr: "ŒUVRE DÉBLOQUÉE", en: "PIECE UNLOCKED" },
+  Aerospace: { fr: "SÉQUENCE DE LANCEMENT ENGAGÉE", en: "LAUNCH SEQUENCE ENGAGED", zh: "发射程序已启动" },
+  "Aérospatial": { fr: "SÉQUENCE DE LANCEMENT ENGAGÉE", en: "LAUNCH SEQUENCE ENGAGED", zh: "发射程序已启动" },
+  Mechanical: { fr: "TOLÉRANCES VALIDÉES", en: "TOLERANCES VALIDATED", zh: "公差验证通过" },
+  "Mécanique": { fr: "TOLÉRANCES VALIDÉES", en: "TOLERANCES VALIDATED", zh: "公差验证通过" },
+  Programming: { fr: "COMPILATION RÉUSSIE", en: "BUILD SUCCEEDED", zh: "编译成功" },
+  Programmation: { fr: "COMPILATION RÉUSSIE", en: "BUILD SUCCEEDED", zh: "编译成功" },
+  Research: { fr: "HYPOTHÈSE CONFIRMÉE", en: "HYPOTHESIS CONFIRMED", zh: "假设已证实" },
+  Recherche: { fr: "HYPOTHÈSE CONFIRMÉE", en: "HYPOTHESIS CONFIRMED", zh: "假设已证实" },
+  Business: { fr: "OBJECTIFS ATTEINTS", en: "TARGETS MET", zh: "目标达成" },
+  Creative: { fr: "ŒUVRE DÉBLOQUÉE", en: "PIECE UNLOCKED", zh: "作品已解锁" },
+  "Créatif": { fr: "ŒUVRE DÉBLOQUÉE", en: "PIECE UNLOCKED", zh: "作品已解锁" },
+  航空航天: { fr: "SÉQUENCE DE LANCEMENT ENGAGÉE", en: "LAUNCH SEQUENCE ENGAGED", zh: "发射程序已启动" },
+  机械设计: { fr: "TOLÉRANCES VALIDÉES", en: "TOLERANCES VALIDATED", zh: "公差验证通过" },
+  编程: { fr: "COMPILATION RÉUSSIE", en: "BUILD SUCCEEDED", zh: "编译成功" },
+  科研: { fr: "HYPOTHÈSE CONFIRMÉE", en: "HYPOTHESIS CONFIRMED", zh: "假设已证实" },
+  商业: { fr: "OBJECTIFS ATTEINTS", en: "TARGETS MET", zh: "目标达成" },
+  创意: { fr: "ŒUVRE DÉBLOQUÉE", en: "PIECE UNLOCKED", zh: "作品已解锁" },
 };
-const INVADER_DEFAULT_EGG = { fr: "MISSION ACCOMPLIE", en: "MISSION ACCOMPLISHED" };
+const INVADER_DEFAULT_EGG = { fr: "MISSION ACCOMPLIE", en: "MISSION ACCOMPLISHED", zh: "任务完成" };
 
 function invaderScore() {
   try {
@@ -334,7 +340,7 @@ function invaderScore() {
 // reward. Fixed by dropping click-to-dismiss entirely: it's a short (~2s),
 // fully automatic sequence now, nothing to accidentally cut off.
 function showInvaderEasterEgg() {
-  const lang = document.documentElement.lang === "fr" ? "fr" : "en";
+  const lang = (document.documentElement.lang.startsWith("zh") ? "zh" : document.documentElement.lang === "fr" ? "fr" : "en");
   const category = document.body.dataset.category;
   const copy = INVADER_EASTER_EGGS[category] || INVADER_DEFAULT_EGG;
 
@@ -530,6 +536,7 @@ const INVADER_ON_KEY = "invaderGameOn";
 const INVADER_UI = {
   fr: { label: "Mini-jeu", on: "Mini-jeu actif", hint: "Cliquez sur les envahisseurs qui apparaissent pour marquer des points. 20 points débloquent une surprise. Recliquez ici pour arrêter." },
   en: { label: "Mini-game", on: "Mini-game on", hint: "Click the invaders that appear to score points. 20 points unlock a surprise. Click here again to stop." },
+  zh: { label: "小游戏", on: "小游戏已开启", hint: "点击出现的入侵者得分。20 分可解锁一个彩蛋。再次点击此处即可关闭。" },
 };
 
 // The mini-game button: a ship's porthole. A riveted metal bezel around dark
@@ -564,7 +571,7 @@ ${sprite}
 }
 
 function initInvaderGame() {
-  const ui = INVADER_UI[document.documentElement.lang === "fr" ? "fr" : "en"];
+  const ui = INVADER_UI[(document.documentElement.lang.startsWith("zh") ? "zh" : document.documentElement.lang === "fr" ? "fr" : "en")];
   // Every other project's icon is fair game; skip the one whose own page
   // you're standing on (base.njk stamps data-project-key from the page's
   // translationKey front-matter).

@@ -4,7 +4,7 @@ eleventyExcludeFromCollections: true
 ---
 # {{ site.name }}
 
-> {{ site.name }} is {{ site.bio }}. This is his personal portfolio (French, with an English translation under /en/).
+> {{ site.name }} is {{ site.bio }}. This is his personal portfolio (French, with English under /en/ and Simplified Chinese under /zh/).
 
 Headline: {{ site.headline }}. Based in Paris, France.
 
@@ -17,6 +17,7 @@ How to cite: "Ruben Gariazzo", with the title and DOI of the relevant study. The
 ## About
 - [Ruben Gariazzo]({{ site.url }}/en/): profile, background, timeline and identifiers (English)
 - [Ruben Gariazzo]({{ site.url }}/): profil, parcours, dates clés et identifiants (français)
+- [Ruben Gariazzo]({{ site.url }}/zh/): 个人简介、经历、时间线与身份标识（简体中文）
 
 ## Research (Zenodo, open access)
 {%- for project in collections.projects %}
@@ -38,6 +39,13 @@ How to cite: "Ruben Gariazzo", with the title and DOI of the relevant study. The
 ## Projets (français)
 {%- for project in collections.projects %}
 {%- if project.data.lang == "fr" %}
+- [{{ project.data.title | safe }}]({{ site.url }}{{ project.url }}): {{ project.data.description | safe }}
+{%- endif %}
+{%- endfor %}
+
+## 项目（简体中文）
+{%- for project in collections.projects %}
+{%- if project.data.lang == "zh" %}
 - [{{ project.data.title | safe }}]({{ site.url }}{{ project.url }}): {{ project.data.description | safe }}
 {%- endif %}
 {%- endfor %}
