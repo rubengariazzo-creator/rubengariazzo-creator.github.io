@@ -13,7 +13,7 @@ highlights:
   - tag: "Aérospatial"
     title: "Icarus, vol nominal à C'Space 2026"
     href: /projets/icarus/
-    text: 'Une mini-fusée conçue, fabriquée et lancée à cinq avec EPF Astronomie, à la campagne C''Space du <a href="https://cnes.fr">CNES</a> et de <a href="https://www.planete-sciences.org">Planète Sciences</a>. J''ai dessiné la coiffe sous CATIA, imprimé des pièces en 3D, simulé la stabilité et réalisé l''animation 3D sous Blender.'
+    text: 'Une mini-fusée conçue, fabriquée et lancée à cinq avec EPF Astronomie, à la campagne C''Space du <a href="https://cnes.fr">CNES</a> et de <a href="https://www.planete-sciences.org">Planète Sciences</a>. J''ai dessiné la coiffe sous CATIA, imprimé des pièces en 3D, participé aux simulations de stabilité et réalisé l''animation 3D sous Blender.'
   - tag: "Recherche"
     title: "Trois études indépendantes publiées sur Zenodo"
     text: 'J''ai creusé l''<a href="/projets/adn-zenon/">effet Zénon quantique appliqué au stockage de données sur ADN</a> (2026), le <a href="/projets/cryptanalyse-agapeyeff/">cryptogramme de D''Agapeyeff</a>, que personne n''a résolu depuis 1939 (2026), et l''<a href="/projets/anharmonicite/">anharmonicité d''un cône basculant</a> (2025).'

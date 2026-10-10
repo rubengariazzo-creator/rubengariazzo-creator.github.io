@@ -75,7 +75,7 @@ Icarus mesure 1,14 m pour 1,66 kg au décollage (1,50 kg sans moteur). Elle est 
 
 - **La coiffe.** Je l'ai modélisée sous CATIA, une ogive de 210 mm dimensionnée pour le diamètre de 83 mm du corps, puis imprimée en 3D en PETG (6 h 44 d'impression). Son plan technique est téléchargeable plus bas.
 - **Les pièces de structure.** J'ai imprimé en 3D la cage de fixation des ailerons (PLA, 6 h 37 d'impression) et les bagues de maintien du moteur (PETG, 1 h 36).
-- **La dynamique de vol.** J'ai simulé la stabilité et la trajectoire avec StabTraj, l'outil de référence de Planète Sciences, pour confirmer qu'Icarus suivrait un vol rectiligne et nominal plutôt que de partir en vrille.
+- **La dynamique de vol.** J'ai participé aux simulations de stabilité et de trajectoire faites avec StabTraj, l'outil de référence de Planète Sciences, en équipe, pour confirmer qu'Icarus suivrait un vol rectiligne et nominal plutôt que de partir en vrille.
 - **L'animation 3D.** Je l'ai réalisée sous Blender et déclinée en plusieurs formats (écrans TV, bornes, réseaux sociaux). Elle est restée secrète jusqu'à sa révélation à la rentrée.
 
 {% include "partials/stl-viewers.njk" %}

@@ -75,7 +75,7 @@ Icarus is 1.14 m long and weighs 1.66 kg at liftoff (1.50 kg without its motor).
 
 - **The nose cone.** I modelled it in CATIA, a 210 mm ogive sized for the 83 mm airframe diameter, then 3D-printed it in PETG (6 h 44 min of printing). Its technical drawing can be downloaded below.
 - **Structural parts.** I 3D-printed the fin mounting cage (PLA, 6 h 37 min) and the motor retaining rings (PETG, 1 h 36 min).
-- **Flight dynamics.** I simulated stability and trajectory with StabTraj, Planète Sciences' reference tool, to confirm that Icarus would hold a straight, nominal flight path rather than tumbling.
+- **Flight dynamics.** I took part in the stability and trajectory simulations run with StabTraj, Planète Sciences' reference tool, as a team, to confirm that Icarus would hold a straight, nominal flight path rather than tumbling.
 - **The 3D animation.** I made it in Blender and delivered it in several formats (TV screens, kiosks, social media). It stayed under wraps until its back-to-school reveal.
 
 {% include "partials/stl-viewers.njk" %}
