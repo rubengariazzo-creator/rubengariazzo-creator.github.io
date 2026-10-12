@@ -681,10 +681,10 @@ function initInvaderGame() {
 // progress bar built on it fake despite looking real. Watching main.jsx's own
 // "is-ready" class (added the moment the WebGL canvas is created and about to
 // render its first frame) is the actually-honest equivalent for this
-// specific hero. A hard 4.8s safety timeout and a 500ms display floor mean it
+// specific hero. A hard 15s safety timeout and a 500ms display floor mean it
 // never hangs on a slow/blocked load and never flashes on a warm cache.
 const INTRO_SESSION_KEY = "introShown";
-const INTRO_MAX_WAIT_MS = 4800;
+const INTRO_MAX_WAIT_MS = 15000;
 
 // One 300x300 SVG, two colours (light line, amber accent), played as a single
 // movement. A pendulum hangs from a bracket and swings left to right. Before
@@ -827,20 +827,30 @@ function showOpeningSequence(container) {
     document.documentElement.classList.remove("intro-pending");
 
     let heroReady = false;
+    let pageLoaded = false;
     let animDone = false;
     let settled = false;
 
     const maybeFinish = () => {
-      if (settled || !heroReady || !animDone) return;
+      if (settled || !heroReady || !pageLoaded || !animDone) return;
       settled = true;
       clearTimeout(safety);
+      clearTimeout(hard);
       window.removeEventListener("keydown", skip);
       gsap
         .timeline({ onComplete: () => { overlay.remove(); resolve(); } })
         .to(overlay, { clipPath: "inset(0 0 100% 0)", duration: 0.55, ease: "expo.inOut" });
     };
 
+    // One cycle is always played in full. If the page is not fully loaded when
+    // a cycle ends, the animation starts over instead of lifting early; the
+    // overlay only leaves at the end of a cycle, once everything is loaded.
     const timeline = playWheelIntro(parts, () => {
+      if (!settled && !(heroReady && pageLoaded)) {
+        animDone = false;
+        timeline.restart();
+        return;
+      }
       animDone = true;
       maybeFinish();
     });
@@ -850,6 +860,7 @@ function showOpeningSequence(container) {
     const skip = () => {
       timeline.progress(1);
       heroReady = true;
+      pageLoaded = true;
       animDone = true;
       maybeFinish();
     };
@@ -872,14 +883,35 @@ function showOpeningSequence(container) {
       }).observe(heroMount, { attributes: true, attributeFilter: ["class"] });
     }
 
-    // Hard stop: a slow or blocked hero never leaves the visitor stuck behind
-    // the overlay.
+    // "Loaded" means the document, its images and stylesheets (window load) and
+    // the web fonts are all in, so nothing pops in once the overlay lifts.
+    const markLoaded = () => {
+      const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
+      Promise.race([fonts, new Promise((r) => setTimeout(r, 3000))]).then(() => {
+        pageLoaded = true;
+        maybeFinish();
+      });
+    };
+    if (document.readyState === "complete") markLoaded();
+    else window.addEventListener("load", markLoaded, { once: true });
+
+    // Hard stop for a connection that never finishes: after this long the
+    // current cycle is simply the last one (it is not cut short).
     const safety = setTimeout(() => {
       heroReady = true;
+      pageLoaded = true;
+      maybeFinish();
+    }, INTRO_MAX_WAIT_MS);
+
+    // Last resort (a hidden tab or a stalled animation loop would otherwise
+    // keep the overlay up): after the safety delay plus one more cycle, end now.
+    const hard = setTimeout(() => {
+      heroReady = true;
+      pageLoaded = true;
       timeline.progress(1);
       animDone = true;
       maybeFinish();
-    }, INTRO_MAX_WAIT_MS);
+    }, INTRO_MAX_WAIT_MS + 3500);
 
     maybeFinish();
   });
