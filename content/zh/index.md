@@ -33,7 +33,7 @@ highlights:
     text: "17 岁时，我以《沙丘之舞》（<em>Danse sur les dunes</em>）入围法国规模最大的业余诗歌比赛的 100 名决赛选手，作品由布鲁诺·杜塞出版社（Éditions Bruno Doucey）出版。"
 ---
 <div class="about-intro">
-<img class="about-portrait about-portrait--lg" src="/assets/img/ruben-gariazzo-studio-400.jpg" srcset="/assets/img/ruben-gariazzo-studio-400.jpg 400w, /assets/img/ruben-gariazzo-studio-768.jpg 768w, /assets/img/ruben-gariazzo-studio.jpg 1536w" sizes="17rem" width="400" height="533" alt="Ruben Gariazzo 的黑白肖像，EPF 工程师学院在读">
+<img class="about-portrait about-portrait--lg" src="/assets/img/ruben-gariazzo-studio-400.jpg" srcset="/assets/img/ruben-gariazzo-studio-400.jpg 400w, /assets/img/ruben-gariazzo-studio-768.jpg 768w, /assets/img/ruben-gariazzo-studio-1536.jpg 1536w, /assets/img/ruben-gariazzo-studio.jpg 3072w" sizes="17rem" width="400" height="533" alt="Ruben Gariazzo 的黑白肖像，EPF 工程师学院在读">
 <div>
 <p>我叫 Ruben Gariazzo，2025 年起在巴黎的 <a href="https://www.epf.fr/en">EPF 工程师学院</a>就读。工程学让我着迷的地方是好奇心。我需要先弄明白事物是怎么运转的，才会想办法去改进它，而且我希望这份理解最终能落到一件具体的东西上。</p>
 <p>一级方程式赛车和航天尤其吸引我，因为在这两个领域里，人们既严谨又团队协作地追求性能。我也被一些离得更远的主题所吸引，比如写作和日常物品，因为它们滋养着我的好奇心，也影响着我看待问题的方式。</p>

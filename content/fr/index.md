@@ -33,7 +33,7 @@ highlights:
     text: "À 17 ans, parmi les 100 finalistes du plus grand concours de poésie amateur de France, avec <em>Danse sur les dunes</em>, publié aux Éditions Bruno Doucey."
 ---
 <div class="about-intro">
-<img class="about-portrait about-portrait--lg" src="/assets/img/ruben-gariazzo-studio-400.jpg" srcset="/assets/img/ruben-gariazzo-studio-400.jpg 400w, /assets/img/ruben-gariazzo-studio-768.jpg 768w, /assets/img/ruben-gariazzo-studio.jpg 1536w" sizes="17rem" width="400" height="533" alt="Portrait en noir et blanc de Ruben Gariazzo, élève ingénieur à l'EPF">
+<img class="about-portrait about-portrait--lg" src="/assets/img/ruben-gariazzo-studio-400.jpg" srcset="/assets/img/ruben-gariazzo-studio-400.jpg 400w, /assets/img/ruben-gariazzo-studio-768.jpg 768w, /assets/img/ruben-gariazzo-studio-1536.jpg 1536w, /assets/img/ruben-gariazzo-studio.jpg 3072w" sizes="17rem" width="400" height="533" alt="Portrait en noir et blanc de Ruben Gariazzo, élève ingénieur à l'EPF">
 <div>
 <p>Je m'appelle Ruben Gariazzo et je suis élève ingénieur à l'<a href="https://www.epf.fr">EPF</a>, à Paris, depuis 2025. Ce qui me motive dans l'ingénierie, c'est la curiosité. J'ai besoin de comprendre comment les choses fonctionnent avant d'essayer de les améliorer, et j'aime que cette compréhension aboutisse à un objet concret.</p>
 <p>La Formule 1 et le spatial m'attirent particulièrement, parce qu'on y cherche la performance avec rigueur et en équipe. Je m'intéresse aussi à des sujets plus éloignés, comme l'écriture ou les objets du quotidien, car ils entretiennent ma curiosité et ma façon de regarder un problème.</p>

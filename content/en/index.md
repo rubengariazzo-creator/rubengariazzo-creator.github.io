@@ -33,7 +33,7 @@ highlights:
     text: "At 17, one of the 100 finalists of France's largest amateur poetry competition, with <em>Danse sur les dunes</em>, published by Éditions Bruno Doucey."
 ---
 <div class="about-intro">
-<img class="about-portrait about-portrait--lg" src="/assets/img/ruben-gariazzo-studio-400.jpg" srcset="/assets/img/ruben-gariazzo-studio-400.jpg 400w, /assets/img/ruben-gariazzo-studio-768.jpg 768w, /assets/img/ruben-gariazzo-studio.jpg 1536w" sizes="17rem" width="400" height="533" alt="Black and white portrait of Ruben Gariazzo, engineering student at EPF">
+<img class="about-portrait about-portrait--lg" src="/assets/img/ruben-gariazzo-studio-400.jpg" srcset="/assets/img/ruben-gariazzo-studio-400.jpg 400w, /assets/img/ruben-gariazzo-studio-768.jpg 768w, /assets/img/ruben-gariazzo-studio-1536.jpg 1536w, /assets/img/ruben-gariazzo-studio.jpg 3072w" sizes="17rem" width="400" height="533" alt="Black and white portrait of Ruben Gariazzo, engineering student at EPF">
 <div>
 <p>My name is Ruben Gariazzo and I am an engineering student at <a href="https://www.epf.fr/en">EPF</a> in Paris, where I have been since 2025. What drives me in engineering is curiosity. I need to understand how things work before I try to improve them, and I like that understanding to end in something concrete.</p>
 <p>Formula 1 and space appeal to me in particular, because they pursue performance with rigor and as a team. I am also drawn to subjects further afield, such as writing and everyday objects, because they feed my curiosity and the way I look at a problem.</p>
