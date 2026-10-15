@@ -1,8 +1,6 @@
 ---
 layout: layouts/project.njk
 translationKey: experiences
-heroBackground: true
-heroColors: ["#0b0d10", "#2a1f14", "#4d3320"]
 title: "Professional experience"
 description: "Ruben Gariazzo's professional and professionalizing experience: quality internship at Ampere (Renault Group), EPF Astronomie, Formula EPF."
 cta:

@@ -1,7 +1,6 @@
 ---
 layout: layouts/page.njk
 translationKey: home
-heroBackground: true
 heroLiquid: true
 heroTag: "EPF 工程师学院在读"
 profilePage: true

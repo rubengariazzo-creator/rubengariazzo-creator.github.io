@@ -1,8 +1,6 @@
 ---
 layout: layouts/project.njk
 translationKey: experiences
-heroBackground: true
-heroColors: ["#0b0d10", "#2a1f14", "#4d3320"]
 title: "Expériences professionnelles"
 description: "Expériences professionnelles et professionnalisantes de Ruben Gariazzo : stage qualité chez Ampere (Groupe Renault), EPF Astronomie, Formula EPF."
 cta:

@@ -20,8 +20,8 @@
 // to its own idle sway -- previously a pure idle loop with no reaction to
 // anything on the page, which read as decoration rather than something alive.
 //
-// Environment lighting is shared with StlViewer via ../shared/StudioEnvironment
-// (see that file for why) instead of each component carrying its own recipe.
+// Lit by plain ambient + directional lights: drei's <Environment> pulled a
+// ~960 KB chunk for reflections the flat artwork barely shows.
 //
 // Pure progressive enhancement: renders nothing if WebGL is unsupported, and any
 // runtime error is caught by the ErrorBoundary so the (empty) container is the
@@ -30,7 +30,6 @@ import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { CanvasTexture, Shape, SRGBColorSpace, Vector2 } from "three";
 import { supportsWebGL, ErrorBoundary } from "../shared/webgl.jsx";
-import StudioEnvironment from "../shared/StudioEnvironment.jsx";
 
 const MEDALLION_SIZE = 2.3;
 const CORNER_RADIUS = 0.42;
@@ -184,15 +183,9 @@ export default function GlassHero({ onReady }) {
       >
         <Suspense fallback={null}>
           <GlassSeal scrollProgress={scrollProgress} />
-          {/* No `background` here (unlike the old glass nose cone): that
-              painted the Lightformers as a bright blurred backdrop, which is
-              what actually read as "the white halo" -- not a CSS glow, the
-              canvas's own content. The medallion carries its own artwork and
-              colors, so it doesn't need a lit backdrop to read; the page's
-              own dark background now shows through the transparent canvas
-              instead. Lightformers stay in the tree purely for reflections/
-              lighting on the clearcoat. */}
-          <StudioEnvironment />
+          <ambientLight intensity={1.6} />
+          <directionalLight position={[2, 2, 4]} intensity={2.2} />
+          <directionalLight position={[-3, -1, 2]} intensity={0.8} />
         </Suspense>
       </Canvas>
     </ErrorBoundary>

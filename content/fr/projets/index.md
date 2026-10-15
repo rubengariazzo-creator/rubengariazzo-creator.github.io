@@ -2,8 +2,6 @@
 layout: layouts/page.njk
 translationKey: projects-list
 projectFilter: true
-heroBackground: true
-heroColors: ["#0b0d10", "#0f2a24", "#134a3a"]
 title: "Projets"
 description: "Liste des projets d'ingénierie, de programmation et de recherche de Ruben Gariazzo."
 ---

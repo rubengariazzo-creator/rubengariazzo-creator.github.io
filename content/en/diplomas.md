@@ -1,8 +1,6 @@
 ---
 layout: layouts/page.njk
 translationKey: diplomes
-heroBackground: true
-heroColors: ["#0b0d10", "#1a2a1f", "#1f4d3a"]
 title: "Diplomas and certifications"
 description: "Ruben Gariazzo's diplomas and certifications: Baccalauréat, Brevet, language proficiency, Inria MOOCs."
 ---

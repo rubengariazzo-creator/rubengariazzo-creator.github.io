@@ -1,8 +1,6 @@
 ---
 layout: layouts/project.njk
 translationKey: experiences
-heroBackground: true
-heroColors: ["#0b0d10", "#2a1f14", "#4d3320"]
 title: "工作与实践经历"
 description: "Ruben Gariazzo 的工作与实践经历：Ampere（雷诺集团）质量实习、EPF Astronomie、Formula EPF。"
 cta:

@@ -16,14 +16,8 @@ import { ThreeMFLoader } from "three/addons/loaders/3MFLoader.js";
 import { toCreasedNormals } from "three/addons/utils/BufferGeometryUtils.js";
 import { Box3, MeshStandardMaterial, Quaternion, Vector3 } from "three";
 import { supportsWebGL, ErrorBoundary } from "../shared/webgl.jsx";
-import StudioEnvironment from "../shared/StudioEnvironment.jsx";
 
-// Same material recipe (color, metalness, roughness) as GlassHero's glass --
-// deliberately reused so the CAD viewer reads as part of the same visual family
-// under the shared StudioEnvironment lighting, not a generic 3D-model-viewer
-// widget with its own unrelated look (its previous flat ambient+directional
-// light had no relationship to the hero's lighting at all).
-const MATERIAL_PROPS = { color: "#c7ccd4", metalness: 0.3, roughness: 0.4, envMapIntensity: 1.1 };
+const MATERIAL_PROPS = { color: "#c7ccd4", metalness: 0.1, roughness: 0.5 };
 
 function StlPart({ src, config }) {
   const raw = useLoader(STLLoader, src);
@@ -188,9 +182,10 @@ export default function StlViewer({ stlSrc, stlLabel, stlMode, stlConfig, stlTog
           onReady?.();
         }}
       >
-        <directionalLight position={[3, 4, 5]} intensity={1} castShadow />
+        <ambientLight intensity={0.7} />
+        <directionalLight position={[3, 4, 5]} intensity={2.8} castShadow />
+        <directionalLight position={[-4, -1, -3]} intensity={0.9} />
         <Suspense fallback={null}>
-          <StudioEnvironment />
           <group ref={groupRef}>
             <Center>
               {sources.map((src) => (

@@ -2,8 +2,6 @@
 layout: layouts/page.njk
 translationKey: projects-list
 projectFilter: true
-heroBackground: true
-heroColors: ["#0b0d10", "#0f2a24", "#134a3a"]
 title: "项目"
 description: "Ruben Gariazzo 的工程、编程与研究项目列表。"
 ---

@@ -1,8 +1,6 @@
 ---
 layout: layouts/page.njk
 translationKey: diplomes
-heroBackground: true
-heroColors: ["#0b0d10", "#1a2a1f", "#1f4d3a"]
 title: "学历与证书"
 description: "Ruben Gariazzo 的学历与证书：法国高中毕业会考（Baccalauréat）、初中毕业文凭（Brevet）、语言能力证明、Inria 慕课。"
 ---

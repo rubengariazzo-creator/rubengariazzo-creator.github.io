@@ -1,7 +1,6 @@
 ---
 layout: layouts/page.njk
 translationKey: home
-heroBackground: true
 heroLiquid: true
 heroTag: "Engineering student at EPF"
 profilePage: true

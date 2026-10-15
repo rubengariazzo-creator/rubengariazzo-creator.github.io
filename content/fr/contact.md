@@ -1,8 +1,6 @@
 ---
 layout: layouts/page.njk
 translationKey: contact
-heroBackground: true
-heroColors: ["#0b0d10", "#241a2e", "#3a2145"]
 contactPage: true
 title: "Contact"
 description: "Contacter Ruben Gariazzo : e-mail, LinkedIn, GitHub, identifiant ORCID, et comment citer ses recherches publiées sur Zenodo."

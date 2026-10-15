@@ -1292,48 +1292,6 @@ html {
   }
 }
 
-.hero-gradient {
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  pointer-events: none;
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--grad-a, #0b0d10) 0%, var(--grad-b, #14202b) 50%, var(--grad-c, #1f3a4d) 100%);
-  background-size: 200% 200%;
-  animation: hero-gradient-shift 18s ease-in-out infinite;
-}
-
-.hero-gradient::before {
-  content: "";
-  position: absolute;
-  inset: -20%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: 0.05;
-  mix-blend-mode: overlay;
-}
-
-.hero-gradient::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at var(--mx, 50%) var(--my, 40%), rgba(255, 255, 255, 0.045), transparent 34%);
-}
-
-@keyframes hero-gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-gradient {
-    animation: none;
-  }
-
-  .hero-gradient::after {
-    display: none;
-  }
-}
-
 @media (max-width: 40rem) {
   .site-header-inner {
     position: relative;
