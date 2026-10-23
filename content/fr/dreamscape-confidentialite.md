@@ -34,7 +34,7 @@ Le jeu demande pour cela les autorisations Android d'accès au réseau et au Wi-
 
 ## Achats
 
-La boutique du jeu (la Galerie du Rêve) ne propose que des apparences cosmétiques. Si des achats avec de l'argent réel sont proposés, ils seront traités entièrement par Google Play, selon la politique de confidentialité de Google. Le développeur n'a jamais accès à vos informations de paiement.
+La boutique du jeu (la Galerie du Rêve) ne propose que des contenus cosmétiques. Les achats avec de l'argent réel sont traités entièrement par Google Play, selon la politique de confidentialité de Google ; le développeur n'a jamais accès à vos informations de paiement. Pour vous livrer un achat, le jeu reçoit de Google Play seulement sa confirmation (quel produit, et un identifiant d'achat) ; il s'en sert pour créditer vos Dreamshards une seule fois, et garde cet identifiant sur votre appareil. Rien n'est envoyé au développeur. Voir aussi les [conditions de vente](/dreamscape-conditions-de-vente/).
 
 ## Enfants
 
