@@ -12,7 +12,7 @@ Contact: [ruben.gariazzo@epfedu.fr](mailto:ruben.gariazzo@epfedu.fr)
 
 Publication director: Ruben Gariazzo.
 
-Under French law (article 6-III of law n° 2004-575 of 21 June 2004 for confidence in the digital economy), an individual publisher acting in a non-professional capacity is permitted to withhold their personal address from public disclosure.
+Under French law (article 1-1, II, of law n° 2004-575 of 21 June 2004 for confidence in the digital economy), an individual publisher acting in a non-professional capacity is permitted to withhold their personal address from public disclosure.
 
 ## Hosting
 

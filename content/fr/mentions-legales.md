@@ -12,7 +12,7 @@ Contact : [ruben.gariazzo@epfedu.fr](mailto:ruben.gariazzo@epfedu.fr)
 
 Directeur de la publication : Ruben Gariazzo.
 
-Conformément à l'article 6-III de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, l'éditeur, personne physique agissant à titre non professionnel, est autorisé à ne pas communiquer publiquement son adresse personnelle.
+Conformément à l'article 1-1, II, de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, l'éditeur, personne physique agissant à titre non professionnel, est autorisé à ne pas communiquer publiquement son adresse personnelle.
 
 ## Hébergement
 
