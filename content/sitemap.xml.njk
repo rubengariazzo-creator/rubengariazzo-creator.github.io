@@ -9,8 +9,10 @@ eleventyExcludeFromCollections: true
   <url>
     <loc>{{ site.url }}{{ entry.url }}</loc>
     <lastmod>{{ entry.date.toISOString().slice(0, 10) }}</lastmod>
+{#- Each portrait is declared on the page that actually shows it. #}
 {%- if entry.data.translationKey == "home" %}
     <image:image><image:loc>{{ site.url }}{{ site.studioImage }}</image:loc></image:image>
+{%- elif entry.data.translationKey == "contact" %}
     <image:image><image:loc>{{ site.url }}{{ site.image }}</image:loc></image:image>
 {%- endif %}
   </url>

@@ -255,6 +255,21 @@ const PROJECT_ICONS = {
     ],
     colors: { X: "#60a5fa", H: "#bfdbfe", S: "#1e3a8a" },
   },
+  lumiere: {
+    pattern: [
+      "................",
+      "...G.G.G.G.G....",
+      "..GGGGGGGGGGGG..",
+      ".XXXXXXXXXXXXXX.",
+      ".XWWWWWWWWWWWWX.",
+      ".XXXXXXXXXXXXXX.",
+      "..W.W.W.W.W.W...",
+      "...W.W.W.W.W.W..",
+      "..W.W.W.W.W.W...",
+      "................",
+    ],
+    colors: { X: "#c9ccd2", W: "#f4f1ea", G: "#a5b4fc" },
+  },
 };
 
 // F1-flavored bonus sprite -- rarer than the invader/project icons, worth
@@ -541,7 +556,7 @@ const INVADER_UI = {
 
 // The mini-game button: a ship's porthole. A riveted metal bezel around dark
 // glass with a glare on it, and the Icarus rocket sprite inside, dim while the
-// game is off and lit (with an amber ring on the glass) while it runs.
+// game is off and lit (with a light burgundy ring on the glass) while it runs.
 function portholeSvg() {
   const rocket = PROJECT_ICONS.icarus;
   const sprite = spriteSvg(rocket.pattern, rocket.colors).replace(
@@ -563,7 +578,7 @@ function portholeSvg() {
 <circle cx="28" cy="28" r="21.5" fill="url(#ph-lip)"/>
 ${rivets}
 <circle cx="28" cy="28" r="18.5" fill="url(#ph-glass)"/>
-<circle class="porthole-lamp" cx="28" cy="28" r="18.5" fill="none" stroke="#e9c186" stroke-width="1.6"/>
+<circle class="porthole-lamp" cx="28" cy="28" r="18.5" fill="none" stroke="#db929d" stroke-width="1.6"/>
 ${sprite}
 <path d="M13.5 22.5A16 16 0 0 1 24 12.5" fill="none" stroke="#fff" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round"/>
 <path d="M41 40A16 16 0 0 1 33 44.5" fill="none" stroke="#fff" stroke-opacity="0.1" stroke-width="1.5" stroke-linecap="round"/>
@@ -686,7 +701,7 @@ function initInvaderGame() {
 const INTRO_SESSION_KEY = "introShown";
 const INTRO_MAX_WAIT_MS = 15000;
 
-// One 300x300 SVG, two colours (light line, amber accent), played as a single
+// One 300x300 SVG, two colours (light line, light burgundy accent), played as a single
 // movement. A pendulum hangs from a bracket and swings left to right. Before
 // it has even come to rest, its rod starts rolling itself up end first (the rod
 // is exactly one circumference long, L = 2*pi*R) into a ring that slides to the

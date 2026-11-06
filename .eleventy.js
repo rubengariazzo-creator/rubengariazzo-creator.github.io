@@ -126,6 +126,9 @@ module.exports = function (eleventyConfig) {
         inLanguage: L === "zh" ? "zh-Hans" : L,
         isPartOf: { "@id": websiteId },
         mainEntity: { "@id": personId },
+        // Tells Google which portrait belongs to which page (studio on the
+        // homepage, the earlier photo on contact) so both get indexed.
+        primaryImageOfPage: { "@type": "ImageObject", contentUrl: site.url + (page.profile ? site.studioImage : site.image) },
       });
     }
     const home = pick("/", "/en/", "/zh/");

@@ -4,7 +4,7 @@ translationKey: home
 heroLiquid: true
 heroTag: "Élève ingénieur à l'EPF"
 profilePage: true
-socialImage: "/assets/img/ruben-gariazzo.jpg"
+socialImage: "/assets/img/ruben-gariazzo-studio-1536.jpg"
 title: "Ruben Gariazzo"
 seoTitle: "Ruben Gariazzo · Élève ingénieur EPF, aérospatial et recherche"
 description: "Ruben Gariazzo, élève ingénieur à l'EPF : fusée Icarus, parapluie ROSEAU, conception CAO, jeu de drones et recherches indépendantes publiées sur Zenodo."
@@ -23,6 +23,10 @@ highlights:
   - tag: "Conception"
     title: "Trois objets du quotidien repensés"
     text: 'Un <a href="/projets/arrosoir-telescopique/">arrosoir télescopique</a> pour arroser jusqu''à 2,50 m sans monter sur une échelle, une <a href="/projets/boite-a-bijoux/">boîte à bijoux</a> à loquet imprimée en 3D, et mon projet personnel <a href="/projets/roseau/">ROSEAU</a>, un parapluie qui lâche avant de casser.'
+  - tag: "Innovation"
+    title: "LUMIÈRE, une lumière au dos de l'écran"
+    href: /projets/lumiere/
+    text: "Notre projet P2I à l'EPF, mené à six, dont j'étais chef de groupe. Une barre plate éclaire le bureau en blanc et pose sur le mur un halo qui suit l'image. J'ai fait les calculs, la CAO, les plans et, sous Blender, l'animation de présentation de 55 s."
   - tag: "Informatique"
     title: "CS50x de Harvard et un jeu en Python"
     text: 'Le cours d''introduction à l''informatique de Harvard, que je suis problème après problème sur la page <a href="/projets/cs50x/">CS50x</a>, et un <a href="/projets/jeu-de-drones/">jeu de sauvetage par drones</a> auquel on peut jouer directement dans le navigateur.'
@@ -32,7 +36,7 @@ highlights:
     text: "À 17 ans, parmi les 100 finalistes du plus grand concours de poésie amateur de France, avec <em>Danse sur les dunes</em>, publié aux Éditions Bruno Doucey."
 ---
 <div class="about-intro">
-<img class="about-portrait about-portrait--lg" src="/assets/img/ruben-gariazzo-studio-400.jpg" srcset="/assets/img/ruben-gariazzo-studio-400.jpg 400w, /assets/img/ruben-gariazzo-studio-768.jpg 768w, /assets/img/ruben-gariazzo-studio-1536.jpg 1536w, /assets/img/ruben-gariazzo-studio.jpg 3072w" sizes="17rem" width="400" height="533" alt="Portrait en noir et blanc de Ruben Gariazzo, élève ingénieur à l'EPF">
+<img class="about-portrait about-portrait--lg" src="/assets/img/ruben-gariazzo-studio-1536.jpg" srcset="/assets/img/ruben-gariazzo-studio-400.jpg 400w, /assets/img/ruben-gariazzo-studio-768.jpg 768w, /assets/img/ruben-gariazzo-studio-1536.jpg 1536w, /assets/img/ruben-gariazzo-studio.jpg 3072w" sizes="17rem" width="400" height="533" alt="Portrait en noir et blanc de Ruben Gariazzo, élève ingénieur à l'EPF">
 <div>
 <p>Je m'appelle Ruben Gariazzo et je suis élève ingénieur à l'<a href="https://www.epf.fr">EPF</a>, à Paris, depuis 2025. Ce qui me motive dans l'ingénierie, c'est la curiosité. J'ai besoin de comprendre comment les choses fonctionnent avant d'essayer de les améliorer, et j'aime que cette compréhension aboutisse à un objet concret.</p>
 <p>La Formule 1 et le spatial m'attirent particulièrement, parce qu'on y cherche la performance avec rigueur et en équipe. Je m'intéresse aussi à des sujets plus éloignés, comme l'écriture ou les objets du quotidien, car ils entretiennent ma curiosité et ma façon de regarder un problème.</p>

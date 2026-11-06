@@ -2,11 +2,12 @@
 layout: layouts/page.njk
 translationKey: contact
 contactPage: true
+socialImage: "/assets/img/ruben-gariazzo.jpg"
 title: "Contact"
 description: "Get in touch with Ruben Gariazzo: email, LinkedIn, GitHub, ORCID iD, and how to cite his research published on Zenodo."
 ---
 <div class="about-intro">
-<img class="about-portrait about-portrait--square" src="/assets/img/ruben-gariazzo-400.jpg" srcset="/assets/img/ruben-gariazzo-400.jpg 400w, /assets/img/ruben-gariazzo.jpg 800w" sizes="13rem" width="400" height="400" alt="Smiling portrait of Ruben Gariazzo">
+<img class="about-portrait about-portrait--square" src="/assets/img/ruben-gariazzo.jpg" srcset="/assets/img/ruben-gariazzo-400.jpg 400w, /assets/img/ruben-gariazzo.jpg 800w" sizes="13rem" width="400" height="400" alt="Smiling portrait of Ruben Gariazzo, engineering student at EPF">
 <div>
 <p>A question about a project, an opportunity to discuss, or just a wish to chat? Write to me, I'm happy to answer.</p>
 

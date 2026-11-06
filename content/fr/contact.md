@@ -2,11 +2,12 @@
 layout: layouts/page.njk
 translationKey: contact
 contactPage: true
+socialImage: "/assets/img/ruben-gariazzo.jpg"
 title: "Contact"
 description: "Contacter Ruben Gariazzo : e-mail, LinkedIn, GitHub, identifiant ORCID, et comment citer ses recherches publiées sur Zenodo."
 ---
 <div class="about-intro">
-<img class="about-portrait about-portrait--square" src="/assets/img/ruben-gariazzo-400.jpg" srcset="/assets/img/ruben-gariazzo-400.jpg 400w, /assets/img/ruben-gariazzo.jpg 800w" sizes="13rem" width="400" height="400" alt="Ruben Gariazzo souriant">
+<img class="about-portrait about-portrait--square" src="/assets/img/ruben-gariazzo.jpg" srcset="/assets/img/ruben-gariazzo-400.jpg 400w, /assets/img/ruben-gariazzo.jpg 800w" sizes="13rem" width="400" height="400" alt="Portrait de Ruben Gariazzo souriant, élève ingénieur à l'EPF">
 <div>
 <p>Une question sur un projet, une opportunité à discuter, ou juste l'envie d'échanger ? Écrivez-moi, je réponds volontiers.</p>
 

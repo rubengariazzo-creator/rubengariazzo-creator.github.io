@@ -26,7 +26,7 @@ Every page on this site loads only from GitHub Pages, with two exceptions, both 
 
 ## Intellectual property
 
-Content on this site is the publisher's own work, except for projects carried out as a group, in a school or club setting, which are the result of collective work: Icarus (a team of five among the members of EPF Astronomie), the V2 jewelry box (a 4-person group), the telescopic watering can (a 6-person group), the ReVolt business plan (a 4-person group), and the drone rescue game (built with a partner). For these projects, the diagrams, photographs, CAD models, and reports shown may be the joint work of several people; only their presentation on this site is the publisher's own. Teammates' names, where known, are credited on the corresponding project pages. This content may not be reused without the prior permission of all rights holders concerned.
+Content on this site is the publisher's own work, except for projects carried out as a group, in a school or club setting, which are the result of collective work: Icarus (a team of five among the members of EPF Astronomie), the V2 jewelry box (a 4-person group), the telescopic watering can (a 6-person group), the LUMIÈRE light bar (an EPF P2I project, a 6-person group), the ReVolt business plan (a 4-person group), and the drone rescue game (built with a partner). For these projects, the diagrams, photographs, CAD models, and reports shown may be the joint work of several people; only their presentation on this site is the publisher's own. Teammates' names, where known, are credited on the corresponding project pages. This content may not be reused without the prior permission of all rights holders concerned.
 
 ## Personal data
 

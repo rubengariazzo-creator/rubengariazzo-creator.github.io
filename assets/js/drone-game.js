@@ -99,7 +99,7 @@ run_sync(Promise.resolve(1))
 .drone-game-input-label{flex:1 1 100%;color:#eee;font-size:0.9rem;}
 .drone-game-input-field{font:inherit;padding:0.45rem 0.7rem;border-radius:5px;border:1px solid #555;background:#0b0b0d;color:#eee;min-width:10rem;flex:1 1 auto;}
 .drone-game-controls{margin-top:1rem;}
-.drone-game-fallback-notice{color:#c99a4b;font-size:0.85rem;margin-top:0.6rem;}
+.drone-game-fallback-notice{color:#db929d;font-size:0.85rem;margin-top:0.6rem;}
 @media (max-width:40rem){
 .drone-game-terminal{font-size:0.62rem;max-height:20rem;}
 }

@@ -2,11 +2,12 @@
 layout: layouts/page.njk
 translationKey: contact
 contactPage: true
+socialImage: "/assets/img/ruben-gariazzo.jpg"
 title: "联系"
 description: "联系 Ruben Gariazzo：电子邮件、LinkedIn、GitHub、ORCID，以及如何引用他发表在 Zenodo 上的研究。"
 ---
 <div class="about-intro">
-<img class="about-portrait about-portrait--square" src="/assets/img/ruben-gariazzo-400.jpg" srcset="/assets/img/ruben-gariazzo-400.jpg 400w, /assets/img/ruben-gariazzo.jpg 800w" sizes="13rem" width="400" height="400" alt="Ruben Gariazzo 微笑的肖像">
+<img class="about-portrait about-portrait--square" src="/assets/img/ruben-gariazzo.jpg" srcset="/assets/img/ruben-gariazzo-400.jpg 400w, /assets/img/ruben-gariazzo.jpg 800w" sizes="13rem" width="400" height="400" alt="Ruben Gariazzo 微笑的肖像，EPF 工程师学院学生">
 <div>
 <p>想问问某个项目，想谈一个机会，或者只是想聊聊？给我写信吧，我很乐意回复。</p>
 

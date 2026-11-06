@@ -4,7 +4,7 @@ translationKey: home
 heroLiquid: true
 heroTag: "Engineering student at EPF"
 profilePage: true
-socialImage: "/assets/img/ruben-gariazzo.jpg"
+socialImage: "/assets/img/ruben-gariazzo-studio-1536.jpg"
 title: "Ruben Gariazzo"
 seoTitle: "Ruben Gariazzo · EPF engineering student, aerospace and research"
 description: "Ruben Gariazzo, engineering student at EPF: the Icarus rocket, the ROSEAU umbrella, CAD design, a drone rescue game and independent research on Zenodo."
@@ -23,6 +23,10 @@ highlights:
   - tag: "Design"
     title: "Three everyday objects reimagined"
     text: 'A <a href="/en/projects/telescopic-watering-can/">telescopic watering can</a> that reaches 2.50 m without climbing a ladder, a latched <a href="/en/projects/jewelry-box/">jewelry box</a> printed in 3D, and my personal project <a href="/en/projects/roseau-umbrella/">ROSEAU</a>, an umbrella that lets go before it breaks.'
+  - tag: "Innovation"
+    title: "LUMIÈRE, a light on the back of the screen"
+    href: /en/projects/lumiere/
+    text: "Our P2I project at EPF, run by six of us, with me as group leader. A flat bar lights the desk in white and casts a halo on the wall that follows the image. I did the calculations, the CAD, the drawings and, in Blender, the 55 s presentation animation."
   - tag: "Computer science"
     title: "Harvard's CS50x and a Python game"
     text: 'Harvard''s introduction to computer science, which I follow problem after problem on the <a href="/en/projects/cs50x/">CS50x</a> page, and a <a href="/en/projects/drone-rescue-game/">drone rescue game</a> you can play right in the browser.'
@@ -32,7 +36,7 @@ highlights:
     text: "At 17, one of the 100 finalists of France's largest amateur poetry competition, with <em>Danse sur les dunes</em>, published by Éditions Bruno Doucey."
 ---
 <div class="about-intro">
-<img class="about-portrait about-portrait--lg" src="/assets/img/ruben-gariazzo-studio-400.jpg" srcset="/assets/img/ruben-gariazzo-studio-400.jpg 400w, /assets/img/ruben-gariazzo-studio-768.jpg 768w, /assets/img/ruben-gariazzo-studio-1536.jpg 1536w, /assets/img/ruben-gariazzo-studio.jpg 3072w" sizes="17rem" width="400" height="533" alt="Black and white portrait of Ruben Gariazzo, engineering student at EPF">
+<img class="about-portrait about-portrait--lg" src="/assets/img/ruben-gariazzo-studio-1536.jpg" srcset="/assets/img/ruben-gariazzo-studio-400.jpg 400w, /assets/img/ruben-gariazzo-studio-768.jpg 768w, /assets/img/ruben-gariazzo-studio-1536.jpg 1536w, /assets/img/ruben-gariazzo-studio.jpg 3072w" sizes="17rem" width="400" height="533" alt="Black and white portrait of Ruben Gariazzo, engineering student at EPF">
 <div>
 <p>My name is Ruben Gariazzo and I am an engineering student at <a href="https://www.epf.fr/en">EPF</a> in Paris, where I have been since 2025. What drives me in engineering is curiosity. I need to understand how things work before I try to improve them, and I like that understanding to end in something concrete.</p>
 <p>Formula 1 and space appeal to me in particular, because they pursue performance with rigor and as a team. I am also drawn to subjects further afield, such as writing and everyday objects, because they feed my curiosity and the way I look at a problem.</p>

@@ -30,8 +30,8 @@
   --bg-elevated: #14171c;
   --text: #edeff2;
   --text-muted: #adb3bc;
-  --accent: #c4903f;
-  --accent-strong: #e9c186;
+  --accent: #7a1f2e;
+  --accent-strong: #db929d;
   --border: #232830;
   --max-width: 72rem;
   --space: 1.5rem;
@@ -122,7 +122,7 @@ body {
 
 /* Hull. The page is the inside of a ship's bridge, drawn the way a model
    maker would: slate-blue steel, chunky chamfered beams, plating cut into
-   panels (vents, recessed inserts, a few amber and red indicator lights), all
+   panels (vents, recessed inserts, a few burgundy indicator lights), all
    from one tileable greeble texture (assets/img/decor/greeble.webp, generated
    once, 15 KB) plus bevels. Nothing is text, nothing round: two structural
    pylons either side of the reading column, plating outside them, a trapezoid
@@ -194,8 +194,8 @@ body {
   height: 22px;
   clip-path: polygon(22px 0, calc(100% - 22px) 0, 100% 100%, 0 100%);
   background:
-    linear-gradient(#f0b050, #f0b050) calc(100% - 44px) 9px / 14px 4px no-repeat,
-    linear-gradient(#e0583a, #e0583a) calc(100% - 70px) 9px / 10px 4px no-repeat,
+    linear-gradient(#a3283c, #a3283c) calc(100% - 44px) 9px / 14px 4px no-repeat,
+    linear-gradient(#6b1a28, #6b1a28) calc(100% - 70px) 9px / 10px 4px no-repeat,
     linear-gradient(to bottom, var(--steel-hi), transparent 3px, transparent calc(100% - 3px), var(--steel-lo)),
     linear-gradient(rgba(7, 9, 12, 0.55), rgba(7, 9, 12, 0.55)),
     var(--hull-tile) 0 0 / 200px 200px;
@@ -213,7 +213,7 @@ body {
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent-strong);
   transition: color 0.15s ease;
 }
 
@@ -468,7 +468,7 @@ main {
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 0.3rem;
-  border: 1px solid rgba(233, 193, 134, 0.3);
+  border: 1px solid rgba(219, 146, 157, 0.3);
   background: rgba(20, 23, 28, 0.7);
   color: var(--text);
   font-size: 1.75rem;
@@ -479,7 +479,7 @@ main {
 
 .lightbox-close:hover,
 .lightbox-close:focus-visible {
-  border-color: var(--accent);
+  border-color: var(--accent-strong);
   background: rgba(28, 32, 39, 0.85);
 }
 
@@ -583,7 +583,7 @@ main {
   height: 3rem;
   border-radius: 0.3rem;
   background: rgba(20, 23, 28, 0.7);
-  border: 1px solid rgba(233, 193, 134, 0.3);
+  border: 1px solid rgba(219, 146, 157, 0.3);
   color: var(--text);
   font-size: 1.25rem;
   text-decoration: none;
@@ -592,7 +592,7 @@ main {
 
 .scroll-hint:hover,
 .scroll-hint:focus-visible {
-  border-color: var(--accent);
+  border-color: var(--accent-strong);
   background: rgba(28, 32, 39, 0.85);
 }
 
@@ -735,7 +735,7 @@ html {
 }
 
 /* Buttons are plates, like everything else on the hull: the primary action is
-   a brushed-steel plate with dark engraved text; hover lights an amber glow and
+   a brushed-steel plate with dark engraved text; hover lights a burgundy glow and
    lifts it a pixel. (This replaces the old instrument-panel kit with its
    corner-bracket reticle.) */
 .project-cta a,
@@ -765,7 +765,7 @@ html {
 [data-glass-cta]:focus-visible {
   color: #0f1216;
   transform: translateY(-1px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.45), 0 1px 0 rgba(0, 0, 0, 0.7), 0 0 1rem rgba(196, 144, 63, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.45), 0 1px 0 rgba(0, 0, 0, 0.7), 0 0 1rem rgba(122, 31, 46, 0.65);
 }
 
 .project-cta a:focus-visible,
@@ -868,7 +868,7 @@ html {
     linear-gradient(100deg, transparent 15%, rgba(255, 255, 255, 0.22) 45%, transparent 75%),
     repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.09) 0 1px, rgba(0, 0, 0, 0.06) 1px 2px),
     linear-gradient(180deg, #b5bbc3, #8f959d 55%, #7b8189);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.45), 0 1px 0 rgba(0, 0, 0, 0.7), 0 0 0.9rem rgba(196, 144, 63, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.45), 0 1px 0 rgba(0, 0, 0, 0.7), 0 0 0.9rem rgba(122, 31, 46, 0.45);
 }
 
 .filter-empty {
@@ -902,7 +902,7 @@ html {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(196, 144, 63, 0.26), transparent 60%);
+  background: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(122, 31, 46, 0.34), transparent 60%);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -1013,7 +1013,7 @@ html {
   text-transform: uppercase;
   color: var(--accent-strong);
   background: rgba(10, 12, 15, 0.65);
-  border: 1px solid rgba(233, 193, 134, 0.25);
+  border: 1px solid rgba(219, 146, 157, 0.25);
   border-radius: 0.3rem;
   padding: 0.15rem 0.45rem;
   backdrop-filter: blur(4px);
@@ -1138,7 +1138,7 @@ html {
 
 .highlight-card a {
   color: var(--text);
-  text-decoration-color: var(--accent);
+  text-decoration-color: var(--accent-strong);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
 }
@@ -1159,7 +1159,7 @@ html {
   max-width: 70ch;
   margin: 2rem 0;
   padding: 1.25rem 1.5rem;
-  border: 1px solid rgba(233, 193, 134, 0.3);
+  border: 1px solid rgba(219, 146, 157, 0.3);
   border-radius: 0.25rem;
   background: rgba(20, 23, 28, 0.55);
 }
@@ -1242,7 +1242,7 @@ html {
   /* No mask-image here on purpose: that circular fade existed to hide the
      edge of the old bright Lightformer backdrop (the "white halo"), which
      GlassHero no longer renders -- the medallion's own rounded-square shape
-     is now the only visible edge. A soft amber contact-shadow replaces it for
+     is now the only visible edge. A soft burgundy contact-shadow replaces it for
      a touch of lift instead of a stark glow. */
   flex: 0 0 auto;
   width: clamp(9rem, 16vw, 15rem);
@@ -1250,7 +1250,7 @@ html {
   pointer-events: none;
   opacity: 0;
   transition: opacity 1.2s var(--ease);
-  filter: drop-shadow(0 0.5rem 1.5rem rgba(196, 144, 63, 0.30));
+  filter: drop-shadow(0 0.5rem 1.5rem rgba(122, 31, 46, 0.39));
 }
 
 .hero-liquid-mount.is-ready {
@@ -1480,7 +1480,7 @@ html {
     linear-gradient(100deg, transparent 15%, rgba(255, 255, 255, 0.22) 45%, transparent 75%),
     repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.09) 0 1px, rgba(0, 0, 0, 0.06) 1px 2px),
     linear-gradient(180deg, #b5bbc3, #8f959d 55%, #7b8189);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.45), 0 1px 0 rgba(0, 0, 0, 0.7), 0 0 0.8rem rgba(196, 144, 63, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.45), 0 1px 0 rgba(0, 0, 0, 0.7), 0 0 0.8rem rgba(122, 31, 46, 0.45);
 }
 
 .stl-viewer-label {
@@ -1645,7 +1645,7 @@ html {
 }
 
 .invader-toggle[aria-pressed="true"] {
-  filter: drop-shadow(0 0 0.8rem rgba(196, 144, 63, 0.4)) drop-shadow(0 0.35rem 0.7rem rgba(0, 0, 0, 0.55));
+  filter: drop-shadow(0 0 0.8rem rgba(122, 31, 46, 0.52)) drop-shadow(0 0.35rem 0.7rem rgba(0, 0, 0, 0.55));
 }
 
 .invader-toggle[aria-pressed="true"] .porthole-sprite {
@@ -1856,7 +1856,7 @@ html {
 }
 
 .cs50x-progress-list {
-  --topic-color: #d3a875;
+  --topic-color: var(--accent-strong);
   list-style: none;
   padding: 0;
   margin: 0;
@@ -2010,13 +2010,13 @@ iframe.video-frame {
   height: 3.5rem;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: rgba(10, 12, 15, 0.72) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23e9c186' d='M9 6.5v11l9-5.5z'/%3E%3C/svg%3E") center / 60% no-repeat;
+  background: rgba(10, 12, 15, 0.72) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23db929d' d='M9 6.5v11l9-5.5z'/%3E%3C/svg%3E") center / 60% no-repeat;
   border: 1px solid var(--accent-strong);
 }
 
 .video-frame:hover::after,
 .video-frame:focus-visible::after {
-  background-color: rgba(196, 144, 63, 0.5);
+  background-color: rgba(122, 31, 46, 0.65);
 }
 
 iframe.video-frame::after {
