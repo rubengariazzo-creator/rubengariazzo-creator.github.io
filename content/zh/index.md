@@ -26,7 +26,7 @@ highlights:
   - tag: "创新"
     title: "LUMIÈRE：装在屏幕背后的灯"
     href: /zh/projects/lumiere/
-    text: "我们在 EPF 的 P2I 项目，六人合作，我担任组长。一根扁平灯条用白光照亮桌面，并在墙上投出随画面变化的光晕。我负责计算、CAD、工程图，并用 Blender 制作了 55 秒的展示动画。"
+    text: "我们在 EPF 的 P2I 项目，六人合作，我担任项目负责人。一根扁平灯条用白光照亮桌面，并在墙上投出随画面变化的光晕。我负责协调团队、甘特图和预算，完成计算、CAD、工程图，并用 Blender 制作了 55 秒的展示动画。"
   - tag: "计算机科学"
     title: "哈佛 CS50x 与一个 Python 游戏"
     text: '哈佛大学的计算机科学入门课程，我在 <a href="/zh/projects/cs50x/">CS50x</a> 页面上逐题记录学习进度；另外还有一个可以直接在浏览器中玩的<a href="/zh/projects/drone-rescue-game/">无人机救援游戏</a>。'

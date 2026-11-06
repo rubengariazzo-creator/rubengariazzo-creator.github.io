@@ -78,7 +78,7 @@ cta:
   label: "Voir les projets"
   href: /projets/
 ---
-LUMIÈRE est notre projet P2I à l'EPF, mené à six à l'automne 2026 dans le module « Structurer le processus d'innovation », encadré par Jérôme Dutel. C'est une barre lumineuse plate qui se fixe au dos d'un écran. Elle envoie une lumière blanche réglable vers le bureau et un halo de couleur vers le mur, et elle s'adapte à la lumière de la pièce comme aux couleurs affichées. J'étais chef de groupe. J'ai tenu le planning, fait les calculs, la CAO, les plans et le rapport, et j'ai réalisé sous Blender le modèle 3D, les rendus et l'animation de présentation.
+LUMIÈRE est notre projet P2I à l'EPF, mené à six dans le module « Structurer le processus d'innovation », encadré par Jérôme Dutel. C'est une barre lumineuse plate qui se fixe au dos d'un écran. Elle envoie une lumière blanche réglable vers le bureau et un halo de couleur vers le mur, et elle s'adapte à la lumière de la pièce comme aux couleurs affichées. J'étais chef de projet.
 
 L'animation en tête de page dure 55 s et suit le déroulé de notre soutenance. La barre s'assemble pièce par pièce, se pose au dos de l'écran et s'allume. On voit ensuite l'intensité et la teinte se régler selon la pièce et le halo suivre l'image. Puis viennent les deux versions vues de dos et les coupes, avec la lumière dirigée, le capteur, le mode soirée et l'autonomie.
 
@@ -88,11 +88,13 @@ Le visualiseur montre la version A1 en vue éclatée, avec un bouton pour l'asse
 
 ## L'équipe
 
-Flore Descroix s'est occupée du besoin (état de l'art, enquête, cahier des charges et Ishikawa). Auxence Lassagne a mené la décision avec la matrice de Pugh et a travaillé sur le diaporama et le rapport. Ludivin Marreau--Reymond a travaillé sur l'état de l'art, l'enquête, le cahier des charges et le diaporama. Jocelin Cerfontaine a animé le brainstorming et les réunions. Ines Wallon, arrivée le 2 octobre, a fait la carte mentale, le TRIZ, le diagramme pieuvre et l'Ishikawa.
+En tant que chef de projet, j'ai coordonné l'équipe et réparti les tâches. J'ai construit le diagramme de Gantt et suivi le prévu et le réalisé, tenu le tableau des charges et des dépenses, fait les calculs (masse, coût, autonomie, consommation), modélisé les deux versions, dessiné les plans, rédigé une bonne part du rapport, et réalisé sous Blender les rendus et l'animation de présentation.
+
+Auxence Lassagne a mené la décision avec la matrice de Pugh et a travaillé sur le diaporama et le rapport. Ludivin Marreau--Reymond a travaillé sur l'état de l'art, l'enquête, le cahier des charges et le diaporama. Jocelin Cerfontaine a animé le brainstorming et les réunions. Ines Wallon a fait la carte mentale, le TRIZ, le diagramme pieuvre et l'Ishikawa. Flore Descroix s'est occupée du besoin (état de l'art, enquête, cahier des charges et Ishikawa).
 
 ## Le problème
 
-On passe des heures devant un écran très lumineux, souvent dans une pièce sombre ou mal éclairée. Ce contraste, les reflets sur la dalle et certaines couleurs saturées font partie des causes de fatigue visuelle que notre état de l'art a relevées. L'idée vient des salles d'opération, où les tenues vertes, complémentaires du rouge, masquent l'image rémanente. Nous avons voté pour ce sujet à la première réunion, le 29 septembre.
+On passe des heures devant un écran très lumineux, souvent dans une pièce sombre ou mal éclairée. Ce contraste, les reflets sur la dalle et certaines couleurs saturées font partie des causes de fatigue visuelle que notre état de l'art a relevées. L'idée vient des salles d'opération, où les tenues vertes, complémentaires du rouge, masquent l'image rémanente. Nous avons voté pour ce sujet à la première réunion.
 
 Les produits existants se rangent en deux familles. La BenQ ScreenBar Halo et la Xiaomi Mi Light Bar éclairent le bureau mais pas le mur derrière l'écran. Le Philips Hue Play et le Govee DreamView colorent le mur au rythme de l'image, mais ils coûtent de 180 à 220 € et ne sont pas pensés contre la fatigue. Deux brevets nous ont donné nos idées clés, le réglage de la lumière par un capteur d'ambiance et une couleur d'éclairage choisie d'après l'image affichée.
 
@@ -104,7 +106,7 @@ Le cahier des charges demande 300 à 500 lux autour de l'écran, une teinte de 3
 
 ## Des idées au concept
 
-Le brainstorming du 5 octobre n'a donné que 10 idées. La méthode de l'inversion nous a débloqués. En nous demandant comment endommager la vue des utilisateurs, nous avons trouvé 24 réponses, puis retourné chacune en idée. Un fort contraste avec une pièce noire est devenu un halo réglé par un capteur, et un système trop lourd qui fait basculer l'écran est devenu un module batterie placé en bas. Nous sommes arrivés à 37 idées en dix familles, dont 28 ont servi à la matrice de Pugh.
+Le premier brainstorming n'a donné que 10 idées. La méthode de l'inversion nous a débloqués. En nous demandant comment endommager la vue des utilisateurs, nous avons trouvé 24 réponses, puis retourné chacune en idée. Un fort contraste avec une pièce noire est devenu un halo réglé par un capteur, et un système trop lourd qui fait basculer l'écran est devenu un module batterie placé en bas. Nous sommes arrivés à 37 idées en dix familles, dont 28 ont servi à la matrice de Pugh.
 
 Auxence a comparé six solutions à une lampe de bureau classique. Notre concept arrive en tête avec 19 points, devant la BenQ (16) et la Xiaomi (14), et son seul point négatif est le prix. Ses notes étaient des objectifs, puisqu'il n'existait pas encore. Les calculs devaient ensuite les vérifier.
 
@@ -112,7 +114,7 @@ Auxence a comparé six solutions à une lampe de bureau classique. Notre concept
 
 LUMIÈRE tient en deux modules plats et fermés. La barre haute M1, longue de 36 cm, porte deux rubans LED derrière leurs diffuseurs. Un ruban COB 24 V bicolore (2700 à 6500 K, IRC supérieur à 90) éclaire le bureau, et un ruban SK6812 fait le halo. Elle loge aussi une carte XIAO ESP32-C3, un capteur de lumière OPT3001, un bouton, un convertisseur 5 V vers 24 V et deux transistors de gradation. Le module M2 de la version A1 loge une batterie LiPo 2S de 5000 mAh et son chargeur en bas de la dalle, pour garder le centre de gravité bas. La version A2 se passe de M2 et se branche en USB-C. Chaque module tient par quatre aimants néodyme sur des plaques d'acier collées au dos de l'écran, avec de l'EPDM pour ne pas le rayer. Les boîtiers sont en PLA imprimé, avec des parois de 1,6 mm et des couvercles vissés.
 
-Le design a connu quatre versions, le 10 octobre. Le premier boîtier en fer à cheval autour de l'écran ne montrait pas comment il tenait. Les boîtiers étaient ouverts, et la batterie dans la barre haute remontait le centre de gravité. Mes revues ont aussi relevé un seul ruban pour deux diffuseurs et un repère manquant sur le dessin d'ensemble, aujourd'hui complet à 22 repères. La lampe retenue sur la Pugh papier était en fait une ampoule E27 sur secteur 230 V, sans doute un « 12 W » lu comme 12 V. Le ruban COB l'a remplacée.
+Le design a connu quatre versions. Le premier boîtier en fer à cheval autour de l'écran ne montrait pas comment il tenait. Les boîtiers étaient ouverts, et la batterie dans la barre haute remontait le centre de gravité. Mes revues ont aussi relevé un seul ruban pour deux diffuseurs et un repère manquant sur le dessin d'ensemble, aujourd'hui complet à 22 repères. La lampe retenue sur la Pugh papier était en fait une ampoule E27 sur secteur 230 V, sans doute un « 12 W » lu comme 12 V. Le ruban COB l'a remplacée.
 
 ## Chiffres et conformité
 
@@ -122,10 +124,10 @@ A2 respecte la masse et le prix visés. A1 respecte l'autonomie, mais ni la mass
 
 ## Ce que nous en retenons
 
-Le classeur partagé suivait le prévu et le réalisé. Nous avions prévu 78,75 h et nous en avons compté 66,75 au 16 octobre, avec 7,5 h de dépassement sur les tâches terminées. La conception a fini trois jours en avance, parce que la carte et le design étaient décidés dès le 10 octobre. Le brainstorming a pris cinq jours de retard et le Pareto dix, et le rapport comme le diaporama ont été terminés le jour même de la remise. La Pugh a aussi été faite avant la fin du brainstorming, sans justification écrite des notes.
+Le classeur partagé suivait le prévu et le réalisé. Nous avions prévu 78,75 h et nous en avons compté 66,75, avec 7,5 h de dépassement sur les tâches terminées. La conception a fini en avance, parce que la carte et le design avaient été décidés tôt. Le brainstorming et le Pareto ont pris du retard, et le rapport comme le diaporama ont été terminés juste à temps pour la remise. La Pugh a aussi été faite avant la fin du brainstorming, sans justification écrite des notes.
 
 Pour la plupart d'entre nous, enchaîner seuls les étapes d'un projet était nouveau. La prochaine fois, je prévoirais 30 à 50 % de marge sur les durées, je validerais le cahier des charges seulement après un premier calcul de masse, de prix et d'autonomie, et je vérifierais chaque référence avant de la retenir. Flore propose de chercher les brevets dès l'état de l'art, et elle a raison, puisque ce sont eux qui nous ont donné le capteur et le halo.
 
 ## Limites et suites
 
-LUMIÈRE est un projet d'étude. Au rendu du 16 octobre, la conception était complète (modèle 3D, plans, calculs, animation), mais aucun prototype n'était imprimé. C'est la prochaine étape logique, pour mesurer l'éclairement réel, la chaleur du ruban et la tenue des aimants. Il faudrait aussi lire la fiche du ruban COB (rendu des couleurs, scintillement, groupe de risque photobiologique) et écrire l'appli. Nous avons présenté le projet en soutenance le 19 octobre, un oral de six minutes où chacun a pris la parole, et j'ai commenté la suite de l'animation, du halo jusqu'aux coupes. Le rapport et le dossier de plans sont dans les documents ci-dessous.
+LUMIÈRE est un projet d'étude. Au rendu, la conception était complète (modèle 3D, plans, calculs, animation), mais aucun prototype n'était imprimé. C'est la prochaine étape logique, pour mesurer l'éclairement réel, la chaleur du ruban et la tenue des aimants. Il faudrait aussi lire la fiche du ruban COB (rendu des couleurs, scintillement, groupe de risque photobiologique) et écrire l'appli. Nous avons présenté le projet en soutenance, un oral de six minutes où chacun a pris la parole, et j'ai commenté la suite de l'animation, du halo jusqu'aux coupes. Le rapport et le dossier de plans sont dans les documents ci-dessous.

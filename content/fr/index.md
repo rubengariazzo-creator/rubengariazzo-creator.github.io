@@ -26,7 +26,7 @@ highlights:
   - tag: "Innovation"
     title: "LUMIÈRE, une lumière au dos de l'écran"
     href: /projets/lumiere/
-    text: "Notre projet P2I à l'EPF, mené à six, dont j'étais chef de groupe. Une barre plate éclaire le bureau en blanc et pose sur le mur un halo qui suit l'image. J'ai fait les calculs, la CAO, les plans et, sous Blender, l'animation de présentation de 55 s."
+    text: "Notre projet P2I à l'EPF, mené à six, dont j'étais chef de projet. Une barre plate éclaire le bureau en blanc et pose sur le mur un halo qui suit l'image. J'ai coordonné l'équipe, tenu le Gantt et le budget, fait les calculs, la CAO, les plans et, sous Blender, l'animation de présentation de 55 s."
   - tag: "Informatique"
     title: "CS50x de Harvard et un jeu en Python"
     text: 'Le cours d''introduction à l''informatique de Harvard, que je suis problème après problème sur la page <a href="/projets/cs50x/">CS50x</a>, et un <a href="/projets/jeu-de-drones/">jeu de sauvetage par drones</a> auquel on peut jouer directement dans le navigateur.'

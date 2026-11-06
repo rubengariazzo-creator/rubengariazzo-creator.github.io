@@ -26,7 +26,7 @@ highlights:
   - tag: "Innovation"
     title: "LUMIÈRE, a light on the back of the screen"
     href: /en/projects/lumiere/
-    text: "Our P2I project at EPF, run by six of us, with me as group leader. A flat bar lights the desk in white and casts a halo on the wall that follows the image. I did the calculations, the CAD, the drawings and, in Blender, the 55 s presentation animation."
+    text: "Our P2I project at EPF, run by six of us, with me as project leader. A flat bar lights the desk in white and casts a halo on the wall that follows the image. I coordinated the team, kept the Gantt chart and the budget, did the calculations, the CAD, the drawings and, in Blender, the 55 s presentation animation."
   - tag: "Computer science"
     title: "Harvard's CS50x and a Python game"
     text: 'Harvard''s introduction to computer science, which I follow problem after problem on the <a href="/en/projects/cs50x/">CS50x</a> page, and a <a href="/en/projects/drone-rescue-game/">drone rescue game</a> you can play right in the browser.'
