@@ -114,7 +114,7 @@ Auxence compared six solutions against a classic desk lamp. Our concept comes fi
 
 LUMIÈRE comes down to two flat, closed modules. The top bar M1, 36 cm long, carries two LED strips behind their diffusers. A bicolour 24 V COB strip (2700 to 6500 K, CRI above 90) lights the desk, and an SK6812 strip makes the halo. It also houses a XIAO ESP32-C3 board, an OPT3001 light sensor, a button, a 5 V to 24 V converter and two dimming transistors. On version A1, module M2 houses a 5000 mAh 2S LiPo battery and its charger at the bottom of the panel, to keep the centre of gravity low. Version A2 does without M2 and plugs in over USB-C. Each module holds by four neodymium magnets on steel plates glued to the back of the screen, with EPDM so it does not scratch it. The housings are printed in PLA, with 1.6 mm walls and screwed covers.
 
-The design went through four versions. The first horseshoe housing around the screen did not show how it held. The housings were open, and the battery in the top bar raised the centre of gravity. My reviews also caught a single strip for two diffusers and a missing item number on the assembly drawing, now complete with 22 items. The lamp chosen on the paper Pugh matrix was in fact an E27 bulb on 230 V mains, probably a "12 W" read as 12 V. The COB strip replaced it.
+The design went through four versions. The first horseshoe housing around the screen did not show how it held. The housings were open, and the battery in the top bar raised the centre of gravity. My reviews also caught a single strip for two diffusers and a missing item number on the assembly drawing, now complete with 22 items. The lamp chosen on the paper Pugh matrix was in fact an E27 bulb on 230 V mains. The COB strip replaced it.
 
 ## Figures and compliance
 
