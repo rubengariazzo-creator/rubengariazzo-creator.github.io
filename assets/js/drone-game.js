@@ -155,9 +155,22 @@ run_sync(Promise.resolve(1))
       });
   }
 
+  // WebKit (Safari, and every browser on iOS, Chrome included) crashes the
+  // interpreter during the JSPI probe ("Stack (most recent call first): <no
+  // Python frame>") and then hangs instead of throwing, so never probe there.
+  // CriOS/FxiOS are iOS Chrome/Firefox, which are WebKit too.
+  const ua = navigator.userAgent;
+  const IS_WEBKIT = /AppleWebKit/.test(ua) && (!/Chrome\/|Chromium\//.test(ua) || /CriOS|FxiOS|EdgiOS/.test(ua));
+
   async function jspiSupported(pyodide) {
+    if (IS_WEBKIT) return false;
     try {
-      await pyodide.runPythonAsync(JSPI_PROBE);
+      // The probe resolves instantly where JSPI works; a hang means a broken
+      // engine, and the caller discards this interpreter.
+      await Promise.race([
+        pyodide.runPythonAsync(JSPI_PROBE),
+        new Promise((_, reject) => setTimeout(() => reject(new Error("JSPI probe timeout")), 5000)),
+      ]);
       return true;
     } catch (err) {
       return false;
@@ -220,10 +233,11 @@ run_sync(Promise.resolve(1))
         }
       }
       if (!jspiOk) {
-        // A failed probe or run may have killed the interpreter: always start over.
+        // A failed probe or run may have killed the interpreter: start over,
+        // unless the probe was skipped (WebKit) and the interpreter is untouched.
         inputForm.hidden = true;
         terminal.textContent = "";
-        pyodide = await freshInterpreter();
+        if (!IS_WEBKIT) pyodide = await freshInterpreter();
         fallbackNotice.hidden = false;
         fallbackNotice.textContent = t.fallbackNotice;
         pyodide.runPython(PROMPT_INPUT_SHIM);
