@@ -36,7 +36,7 @@ With my partner Ilyane Haida, I programmed a rescue game on a 12x12 grid. Drones
       <li>Each move costs 1 battery point (+2 to pick up a survivor); battery recharges at the hospital.</li>
       <li>A storm disables any active drone it touches while moving, for 2 turns.</li>
       <li>Each survivor delivered to the hospital earns 1 point. The game ends when all survivors are saved, when all drones are down, or after 40 turns.</li>
-      <li>To play, enter the ID of the drone to move (or <code>f</code> to end the turn), then its destination as <code>column row</code>, for example <code>C 5</code>.</li>
+      <li>To play, enter the number of the drone to move, without the D (<code>1</code> for <code>D1</code>, or <code>f</code> to end the turn), then its destination as <code>column row</code>, for example <code>C 5</code>.</li>
     </ul>
   </div>
   <button type="button" class="drone-game-play">Play the game</button>

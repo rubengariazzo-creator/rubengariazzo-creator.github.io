@@ -36,7 +36,7 @@ cta:
       <li>每次移动消耗 1 点电量（接幸存者另加 2 点）；电量在医院充电。</li>
       <li>风暴在移动时碰到任何处于活动状态的无人机，都会使其失能 2 个回合。</li>
       <li>每送达一名幸存者到医院得 1 分。所有幸存者获救、所有无人机失能，或进行满 40 回合时，游戏结束。</li>
-      <li>玩的时候，先输入要移动的无人机编号（输入 <code>f</code> 结束回合），再输入目的地，格式为“列 行”，例如 <code>C 5</code>。</li>
+      <li>玩的时候，先输入要移动的无人机编号，不带 D（<code>D1</code> 输入 <code>1</code>；输入 <code>f</code> 结束回合），再输入目的地，格式为“列 行”，例如 <code>C 5</code>。</li>
     </ul>
   </div>
   <button type="button" class="drone-game-play">Play the game</button>

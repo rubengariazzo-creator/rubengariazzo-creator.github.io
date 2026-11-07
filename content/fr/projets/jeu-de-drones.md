@@ -36,7 +36,7 @@ Avec Ilyane Haida, en binôme, nous avons programmé un jeu de sauvetage sur une
       <li>Chaque déplacement coûte 1 point de batterie (+2 pour récupérer un survivant) ; la batterie se recharge sur l'hôpital.</li>
       <li>Une tempête désactive pendant 2 tours tout drone actif qu'elle touche en se déplaçant.</li>
       <li>Chaque survivant déposé à l'hôpital rapporte 1 point. La partie s'arrête quand tous les survivants sont sauvés, quand tous les drones sont hors service ou après 40 tours.</li>
-      <li>Pour jouer, entrez l'identifiant du drone à déplacer (ou <code>f</code> pour finir le tour), puis sa destination au format <code>colonne ligne</code>, par exemple <code>C 5</code>.</li>
+      <li>Pour jouer, entrez le numéro du drone à déplacer, sans le D (<code>1</code> pour <code>D1</code>, ou <code>f</code> pour finir le tour), puis sa destination au format <code>colonne ligne</code>, par exemple <code>C 5</code>.</li>
     </ul>
   </div>
   <button type="button" class="drone-game-play">Lancer le jeu</button>

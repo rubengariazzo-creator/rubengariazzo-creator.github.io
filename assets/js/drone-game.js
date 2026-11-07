@@ -184,14 +184,18 @@ run_sync(Promise.resolve(1))
     fallbackNotice.hidden = true;
     status.textContent = t.loading;
 
+    // Fresh interpreter per (re)play instead of trying to reset in-memory game state.
+    async function freshInterpreter() {
+      const py = await window.loadPyodide();
+      py.setStdout({ batched: (msg) => appendLine(terminal, msg) });
+      py.setStderr({ batched: (msg) => appendLine(terminal, msg) });
+      py.FS.writeFile("config.json", JSON.stringify(CONFIG));
+      return py;
+    }
+
     try {
       await loadPyodideLoader();
-      // Fresh interpreter per (re)play instead of trying to reset in-memory game state.
-      const pyodide = await window.loadPyodide();
-
-      pyodide.setStdout({ batched: (msg) => appendLine(terminal, msg) });
-      pyodide.setStderr({ batched: (msg) => appendLine(terminal, msg) });
-      pyodide.FS.writeFile("config.json", JSON.stringify(CONFIG));
+      let pyodide = await freshInterpreter();
 
       status.textContent = t.fetching;
       const res = await fetch(SCRIPT_URL);
@@ -201,13 +205,25 @@ run_sync(Promise.resolve(1))
       status.textContent = t.starting;
       // Runs the real, unmodified drone-rescue.py. input() is patched above to
       // suspend Python execution (via JSPI) until the on-page form is submitted,
-      // without blocking the browser or hiding the grid; falls back to a plain
-      // prompt() only if the browser lacks JSPI support.
-      if (await jspiSupported(pyodide)) {
-        window.__droneGameAsyncInput = makeAsyncInput(container);
-        pyodide.runPython(JSPI_INPUT_SHIM);
-        await pyodide.runPythonAsync(source);
-      } else {
+      // without blocking the browser or hiding the grid. Some mobile engines
+      // report JSPI yet crash the interpreter ("Fatal Python error ... <no Python
+      // frame>") when it actually suspends, so any failure there restarts a fresh
+      // interpreter in prompt() mode instead of leaving a dead game.
+      let jspiOk = await jspiSupported(pyodide);
+      if (jspiOk) {
+        try {
+          window.__droneGameAsyncInput = makeAsyncInput(container);
+          pyodide.runPython(JSPI_INPUT_SHIM);
+          await pyodide.runPythonAsync(source);
+        } catch (err) {
+          jspiOk = false;
+        }
+      }
+      if (!jspiOk) {
+        // A failed probe or run may have killed the interpreter: always start over.
+        inputForm.hidden = true;
+        terminal.textContent = "";
+        pyodide = await freshInterpreter();
         fallbackNotice.hidden = false;
         fallbackNotice.textContent = t.fallbackNotice;
         pyodide.runPython(PROMPT_INPUT_SHIM);
