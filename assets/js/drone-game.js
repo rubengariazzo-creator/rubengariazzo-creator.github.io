@@ -62,7 +62,6 @@ run_sync(Promise.resolve(1))
       loading: "Chargement de l'environnement Python…",
       fetching: "Récupération du script du jeu…",
       starting: "Démarrage de la partie…",
-      probing: "Vérification de la saisie intégrée…",
       playing: "Partie en cours.",
       playingPrompt: "Partie en cours (saisie par fenêtres).",
       error: "Une erreur est survenue : ",
@@ -75,7 +74,6 @@ run_sync(Promise.resolve(1))
       loading: "Loading Python environment…",
       fetching: "Fetching the game script…",
       starting: "Starting the game…",
-      probing: "Checking in-page input…",
       playing: "Game in progress.",
       playingPrompt: "Game in progress (dialog input).",
       error: "An error occurred: ",
@@ -229,7 +227,6 @@ run_sync(Promise.resolve(1))
       // report JSPI yet crash the interpreter ("Fatal Python error ... <no Python
       // frame>") when it actually suspends, so any failure there restarts a fresh
       // interpreter in prompt() mode instead of leaving a dead game.
-      status.textContent = t.probing;
       let jspiOk = await jspiSupported(pyodide);
       if (jspiOk) {
         try {

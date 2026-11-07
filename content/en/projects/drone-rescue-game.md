@@ -52,7 +52,7 @@ With my partner Ilyane Haida, I programmed a rescue game on a 12x12 grid. Drones
     <button type="button" class="drone-game-replay" hidden>Play again</button>
   </div>
 </div>
-<script src="/assets/js/drone-game.js?v=3" defer></script>
+<script src="/assets/js/drone-game.js?v=4" defer></script>
 
 ## Architecture
 
