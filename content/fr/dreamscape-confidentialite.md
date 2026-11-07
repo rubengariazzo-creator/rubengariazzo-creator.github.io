@@ -5,13 +5,13 @@ description: "Politique de confidentialité du jeu Dreamscape (Android et Window
 robots: noindex
 eleventyExcludeFromCollections: true
 ---
-*Dernière mise à jour : 7 novembre 2026*
+*Dernière mise à jour : 8 novembre 2026*
 
 Dreamscape (« le jeu ») est un jeu de construction de royaume et de combats pour Android et Windows, développé de manière indépendante. Cette page explique quelles données le jeu utilise et ce qu'il en fait.
 
 ## En bref
 
-Dreamscape n'affiche aucune publicité, n'utilise aucun outil de mesure d'audience et ne vend ni ne partage aucune donnée. Une seule chose quitte votre appareil, et seulement si l'option est cochée : vos scores pour le classement en ligne, avec un pseudonyme et un identifiant tiré au hasard (voir « Classement en ligne »).
+Dreamscape n'affiche aucune publicité, n'utilise aucun outil de mesure d'audience et ne vend ni ne partage aucune donnée. Une seule chose quitte votre appareil, et seulement si vous l'avez accepté : vos scores pour le classement en ligne, avec un pseudonyme et un identifiant tiré au hasard (voir « Classement en ligne »).
 
 ## Données enregistrées sur votre appareil
 
@@ -35,16 +35,16 @@ Le jeu demande pour cela les autorisations Android d'accès au réseau et au Wi-
 
 ## Classement en ligne
 
-Si l'option « Participer au classement » est cochée dans les Options du jeu (elle l'est par défaut), le jeu envoie de temps en temps à notre service de classement, hébergé par Cloudflare :
+Le jeu vous demande si vous voulez participer au classement en ligne. Rien n'est envoyé tant que vous n'avez pas répondu oui. Si vous acceptez (ou si vous cochez plus tard « Participer au classement » dans les Options du jeu), le jeu envoie de temps en temps à notre service de classement, hébergé par Cloudflare :
 
 - un identifiant tiré au hasard, propre à l'appareil, qui ne permet pas de savoir qui vous êtes ;
 - le pseudonyme affiché dans le classement (le nom de votre partie, ou celui que vous choisissez) ;
 - le peuple de votre royaume et la version du jeu ;
-- vos scores : médailles des défis, influence, Couronnes, temps pour conquérir 15 royaumes.
+- vos scores : temps pour conquérir 15 royaumes, dégâts infligés en combat, médailles des défis, Couronnes, influence, trophées de la Brume.
 
 Ces données servent seulement à afficher le classement, dans le jeu et sur la page [Classement](/dreamscape-classement/). Elles ne sont ni vendues ni partagées. Le pseudonyme et les scores sont publics ; l'identifiant ne l'est jamais en entier. Le service n'enregistre pas votre adresse IP (Cloudflare la voit pour acheminer la demande, comme tout hébergeur, selon sa propre politique de confidentialité). Les scores sont gardés tant que le classement existe, ou jusqu'à ce que vous demandiez leur effacement.
 
-Choisissez un pseudonyme plutôt que votre vrai nom. Décochez l'option pour ne plus rien envoyer. Pour faire effacer vos scores, écrivez à l'adresse de contact en donnant votre pseudonyme.
+Choisissez un pseudonyme plutôt que votre vrai nom. Vous pouvez changer d'avis à tout moment : décochez l'option dans les Options du jeu, et plus rien n'est envoyé. Pour faire effacer vos scores, écrivez à l'adresse de contact en donnant votre pseudonyme.
 
 ## Achats
 
