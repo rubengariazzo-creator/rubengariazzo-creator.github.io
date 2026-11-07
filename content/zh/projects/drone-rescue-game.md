@@ -52,7 +52,7 @@ cta:
     <button type="button" class="drone-game-replay" hidden>Play again</button>
   </div>
 </div>
-<script src="/assets/js/drone-game.js" defer></script>
+<script src="/assets/js/drone-game.js?v=3" defer></script>
 
 ## 程序结构
 

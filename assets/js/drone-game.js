@@ -62,6 +62,9 @@ run_sync(Promise.resolve(1))
       loading: "Chargement de l'environnement Python…",
       fetching: "Récupération du script du jeu…",
       starting: "Démarrage de la partie…",
+      probing: "Vérification de la saisie intégrée…",
+      playing: "Partie en cours.",
+      playingPrompt: "Partie en cours (saisie par fenêtres).",
       error: "Une erreur est survenue : ",
       done: "Partie terminée.",
       submit: "Envoyer",
@@ -72,6 +75,9 @@ run_sync(Promise.resolve(1))
       loading: "Loading Python environment…",
       fetching: "Fetching the game script…",
       starting: "Starting the game…",
+      probing: "Checking in-page input…",
+      playing: "Game in progress.",
+      playingPrompt: "Game in progress (dialog input).",
       error: "An error occurred: ",
       done: "Game finished.",
       submit: "Send",
@@ -199,9 +205,10 @@ run_sync(Promise.resolve(1))
 
     // Fresh interpreter per (re)play instead of trying to reset in-memory game state.
     async function freshInterpreter() {
-      const py = await window.loadPyodide();
-      py.setStdout({ batched: (msg) => appendLine(terminal, msg) });
-      py.setStderr({ batched: (msg) => appendLine(terminal, msg) });
+      // Output callbacks passed at load time so errors raised during startup
+      // (e.g. the first "Fatal Python error: ..." line) reach the page too.
+      const out = (msg) => appendLine(terminal, msg);
+      const py = await window.loadPyodide({ stdout: out, stderr: out });
       py.FS.writeFile("config.json", JSON.stringify(CONFIG));
       return py;
     }
@@ -222,11 +229,13 @@ run_sync(Promise.resolve(1))
       // report JSPI yet crash the interpreter ("Fatal Python error ... <no Python
       // frame>") when it actually suspends, so any failure there restarts a fresh
       // interpreter in prompt() mode instead of leaving a dead game.
+      status.textContent = t.probing;
       let jspiOk = await jspiSupported(pyodide);
       if (jspiOk) {
         try {
           window.__droneGameAsyncInput = makeAsyncInput(container);
           pyodide.runPython(JSPI_INPUT_SHIM);
+          status.textContent = t.playing;
           await pyodide.runPythonAsync(source);
         } catch (err) {
           jspiOk = false;
@@ -241,6 +250,9 @@ run_sync(Promise.resolve(1))
         fallbackNotice.hidden = false;
         fallbackNotice.textContent = t.fallbackNotice;
         pyodide.runPython(PROMPT_INPUT_SHIM);
+        status.textContent = t.playingPrompt;
+        // Let the notice and status paint before the synchronous run blocks the page.
+        await new Promise((r) => setTimeout(r, 50));
         pyodide.runPython(source);
       }
 

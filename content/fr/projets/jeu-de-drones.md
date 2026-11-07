@@ -52,7 +52,7 @@ Avec Ilyane Haida, en binôme, nous avons programmé un jeu de sauvetage sur une
     <button type="button" class="drone-game-replay" hidden>Rejouer</button>
   </div>
 </div>
-<script src="/assets/js/drone-game.js" defer></script>
+<script src="/assets/js/drone-game.js?v=3" defer></script>
 
 ## Architecture
 
