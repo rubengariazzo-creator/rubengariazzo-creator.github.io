@@ -1,0 +1,139 @@
+---
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dreamscape : classement</title>
+<meta name="robots" content="noindex">
+<!--
+  Spec 272, lot 7a : la page du classement pour le site (GitHub Pages). Autonome : à copier telle quelle dans le site.
+  Elle lit le Worker du classement (tools/classement/worker). Tant que WORKER est vide, elle l'annonce sans rien lire.
+-->
+<script>
+  // L'adresse du Worker, sans « / » final (ex. "https://dreamscape-classement.xxx.workers.dev"). Vide : pas encore ouvert.
+  const WORKER = "https://dreamscape-classement.dreamscape-classement.workers.dev";
+</script>
+<style>
+  :root {
+    --velin: #f6efdc; --velin-fonce: #ebdfc2; --encre: #3b2b1c; --encre-douce: #6b5743; --encre-pale: #998771;
+    --filet: #74593c; --ocre: #a67d32; --sanguine: #8d3d28; --fond: #e4d0a6;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--fond); }
+  body {
+    margin: 0; padding: 24px 16px 48px; color: var(--encre); background: var(--fond);
+    font: 17px/1.5 Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  }
+  .feuillet {
+    max-width: 760px; margin: 0 auto; padding: 28px 28px 32px; background: var(--velin);
+    border: 1px solid var(--filet); outline: 3px double var(--filet); outline-offset: 5px;
+    box-shadow: 0 6px 24px rgba(59, 43, 28, 0.25);
+  }
+  h1 {
+    margin: 0 0 2px; text-align: center; font-weight: normal; letter-spacing: 0.18em; font-size: 30px;
+    color: var(--sanguine); text-transform: uppercase;
+  }
+  .devise { text-align: center; font-style: italic; color: var(--encre-douce); margin: 0 0 22px; }
+  .onglets { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-bottom: 14px; }
+  .onglets button {
+    font: inherit; font-size: 15px; color: var(--encre); background: var(--velin-fonce); cursor: pointer;
+    border: 1px solid var(--filet); border-radius: 3px; padding: 6px 12px;
+  }
+  .onglets button[aria-selected="true"] { background: var(--filet); color: var(--velin); }
+  h2 {
+    font-weight: normal; font-size: 20px; color: var(--sanguine); margin: 18px 0 4px;
+    border-bottom: 1px solid var(--filet); padding-bottom: 2px;
+  }
+  .note { color: var(--encre-douce); font-size: 15px; margin: 0 0 10px; }
+  .etat { text-align: center; color: var(--encre-pale); font-style: italic; padding: 18px 0; }
+  table { width: 100%; border-collapse: collapse; }
+  td { padding: 5px 8px; border-bottom: 1px solid rgba(116, 89, 60, 0.18); }
+  td.rang { width: 3em; text-align: right; color: var(--encre-douce); font-variant-numeric: tabular-nums; }
+  tr.podium td.rang { color: var(--sanguine); font-weight: bold; }
+  td.valeur { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: bold; }
+  td.pseudo { overflow-wrap: anywhere; }
+  tr.estime td { font-style: italic; color: var(--encre-douce); }
+  tr.estime td.valeur { font-weight: normal; }
+  @media (max-width: 480px) { .feuillet { padding: 20px 14px; } h1 { font-size: 24px; } }
+</style>
+</head>
+<body>
+<main class="feuillet">
+  <h1>Dreamscape</h1>
+  <p class="devise">Le classement des royaumes de rêve</p>
+  <nav class="onglets" role="tablist" id="onglets"></nav>
+  <section id="vue"></section>
+</main>
+<script>
+  const CATEGORIES = [
+    { id: "temps15", onglet: "15 royaumes", titre: "Temps des 15 royaumes",
+      note: "Le temps de jeu actif pour conquérir les 15 royaumes : le plus court en tête." },
+    { id: "medailles", onglet: "Défis", titre: "Médailles des défis",
+      note: "Les médailles gagnées aux défis de la semaine, toutes semaines confondues." },
+    { id: "couronnes", onglet: "Couronnes", titre: "Couronnes", note: "Les Couronnes du trésor, au plus haut." },
+    { id: "influence", onglet: "Influence", titre: "Influence", note: "Le prestige gagné par l'influence, au plus haut." },
+    { id: "trophees", onglet: "Brume", titre: "Trophées de la Brume", note: "Les trophées de la Brume arrivent bientôt." },
+  ];
+  const vue = document.getElementById("vue");
+  const onglets = document.getElementById("onglets");
+
+  function duree(s) {
+    const m = Math.round(s / 60);
+    return m < 60 ? `${m} min` : `${Math.floor(m / 60)} h ${String(m % 60).padStart(2, "0")}`;
+  }
+  function valeur(cat, v, estime) {
+    if (cat === "temps15") return estime ? `≈ ${duree(v)} (estimé)` : duree(v);
+    return Math.round(v).toLocaleString("fr-FR");
+  }
+  function el(tag, attrs = {}, texte = "") {
+    const e = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
+    if (texte) e.textContent = texte; // jamais innerHTML : les pseudos viennent des joueurs
+    return e;
+  }
+  function tableau(cat, lignes, estime) {
+    const t = el("table");
+    for (const l of lignes) {
+      const tr = el("tr", { class: (estime ? "estime " : "") + (l.rang <= 3 ? "podium" : "") });
+      tr.append(el("td", { class: "rang" }, String(l.rang)), el("td", { class: "pseudo" }, l.pseudo),
+        el("td", { class: "valeur" }, valeur(cat, l.valeur, estime)));
+      t.append(tr);
+    }
+    return t;
+  }
+  async function montrer(cat) {
+    for (const b of onglets.children) b.setAttribute("aria-selected", b.dataset.cat === cat.id ? "true" : "false");
+    vue.replaceChildren(el("h2", {}, cat.titre), el("p", { class: "note" }, cat.note));
+    if (!WORKER) { vue.append(el("p", { class: "etat" }, "Le classement en ligne n'est pas encore ouvert.")); return; }
+    const attente = el("p", { class: "etat" }, "Lecture du classement…");
+    vue.append(attente);
+    try {
+      const r = await fetch(`${WORKER}/classement?categorie=${cat.id}&n=50`);
+      if (!r.ok) throw new Error(r.status);
+      const d = await r.json();
+      attente.remove();
+      const lignes = d.lignes || [], estimes = d.estimes || [];
+      if (!lignes.length && !estimes.length) vue.append(el("p", { class: "etat" }, cat.id === "trophees" ? "Bientôt." : "Personne pour l'instant."));
+      if (lignes.length) vue.append(tableau(cat.id, lignes, false));
+      if (estimes.length) {
+        vue.append(el("h2", {}, "Anciennes parties (temps estimé)"),
+          el("p", { class: "note" }, "Commencées avant le chronomètre : le temps est estimé d'après ce que le royaume a produit."),
+          tableau(cat.id, estimes, true));
+      }
+    } catch {
+      attente.textContent = "Le classement n'a pas pu être lu. Réessayez plus tard.";
+    }
+  }
+  for (const cat of CATEGORIES) {
+    const b = el("button", { role: "tab", type: "button" }, cat.onglet);
+    b.dataset.cat = cat.id;
+    b.addEventListener("click", () => montrer(cat));
+    onglets.append(b);
+  }
+  montrer(CATEGORIES[0]);
+</script>
+</body>
+</html>
