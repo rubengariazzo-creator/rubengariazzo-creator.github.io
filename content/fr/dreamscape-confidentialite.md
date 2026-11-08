@@ -40,7 +40,7 @@ Si l'option « Participer au classement » est cochée dans les Options du jeu (
 - un identifiant tiré au hasard, propre à l'appareil, qui ne permet pas de savoir qui vous êtes ;
 - le pseudonyme affiché dans le classement (le nom de votre partie, ou celui que vous choisissez) ;
 - le peuple de votre royaume et la version du jeu ;
-- vos scores : temps pour conquérir 15 royaumes, dégâts infligés en combat, médailles des défis, Couronnes, influence, trophées de la Brume.
+- vos scores : temps pour conquérir 15 royaumes, dégâts infligés en combat, médailles des défis (le total, et le nombre de médailles d'or, d'argent et de bronze), Couronnes, influence, trophées de la Brume.
 
 Sans connexion à Internet, rien n'est envoyé : vos scores partent dès que l'appareil est de nouveau connecté, ou la prochaine fois que vous ouvrez le jeu avec une connexion. Le jeu vous le signale.
 
