@@ -5,7 +5,7 @@ description: "Politique de confidentialité du jeu Dreamscape (Android et Window
 robots: noindex
 eleventyExcludeFromCollections: true
 ---
-*Dernière mise à jour : 8 novembre 2026*
+*Dernière mise à jour : 11 novembre 2026*
 
 Dreamscape (« le jeu ») est un jeu de construction de royaume et de combats pour Android et Windows, développé de manière indépendante. Cette page explique quelles données le jeu utilise et ce qu'il en fait.
 
@@ -40,7 +40,7 @@ Si l'option « Participer au classement » est cochée dans les Options du jeu (
 - un identifiant tiré au hasard, propre à l'appareil, qui ne permet pas de savoir qui vous êtes ;
 - le pseudonyme affiché dans le classement (le nom de votre partie, ou celui que vous choisissez) ;
 - le peuple de votre royaume et la version du jeu ;
-- vos scores : temps pour conquérir 15 royaumes, dégâts infligés en combat, médailles des défis (le total, et le nombre de médailles d'or, d'argent et de bronze), Couronnes, influence, trophées de la Brume.
+- vos scores : temps pour conquérir 15 royaumes, dégâts infligés en combat, la ligue de la semaine (le palier atteint et quand), médailles des défis (le total, et le nombre de médailles d'or, d'argent et de bronze), Couronnes, influence, trophées de la Brume.
 
 Sans connexion à Internet, rien n'est envoyé : vos scores partent dès que l'appareil est de nouveau connecté, ou la prochaine fois que vous ouvrez le jeu avec une connexion. Le jeu vous le signale.
 

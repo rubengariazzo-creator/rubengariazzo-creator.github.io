@@ -190,6 +190,8 @@ eleventyExcludeFromCollections: true
     .marche .valeur, .r1 .valeur { margin: 0; font-size: 24px; }
     ol.liste li { grid-template-columns: 1.8em minmax(0, 1fr) auto; gap: 7px; padding-inline: 0; }
     ol.liste li:nth-child(n) { margin-inline: 0; }
+    ol.liste li:has(.palier) { grid-template-columns: 1.8em minmax(0, 1fr); }
+    ol.liste li:has(.palier) > .valeur { grid-column: 2; justify-self: start; }
     ol.liste .valeur { font-size: 18px; }
   }
   /* Sans mouvement : le guilloché reste gravé, une seule image (la lumière posée où la phase la met). */
