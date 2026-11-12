@@ -163,8 +163,9 @@ eleventyExcludeFromCollections: true
   ol.liste .qui { min-width: 0; }
   ol.liste .pseudo { display: block; overflow-wrap: anywhere; }
   ol.liste .valeur { font: 400 20px/1 var(--titre); color: var(--sanguine); white-space: nowrap; font-variant-numeric: tabular-nums; }
-  .estimes li .pseudo, .estimes li .valeur { font-style: italic; color: var(--encre-douce); font-weight: normal; }
-  h3 { margin: 26px 0 2px; font: 400 22px/1.2 var(--titre); color: var(--encre); text-align: center; }
+  /* Un temps estimé (une partie commencée avant le chronomètre) : dans le même classement, en italique, d'une encre plus douce. */
+  ol.liste li.estime .pseudo, ol.liste li.estime .valeur, .marche.estime .pseudo, .marche.estime .valeur { font-style: italic; color: var(--encre-douce); font-weight: normal; }
+  .note.pied { margin-top: 14px; text-align: center; font-size: 14px; }
 
   .etat { text-align: center; color: var(--encre-douce); padding: 26px 0 18px; }
   .etat svg { width: 46px; height: 46px; fill: var(--velin-ombre); stroke: var(--filet); stroke-width: 2; display: block; margin: 0 auto 8px; }
@@ -683,11 +684,11 @@ void main() {
     elt.classList.add("songes");
     elt.append(flammes(SONGES === "b" ? 1 : 0, marge));
   }
-  function podium(cat, lignes, estime) {
+  function podium(cat, lignes) {
     const box = el("div", { class: "podium" });
     const teintes = ["or", "argent", "bronze"];
     lignes.slice(0, 3).forEach((l, i) => {
-      const m = el("div", { class: `marche r${i + 1}` });
+      const m = el("div", { class: `marche r${i + 1}` + (l.estime ? " estime" : "") });
       const med = el("div", { class: "medaille" });
       med.append(svg("-6 -6 112 112", `<use href="#etoile" fill="url(#g-${teintes[i]})" stroke="#5a4128" stroke-width="3" stroke-linejoin="round"/>`),
         el("span", { class: "rang-num" }, String(l.rang)));
@@ -695,21 +696,21 @@ void main() {
       qui.append(el("div", { class: "pseudo" }, l.pseudo));
       const p = peuple(l.peuple); if (p) qui.append(p);
       const mx = metaux(l); if (mx) qui.append(mx);
-      m.append(med, qui, cat === "ligue" ? badgeLigne(l.valeur, true) : el("div", { class: "valeur" }, valeur(cat, l.valeur, estime)), guilloche(i));
+      m.append(med, qui, cat === "ligue" ? badgeLigne(l.valeur, true) : el("div", { class: "valeur" }, valeur(cat, l.valeur, l.estime)), guilloche(i));
       if (cat === "ligue") songesAutour(m, l.valeur, 30);
       box.append(m);
     });
     return box;
   }
-  function liste(cat, lignes, estime) {
-    const ol = el("ol", { class: "liste" + (estime ? " estimes" : "") });
+  function liste(cat, lignes) {
+    const ol = el("ol", { class: "liste" });
     lignes.forEach((l, i) => {
-      const li = el("li"); li.style.animationDelay = `${Math.min(i, 12) * 0.03}s`;
+      const li = el("li", l.estime ? { class: "estime" } : {}); li.style.animationDelay = `${Math.min(i, 12) * 0.03}s`;
       const qui = el("div", { class: "qui" });
       qui.append(el("span", { class: "pseudo" }, l.pseudo));
       const p = peuple(l.peuple); if (p) qui.append(p);
       const mx = metaux(l); if (mx) qui.append(mx);
-      li.append(el("span", { class: "rang" }, String(l.rang)), qui, cat === "ligue" ? badgeLigne(l.valeur, false) : el("span", { class: "valeur" }, valeur(cat, l.valeur, estime)));
+      li.append(el("span", { class: "rang" }, String(l.rang)), qui, cat === "ligue" ? badgeLigne(l.valeur, false) : el("span", { class: "valeur" }, valeur(cat, l.valeur, l.estime)));
       if (cat === "ligue") songesAutour(li, l.valeur, 26);
       ol.append(li);
     });
@@ -736,7 +737,9 @@ void main() {
       const d = await r.json();
       if (n !== demande) return;
       attente.remove();
-      const lignes = d.lignes || [];
+      // Un seul classement : les temps mesurés, puis les estimés (anciennes parties), dont les rangs continuent.
+      const mesures = d.lignes || [];
+      const lignes = mesures.concat((d.estimes || []).map(l => ({ ...l, estime: true, rang: mesures.length + l.rang }))).slice(0, 50);
       if (!lignes.length) {
         vue.append(cat.id === "ligue"
           ? etat("Personne pour l'instant", "La ligue de la semaine attend son premier rêveur. Gagnez une revanche contre un grand royaume, et la première place est à vous.")
@@ -746,8 +749,9 @@ void main() {
       }
       if (lignes.length) {
         if (cat.id === "ligue" && SONGES === "a" && palierDe(lignes[0].valeur) === 3) vue.append(el("div", { class: "place-flammes" }));
-        vue.append(podium(cat.id, lignes, false));
-        if (lignes.length > 3) vue.append(liste(cat.id, lignes.slice(3), false));
+        vue.append(podium(cat.id, lignes));
+        if (lignes.length > 3) vue.append(liste(cat.id, lignes.slice(3)));
+        if (lignes.some(l => l.estime)) vue.append(el("p", { class: "note pied" }, "≈ : temps estimé, pour une partie commencée avant le chronomètre."));
       }
     } catch {
       if (n !== demande) return;
