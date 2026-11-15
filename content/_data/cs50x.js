@@ -60,7 +60,12 @@ const FR_TRANSLATIONS = {
     reflection:
       "Fonctionnement du web en coulisses : requêtes et réponses HTTP, structure des pages en HTML, mise en forme en CSS et Bootstrap, et interactivité en JavaScript grâce au DOM.",
   },
-  "Week 9: Flask": { title: "Semaine 9 : Flask" },
+  "Week 9: Flask": {
+    title: "Semaine 9 : Flask",
+    reflection:
+      "Création d'applications web en Python avec Flask : routes, gabarits Jinja, formulaires en GET et POST, sessions et cookies, et stockage des données dans une base SQL derrière le site.",
+  },
+  "Final Project": { title: "Projet final" },
 };
 
 module.exports = async function () {
