@@ -279,7 +279,7 @@ eleventyExcludeFromCollections: true
     return Math.round(v).toLocaleString("fr-FR");
   }
   function peuple(id) {
-    const p = PEUPLES[id];
+    const p = Object.hasOwn(PEUPLES, id) ? PEUPLES[id] : null; // (audit 15/11 : pas « constructor »…)
     if (!p) return null;
     const s = el("span", { class: "peuple" });
     const i = el("i"); i.style.setProperty("--c", p[1]);
